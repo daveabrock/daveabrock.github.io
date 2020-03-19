@@ -1,5 +1,5 @@
 ---
-categories: Blazor .net core
+categories: blazor .net-core
 date: "2018-11-12"
 title: "Share Blazor Components with Shared Class Libraries"
 layout: post

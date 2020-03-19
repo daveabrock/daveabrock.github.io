@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: GitHub, Git
+categories: github git
 date: "2018-10-27"
 title: "GitHub tip: You don't need that .git extension to clone"
 ---
