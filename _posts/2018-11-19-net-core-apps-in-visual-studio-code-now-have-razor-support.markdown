@@ -1,5 +1,4 @@
 ---
-categories: visual-studio-code .net-core tools
 date: "2018-11-19"
 title: "Razor Support for ASP.NET Core Apps in Visual Studio Code"
 layout: post

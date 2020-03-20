@@ -1,5 +1,4 @@
 ---
-categories: best-practices rants
 date: "2019-02-07"
 title: "Keep Those Boolean Conditionals Simple"
 layout: post

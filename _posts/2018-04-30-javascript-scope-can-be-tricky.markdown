@@ -1,5 +1,4 @@
 ---
-categories: javascript
 date: "2018-04-30"
 title: "JavaScript Scope Can Be Tricky"
 layout: post

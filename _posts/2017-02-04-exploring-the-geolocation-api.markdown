@@ -1,6 +1,5 @@
 ---
 layout: post
-categories: html5 javascript
 date: "2017-02-04"
 title: "Exploring the Geolocation API"
 ---

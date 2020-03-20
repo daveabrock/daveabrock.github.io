@@ -1,5 +1,4 @@
 ---
-categories: html5 javascript
 date: "2017-02-04"
 title: "The AppCache API: Is It Worth It?"
 layout: post

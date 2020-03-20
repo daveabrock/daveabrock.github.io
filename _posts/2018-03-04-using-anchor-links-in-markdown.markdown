@@ -1,5 +1,4 @@
 ---
-categories: markdown
 date: "2018-03-04"
 title: "Using Anchor Links in Markdown"
 layout: post

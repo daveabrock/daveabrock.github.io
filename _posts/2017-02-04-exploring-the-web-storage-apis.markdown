@@ -1,5 +1,4 @@
 ---
-categories: html5 javascript
 date: "2017-02-04"
 title: "Exploring the Web Storage APIs"
 layout: post

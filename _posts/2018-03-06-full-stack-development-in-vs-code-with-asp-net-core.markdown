@@ -1,5 +1,4 @@
 ---
-categories: visual-studio-code .net-core tools
 date: "2018-03-06"
 title: "Full-Stack Development in Visual Studio Code with ASP.NET Core"
 layout: post
