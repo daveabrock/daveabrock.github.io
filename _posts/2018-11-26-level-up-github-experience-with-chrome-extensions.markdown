@@ -17,7 +17,7 @@ The [Awesome Autocomplete for GitHub extension,](https://chrome.google.com/webst
 
 This extension supercharges the top GitHub search bar by adding auto-completion, last active users, top public repositories, and more.
 
-![Search](/../../images/Search.png)
+![Search](/../assets/Search.png)
 
 You can even type `aa<space>` to find GitHub repositories directly from your Chrome address bar!
 
