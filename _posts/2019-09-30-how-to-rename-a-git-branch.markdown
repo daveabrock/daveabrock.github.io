@@ -15,7 +15,7 @@ If you aren't already at the branch in question, check it out:
 git checkout <my-branch-i-want-to-rename>
 ```
 
-Now that your branch is checked out, rename it bby using the `git branch` command:
+Now that your branch is checked out, rename it by using the `git branch` command:
 
 ```bash
 git branch -m <new-name-of-my-branch>
