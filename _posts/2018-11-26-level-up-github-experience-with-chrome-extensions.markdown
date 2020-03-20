@@ -30,7 +30,7 @@ The default file icons in GitHub are so, so boring. Are you tired of seeing the 
 
 The [File Icon for GitHub, GitLab and Gitbucket extension,](https://chrome.google.com/webstore/detail/file-icon-for-github-gitl/ficfmibkjjnpogdcfhfokmihanoldbfe?hl=en) by [Homer Chen,](https://twitter.com/xxhomey19) adds file icons to GitHub repositories. Personally, this makes it easier for me to find certain files in folders with many files.
 
-![FileIcons](../../images//FileIcons.png)
+![FileIcons](../assets/FileIcons.png)
 
 * [GitHub project](https://github.com/xxhomey19/github-file-icon)
 * [Chrome extension](https://chrome.google.com/webstore/detail/file-icon-for-github-gitl/ficfmibkjjnpogdcfhfokmihanoldbfe?hl=en)
@@ -39,7 +39,7 @@ The [File Icon for GitHub, GitLab and Gitbucket extension,](https://chrome.googl
 
 Any reasonable code editor gives you the ability to easily expand or collapse code blocks for readability. The [GitHub Code Folding extension](https://chrome.google.com/webstore/detail/github-code-folding/lefcpjbffalgdcdgidjdnmabfenecjdf/), by [Noam Lustiger](https://github.com/noam3127), allows you to do this inside the GitHub user interface.
 
-![CodeFolding-1](../../images/CodeFolding-1.gif)
+![CodeFolding-1](../assets/CodeFolding-1.gif)
 
 * [GitHub project](https://github.com/noam3127/github-code-folding)
 * [Chrome extension](https://chrome.google.com/webstore/detail/github-code-folding/lefcpjbffalgdcdgidjdnmabfenecjdf/)
@@ -50,7 +50,7 @@ The [GitHub Repository Size extension](https://chrome.google.com/webstore/detail
 
 The extension lists the size for an entire GitHub repository and also the size of each file.
 
-![Size](../../images/Size.png)
+![Size](../assets/Size.png)
 
 * [GitHub project](https://github.com/harshjv/github-repo-size)
 * [Chrome extension](https://chrome.google.com/webstore/detail/github-repository-size/apnjnioapinblneaedefcnopcjepgkci?hl=en)
@@ -68,7 +68,7 @@ The [Isometric Contributions extension](https://chrome.google.com/webstore/detai
 
 Of course, you can easily switch between the isometric view and the default view. This extension does not have certain functionality like hovering over a day for details.
 
-![IsometricContributions](../../images/IsometricContributions.png)
+![IsometricContributions](../assets/IsometricContributions.png)
 
 * [GitHub project](https://github.com/jasonlong/isometric-contributions)
 * [Chrome extension](https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien)
@@ -79,7 +79,7 @@ The [Notifier for GitHub extension](https://chrome.google.com/webstore/detail/no
 
 (The screenshot grabbed from [the extension's repository](https://github.com/sindresorhus/notifier-for-github).)
 
-![screenshot](../../images/screenshot.png)
+![screenshot](../assets/screenshot.png)
 
 * [GitHub project](https://github.com/sindresorhus/notifier-for-github)
 * [Chrome extension](https://chrome.google.com/webstore/detail/notifier-for-github/lmjdlojahmbbcodnpecnjnmlddbkjhnn?hl=en)
@@ -88,7 +88,7 @@ The [Notifier for GitHub extension](https://chrome.google.com/webstore/detail/no
 
 I cannot do without [the Octotree extension](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc?hl=en-US). This extension offers an easy-to-navigate code tree, allowing for lightning-fast browsing of a repository's files.
 
-![Octotree](../../images/Octotree.png)
+![Octotree](../assets/Octotree.png)
 
 * [GitHub project](https://github.com/ovity/octotree)
 * [Chrome extension](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc?hl=en-US)
@@ -106,11 +106,11 @@ Some functionality includes the ability to mark issues and pull requests as unre
 
 Where do you stand on the tabs vs. spaces argument? You can only pick one. (In an effort to keep all my readers, I will abstain from this one.)
 
-{{< youtube SsoOG6ZeyUI >}}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SsoOG6ZeyUI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The [Render Whitespace on GitHub extension](https://chrome.google.com/webstore/detail/render-whitespace-on-gith/ifdbipohclgnokjgpejhnbjdlgjkkhom), by [Gleb Mazovetskiy](https://twitter.com/glebm), allows you to quickly find out the formatting of a repository's code.
 
-![Whitespace](../../images/Whitespace.png)
+![Whitespace](../assets/Whitespace.png)
 
 * [GitHub project](https://github.com/glebm/render-whitespace-on-github)
 * [Chrome extension](https://chrome.google.com/webstore/detail/render-whitespace-on-gith/ifdbipohclgnokjgpejhnbjdlgjkkhom)
@@ -121,7 +121,7 @@ When I discover a GitHub repository, I like to find out information about the au
 
 The [Twitter for GitHub extension](https://chrome.google.com/webstore/detail/twitter-for-github/joalalcafnlmimkfkihjbdgmphgedojc), by [Nicolás Bevacqua](https://twitter.com/nzgb), attempts to find a user's Twitter handle and display it on a GitHub profile.
 
-![GitHubTwitter](../../images/GitHubTwitter.png)
+![GitHubTwitter](../assets/GitHubTwitter.png)
 
 * [GitHub project](https://github.com/bevacqua/twitter-for-github)
 * [Chrome extension](https://chrome.google.com/webstore/detail/twitter-for-github/joalalcafnlmimkfkihjbdgmphgedojc)
