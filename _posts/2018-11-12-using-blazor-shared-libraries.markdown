@@ -31,12 +31,12 @@ Let's create a Blazor application.
 1. From Visual Studio 2017, click **File** > **New** > **Project** and select the **Visual C#** > **.NET Core** > **ASP.NET Core Web Application**.
 2. Give it a name, like **MySharedLibDemo**, and click **OK**.
 
-    ![Blazor-NewProject-2](/../../images/Blazor-NewProject-2.png)
+    ![Blazor-NewProject-2](/../assets/Blazor-NewProject-2.png)
 
 3. Select the **Blazor** template and click **OK**. This will scaffold a default SPA application that is integrated with WebAssembly.
 4. After the scaffolding completes, click **Debug** > **Start Without Debugging** to run the application. Your site should resemble the following.
 
-    ![InitialBlazorAppView-2](/../../images/InitialBlazorAppView-2.png)
+    ![InitialBlazorAppView-2](/../assets/InitialBlazorAppView-2.png)
 
     Leave this running so we can save the application in Visual Studio and reload it.
 
@@ -44,12 +44,12 @@ Let's create a Blazor application.
 
 5. Right-click the solution and select **Open Command Line**. From your preferred command line utility, enter `dotnet new` to see all the .NET Core templates available to you. We will be adding the **Blazor Library** template to our project.
 
-    ![core-templates-1](/../../images/core-templates-1.png)
+    ![core-templates-1](/../assets/core-templates-1.png)
 
 6. From your prompt, enter `dotnet new blazorlib -o MySharedBlazorLibrary`. This will add the `MySharedBlazorLibrary` project in your directory.
 7. Right-click your solution and click **Add** > **Existing Project**. Browse to your library, select the *MySharedBlazorLibrary.csproj* file, and click **Open**. Your project structure will now resemble the following.
 
-   ![Blazor-SolutionExplorer](/../../images/Blazor-SolutionExplorer.png)
+   ![Blazor-SolutionExplorer](/../assets/Blazor-SolutionExplorer.png)
 
 8. Finally, reference the shared project. From your main project, right-click **Dependencies** > **Add Reference...** Then, select your newly created project and click **OK**.
 
@@ -67,7 +67,7 @@ Now, all you need to do is add the component to your project. If you remember, t
 
 From your `Pages/Index.cshtml` file, below the `SurveyPrompt` component, add the `Component1` component. As you begin typing, you can use IntelliSense.
 
-   ![Autocomplete](/../../images/Autocomplete.png)
+   ![Autocomplete](/../assets/Autocomplete.png)
 
 Your `Index.cshtml` component should now look like this:
 
@@ -89,6 +89,6 @@ Notice you don't even need a `@using` statement in your view to reference your c
 
 After you save your changes, reload the page to see your new component in action.
 
-   ![PageWithComponent-1](/../../images/PageWithComponent-1.png)
+   ![PageWithComponent-1](/../assets/PageWithComponent-1.png)
 
 You have just referenced a component from a shared library with minimal effort. By merely importing the library, you were able to add a component and its styles quite easily.
