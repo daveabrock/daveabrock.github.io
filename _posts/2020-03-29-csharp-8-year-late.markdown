@@ -183,7 +183,7 @@ var movies = new string[]
     "Quantum of Solace",
     "Skyfall",
     "Spectre" // eek
-}
+};
 ```
 
 ### Indexes
@@ -207,13 +207,13 @@ var movies = new string[]
     "Skyfall", // ^2
     "Spectre" // ^1
     // words.length value is ^0
-}
+};
 ```
 
 Now, you don't have to do counting from an index and makes things a lot easier. For example, to get *Skyfall* (please use string interpolation to prove you aren't a monster):
 
 ```csharp
-Console.WriteLine($"The second to last Bond movie is {movies{^2}}");
+Console.WriteLine($"The second to last Bond movie is {movies[^2]}");
 ```
 
 See? You've already forgotten about *Spectre*.
