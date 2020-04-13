@@ -145,19 +145,10 @@ Async improvements are not new to the language, as the `async/await` pattern was
 With async streams, they:
 
 - Are declared with an `async` keyword modifier
-- Returns an `IAsyncEnumerable`
-- Contains `yield` statements to return the stream elements
+- Return an `IAsyncEnumerable`
+- Contain `yield` statements to return the stream elements
 
 You can see the benefits in cycling through a traditional `for` loop. Check out the [Microsoft Docs article](https://docs.microsoft.com/dotnet/csharp/tutorials/generate-consume-asynchronous-stream) for a full demonstration.
-
-```csharp
-public static async IAsyncEnumerable<int> GoThroughNumbers()
-{
-    for (int i = 0; i < 1000; i++)
-    {
-        Console.Write()
-    }
-}
 
 ## Indices and ranges
 
