@@ -4,8 +4,6 @@ title: "C# 8, A Year Late"
 layout: post
 ---
 
-# C# 8, A Year Late
-
 After working in C# for the better part of a decade, last year I went on a hiatus from the .NET ecosystem and dove in head-first on Node.js, TypeScript, and React. Now, I'm back! Since I've been writing C# code again and shaking off the rust, Visual Studio 2019 (and more specifically, the Roslyn analyzers) keep reminding me: "**Fun fact: did you know you can do this new thing?**"
 
 After repeating this exercise approximately 26 times, I decided to do some actual research and see what's changed with C# 8—I hope this helps you, too.
