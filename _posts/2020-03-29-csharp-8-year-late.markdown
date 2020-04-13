@@ -12,6 +12,8 @@ This article, while on the long side (sorry!), just mentions a few of my favorit
 
 **Worth mentioning**: According [to the article in question](https://docs.microsoft.com/dotnet/csharp/whats-new/csharp-8), C# 8.0 is supported on .NET Core 3.*x* and .NET Standard 2.1 (see [the documentation](https://docs.microsoft.com/dotnet/csharp/language-reference/configure-language-version) on language versioning).
 
+Also, a big thank you goes out to Microsoft's [David Pine](https://twitter.com/davidpine7) for his valuable feedback on this post.
+
 ## Simplified using declarations
 
 When you use a **using** declaration, you are telling the C# compiler that the current variable should automatically be disposed at the end of the variable's scope. Remember how your grandparents did this, way back in C# 7?
@@ -226,13 +228,15 @@ With ranges in C# 8, remember this: the start of the range is included, and the 
 
 ```csharp
 // Returns first three movies (index 0, 1, 2 => Dr. No, From Russia, Goldfinger)
-var awesomeConneryOnes = movies[0..3]
+var conneryMovies = movies[0..3];
+Console.WriteLine($"The first three Connery movies are: {string.Join(", ", conneryMovies)}");
 ```
 
 You can use the `^` index from end operator, as discussed previously, to grab my favorite Daniel Craig films (*Skyfall*, *Quantum of Solace* (work with me here), and *Casino Royale*).
 
 ```csharp
-var awesomeCraigOnes = movies[^2..^5];
+var craigMovies = movies[^4..^1];
+Console.WriteLine($"My favorite Craig movies are: {string.Join(", ", craigMovies)}");
 ```
 
 You can also use the `Range` struct, which can then be used inside `[` and `]` to give you that array-like kind of feeling.
