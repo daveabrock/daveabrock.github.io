@@ -54,25 +54,28 @@ With your regular switch expression, you have to go through a lot of motions wit
 Let's take a look at an admittedly simple switch statement we've all written more than we'd like to admit.
 
 ```csharp
-public static void FindAProgrammingLanguage(string languageInput)
+public static string FindAProgrammingLanguage(string languageInput)
 {
+    string languagePhrase;
+
     switch (languageInput)
     {
         case "C#":
-            Console.WriteLine("C# is fun!");
+            languagePhrase = "C# is fun!";
             break;
         case "JavaScript":
-            Console.WriteLine("JavaScript is mostly fun!");
+            languagePhrase = "JavaScript is mostly fun!";
             break;
         case "TypeScript":
-            Console.WriteLine("TypeScript makes JavaScript more fun!");
+            languagePhrase = "TypeScript makes JavaScript more fun!";
             break;
         case "C++":
-            Console.WriteLine("C++ has pointers!");
+            languagePhrase = "C++ has pointers!";
             break;
         default:
-            throw new Exception("You code in something else I don't recognize.");
+             throw new Exception("You code in something else I don't recognize.");
     };
+    return languagePhrase;
 }
 ```
 
@@ -85,15 +88,18 @@ With syntax improvements in C# 8, we can:
 Look at us now!
 
 ```csharp
-public static void FindAProgrammingLanguage(string languageInput) =>
-    languageInput switch
+public static string FindAProgrammingLanguage(string languageInput)
+{
+    string languagePhrase = languageInput switch
     {
-        "C#"            => Console.WriteLine("C# is fun!"),
-        "JavaScript"    => Console.WriteLine("JavaScript is mostly fun!"),
-        "TypeScript"    => Console.WriteLine("TypeScript makes JavaScript more fun!"),
-        "C++"           => Console.WriteLine("C++ has pointers!"),
-        _               => throw new Exception("You code in something else I don't recognize."),
+        "C#" => "C# is fun!",
+        "JavaScript" => "JavaScript is mostly fun!",
+        "TypeScript" => "TypeScript makes JavaScript more fun!",
+        "C++" => "C++ has pointers!",
+         _ => throw new Exception("You code in something else I don't recognize."),
     };
+    return languagePhrase;
+}
 ```
 
 ### Property patterns
