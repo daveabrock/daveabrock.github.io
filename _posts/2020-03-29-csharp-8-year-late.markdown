@@ -17,9 +17,11 @@ This article, while on the long side (sorry!), just mentions a few of my favorit
 When you use a **using** declaration, you are telling the C# compiler that the current variable should automatically be disposed at the end of the variable's scope. Remember how your grandparents did this, way back in C# 7?
 
 ```csharp
+// using System.IO;
+
 static void DoStuffWithAFile(string doingSomeStuff)
 {
-    using (var file = new StreamWriter("MyFile.txt))
+    using (var file = new StreamWriter("MyFile.txt"))
     {
         // three for-eaches
         // five logging statements
@@ -33,7 +35,7 @@ Now, you can accomplish this with a simplified **using var** statement and avoid
 ```csharp
 static void DoStuffWithAFile(string doingSomeStuff)
 {
-    using var file = new StreamWriter("MyFile.txt)
+    using var file = new StreamWriter("MyFile.txt");
     // three for-eaches
     // nine if statements
 }
@@ -56,12 +58,16 @@ public static void FindAProgrammingLanguage(string languageInput)
     {
         case "C#":
             Console.WriteLine("C# is fun!");
+            break;
         case "JavaScript":
-            Console.WriteLine("JavaScript is mostly fun!")
+            Console.WriteLine("JavaScript is mostly fun!");
+            break;
         case "TypeScript":
             Console.WriteLine("TypeScript makes JavaScript more fun!");
+            break;
         case "C++":
             Console.WriteLine("C++ has pointers!");
+            break;
         default:
             throw new Exception("You code in something else I don't recognize.");
     };
