@@ -4,8 +4,6 @@ title: "What I'm Reading (week of 4/14/20)"
 layout: post
 ---
 
-# What Amused Me (week of 4/14/20)
-
 Here's a weekly Friday shout-out of articles, videos, and other content I found interesting. 
 
 ## Development and testing
