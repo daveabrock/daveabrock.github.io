@@ -1,6 +1,12 @@
 name: Send a Tweet
 on: [push]
 jobs:
+  log-message:  
+    runs-on: ubuntu-latest
+    steps:
+       - uses: actions/checkout@v1
+       - id: log
+         run: echo "::set-output name=message::$(git log --no-merges -1 --oneline)"   
   tweet:
     runs-on: ubuntu-latest
     steps:
