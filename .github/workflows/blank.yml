@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - id: log
-        run: echo "::set-output name=message::$(git log --no-merges -1 --pretty=%B)"
+        run: echo "$(git log --no-merges -1 --pretty=%B)"
       - uses: ethomson/send-tweet-action@v1
         with:
           status: "NEW POST: ${{ steps.log.output.message }}"
