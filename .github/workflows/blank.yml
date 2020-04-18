@@ -10,9 +10,11 @@ jobs:
   tweet:
     runs-on: ubuntu-latest
     steps:
+      - id:  log
+        run: echo "::set-output name=message::$(git log --no-merges -1 --pretty=%B)"
       - uses: ethomson/send-tweet-action@v1
         with:
-          status: "NEW POST: ${{ github.event.head_commit.message }}"
+          status: "NEW POST: ${{ steps.log.output.message }}"
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
           access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
