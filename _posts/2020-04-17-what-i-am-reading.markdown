@@ -1,6 +1,6 @@
 ---
 date: "2020-04-17"
-title: "What I'm Reading (Week of 4/14/20)"
+title: "What I'm Reading (week of 4/14/20)"
 layout: post
 ---
 
