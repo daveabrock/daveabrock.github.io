@@ -6,7 +6,7 @@ jobs:
     steps:
        - uses: actions/checkout@v1
        - id: log
-         run: echo "$(git shortlog --no-merges -1 --oneline)"
+         run: echo "$(git log -1 --pretty=%B)"
   tweet:
     runs-on: ubuntu-latest
     steps:
