@@ -167,7 +167,7 @@ jobs:
 
 This results in a **NEW POST:** tweet, sadly, with no commit data. This does not persist across actions or steps (in retrospect, the reason for it being in `steps`). Luckily, GitHub Actions has [environment variables](https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables), which come to our rescue.
 
-While I was on the right track with my `run` statement, I should have used `set-env` instead. This injects the value into an `env` object that GitHub Actions uses for environmental variables. So: if I say `set-env name=POST_COMMIT_MESSAGE` I could access it later using `${{ env.POST_COMMIT_MESSAGE }}`. Here is the updated file.
+While I was on the right track with my `run` statement, I should have used `set-env` instead. This injects the value into an `env` object that GitHub Actions uses for environmental variables. So: if I say `set-env name=POST_COMMIT_MESSAGE` I could access it later using `${% raw %}{{ env.POST_COMMIT_MESSAGE }}{% endraw %}`. Here is the updated file.
 
 ```yaml
 name: Send a Tweet
