@@ -1,18 +1,17 @@
 name: Send a Tweet
 on: [push]
 jobs:
-  log-message:  
-    runs-on: ubuntu-latest
-    steps:
-       - uses: actions/checkout@v1
-       - id: log
-         run: echo "$(git log --no-merges -1 --pretty=%B)"
   tweet:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
+      - id: log
+        run: echo "::set-env name=POST_COMMIT_MESSAGE::$(git log --no-merges -1 --pretty=%B)"
+        env:
+          POST_INFO: step.log.outputs.message 
       - uses: ethomson/send-tweet-action@v1
         with:
-          status: "NEW POST: ${{ github.event.head_commit.message }}"
+          status: "NEW POST: ${{ env.POST_COMMIT_MESSAGE }}"
           consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
           access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
