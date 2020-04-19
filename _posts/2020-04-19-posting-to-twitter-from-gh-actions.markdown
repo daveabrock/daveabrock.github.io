@@ -70,10 +70,11 @@ jobs:
       - uses: ethomson/send-tweet-action@v1
         with:
           status: "NEW POST!"
-          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
-          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          # uncomment these - GH Pages can't parse this correctly on my site
+          #consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          #consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          #access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          #access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
 ```
 
 After you commit the file, you can head over to the `Actions` page in GitHub to monitor the status.
@@ -159,10 +160,11 @@ jobs:
       - uses: ethomson/send-tweet-action@v1
         with:
           status: "NEW POST: ${{ steps.log.output.message }}"
-          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
-          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          # uncomment these - GH Pages can't parse this correctly on my site
+          #consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          #consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          #access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          #access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
 ```
 
 This results in a **NEW POST:** tweet, sadly, with no commit data. This does not persist across actions or steps (in retrospect, the reason for it being in `steps`). Luckily, GitHub Actions has [environment variables](https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables), which come to our rescue.
@@ -182,10 +184,11 @@ jobs:
       - uses: ethomson/send-tweet-action@v1
         with:
           status: "NEW POST: ${{ env.POST_COMMIT_MESSAGE }}"
-          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
-          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          # uncomment these - GH Pages can't parse this correctly on my site
+          #consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          #consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          #access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          #access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
 ```
 
 It works! So now, in the future, if I push a commit message to `master` in the format `<Post title> <url>` it will push to Twitter right away. (I can now customize based on PR or other policies, as well.)
