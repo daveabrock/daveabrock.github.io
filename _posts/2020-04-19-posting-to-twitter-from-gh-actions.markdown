@@ -4,8 +4,6 @@ title: "Tweeting New GitHub Pages Posts from GitHub Actions"
 layout: post
 ---
 
-# Tweeting New GitHub Pages Posts from GitHub Actions
-
 For the last few years, I hosted my blog on the [Ghost platform](https://ghost.org/). It was a fast, Node-powered CMS, which allowed for stupid-simple publishing: I could get in, write, and get out. However, I was looking at another annual bill for $220 and I wanted to find a better (and cheaper) way. I knew of the myriad of static site generators out there today. I eventually landed on [Jekyll + GitHub Pages](https://pages.github.com/). A month in, I'm happy that GitHub Pages gives me the flexibility to customize as I wanted, but also the simplicity. I can push a markdown file to GitHub, and then deploy to daveabrock.com automatically. All for just the cost of my domain name ($9 a year)!
 
 After I publish my posts, I typically post them to Twitter. Ghost had a setting to do this. Could I do this from GitHub Pages? Not easily, it seemed, without leveraging external services. I could maybe toy with an RSS feed trigger from IFTTT or build something with Azure Logic Apps. Of course, it's a silly thing to obsess over but why should I manually do something repeatedly?
