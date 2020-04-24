@@ -1,6 +1,6 @@
 ---
 date: "2020-04-23"
-title: "Optimize Images in GitHub Using ImgBot"
+title: "Compress Images in GitHub Using ImgBot"
 layout: post
 ---
 
