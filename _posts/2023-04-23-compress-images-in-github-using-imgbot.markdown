@@ -1,6 +1,6 @@
 ---
 date: "2020-04-23"
-title: "Compress Images in GitHub Using ImgBot"
+title: "Compress Images in GitHub Using Imgbot"
 layout: post
 ---
 
@@ -13,17 +13,17 @@ For the uninitiated, image compression involves shrinking (or "compressing") the
 
 Image compression is not simple, so unless you specialize in this, you should definitely take advantage of the bevy of tools out there in the community. These tools can come from command-line interfaces (CLIs), editor extensions (I really like the Docs Authoring Pack from Microsoft), or even web sites like TinyPNG (this manual solution does not scale well).
 
-Another approach, of course, would be automating it after-the-fact with a bot. While this gives you less control, you can take a "set it and forget it" mindset and not have to worry about it at all. That's where I discovered [ImgBot](https://imgbot.net/), a GitHub bot you can download that scans your GitHub repository for images, compresses them, and then submits a pull request for you to merge into your codebase. It delivers lossless compression by default and is configurable, as well.
+Another approach, of course, would be automating it after-the-fact with a bot. While this gives you less control, you can take a "set it and forget it" mindset and not have to worry about it at all. That's where I discovered [Imgbot](https://imgbot.net/), a GitHub bot you can download that scans your GitHub repository for images, compresses them, and then submits a pull request for you to merge into your codebase. It delivers lossless compression by default and is configurable, as well.
 
-Let's get started with ImgBot and how it can help you manage your repository's image files.
+Let's get started with Imgbot and how it can help you manage your repository's image files.
 
-## Download ImgBot
+## Download Imgbot
 
-To get started, you'll need to head over to the ImgBot site to download the bot to your GitHub account. After you pick a plan (free for public open-source repos!) you'll need GitHub to give ImgBot access to your single repository (or all of them). Once that is installed, ImgBot will create a branch for you and publish a pull request that you can view and then merge, if it's too your liking.
+To get started, you'll need to head over to the Imgbot site to download the bot to your GitHub account. After you pick a plan (free for public open-source repos!) you'll need GitHub to give Imgbot access to your single repository (or all of them). Once that is installed, Imgbot will create a branch for you and publish a pull request that you can view and then merge, if it's too your liking.
 
 For me, I was able to save about 18% (some were already compressed):
 
-![ImgBot compression results](/../assets/imgbot-lossy.png)
+![Imgbot compression results](/../assets/imgbot-lossy.png)
 
 ## Opt-in to configuration options
 
