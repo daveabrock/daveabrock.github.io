@@ -19,7 +19,7 @@ Let's get started with Imgbot and how it can help you manage your repository's i
 
 ## Download Imgbot
 
-To get started, you'll need to head over to the Imgbot site to download the bot to your GitHub account. After you pick a plan (free for public open-source repos!) you'll need GitHub to give Imgbot access to your single repository (or all of them). Once that is installed, Imgbot will create a branch for you and publish a pull request that you can view and then merge, if it's too your liking.
+To get started, you'll need to head over to the Imgbot site to download the bot to your GitHub account. After you pick a plan (free for public open-source repos!) you'll need GitHub to give Imgbot access to your single repository (or all of them). Once that is installed, Imgbot will create a branch for you and publish a pull request that you can view and then merge, if it's to your liking.
 
 For me, I was able to save about 18% (some were already compressed):
 
