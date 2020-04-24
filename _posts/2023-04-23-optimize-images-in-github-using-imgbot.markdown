@@ -23,7 +23,7 @@ To get started, you'll need to head over to the ImgBot site to download the bot 
 
 For me, I was able to save about 18% (some were already compressed):
 
-![ImgBot compression results](../assets/imgbot-lossy.png)
+![ImgBot compression results](/../assets/imgbot-lossy.png)
 
 ## Opt-in to configuration options
 
