@@ -4,8 +4,6 @@ title: "On Getting By"
 layout: post
 ---
 
-# On getting by
-
 Every week, I sit down and write *something*. I learned long ago that nothing quite works like forced consistency. Let's get real, friends: lately, it's been tough sledding. I'm tired and absolutely exhausted—and odds are that you are, too. **This is hard.**
 
 (To be clear: I work in a field where working from home is quite seamless and feel very lucky that my job was not impacted and that I am (1) able to work as I was previously, and (2) am in good health. I am not trying to take away from those doing heroic work, or those who are truly suffering right now.)
