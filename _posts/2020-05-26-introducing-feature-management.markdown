@@ -22,7 +22,7 @@ For this post, I'll be using an ASP.NET Core Web Application with the traditiona
 Once you create your project, you'll need to install `Microsoft.FeatureManagement`. You can do this in one of two ways:
 
 - From the NuGet Package Manager (easiest way is to right-click your solution in Visual Studio, then clicking **Manage NuGet Packages**)
-- From the `dotnet` CLI, you can execute the `dotnet add Microsoft.FeatureManagement` command
+- From the `dotnet` CLI, you can execute the `dotnet add package Microsoft.FeatureManagement` command
 
 (While we are using an ASP.NET Core application, the library depends on .NET Standard 2.0—so even non-.NET Core applications can benefit.)
 
@@ -148,7 +148,7 @@ If you run your app, you just see the standard welcome message, because your fea
 
 Now, if you go to your `appsettings.json` file and set `WelcomeText` to true and restart the *page*, you'll see the feature flag in action! (You only have to restart the page, and not the app, as the configuration provider handles the change without an app restart!)
 
-![After turning on flag](/../assets/feature-flag-welcome-before.PNG)
+![After turning on flag](/../assets/feature-flag-welcome-after.PNG)
 
 When thinking in terms of deployment, you can set release variables and whatnot to better manage when to turn these on. We will discuss these when we talk about integrating with Azure.
 
