@@ -1,6 +1,6 @@
 ---
 date: "2020-05-30"
-title: "Using Microsoft.FeatureManagement.AspNetCore to filter action methods and classes"
+title: "Using Microsoft.FeatureManagement.AspNetCore to filter actions and HTML"
 layout: post
 ---
 
