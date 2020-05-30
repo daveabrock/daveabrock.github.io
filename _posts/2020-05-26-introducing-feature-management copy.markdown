@@ -1,5 +1,5 @@
 ---
-date: "2020-05-24"
+date: "2020-05-26"
 title: "Introducing the Microsoft.FeatureManagement library"
 layout: post
 ---
@@ -11,7 +11,7 @@ Instead of writing this logic and having to deal with the corner case headaches,
 I'll be writing a few posts on this topic:
 
 - In **this post**, we'll take a test drive through `Microsoft.FeatureManagement` by demonstrating a simple example
-- In **the next post**, we will show how you can filter out action methods (or even classes)
+- In **the next post**, we will show how you can filter out action methods (or even classes) and HTML content using `Microsoft.FeatureManagement.AspNetCore`
 - In **a third post**, I'll showcase the true power of feature flags: writing your own!
 - Finally, in **a fourth post**, we'll discuss how to integrate this functionality with Azure
 
