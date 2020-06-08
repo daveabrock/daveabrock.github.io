@@ -4,7 +4,7 @@ title: "Implement custom filters in your ASP.NET Core feature flags"
 layout: post
 ---
 
-So far in this series, we introduced `Microsoft.FeatureManagement` as a way to [manage feature flag functionality in your .NET applications](https://daveabrock.com/2020/05/24/introducing-feature-management.html) and used the `Microsoft.FeatureManagement.AspNetCore` library to [conditionally filter HTML components and apply filters across controller action methods and classes](https://daveabrock.com/2020/05/30/introducing-feature-management-aspnetcore.html).
+So far in this series, we introduced `Microsoft.FeatureManagement` as a way to [manage feature flag functionality in your .NET applications](https://daveabrock.com/2020/05/26/introducing-feature-management-copy.html) and used the `Microsoft.FeatureManagement.AspNetCore` library to [conditionally filter HTML components and apply filters across controller action methods and classes](https://daveabrock.com/2020/05/30/introducing-feature-management-aspnetcore.html).
 
 These examples are great to show off how to get started with native feature flags, but you might be wondering if you can do something more powerful than simply checking booleans. And, you can! Using feature filters you can use three feature filters provided out of the box, and can also write your own.
 
