@@ -15,7 +15,7 @@ menu_settings:
     # - title: 'About'
     #   url: '/about'
     - title: '.NET Stacks Newsletter'
-      url: '/blog/introducing-dotnetstacks'
+      url: '/2020/05/21/introducing-dotnetstacks'
     - title: 'RSS'
       url: 'http://feeds.feedburner.com/dave-brock'
 
