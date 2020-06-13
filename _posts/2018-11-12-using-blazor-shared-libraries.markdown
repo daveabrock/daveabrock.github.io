@@ -2,6 +2,7 @@
 date: "2018-11-12"
 title: "Share Blazor Components with Shared Class Libraries"
 layout: post
+excerpt: Use shared class libraries to share Blazor components across projects.
 ---
 
 (Some context: Blazor is an experimental .NET web framework using C# and HTML in the browser. See the [preview documentation](https://blazor.net/) for more details on the project and how to get started.)
@@ -19,9 +20,7 @@ Before getting started, make sure you have the following minimum prerequisites i
 * [.NET Core 2.1 SDK](https://go.microsoft.com/fwlink/?linkid=873092), *2.1.402 or later*
 * [Visual Studio 2017 15.8 or later](https://go.microsoft.com/fwlink/?linkid=873093), with the *ASP.NET and web development* workload
 * The [Blazor Language Services Extension](https://go.microsoft.com/fwlink/?linkid=870389) for Visual Studio
-* The Blazor templates from the command line
-  
-  `dotnet new -i Microsoft.AspNetCore.Blazor.Templates`
+* The Blazor templates from the command line by running `dotnet new -i Microsoft.AspNetCore.Blazor.Templates`
 
 ## Create a Blazor application
 
@@ -29,27 +28,11 @@ Let's create a Blazor application.
 
 1. From Visual Studio 2017, click **File** > **New** > **Project** and select the **Visual C#** > **.NET Core** > **ASP.NET Core Web Application**.
 2. Give it a name, like **MySharedLibDemo**, and click **OK**.
-
-    ![Blazor-NewProject-2](/../assets/Blazor-NewProject-2.png)
-
 3. Select the **Blazor** template and click **OK**. This will scaffold a default SPA application that is integrated with WebAssembly.
-4. After the scaffolding completes, click **Debug** > **Start Without Debugging** to run the application. Your site should resemble the following.
-
-    ![InitialBlazorAppView-2](/../assets/InitialBlazorAppView-2.png)
-
-    Leave this running so we can save the application in Visual Studio and reload it.
-
-    Next, we'll add a shared Blazor library. At this time, a Blazor shared library is not available in Visual Studio. We'll use the .NET Core command-line interface (CLI) to accomplish this.
-
+4. After the scaffolding completes, click **Debug** > **Start Without Debugging** to run the application. Leave this running so we can save the application in Visual Studio and reload it. Next, we'll add a shared Blazor library. At this time, a Blazor shared library is not available in Visual Studio. We'll use the .NET Core command-line interface (CLI) to accomplish this.
 5. Right-click the solution and select **Open Command Line**. From your preferred command line utility, enter `dotnet new` to see all the .NET Core templates available to you. We will be adding the **Blazor Library** template to our project.
-
-    ![core-templates-1](/../assets/core-templates-1.png)
-
 6. From your prompt, enter `dotnet new blazorlib -o MySharedBlazorLibrary`. This will add the `MySharedBlazorLibrary` project in your directory.
 7. Right-click your solution and click **Add** > **Existing Project**. Browse to your library, select the *MySharedBlazorLibrary.csproj* file, and click **Open**. Your project structure will now resemble the following.
-
-   ![Blazor-SolutionExplorer](/../assets/Blazor-SolutionExplorer.png)
-
 8. Finally, reference the shared project. From your main project, right-click **Dependencies** > **Add Reference...** Then, select your newly created project and click **OK**.
 
 ## Update the ViewImports.cshtml file
@@ -66,7 +49,7 @@ Now, all you need to do is add the component to your project. If you remember, t
 
 From your `Pages/Index.cshtml` file, below the `SurveyPrompt` component, add the `Component1` component. As you begin typing, you can use IntelliSense.
 
-   ![Autocomplete](/../assets/Autocomplete.png)
+![Autocomplete](/images/Autocomplete.png)
 
 Your `Index.cshtml` component should now look like this:
 
@@ -88,6 +71,6 @@ Notice you don't even need a `@using` statement in your view to reference your c
 
 After you save your changes, reload the page to see your new component in action.
 
-   ![PageWithComponent-1](/../assets/PageWithComponent-1.png)
+   ![PageWithComponent-1](/images/PageWithComponent-1.png)
 
 You have just referenced a component from a shared library with minimal effort. By merely importing the library, you were able to add a component and its styles quite easily.

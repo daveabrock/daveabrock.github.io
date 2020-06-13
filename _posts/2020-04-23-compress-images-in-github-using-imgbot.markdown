@@ -1,6 +1,7 @@
 ---
 date: "2020-04-23"
 title: "Compress Images in GitHub Using Imgbot"
+excerpt: How to use the ImgBot GitHub app for set-it-and-forget-it image compression.
 layout: post
 ---
 
@@ -23,7 +24,7 @@ To get started, you'll need to head over to the Imgbot site to download the bot 
 
 For me, I was able to save about 18% (some were already compressed):
 
-![Imgbot compression results](/../assets/imgbot-lossy.png)
+![Imgbot compression results](/images/imgbot-lossy.png)
 
 ## Opt-in to configuration options
 
@@ -33,14 +34,14 @@ You can configure a schedule, files to ignore, "aggressive" compression, wiki co
 
 ```json
 {
-    "schedule": "daily", // daily|weekly|monthly
+    "schedule": "daily",
     "ignoredFiles": [
-        "*.jpg",                   // ignore by extension
-        "image1.png",              // ignore by filename
-        "public/special_images/*", // ignore by folderpath
+        "*.jpg",
+        "image1.png",
+        "public/special_images/*",
     ],
-    "aggressiveCompression": "true" // true|false
-    "compressWiki": "true" // true|false
+    "aggressiveCompression": "true"
+    "compressWiki": "true"
 }
 ```
 

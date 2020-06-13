@@ -46,8 +46,6 @@ I tried a casual lunch session at work in front of friends and co-workers. It wa
 
 For example, at Twin Cities Code Camp in April I spoke in front of about 100 people—my first time in a group this large. It was a great feeling to not be completely mortified of public speaking anymore.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Getting ready for <a href="https://twitter.com/daveabrock?ref_src=twsrc%5Etfw">@daveabrock</a> to talk about VS Code with .NET Core. Packed room!<a href="https://twitter.com/hashtag/tccc22?src=hash&amp;ref_src=twsrc%5Etfw">#tccc22</a> <a href="https://t.co/79y593tPM9">pic.twitter.com/79y593tPM9</a></p>&mdash; Scott Addie (@Scott_Addie) <a href="https://twitter.com/Scott_Addie/status/987715124134862848?ref_src=twsrc%5Etfw">April 21, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 I'm not a great speaker by any means, but I'm getting better after every talk I give. It's time-consuming, exhausting, and sometimes scary. But when someone comes up to you after a talk and thanks you for teaching them something new, it's all worth it.
 
 In 2018, I spoke at these events:

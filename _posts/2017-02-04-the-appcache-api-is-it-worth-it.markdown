@@ -10,7 +10,7 @@ The Application Cache (AppCache) API allows offline access to your application b
 * **Availability** - Users can navigate to your site when they are offline
 * **Resilience** - If a server breaks or something bombs and your site is inaccessible online, users can still use your offline site.
 
-In this post, we'll explore how to implement AppCache and investigate its benefits and many drawbacks. If you would like to play along at home, feel free to reference an AppCache repo [I created on GitHub](https://github.com/daveabrock/appcache-demo).
+In this post, we'll explore how to implement AppCache and investigate its benefits and many drawbacks.
 
 ### Creating a manifest file ###
 
@@ -26,7 +26,8 @@ So, when will the browser use a new cache? This occurs when a user clears their 
 
 Pay special attention to the second item. A common misconception is that when any resources listed within the manifest change, they will be re-cached. That is wrong. The manifest file itself needs to change. To facilitate this, it is a common practice to leave a timestamp comment at the top of the file that you can update whenever the manifest changes, such as in my example below.
 
-```CACHE MANIFEST
+```
+CACHE MANIFEST
 # v5 2016-08-15
 index.html
 css/main.css
@@ -66,7 +67,7 @@ Now that you have created the manifest file and decided which pages you want to 
 
 From the [MDN documentation on AppCache](https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache), here's how you would see if your application has an updated manifest file.
 
-```language-javascript
+```javascript
 function onUpdateReady() {
   console.log('I found a new version!');
 }
@@ -90,6 +91,6 @@ In [Application Cache is a Douchebag](http://alistapart.com/article/application-
 
 As you can imagine, AppCache's limitations have spurned a "let's not use AppCache" movement across the Web. It has been removed from the Web standards in favor of service workers. When describing service workers, the MDN documentation summed up AppCache's rise and fall nicely:
 
-> The previous attempt — AppCache — seemed to be a good idea because it allowed you to specify assets to cache really easily. However, it made many assumptions about what you were trying to do and then broke horribly when your app didn't follow those assumptions exactly.
+The previous attempt — AppCache — seemed to be a good idea because it allowed you to specify assets to cache really easily. However, it made many assumptions about what you were trying to do and then broke horribly when your app didn't follow those assumptions exactly.
 
 So to answer my initial question, it is not worth it; don't use AppCache. Unless you are completely aware of the limitations and able to live with them, AppCache's drawbacks outweigh its benefits. The community has spoken, and using local storage or service workers is the preferred approach.

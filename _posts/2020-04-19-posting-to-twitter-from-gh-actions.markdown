@@ -2,6 +2,7 @@
 date: "2020-04-19"
 title: "Tweeting New GitHub Pages Posts from GitHub Actions"
 layout: post
+excerpt: Use the power of GitHub Actions to tweet GitHub pages post from a CI pipeline.
 ---
 
 For the last few years, I hosted my blog on the [Ghost platform](https://ghost.org/). It was a fast, Node-powered CMS, which allowed for stupid-simple publishing: I could get in, write, and get out. However, I was looking at another annual bill for $220 and I wanted to find a better (and cheaper) way. I knew of the myriad of static site generators out there today. I eventually landed on [Jekyll + GitHub Pages](https://pages.github.com/). A month in, I'm happy that GitHub Pages gives me the flexibility to customize as I wanted, but also the simplicity. I can push a markdown file to GitHub, and then deploy to daveabrock.com automatically. All for just the cost of my domain name ($9 a year)!
@@ -54,7 +55,7 @@ You need to add those to GitHub as encrypted secrets. From GitHub, go to **Setti
 
 To get started, you'll need to set up a GitHub Action. To do that, click the `Actions` link at the top of your repository, right next to `Pull Requests`. From there, you'll see the power of GitHub Actions—there are so many CI workflows and automation processes to choose!
 
-![Actions options](/../assets/actions-options.png)
+![Actions options](/images/actions-options.png)
 
 For us, though, we'll use `Simple Workflow.` In that pane, click `Set up this workflow.` Once you do that, you will see that you are now editing a `blank.yml` file (which you can rename), sitting in a `.github/workflows` directory. We'll be updating this file.
 
@@ -78,7 +79,7 @@ jobs:
 
 After you commit the file, you can head over to the `Actions` page in GitHub to monitor the status.
 
-![Actions options](/../assets/job-results.png)
+![Job results](/images/job-results.png)
 
 With any luck, you should see a tweet that says "NEW POST!" Let's break down what's happening. (You can also [review the docs](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions) for details on GitHub Actions workflow syntax.)
 

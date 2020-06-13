@@ -1,6 +1,7 @@
 ---
 date: "2020-05-30"
 title: "Using Microsoft.FeatureManagement.AspNetCore to filter actions and HTML"
+excerpt: Use Microsoft.FeatureManagement.AspNetCore to filter HTML and controller actions.
 layout: post
 ---
 
@@ -123,7 +124,7 @@ Of course, if you want to provide a better experience for your users, you can ad
 
 Let's say you want to only render a component on your site if a certain condition applies: for example, that someone is viewing a beta environment. You could definitely mimic what we did in our controllers, right in your razor view, with something like this:
 
-```csharp
+```html
 @if (_featureManager.IsEnabled(FeatureFlags.Beta))
 {
   <div class="beta">We are in beta!</div>

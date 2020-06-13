@@ -14,9 +14,9 @@ When using web storage, we can implement either `localStorage` or `sessionStorag
 
 Although most browsers [support web storage](http://caniuse.com/#feat=namevalue-storage), you still should be a good developer and verify that a user isn't using an unusually old browser like [IE6](http://www.saveie6.com/):
 
-```language-javascript
+```javascript
 function isWebStorageSupported() {
- return 'localStorage' in window;
+   return 'localStorage' in window;
 }
 ```
 
@@ -45,14 +45,14 @@ The following is a [list of methods and properties](https://developer.mozilla.or
 
 While you can only have string values in web storage, you can store arrays or even JavaScript objects using the JSON notation and the available utility methods, like in the following example.
 
-```language-javascript
+```javascript
 var player = { firstName: 'Kris', lastName: 'Bryant' };
 localStorage.setItem('kris', JSON.stringify(player));
 ```
 
 You can then use the `parse()` method to deserialize the `kris` object.
 
-```language-javascript
+```javascript
 var player = JSON.parse(localStorage.getItem('kris'));
 ```
 
@@ -70,7 +70,7 @@ Subscribers receive a `StorageEvent` object that contains data about what change
 
 To begin listening for event notifications, you can add an event handler to the storage event as follows.
 
-```language-javascript
+```javascript
 function respondToEvent(event) {
  alert(event.newValue);
 }
@@ -80,7 +80,7 @@ window.addEventListener('storage', respondToChange, false);
 
 To trigger this event, perform an operation like the following in a new tab from the same site.
 
-```language-javascript
+```javascript
 localStorage.setItem('player', 'Kris');
 ```
 

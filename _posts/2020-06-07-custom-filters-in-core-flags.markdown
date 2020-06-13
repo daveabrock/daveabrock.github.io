@@ -1,7 +1,7 @@
 ---
 date: "2020-06-07"
-title: "Implement custom filters in your ASP.NET Core feature flags"
-layout: post
+title: 'Implement custom filters in your ASP.NET Core feature flags'
+excerpt: Learn how to implement custom filters in your ASP.NET Core apps, using pre-shipped filters or even writing your own.
 ---
 
 So far in this series, we introduced `Microsoft.FeatureManagement` as a way to [manage feature flag functionality in your .NET applications](https://daveabrock.com/2020/05/26/introducing-feature-management-copy.html) and used the `Microsoft.FeatureManagement.AspNetCore` library to [conditionally filter HTML components and apply filters across controller action methods and classes](https://daveabrock.com/2020/05/30/introducing-feature-management-aspnetcore.html).
@@ -123,7 +123,7 @@ public async Task<IActionResult> Index()
 
 Now, let's update our `Home/Index.cshtml` view to conditionally render the warning.
 
-```razor
+```html
 @model IndexViewModel
 
 <div class="text-center">
@@ -138,7 +138,7 @@ Now, let's update our `Home/Index.cshtml` view to conditionally render the warni
 
 Fire up the app and see your hard work. Good job, you.
 
-![After turning on flag](/../assets/timewindow.png)
+![After turning on flag](/images/timewindow.png)
 
 ## Write a custom filter
 
@@ -254,7 +254,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Now, if you add a check similar to the following, you will see your filter in action!
 
-```razor
+```html
 <feature name="@FeatureFlags.BrowserFilter">
   <div>We are using Chrome.</div>
 </feature>

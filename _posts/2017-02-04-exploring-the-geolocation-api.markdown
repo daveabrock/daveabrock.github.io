@@ -2,6 +2,7 @@
 layout: post
 date: "2017-02-04"
 title: "Exploring the Geolocation API"
+excerpt: Use the HTML geolocation API to get and monitor a user's current location.
 ---
 
 Building location-aware applications is a snap with the [HTML5 Geolocation APIs](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation). These APIs allows you to retrieve a user's location – with the user's permission – as a one-time request or over a period of time. This post will walk you through how to implement the Geolocation API.
@@ -10,7 +11,7 @@ Building location-aware applications is a snap with the [HTML5 Geolocation APIs]
 
 When implementing the Geolocation APIs, the first thing you'll want to do is see if geolocation is supported by a user's browser. (You'll notice that the geolocation functionality is [supported by virtually all browsers](http://caniuse.com/#feat=geolocation), but you know what they say about assuming.) You can check by writing code that [uses the in operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in); this returns `true` if the geolocation property exists in the window's navigator object.
 
-```language-javascript
+```javascript
 function supportsGeolocation() {
     return 'geolocation' in navigator;
 }
@@ -53,7 +54,7 @@ In the following example, I'll build a simple page that asks a user to click a b
 
 The following example retrieves the `latitude`, `longitude`, and `accuracy` of the current user, given that they give permission to access their location. After getting this information, we'll display a Google Maps image of their location, easily accessible by using the Google Maps API, which takes `latitude` and `longitude` as parameters.
 
-```language-javascript
+```javascript
 function findMe() {
   var output = document.getElementById("location");
 
@@ -113,7 +114,7 @@ In this case, we have another simple page that has buttons to start and stop wat
 
 In the JavaScript file, we'll start by initializing a `watchId`, using jQuery to initiate click events (more on that in a second), checking to see if the API is supported, and then writing a utility method that will show the information in the `message` div.
 
-```language-javascript
+```javascript
 var watchId = 0;
 
 $(document).ready(function() {
@@ -132,7 +133,7 @@ function showMessage(message) {
 
 And now, here's where the magic happens: if a user's browser supports geolocation, we call `watchPosition`, which in this case take a success callback, an optional error callback, and an optional options parameter.
 
-```language-javascript
+```javascript
 function getLocation() {
     if (supportsGeolocation()) {
         var options = {
@@ -172,7 +173,7 @@ function showError(error) {
 
 Finally, when the user clicks the Stop button, the `clearWatch` method is called and the browser stops tracking the user's location.
 
-```language-javascript
+```javascript
 function endWatch() {
     if (watchId != 0) {
         navigator.geolocation.clearWatch(watchId);

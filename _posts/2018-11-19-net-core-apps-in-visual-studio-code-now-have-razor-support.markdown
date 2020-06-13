@@ -1,6 +1,7 @@
 ---
 date: "2018-11-19"
 title: "Razor Support for ASP.NET Core Apps in Visual Studio Code"
+excerpt: VS Code now supports Razor for ASP.NET Core apps.
 layout: post
 ---
 
@@ -12,10 +13,7 @@ Earlier this year, I spoke and wrote extensively about [how to write an ASP.NET 
 
 That gap is narrowing with the announcement that Visual Studio Code [now has support for Razor,](https://blogs.msdn.microsoft.com/webdev/2018/11/16/razor-support-in-visual-studio-code-now-in-preview/) the .NET markup syntax engine that allows you to write dynamic views using .NET code and HTML markup.
 
-{{< hint warning >}}
-**Support in preview**  
 As discussed in the announcement, this is very much in preview and has limitations. Read the article for details on what these limitations are, how to provide feedback, and how to disable it if you come across issues.
-{{< /hint >}}
 
 ## Take advantage of Razor support in Code
 
@@ -66,12 +64,12 @@ namespace TestRazorSupport.Pages
 
 In _Contact.cshtml_, let's access the `Name` property to check out the Razor support.
 
-{{< figure src="/../../images/Name.png" caption="" >}}
+   ![Name property](/images/Name.png)
 
 It works as you would expect—even inside HTML attributes—as we access the `Email` property:
 
-{{< figure src="/../../images/Email.png" >}}
+  ![Email](/images/Email.png)
 
 And if we access .NET APIs (and [steal from the announcement)](https://blogs.msdn.microsoft.com/webdev/2018/11/16/razor-support-in-visual-studio-code-now-in-preview/) it works beautifully!
 
-{{< figure src="/../../images/DateTime.png" >}}
+   ![DateTime](/images/DateTime.png)

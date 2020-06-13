@@ -6,7 +6,7 @@ layout: post
 
 Here's a weekly shout-out of articles, videos, and other content I found interesting.
 
-# Development
+## Development
 
 - [Deploying a Static Site to Azure Using the az CLI](https://www.davepaquette.com/archive/2020/05/10/deploying-a-static-site-to-azure-using-the-az-cli.aspx) (Dave Paquette)
 - [How to Use Object Destructuring in JavaScript](https://dmitripavlutin.com/javascript-object-destructuring/) (Dmitri Pavlutin)
@@ -17,11 +17,11 @@ Here's a weekly shout-out of articles, videos, and other content I found interes
 - [Announcing TypeScript 3.](https://devblogs.microsoft.com/typescript/announcing-typescript-3-9/) (Daniel Rosenwasser)
 - [Increase ASP.NET File Upload Limits](https://khalidabuhakmeh.com/increase-file-upload-limit-for-aspdotnet) (Khalid Abuhakmeh)
 
-# Design and best practices
+## Design and best practices
 
 [Git Branching Strategies](https://newsignature.com/articles/git-branching-strategies/) (Chris Ayers)
 
-# General technology topics
+## General technology topics
 
 - [Microsoft adds protection against Reply-All email storms in Office 365](https://www.zdnet.com/article/microsoft-adds-protection-against-reply-all-email-storms-in-office-365/) (ZDNet)
 - [Eric Schmidt, who led Google's transformation into a tech giant, has left the company](https://www.cnet.com/news/eric-schmidt-who-led-googles-transformation-into-a-tech-giant-has-left-the-company/) (CNet)
