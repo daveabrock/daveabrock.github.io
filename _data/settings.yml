@@ -94,22 +94,22 @@ font_settings:
     weight: 600
     letter_spacing: 0
   h1:
-    small_size: 18
-    medium_size: 26
+    small_size: 34
+    medium_size: 34
     large_size: 34
     weight: 600
     letter_spacing: -0.02
     line_height: 1.2
   h2:
-    small_size: 14
-    medium_size: 22
+    small_size: 30
+    medium_size: 30
     large_size: 30
     weight: 600
     letter_spacing: -0.02
     line_height: 1.2
   h3:
-    small_size: 12
-    medium_size: 20
+    small_size: 28
+    medium_size: 28
     large_size: 28
     weight: 400
     letter_spacing: -0.02
@@ -136,8 +136,8 @@ font_settings:
     letter_spacing: 0
     line_height: 1.6
   p:
-    small_size: 12
-    medium_size: 14
+    small_size: 19
+    medium_size: 19
     large_size: 19
     weight: 400
     letter_spacing: 0
@@ -155,7 +155,7 @@ font_settings:
 
 advanced_settings:
   ajax_loading: true
-  analytics_code: "UA-83589168-1"
+  analytics_code: ""
   custom_styles: ""
   header_js: ""
   footer_js: ""
