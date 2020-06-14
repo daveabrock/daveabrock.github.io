@@ -6,10 +6,10 @@
 
 .single {
 	margin-top: 0;
-	padding: 40px 0;
+	padding: 10px 0;
 
 	@include mq(tabletp) {
-		padding: 60px 0;
+		padding: 10px 0;
 	}
 
 	@include mq(laptop) {
@@ -288,5 +288,36 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+	}
+}
+
+.author-info {
+	background: $background-alt-color;
+	margin: 10px auto;
+	width: 100%;
+	padding: 10px;
+
+	@include mq(tabletp) {
+		margin: 30px auto;
+		padding: 40px;
+	}
+
+	@include mq(tabletl) {
+		max-width: calc(75% + 80px);
+	}
+
+	@include mq(laptop) {
+		margin: 40px auto;
+		max-width: calc(70% + 100px);
+		padding: 50px;
+	}
+
+	@include mq(desktop) {
+		max-width: calc(65% + 120px);
+		padding: 60px;
+	}
+
+	&:first-child {
+		margin-top: 0;
 	}
 }
