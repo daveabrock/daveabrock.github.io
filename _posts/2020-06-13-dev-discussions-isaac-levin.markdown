@@ -34,7 +34,7 @@ The keynote was actually focused around LIFX lights, as he used those and we par
 
 **Can you walk through a quick high-level architecture of your solution?**
 
-The solution is a WPF application running on .NET Core 5, which is in preview. In summary: the end user opens the app and gets prompted to log in to Microsoft 365. My application gets a token from Azure Active Directory and makes subsequent requests to the Graph API to get the user's profile info and presence. The app polls the API based on the user settings and broadcasts that presence to every enabled light.
+The solution is a WPF application running on .NET Core 5, which is in preview. In summary: the end user opens the app and gets prompted to log in to Microsoft 365. My application gets a token from Azure Active Directory and makes subsequent requests to the Graph API to get the user's profile info and presence. The app polls the API based on the user settings and broadcasts that presence to every enabled light. Check out more in-depth things at the [wiki on GitHub](https://github.com/isaacrlevin/PresenceLight/wiki).
 
 **What was the hardest part of getting this up and running?**
 
