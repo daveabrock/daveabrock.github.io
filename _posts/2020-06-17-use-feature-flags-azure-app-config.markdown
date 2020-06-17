@@ -38,8 +38,6 @@ In [the last post](https://daveabrock.com/2020/06/07/custom-filters-in-core-flag
 
 With our feature in Azure App Configuration, we can remove this from our application and manage the feature, including specific time window and whether it is on or off, right in Azure. This post will refactor what we built in the last post to a cleaner solution using Azure App Configuration.
 
-
-
 Ready to party in the cloud? Of course you are. Let's get started.
 
 ## Project setup
@@ -99,7 +97,7 @@ To add our feature flag in Azure App Configuration, perform the following steps:
    - **End**: "01 Jul 2020 12:00:00 +00:00"
 1. Click **Apply** once more to create your conditional feature flag in Azure App Configuration. Here's a snapshot of what your configuration should look like:
 
-![Isaac Levin](/images/TimeWindow-AppConfig.png)
+![Time window configuration](/images/TimeWindow-AppConfig.PNG)
 
 Great! We are now ready for refactor our application to see this in action. Before you do this, however, navigate to **Access keys** from your Azure App Configuration instance, and copy a connection string (primary or secondary is fine).
 
