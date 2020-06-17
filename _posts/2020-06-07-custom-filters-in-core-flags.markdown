@@ -13,6 +13,13 @@ In this post, I'll show you how to:
 - Use the `TimeWindowFilter` to conditionally show a feature based on a time range
 - Write a custom filter to detect a user's browser to partially roll out a feature
 
+This is part 3 in a four-part series on .NET native feature flags:
+
+- Part 1: [Introducing the `Microsoft.FeatureManagement` library](https://daveabrock.com/2020/05/24/introducing-feature-management-copy)
+- Part 2: [Use Microsoft.FeatureManagement.AspNetCore to filter actions and HTML](https://daveabrock.com/2020/05/30/introducing-feature-management-aspnetcore)
+- Part 3, this post: Implement custom filters in your ASP.NET Core feature flags
+- Part 4: [Manage feature flags with Azure App Configuration](https://daveabrock.com/2020/06/15/use-feature-flags-azure-app-config)
+
 ## Implement IFeatureFilter using provided filters
 
 The `Microsoft.FeatureManagement` library includes support for the `IFeatureFilter` interface, which allows you to define whether criteria is met to enable (or disable) a feature. Included with this interface are three filters you can plug in without custom code:
