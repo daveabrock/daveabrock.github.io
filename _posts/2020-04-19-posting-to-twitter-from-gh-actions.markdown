@@ -1,7 +1,6 @@
 ---
 date: "2020-04-19"
 title: "Tweeting New GitHub Pages Posts from GitHub Actions"
-layout: post
 excerpt: Use the power of GitHub Actions to tweet GitHub pages post from a CI pipeline.
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 date: "2017-02-04"
 title: "Exploring the Geolocation API"
 excerpt: Use the HTML geolocation API to get and monitor a user's current location.

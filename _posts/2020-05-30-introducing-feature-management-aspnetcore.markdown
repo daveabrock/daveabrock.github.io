@@ -2,7 +2,6 @@
 date: "2020-05-30"
 title: "Using Microsoft.FeatureManagement.AspNetCore to filter actions and HTML"
 excerpt: Use Microsoft.FeatureManagement.AspNetCore to filter HTML and controller actions.
-layout: post
 ---
 
 In our previous post, we introduced `Microsoft.FeatureManagement` as a way to [manage feature flag functionality in your .NET applications](https://daveabrock.com/2020/05/24/introducing-feature-management.html). As mentioned in the post, this library is compatible with any .NET Standard application.

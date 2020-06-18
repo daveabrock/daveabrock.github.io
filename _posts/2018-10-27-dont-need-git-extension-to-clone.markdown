@@ -1,5 +1,4 @@
 ---
-layout: post
 date: "2018-10-27"
 title: "GitHub tip: You don't need that .git extension to clone"
 excerpt: Read more to clone from the command line with the .git extension!

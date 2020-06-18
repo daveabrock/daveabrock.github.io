@@ -1,5 +1,4 @@
 ---
-layout: post
 date: "2018-11-26"
 title: "Level Up Your GitHub Experience with Chrome Extensions"
 ---

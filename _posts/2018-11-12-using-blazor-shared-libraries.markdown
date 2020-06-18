@@ -1,7 +1,6 @@
 ---
 date: "2018-11-12"
 title: "Share Blazor Components with Shared Class Libraries"
-layout: post
 excerpt: Use shared class libraries to share Blazor components across projects.
 ---
 

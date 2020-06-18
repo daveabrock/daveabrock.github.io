@@ -1,7 +1,6 @@
 ---
 date: "2017-02-04"
 title: "Publish your localhost with the World using Localtunnel"
-layout: post
 ---
 
 

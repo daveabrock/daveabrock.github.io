@@ -3,7 +3,6 @@ date: "2020-06-13"
 title: "Dev Discussions - Isaac Levin talks PresenceLight"
 excerpt: Microsoft's Isaac Levin talks about his PresenceLight project.
 featured_image: '/images/isaac-levin.jpg'
-layout: post
 ---
 
 *This is the full interview from our discussion with Isaac Levin in my weekly .NET newsletter, [The .NET Stacks](https://dotnetstacks.com/register). Subscribe to the (always free) newsletter to get up to speed on what's going on in the busy .NET community, from one resource!*

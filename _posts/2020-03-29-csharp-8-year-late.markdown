@@ -1,7 +1,6 @@
 ---
 date: "2020-03-29"
 title: "C# 8, A Year Late"
-layout: post
 ---
 
 After working in C# for the better part of a decade, last year I went on a hiatus from the .NET ecosystem and dove in head-first on Node.js, TypeScript, and React. Now, I'm back! Since I've been writing C# code again and shaking off the rust, Visual Studio 2019 (and more specifically, the Roslyn analyzers) keep reminding me: "**Fun fact: did you know you can do this new thing?**"
