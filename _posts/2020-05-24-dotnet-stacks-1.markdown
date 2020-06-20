@@ -4,6 +4,9 @@ title: "The .NET Stacks #1: Microsoft Build, announcements galore!"
 tags: [dotnet-stacks]
 ---
 
+This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait a week to receive the content.
+{: .notice--success}
+
 Welcome to the very first issue of *The .NET Stacks*! I appreciate all of you for being my first subscribers—even before it was even launched. If you have any suggestions, you can simply reply to this email or [hit me up on Twitter](https://twitter.com/dotnetstacks). And if you like what you see, I would love for you to [share with others](https://www.dotnetstacks.com/register) as well. Let's get started!
 
 ## 3 things to keep you informed
