@@ -2,6 +2,7 @@
 date: "2018-11-12"
 title: "Share Blazor Components with Shared Class Libraries"
 excerpt: Use shared class libraries to share Blazor components across projects.
+tags: [blazor, csharp, dotnet-core]
 ---
 
 (Some context: Blazor is an experimental .NET web framework using C# and HTML in the browser. See the [preview documentation](https://blazor.net/) for more details on the project and how to get started.)

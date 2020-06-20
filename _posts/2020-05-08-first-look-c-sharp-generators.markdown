@@ -2,6 +2,7 @@
 date: "2020-05-08"
 title: "First Look: C# Source Generators"
 excerpt: An initial look at the power of C# source generators.
+tags: [csharp]
 ---
 
 Last week, Microsoft introduced a preview of [C# Source Generators](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/), to be released with the C# 9 release. While the tooling isn't great (yet), it's available for curious developers to play with—so long as you are on the [latest version of Visual Studio 2019 preview](https://dotnet.microsoft.com/download/dotnet/5.0) and the [latest .NET 5 preview](https://dotnet.microsoft.com/download/dotnet/5.0), too. If you've been geeking out on C# for a while, you may remember this [was proposed as early as C# 6.](https://github.com/dotnet/roslyn/blob/12bd769ebcd3121b88f535e8559f5a42d9c0e873/docs/features/generators.md)

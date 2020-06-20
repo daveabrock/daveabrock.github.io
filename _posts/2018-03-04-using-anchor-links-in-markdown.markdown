@@ -1,6 +1,7 @@
 ---
 date: "2018-03-04"
 title: "Using Anchor Links in Markdown"
+tags: [blogging, markdown, quick-tips]
 ---
 
 This is a short post that might help you.

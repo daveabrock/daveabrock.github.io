@@ -1,6 +1,7 @@
 ---
 date: "2018-11-26"
 title: "Level Up Your GitHub Experience with Chrome Extensions"
+tags: [github, tools]
 ---
 
 If you do any work in open source, you probably live for GitHub. With all the time you spend using it, you can improve your experience by leveraging a variety of browser extensions.

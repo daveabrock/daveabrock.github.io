@@ -2,6 +2,7 @@
 date: "2018-10-27"
 title: "GitHub tip: You don't need that .git extension to clone"
 excerpt: Read more to clone from the command line with the .git extension!
+tags: [git, quick-tips]
 ---
 
 If you want to clone a GitHub repository, the most common (and [documented](https://help.github.com/articles/cloning-a-repository/)) way is to browse to it and click that green **Clone or download** button. In this case, I am cloning the [.NET machine learning project](https://github.com/dotnet/machinelearning):

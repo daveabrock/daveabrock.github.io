@@ -1,6 +1,7 @@
 ---
 date: "2020-05-08"
 title: "What I'm Reading (Week of 5/4/20)"
+tags: [what-i-am-reading]
 ---
 
 Here's a weekly Friday shout-out of articles, videos, and other content I found interesting.

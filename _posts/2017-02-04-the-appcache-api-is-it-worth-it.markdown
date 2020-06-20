@@ -1,6 +1,7 @@
 ---
 date: "2017-02-04"
 title: "The AppCache API: Is It Worth It?"
+tags: [javascript, html5]
 ---
 
 The Application Cache (AppCache) API allows offline access to your application by providing the following benefits:

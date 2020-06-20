@@ -2,6 +2,7 @@
 date: "2020-05-24"
 title: "Introducing the Microsoft.FeatureManagement library"
 excerpt: Use Microsoft.FeatureManagement to add native feature flags!
+tags: [csharp, dotnet-core, feature-flags]
 ---
 
 A couple of weeks ago, I needed to find a way to better manage new functionality for a feature that was not ready yet (it broke stuff). We didn't know exactly when the feature would be shipped, but we also didn't want to deal with branch and merging headaches when the moment came. 

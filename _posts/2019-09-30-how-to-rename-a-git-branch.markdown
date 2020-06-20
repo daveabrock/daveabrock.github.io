@@ -1,6 +1,7 @@
 ---
 date: "2019-09-30"
 title: "How to rename a Git branch"
+tags: [git, quick-tips]
 ---
 
 As a developer for more than a decade, sometimes I wonder how it's taken me this long to do a thing. This morning, it was renaming a Git branch. Whatever the case, I finally found the need to do it this morning and am happy to share how easy it is.

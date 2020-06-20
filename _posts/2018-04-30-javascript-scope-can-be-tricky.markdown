@@ -1,6 +1,7 @@
 ---
 date: "2018-04-30"
 title: "JavaScript Scope Can Be Tricky"
+tags: [javascript]
 ---
 
 I was writing some vanilla JavaScript this weekend - it has been quite awhile since I did so. As I've been writing mostly C# code lately, what always gets me with JavaScript isn't its pain points or subtle nuances. It's the different behavior from compiled languages I'm often used to, like C# or Java. No matter how often I work in JS, as long as I'm committed to being a polyglot, it'll trip me up to the point that it's just a little bit of an annoyance.

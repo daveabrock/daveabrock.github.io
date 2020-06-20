@@ -1,8 +1,8 @@
 ---
 date: "2017-02-04"
 title: "Publish your localhost with the World using Localtunnel"
+tags: [tools]
 ---
-
 
 During your development process, you may need to show off your work from a browsable URL but you aren't quite ready for a deploy or even a check in. For example, you might want to do some easy mobile testing on your device of choice, or you may have an eager customer that wants to see your latest and greatest. Alternatively, your application might have webhooks to other services that require a public URL.
 

@@ -1,6 +1,7 @@
 ---
 date: "2020-04-29"
 title: "On Getting By"
+tags: [personal]
 ---
 
 Every week, I sit down and write *something*. I learned long ago that nothing quite works like forced consistency. Let's get real, friends: lately, it's been tough sledding. I'm tired and absolutely exhausted—and odds are that you are, too. **This is hard.**

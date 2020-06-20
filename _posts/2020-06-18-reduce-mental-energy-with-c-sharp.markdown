@@ -2,6 +2,7 @@
 date: "2020-06-18"
 title: 'Reduce mental energy with C# 9'
 excerpt: Learn how C# 9 makes things cleaner, more maintainable, and minimizes mental energy.
+tags: [csharp]
 ---
 
 This is a humbling yet completely accurate fact: you spend much more time reading code than writing it. Any experienced programmer will tell you the reading-to-writing ratio is easily 5-to-1 or even 10-to-1. You're understanding how things work. You're hunting for bugs. You're scrolling past code with thoughts like, "*Nope, doesn't apply ... doesn't matter, doesn't matter ...*" until you have to pause and think, and spend a silly amount of time trying to understand how something works.

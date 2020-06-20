@@ -1,6 +1,7 @@
 ---
 date: "2017-02-04"
 title: "Exploring the Web Storage APIs"
+tags: [javascript, html5]
 ---
 
 For years, if we wanted to store local data we would look to using HTTP cookies—a convenient way to persist small amounts of data on a user's machine. And we do mean *small*: cookies are limited to about 4KB apiece. Also, the cookie is passed along with every request and response even if it isn't used, making for heavy HTTP messaging.

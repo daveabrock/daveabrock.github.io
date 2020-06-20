@@ -2,6 +2,7 @@
 date: "2018-11-19"
 title: "Razor Support for ASP.NET Core Apps in Visual Studio Code"
 excerpt: VS Code now supports Razor for ASP.NET Core apps.
+tags: [vs-code, dotnet-core, razor]
 ---
 
 The beauty of a cross-platform framework like ASP.NET Core is your ability to choose tooling **you prefer**. With all its advantages, [Visual Studio](https://visualstudio.microsoft.com/) can sometimes be too powerful for what you need.

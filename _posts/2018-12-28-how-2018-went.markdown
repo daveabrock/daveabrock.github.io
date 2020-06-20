@@ -1,6 +1,7 @@
 ---
 date: "2018-12-28"
 title: "How 2018 Went"
+tags: [personal]
 ---
 
 
