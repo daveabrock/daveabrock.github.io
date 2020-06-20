@@ -12,7 +12,6 @@ This is part 4 in a four-part series on .NET native feature flags:
 - Part 3: [Implement custom filters in your ASP.NET Core feature flags](https://daveabrock.com/2020/06/07/custom-filters-in-core-flags)
 - Part 4, this post: Manage feature flags with Azure App Configuration
 
-
 Throughout this blog series, we've done a test drive on all that native .NET feature flags have to offer. We've created a basic toggle, filtered view components and controller actions in ASP.NET Core, and written our own filters. However, you may have noticed something: these settings are all driven by our configuration in the `appsettings.json` file. So, turning these flags off and on requires an update to the configuration file and a re-deploy. You can simplify this with release variables in your pipeline with your favorite tool (like Jenkins, GitHub Actions, or Azure DevOps, for example), but this is such a drag.  
 
 In this post, we'll be able to make your life easier by storing features in Azure App Configuration. Once you connect your App Configuration instance with your app, you'll be able to enable/disable your feature flags, literally, with a click of a button in Azure - no configuration change or redeploy required.
@@ -63,7 +62,8 @@ Now that we have our application set up, let's go set up Azure App Configuration
 
 Before you get started with this section, confirm that you have an [Azure account ready to go](https://azure.microsoft.com/free). Once it is, head on over to the Azure Portal at [portal.azure.com](https://portal.azure.com). Now you're ready to create a new Azure App Configuration instance.
 
-(I will add that Azure is famous for continuously tweaking their UI, so screenshots may not always be up to date, but shouldn't change too much.)
+**Heads up!** Azure is famous for continuously tweaking their UI, so screenshots may not always be up to date, but shouldn't change too much.
+{: .notice--warning}
 
 ### Create new Azure App Configuration instance
 
