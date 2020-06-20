@@ -2,6 +2,7 @@
 date: "2020-05-24"
 title: "The .NET Stacks #1: Microsoft Build, announcements galore!"
 tags: [dotnet-stacks]
+comments: false
 ---
 
 This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
