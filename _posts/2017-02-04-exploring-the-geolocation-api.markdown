@@ -2,6 +2,7 @@
 date: "2017-02-04"
 title: "Exploring the Geolocation API"
 excerpt: Use the HTML geolocation API to get and monitor a user's current location.
+tags: [javascript, html5]
 ---
 
 Building location-aware applications is a snap with the [HTML5 Geolocation APIs](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation). These APIs allows you to retrieve a user's location – with the user's permission – as a one-time request or over a period of time. This post will walk you through how to implement the Geolocation API.
