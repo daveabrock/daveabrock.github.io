@@ -9,4 +9,4 @@ jobs:
       uses: jacobtomlinson/gha-find-replace@master
       with:
         find: "/images/"
-        replace: "/{{site.url}}/images"
+        replace: "/{{site.baseurl}}/images"
