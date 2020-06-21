@@ -98,7 +98,7 @@ To add our feature flag in Azure App Configuration, perform the following steps:
    - **End**: "01 Jul 2020 12:00:00 +00:00"
 1. Click **Apply** once more to create your conditional feature flag in Azure App Configuration. Here's a snapshot of what your configuration should look like:
 
-![Time window configuration](/images/TimeWindow-AppConfig.PNG)
+![Time window configuration]({{site.baseurl}}/images/TimeWindow-AppConfig.PNG)
 
 Great! We are now ready for refactor our application to see this in action. Before you do this, however, navigate to **Access keys** from your Azure App Configuration instance, and copy a connection string (primary or secondary is fine).
 
