@@ -236,7 +236,10 @@ tag_archive:
 #     category: /categories/:name/
 #     tag: /tags/:name/
 
-
+jekyll-feed:
+  name: 'Dave Brock'
+  url: 'https://daveabrock.com'
+  description: 'Dave Brock on Microsoft and JavaScript technologies.'
 # HTML Compression
 # - https://jch.penibelst.de/
 compress_html:
