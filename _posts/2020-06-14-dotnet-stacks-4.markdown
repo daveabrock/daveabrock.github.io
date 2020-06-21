@@ -3,7 +3,7 @@ date: "2020-06-14"
 title: "The .NET Stacks #4: EF Core, PresenceLight, community roundup!"
 tags: [dotnet-stacks]
 comments: false
-og_image: /images/stacks-graph.jpg
+header.image: /images/stacks-graph.jpg
 ---
 
 This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
