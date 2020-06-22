@@ -30,7 +30,7 @@ Your typical workflow of retrieving data over the wire likely involves HTTP APIs
 - gRPC offers bi-directional streaming, while HTTP APIs only offer client or server streaming.
 - gRPC offers first-class code generation support, by sharing the *.proto* file between client and server implementations, while HTTP APIs require additional tooling and OpenAPI support.
 
-### How is gRPC different than SOAP?
+### How is gRPC different than WCF?
 
 So, to answer the second question, how is this different than your experience with WCF? The main use case for RPC is coding with coordination between the client and the server with the idea of a single platform without a networking dependency. 
 
