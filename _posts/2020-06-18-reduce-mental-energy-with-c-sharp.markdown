@@ -7,6 +7,7 @@ tags: [csharp]
 
 This is a humbling yet completely accurate fact: you spend much more time reading code than writing it. Any experienced programmer will tell you the reading-to-writing ratio is easily 5-to-1 or even 10-to-1. You're understanding how things work. You're hunting for bugs. You're scrolling past code with thoughts like, "*Nope, doesn't apply ... doesn't matter, doesn't matter ...*" until you have to pause and think, and spend a silly amount of time trying to understand how something works.
 
+
 It could be a developer trying to be clever, or an unfortunate function with an [arrow-shaped pattern](http://wiki.c2.com/?ArrowAntiPattern) ... you know, a variety of things. Whatever the case, it interrupts your flow. When you think how much time you spend reviewing code, it adds up and can turn into a big annoyance.
 
 For example, let's say you're trying to figure out a bug and you come across this C# 8 code.
@@ -59,7 +60,7 @@ public record Developer { string FirstName; string LastName; string PreferredLan
 
 ### With-expressions
 
-Much of your data is immutable, so if you wanted to create a new object with much, but not all, of the same data, you would do something like this (your use cases would be much more complicated, hopefully).
+Much of your data is immutable, so if you wanted to create a new object with much, but not all, of the same data, you ~~would do something like this (your use cases would be much more complicated, hopefully)~~ are probably used to doing something like this in regular C# 8.
 
 ```csharp
 var developer1 = new Developer("Dave", "Brock", "C#");
