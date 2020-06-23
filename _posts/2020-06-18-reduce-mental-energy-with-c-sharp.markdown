@@ -65,7 +65,7 @@ Much of your data is immutable, so if you wanted to create a new object with muc
 ```csharp
 var developer1 = new Developer("Dave", "Brock", "C#");
 var developer2 = developer1;
-developer1.LastName = "Pine";
+developer2.LastName = "Pine";
 ```
 
 In C# 9, try a `with` expression instead:
