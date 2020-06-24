@@ -60,32 +60,61 @@ public record Developer { string FirstName; string LastName; string PreferredLan
 
 ### With-expressions
 
-Much of your data is immutable, so if you wanted to create a new object with much, but not all, of the same data, you ~~would do something like this (your use cases would be much more complicated, hopefully)~~ are probably used to doing something like this in regular C# 8.
+Much of your data is immutable, so if you wanted to create a new object with much, but not all, of the same data, you ~~would do something like this (your use cases would be much more complicated, hopefully)~~ are probably used to doing something like this in regular C# 8 with classes.
 
 ```csharp
-var developer1 = new Developer("Dave", "Brock", "C#");
+using System;
+
+var developer1 = new Developer
+{
+    FirstName = "David",
+    LastName = "Brock",
+    PreferredLanguage = "C#"
+};
+
+// ...
 var developer2 = developer1;
 developer2.LastName = "Pine";
+Console.WriteLine(person2.FirstName); // David
+Console.WriteLine(person2.LastName); // Pine
+Console.WriteLine(person2.PreferredLanguage); // C#
+
+public class Developer
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string PreferredLanguage { get; set; }
+}
 ```
 
-In C# 9, try a `with` expression instead:
+In C# 9, try a `with` expression instead, with your records:
 
 ```csharp
-var developer1 = new Developer("Dave", "Brock");
+using System;
+
+var developer1 = new Developer
+{
+    FirstName = "David",
+    LastName = "Brock",
+    PreferredLanguage = "C#"
+};
+  
 var developer2 = developer1 with { LastName = "Pine" };
+Console.WriteLine(developer2.FirstName); // David
+Console.WriteLine(developer2.LastName); // Pine
+Console.WriteLine(developer2.PreferredLanguage); // C#
+
+public record Developer
+{
+    public string FirstName;
+    public string LastName;
+    public string PreferredLanguage;
+}
 ```
 
 You can even specify multiple properties to just include what you need changed.
 
-## Logical patterns
-
-OK, moving on from records (for now). With the `is not` pattern we used to kick off this post, we showcased some logical pattern improvements. You can officially combine any operators with `and`, `or`, and `not`.
-
-A great use case would be for every developer's battle: null checking. For example, you can easier code against `null`, or in this case, `not null`:
-
-```csharp
-not null => throw new ArgumentException($"Not sure what this is: {yourArgument}", nameof(yourArgument))
-```
+This C# 9 example above is actually an example of a top-level program! Speaking of which...
 
 ## Top-level programs
 
@@ -113,9 +142,19 @@ Console.WriteLine("Hello, Wisconsin!");
 
 This will need to follow the [Highlander rule](https://highlander.fandom.com/wiki/There_can_be_only_one#:~:text=There%20can%20be%20only%20one,one%22%20shall%20receive%20The%20Prize.) - there can only be one - but the same argument applies to the `Main()` entry method in your console applications today.
 
+## Logical patterns
+
+OK, moving on from records (for now). With the `is not` pattern we used to kick off this post, we showcased some logical pattern improvements. You can officially combine any operators with `and`, `or`, and `not`.
+
+A great use case would be for every developer's battle: null checking. For example, you can easier code against `null`, or in this case, `not null`:
+
+```csharp
+not null => throw new ArgumentException($"Not sure what this is: {yourArgument}", nameof(yourArgument))
+```
+
 ## New expressions for target types
 
-Let's say I had a `Developer` type that takes in a first and last name. To create the object, I'd do something like this:
+Let's say I had a `Developer` type that takes in a first and last name from a constructor. To create the object, I'd do something like this:
 
 ```csharp
 Developer dave = new Developer("Dave", "Brock", "C#");
