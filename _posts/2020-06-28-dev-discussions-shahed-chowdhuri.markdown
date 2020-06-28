@@ -1,5 +1,5 @@
 ---
-date: "2020-06-26"
+date: "2020-06-28"
 title: "Dev Discussions - Shahed Chowdhuri talks about his ASP.NET A-Z blog series"
 excerpt: We talk with Shahed Showdhuri about ASP.NET Core blogging and more!
 tags: [dotnet-stacks, dev-discussions]
@@ -8,7 +8,7 @@ tags: [dotnet-stacks, dev-discussions]
 This is the full interview from my discussion with Shahed Chowdhuri in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
 {: .notice--success}
 
-As a huge fan of the Marvel universe, Microsoft's Shahed Chowdhuri must feel like Captain America after publishing the last post of his ASP.NET Core A-Z blog series this week. In these posts, he wrote 26 ASP.NET Core posts in 26 weeks, from A-Z (Authentication & Authorization to Zero-Downtime Web Apps). This was all using a single sample project!
+As a huge fan of the Marvel universe, Microsoft's Shahed Chowdhuri must feel like Captain America after publishing the last post of his [ASP.NET Core A-Z blog series](https://wakeupandcode.com/aspnetcore/#aspnetcore2020) this week. In these posts, he wrote 26 ASP.NET Core posts in 26 weeks, from A-Z (Authentication & Authorization to Zero-Downtime Web Apps). This was all using a single sample project!
 
 I talked with Shahed about his path to Microsoft, the evolution of the blog series, his side projects and interests and, of course, which Marvel character sums him up best.
 
@@ -24,7 +24,7 @@ I realized that I could build something, see results instantly, fix issues, and 
 
 I joined Microsoft as a Tech Evangelist 6+ years ago, as I was already using my spare time for public speaking on various topics. My role has changed in recent years, and I’m currently working with our enterprise customers to collaborate on software development projects and solve real-world business problems.
 
-**What made you take on the original "ASP.NET Core A-Z" [blog series](https://wakeupandcode.com/aspnetcore/#aspnetcore2019) in 2019?**
+**What made you take on the original ASP.NET Core A-Z [blog series](https://wakeupandcode.com/aspnetcore/#aspnetcore2019) in 2019?**
 
 During my evangelism days, I would mostly use my site to publish my PowerPoint slides after a meetup or conference. But I wouldn’t get a lot of traffic on the site, because I didn’t have many recent articles. As my role changed within Microsoft, I really wanted to give something back to the community again, in the form of technical writing and code samples.
 
@@ -45,7 +45,7 @@ As a result, this was the birth of a mini series to end 2018 with a bang. As you
 - **A**PI Controllers in ASP .NET Core
 - **R**eal-time ASP .NET Core Web Apps with SignalR
 
-Over a span of 12 weeks from October to December 2018, I published these seemingly randomly-selected topics on ASP .NET Core. Eventually, I [revealed the hidden message “HAPPY NEW YEAR” just before the new year](https://wakeupandcode.com/aspnetcore/#aspnetcore2018). Knowing that I couldn’t pull off the same trick twice, I decided go with a new series in 2019.
+Over a span of 12 weeks from October to December 2018, I published these seemingly randomly-selected topics on ASP.NET Core. Eventually, I [revealed the hidden message “HAPPY NEW YEAR” just before the new year](https://wakeupandcode.com/aspnetcore/#aspnetcore2018). Knowing that I couldn’t pull off the same trick twice, I decided go with a new series in 2019.
 
 There are 52 weeks in a year, 26 weeks in half a year. This was the perfect opportunity to [cover 26 different topics from A-Z in 2019](https://wakeupandcode.com/aspnetcore/#aspnetcore2019), since there are also 26 letters in the alphabet.
 
@@ -61,7 +61,7 @@ The 2019 series included code snippets that were all over the place. For the 202
 
 **Other than ASP.NET Core, what other Microsoft technologies excite you/do you like to tinker with?**
 
-There are so many! Before joining Microsoft, I had used Visual Studio and C# paired with XNA to build video games for Windows and Xbox 360 in my spare time.
+There are so many! Before joining Microsoft, I had used Visual Studio and C# paired with XNA to build video games for Windows and XBox 360 in my spare time.
 
 I also used my ASP.NET skills to publish a free Sales Data Analyzer tool to help other indie developers better understand their worldwide sales data.
 
