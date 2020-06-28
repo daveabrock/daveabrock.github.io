@@ -1,6 +1,6 @@
 ---
 date: "2020-06-28"
-title: "Dev Discussions - Shahed Chowdhuri talks about his ASP.NET A-Z blog series"
+title: "Dev Discussions - Shahed Chowdhuri talks about his ASP.NET Core A-Z blog series"
 excerpt: We talk with Shahed Showdhuri about ASP.NET Core blogging and more!
 tags: [dotnet-stacks, dev-discussions]
 ---
