@@ -16,7 +16,7 @@ The [Awesome Autocomplete for GitHub extension,](https://chrome.google.com/webst
 
 This extension supercharges the top GitHub search bar by adding auto-completion, last active users, top public repositories, and more.
 
-![Search]({{ site.url }}{{ site.baseurl }}{{ site.url }}{{ site.baseurl }}/images/Search.png)
+![Search]({{ site.url }}{{ site.baseurl }}/images/Search.png)
 
 You can even type `aa<space>` to find GitHub repositories directly from your Chrome address bar!
 
@@ -29,7 +29,7 @@ The default file icons in GitHub are so, so boring. Are you tired of seeing the 
 
 The [File Icon for GitHub, GitLab and Gitbucket extension,](https://chrome.google.com/webstore/detail/file-icon-for-github-gitl/ficfmibkjjnpogdcfhfokmihanoldbfe?hl=en) by [Homer Chen,](https://twitter.com/xxhomey19) adds file icons to GitHub repositories. Personally, this makes it easier for me to find certain files in folders with many files.
 
-![FileIcons]({{ site.url }}{{ site.baseurl }}{{ site.url }}{{ site.baseurl }}/images/FileIcons.png)
+![FileIcons]({{ site.url }}{{ site.baseurl }}/images/FileIcons.png)
 
 * [GitHub project](https://github.com/xxhomey19/github-file-icon)
 * [Chrome extension](https://chrome.google.com/webstore/detail/file-icon-for-github-gitl/ficfmibkjjnpogdcfhfokmihanoldbfe?hl=en)
@@ -38,7 +38,7 @@ The [File Icon for GitHub, GitLab and Gitbucket extension,](https://chrome.googl
 
 Any reasonable code editor gives you the ability to easily expand or collapse code blocks for readability. The [GitHub Code Folding extension](https://chrome.google.com/webstore/detail/github-code-folding/lefcpjbffalgdcdgidjdnmabfenecjdf/), by [Noam Lustiger](https://github.com/noam3127), allows you to do this inside the GitHub user interface.
 
-![CodeFolding-1]({{ site.url }}{{ site.baseurl }}{{ site.url }}{{ site.baseurl }}/images/CodeFolding-1.gif)
+![CodeFolding-1]({{ site.url }}{{ site.baseurl }}/images/CodeFolding-1.gif)
 
 * [GitHub project](https://github.com/noam3127/github-code-folding)
 * [Chrome extension](https://chrome.google.com/webstore/detail/github-code-folding/lefcpjbffalgdcdgidjdnmabfenecjdf/)
