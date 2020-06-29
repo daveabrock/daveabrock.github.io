@@ -55,7 +55,7 @@ You need to add those to GitHub as encrypted secrets. From GitHub, go to **Setti
 
 To get started, you'll need to set up a GitHub Action. To do that, click the `Actions` link at the top of your repository, right next to `Pull Requests`. From there, you'll see the power of GitHub Actions—there are so many CI workflows and automation processes to choose!
 
-![Actions options](/images/actions-options.png)
+![Actions options]({{ site.url }}{{ site.baseurl }}/images/actions-options.png)
 
 For us, though, we'll use `Simple Workflow.` In that pane, click `Set up this workflow.` Once you do that, you will see that you are now editing a `blank.yml` file (which you can rename), sitting in a `.github/workflows` directory. We'll be updating this file.
 
@@ -79,7 +79,7 @@ jobs:
 
 After you commit the file, you can head over to the `Actions` page in GitHub to monitor the status.
 
-![Job results](/images/job-results.png)
+![Job results]({{ site.url }}{{ site.baseurl }}/images/job-results.png)
 
 With any luck, you should see a tweet that says "NEW POST!" Let's break down what's happening. (You can also [review the docs](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions) for details on GitHub Actions workflow syntax.)
 

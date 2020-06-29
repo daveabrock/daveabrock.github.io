@@ -49,7 +49,7 @@ Now, all you need to do is add the component to your project. If you remember, t
 
 From your `Pages/Index.cshtml` file, below the `SurveyPrompt` component, add the `Component1` component. As you begin typing, you can use IntelliSense.
 
-![Autocomplete](/images/Autocomplete.png)
+![Autocomplete]({{ site.url }}{{ site.baseurl }}{{ site.url }}{{ site.baseurl }}/images/Autocomplete.png)
 
 Your `Index.cshtml` component should now look like this:
 
@@ -71,6 +71,6 @@ Notice you don't even need a `@using` statement in your view to reference your c
 
 After you save your changes, reload the page to see your new component in action.
 
-   ![PageWithComponent-1](/images/PageWithComponent-1.png)
+   ![PageWithComponent-1]({{ site.url }}{{ site.baseurl }}{{ site.url }}{{ site.baseurl }}/images/PageWithComponent-1.png)
 
 You have just referenced a component from a shared library with minimal effort. By merely importing the library, you were able to add a component and its styles quite easily.

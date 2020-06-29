@@ -2,7 +2,7 @@
 date: "2020-06-13"
 title: "Dev Discussions - Isaac Levin talks PresenceLight"
 excerpt: Microsoft's Isaac Levin talks about his PresenceLight project.
-featured_image: '/images/isaac-levin.jpg'
+featured_image: '{{ site.url }}{{ site.baseurl }}/images/isaac-levin.jpg'
 tags: [dotnet-stacks, dev-discussions]
 ---
 
@@ -15,7 +15,7 @@ This was brought to you by PresenceLight, a WPF app developed by Microsoft's Isa
 
 For more information on PresenceLight, check out the [GitHub repo](https://github.com/isaacrlevin/PresenceLight) (where you can [find the releases](https://github.com/isaacrlevin/PresenceLight/releases)), Isaac's [blog post](https://www.isaaclevin.com/post/presence-light/), and of course you can always [contact him on Twitter](https://twitter.com/isaacrlevin).
 
-![Isaac Levin](/images/isaac-levin.jpg)
+![Isaac Levin]({{ site.url }}{{ site.baseurl }}/images/isaac-levin.jpg)
 
 **Can you walk me through your path to working at Microsoft?**
 

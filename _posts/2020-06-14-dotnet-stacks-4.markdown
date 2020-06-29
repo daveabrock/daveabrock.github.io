@@ -3,7 +3,7 @@ date: "2020-06-14"
 title: "The .NET Stacks #4: EF Core, PresenceLight, community roundup!"
 tags: [dotnet-stacks]
 comments: false
-header.image: "/images/stacks-graph.jpg"
+header.image: "{{ site.url }}{{ site.baseurl }}/images/stacks-graph.jpg"
 ---
 
 This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
@@ -35,7 +35,7 @@ When EF Core was released with a limited feature set of EF6 capabilities, they'v
 
 If you watched Scott Hanselman’s [keynote at Microsoft Build](https://mybuild.microsoft.com/sessions/871ef73f-f04a-405b-a0fa-01d7433067d1?WT.mc_id=-blog-scottha) (you know, the “self-hosted” one), he showed off changing room lighting to your status in Teams (or Slack, Skype, etc.) and matching any background colors to your smart lights with the click of a button! This was brought to you by PresenceLight, a WPF app developed by Microsoft’s Isaac Levin. I caught up with Isaac to talk about his path to Microsoft, the development of the app, and advice for developers.
 
-![Isaac Levin]({{ site.url }}{{ site.baseurl }}/images/isaac-levin-newsletter.jpg)
+![Isaac Levin]({{ site.url }}{{ site.baseurl }}{{ site.url }}{{ site.baseurl }}/images/isaac-levin-newsletter.jpg)
 
 **What motivated you to develop PresenceLight?**
 

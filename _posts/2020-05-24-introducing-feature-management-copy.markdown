@@ -138,10 +138,10 @@ public async Task<IActionResult> Index()
 
 In the `Index` view action, we are calling `IsEnabledAsync` and passing in our flag's name from the `appsettings.json` file. If that value is `true` the `Message` will display `Welcome to the feature flag` and if not, `Welcome`. The complexity you deal with every day, right?
 If you run your app, you just see the standard welcome message, because your feature flag is set to `false` in your configuration.
-![Before turning on flag](/images/feature-flag-welcome-before.PNG)
+![Before turning on flag]({{ site.url }}{{ site.baseurl }}/images/feature-flag-welcome-before.PNG)
 
 Now, if you go to your `appsettings.json` file and set `WelcomeText` to true and restart the *page*, you'll see the feature flag in action! (You only have to restart the page, and not the app, as the configuration provider handles the change without an app restart!)
 
-![After turning on flag](/images/feature-flag-welcome-after.PNG)
+![After turning on flag]({{ site.url }}{{ site.baseurl }}/images/feature-flag-welcome-after.PNG)
 
 When thinking in terms of deployment, you can set release variables and whatnot to better manage when to turn these on. We will discuss these when we talk about integrating with Azure.

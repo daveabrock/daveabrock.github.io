@@ -10,7 +10,7 @@ This is the full interview from my discussion with Michael Crump in my weekly (f
 
 (An introduction from Michael Crump.)
 
-![Michael Crump](/images/michael-crump.png)
+![Michael Crump]({{ site.url }}{{ site.baseurl }}/images/michael-crump.png)
 
 **My [crack team of researchers](https://google.com) tell me that you were a former Microsoft Silverlight MVP. Ah, memories. Do you miss it?**
 

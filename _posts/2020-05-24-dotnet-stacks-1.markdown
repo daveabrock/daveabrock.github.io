@@ -68,7 +68,7 @@ Care to show off what you're building? Reach out at hey@dotnetstacks.com, and it
 
 ## Tweet of the week
 
-![tweet of the week](/images/tweet-of-week.png)
+![tweet of the week]({{ site.url }}{{ site.baseurl }}/images/tweet-of-week.png)
 
 ## Feedback?
 

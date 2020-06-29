@@ -146,7 +146,7 @@ Now, let's update our `Home/Index.cshtml` view to conditionally render the warni
 
 Fire up the app and see your hard work. Good job, you.
 
-![After turning on flag](/images/timewindow.png)
+![After turning on flag]({{ site.url }}{{ site.baseurl }}/images/timewindow.png)
 
 ## Write a custom filter
 
