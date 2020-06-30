@@ -6,7 +6,7 @@ featured_image: '{{ site.url }}{{ site.baseurl }}/images/isaac-levin.jpg'
 tags: [dotnet-stacks, dev-discussions]
 ---
 
-This is the full interview from my discussion with Isaac Levin in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
+This is the full interview from my discussion with Isaac Levin in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away!
 {: .notice--success}
 
 If you watched Scott Hanselman's [keynote at Microsoft Build](https://mybuild.microsoft.com/sessions/871ef73f-f04a-405b-a0fa-01d7433067d1?WT.mc_id=-blog-scottha) (you know, the "self-hosted" one), he showed off changing room lighting to your status in Teams (or Slack, Skype, etc.) and matching any background colors to your smart lights with the click of a button!
