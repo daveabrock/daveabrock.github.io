@@ -13,9 +13,9 @@ Here's what we'll be walking through:
 
 - Post 1 (*this post*) - Init-only features
 - Post 2 (*future post*) - Records
-- Post 2 (*future post*) - Pattern matching
-- Post 3 (*future post*) - Target typing and covariant returns
-- Post 4 (*future post*) - Putting it all together: an all-in-one application
+- Post 3 (*future post*) - Pattern matching
+- Post 4 (*future post*) - Target typing and covariant returns
+- Post 5 (*future post*) - Putting it all together: an all-in-one application
 
 **Heads up!** C# 9 is still in preview mode, so much of this content might change. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
 {: .notice--danger}
