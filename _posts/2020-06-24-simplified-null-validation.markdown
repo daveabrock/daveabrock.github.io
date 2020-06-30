@@ -38,7 +38,7 @@ public void DoSomethingCool(string coolString!)
 }
 ```
 
-I have mixed feelings about this proposal. 
+I have mixed feelings about this proposal.
 
 Not only are you *super excited* about your parameter, you're also asking the C# parameter to trigger standard null checks for it. It is important to mention this is for runtime checks only and does not impact the type system. Therefore, the check is on the value and not the type. I love the clarity.
 
