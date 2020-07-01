@@ -2,7 +2,9 @@
 date: "2020-06-17"
 title: 'Party in the cloud with feature flags and Azure App Configuration'
 excerpt: Learn how to integrate native .NET feature flags with Azure App Configuration.
-featured_image: '{{ site.url }}{{ site.baseurl }}/images/the-cloud.jpg'
+header:
+    overlay_image: /assets/images/ff-appconfig.png
+    overlay_filter: 0.8
 tags: [csharp, dotnet-core, feature-flags]
 ---
 This is part 4 in a four-part series on .NET native feature flags:
