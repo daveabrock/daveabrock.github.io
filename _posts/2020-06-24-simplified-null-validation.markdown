@@ -5,6 +5,8 @@ excerpt: An update on simplified null checking in C# 9.
 tags: [csharp]
 ---
 
+**UPDATE:** *Since the initial publishing of the post, the approach has changed. This post has been updated to reflect the latest news*.
+
 In my last post, I took a [test drive through some C# 9 features](https://daveabrock.com/2020/06/18/reduce-mental-energy-with-c-sharp) that might make your developer life easier. In it, I mentioned using logical patterns, such as the `not` keyword to throw an `ArgumentException`, if wanted:
 
 ```csharp
@@ -29,6 +31,8 @@ public void DoSomethingCool(string coolString)
 }
 ```
 
+### Initial approach: add `!` to your parameter name
+
 In this C# 9 proposal, you can add `!` to your parameter name to simplify things. Try this one instead:
 
 ```csharp
@@ -48,4 +52,18 @@ But, there's a lot here:
 - It's very single-use and not very extensible
 - There seems to be other approaches that make more sense like a `[NullCheck]` attribute, as was suggested, or using asserts, or even a project file directive
 
-Anyway, if you look at the [Language Feature Status](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md) and even the [spirited issue itself](https://github.com/dotnet/csharplang/issues/2145), it is very much in progress. If you're looking to simplify null checking in C# 9, for now, I would depend on using logical patterns instead.
+### New approach: use `!!` instead
+
+Late last week, around June 25-*ish* of 2020, the C# team will be changing to use `!!` instead ([meeting notes here](https://github.com/dotnet/csharplang/blob/master/meetings/2020/LDM-2020-06-24.md#parameter-null-checking)).
+
+The general rules are:
+
+- If this is used on a parameter, throw `ArgumentNullException(nameof(paramName))`
+- If used elsewhere, throw `InvalidOperationException`. A `NullOperationException` might be clearer, and others have noticed this as well
+
+This behavior could also be used as an operator. If you review the [GitHub issue on the topic](https://github.com/dotnet/csharplang/issues/2145), Jared Parsons notes:
+>The decision was limited to using !! as parameter null checking. While LDM recognizes that !! could be useful as an operator, and in previous meetings we had sketched out how that would work, in this meeting we only decided on the parameter form.
+
+I do think this is better, but not *that much better*. The confusion surrounding how `!` is used has been eliminated, but it still isn't an extensible solution. Adding a keyword might help here, but I personally would like to see more flexibility with more than just parameters, such as a `{ get; set!; }` construct.
+
+Anyway, if you look at the [Language Feature Status](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md) and even the [spirited issue itself](https://github.com/dotnet/csharplang/issues/2145), it is very much in progress. If you're looking to simplify null checking in C# 9, for now, I would depend on using logical patterns until this is ironed out some more.
