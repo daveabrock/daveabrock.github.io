@@ -5,7 +5,7 @@ tags: [dotnet-stacks]
 comments: false
 ---
 
-This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
+This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait a week to receive the content.
 {: .notice--success}
 
 Happy Monday, everyone. I have to be honest, it feels awkward diving right into .NET after the last week or so, especially considering what's happening in America right now. I'll just say this before I get to it: I hope everyone is okay. 
