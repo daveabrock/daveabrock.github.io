@@ -3,6 +3,10 @@ date: "2020-05-24"
 title: "The .NET Stacks #1: Microsoft Build, announcements galore!"
 tags: [dotnet-stacks]
 comments: false
+excerpt: We discuss all of the Microsoft Build news!
+header:
+    overlay_image: /assets/images/stacks-1-card.png
+    overlay_filter: 0.8
 ---
 
 This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait a week to receive the content.

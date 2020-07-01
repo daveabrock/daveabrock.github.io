@@ -3,7 +3,10 @@ date: "2020-06-14"
 title: "The .NET Stacks #4: EF Core, PresenceLight, community roundup!"
 tags: [dotnet-stacks]
 comments: false
-header.image: "{{ site.url }}{{ site.baseurl }}/images/stacks-graph.jpg"
+excerpt: We check in on EF Core and talk with Isaac Levin about his PresenceLight project!
+header:
+    overlay_image: /assets/images/stacks-4-card.png
+    overlay_filter: 0.8
 ---
 
 This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait a week to receive the content.
