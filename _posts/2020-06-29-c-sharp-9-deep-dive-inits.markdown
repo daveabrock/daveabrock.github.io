@@ -4,7 +4,7 @@ title: "C# 9 Deep Dive: Init-only features"
 excerpt: In a C# 9, deep dive, we will first walk through init-only features.
 tags: [csharp]
 header:
-    og_image: /assets/images/stacks-graph.jpg
+    overlay_image: /assets/images/stacks-graph.jpg
 ---
 
 A few weeks ago, we took a quick tour of some upcoming C# 9 features that will [make your development life easier](https://daveabrock.com/2020/06/18/reduce-mental-energy-with-c-sharp). We dipped our toes in the water. But now it's time to dig a little deeper.
