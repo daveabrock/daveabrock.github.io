@@ -1,11 +1,11 @@
 ---
-date: "2020-06-26"
+date: "2020-07-05"
 title: "The .NET Stacks #6: Blazor mobile bindings, EF update, ASP.NET Core A-Z, more!"
 tags: [dotnet-stacks]
 comments: false
 ---
 
-This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
+This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait a week to receive the content.
 {: .notice--success}
 
 On tap this week:
