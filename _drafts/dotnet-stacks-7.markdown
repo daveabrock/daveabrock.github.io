@@ -1,6 +1,6 @@
 ---
-date: "2020-06-30"
-title: "The .NET Stacks #7: something, something, community roundup!"
+date: "2020-07-05"
+title: "The .NET Stacks #7: Azure SDKs, testing, community roundup, more!"
 tags: [dotnet-stacks]
 comments: false
 ---
@@ -10,13 +10,43 @@ This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider 
 
 On tap this week:
 
-- Thing 1
-- Thing 2
+- A look at the Azure SDKs
+- What's your test automation maturity level?
+- The evolution (and optics) of how far .NET has come
 - Community roundup
 
-## Thing 1
+## A look at the Azure SDKs
 
-## Thing 2
+If you work with Azure SDKs, have you looked into the improvements lately in the last 6-9 months? (You can catch up quickly with a [quick video Microsoft pushed out last month](https://www.youtube.com/watch?v=38RYIx7a2M4).)
+
+Here's the gist: before the new SDKs were released, each Azure team created their own SDKs in their own repositories, with their own CI process, with varying levels of OS support, language support, and so on. The new SDKs promise new common guidelines, centralized systems and repositories, and consistent security and support. These SDKs deliver language support for .NET, Java, Python, and JavaScript/TypeScript, with a promise of more languages to come. Most importantly, packages have been released to all the common package managers, meeting developers where they are—instead of asking them to conform to the whims of each API.
+
+Microsoft has a [landing page of sorts](https://azure.github.io/azure-sdk/) where you can review releases, feature updates, and API information.
+
+## What's your test automation maturity level?
+
+From the Applitools blog, Angie Jones published a nice piece on [how to measure your test automation maturity](https://applitools.com/blog/measure-your-test-automation-maturity). While this is tech-agnostic, it's worth a mention in this space as I found it valuable for me to think more critically about my own testing approach. 
+
+I found it interesting that, in her research, she found that 60% of the teams no longer have a distinction between development and QA engineers. Score one for end-to-end ownership and the DevOps movement.
+
+As you read the article, you can give your team its own testing maturity score based on:
+
+- Your ability to automate unit tests, web tests, API tests, security tests, performance tests, and accessibility tests
+- If you test across browsers, devices, and screen sizes
+- If tests are executed in your CI/CD pipeline
+- If you use feature flags ([shameless plug for my series on .NET feature toggles](https://daveabrock.com/2020/05/24/introducing-feature-management-copy))
+
+What was your score?
+
+## The evolution (and optics) of how far .NET has come
+
+If you spend any time looking at #dotnet Twitter, this week was an interesting one. Billy Collins (@BlazorGuy) [tweeted](https://twitter.com/BlazorGuy/status/1279092538490736640), *"What's up with non-.NET developers thinking C# is a Windows only, corporate bloatware language? It's not 2005 anymore!"* This caused [another discussion](https://twitter.com/davidfowl/status/1279538339780063232) spearheaded by ASP.NET Core architect David Fowler. Microsoft is definitely having to strike a fine balance of attracting modern development, yet supporting enterprise (legacy) customers.
+
+The big challenge Microsoft still faces is trying to get developers who haven't worked on .NET in awhile—and have perhaps ditched it for faster, cross-platform solutions—that .NET has a cutting-edge platform again, and has been for the last 5 years. Their persistence to keep the .NET/ASP.NET name on every iteration of the platform has, I believe, done Microsoft a disservice. Let's say I ditched .NET in the old Framework days and only have a passing interest in .NET. If I hear things like .NET Core, .NET Standard, and .NET 5, do I believe things have changed without researching more?
+
+As Fowler [tweeted](https://twitter.com/davidfowl/status/1279545670894936065), *"This is why timing and marketing is super important in product development. Not only is it hard to erase search history for something that’s been around for 20 years, but you have to deal with the impressions people has years ago about a “new product” with the same name. At the same time, you want to leverage the existing ecosystem so you’re not starting from scratch."*
+
+With all that said, [.NET 5 promises a unified framework](https://devblogs.microsoft.com/dotnet/introducing-net-5/) and a stable, predictable release schedule—with a new major version every November. In many ways, this is a realization of a vision Microsoft developed many years ago with a unified, fast, cross-platform framework. And people can [run apps without a separate deploy of .NET Core](https://github.com/dotnet/runtime/issues/36590)! These are exciting times. Hopefully, the community perception continues to improve as a result.
 
 ## Community roundup
 
