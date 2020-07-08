@@ -226,7 +226,7 @@ Watch what happens as we:
 
 - Create a new `Person` called `person`, Tony Stark
 - Create another `Person`, called `newPerson`, Howard Stark, with two different properties (`FirstName` and `City`)
-- Create a third `Person` called `anotherPerson`, and set `newPerson` to the same values as the original `person`
+- Create a third `Person` called `anotherPerson`, and set `anotherPerson` to the same values as the original `person`
 
 ```csharp
 class Program
