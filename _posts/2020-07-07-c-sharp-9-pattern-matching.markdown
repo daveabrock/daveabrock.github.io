@@ -1,5 +1,5 @@
 ---
-date: "2020-07-06"
+date: "2020-07-08"
 title: "C# 9 Deep Dive: Pattern Matching"
 excerpt: In a C# 9 deep dive, we explore improved pattern matching.
 tags: [csharp]
