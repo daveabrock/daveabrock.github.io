@@ -49,6 +49,8 @@ Records are offering the following advantages, from what I can see:
 
 Of course you can do this with structs, and even classes, but this requires tedious boilerplate. The idea here is to have a construct that is simple and straightforward to implement.
 
+**UPDATE**: One of the biggest draws of records over structs is the reduced memory allocation that is required. Since C# records are compiled to reference types behind the scenes, they are accessed by a reference and not as a copy. As a result, no additional memory allocation is required other than the original record allocation. **Thanks to commenter Tecfield for mentioning this!**
+
 Hopefully by now, if I did my job, you know what records are and the rationale for them. Let's see some code.
 
 If you want to play along, the easiest way as of now is to [download LinqPad 6 Beta](https://www.linqpad.net/linqpad6.aspx#beta), then select **Edit** > **Preferences** > **Query** > **Use Roslyn Daily build for experimental C# 9 support).**
@@ -79,7 +81,7 @@ As of this writing, the `record` declaration is not enough to get complete objec
 
 ## Use `with` expressions with records
 
-Before C# 9, you would do the following to represent new state using immutability.
+Before C# 9, you would likely represent new state by creating new values from existing ones.
 
 ```csharp
 var person = new Person
@@ -96,7 +98,7 @@ newPerson.FirstName = "Howard";
 newPerson.City = "Pasadena";
 ```
 
-This pattern—creating new values from existing ones to represent new state—is referred to as non-destructive mutation (now *that* will make you seem smart at your next dinner party!). C# 9 has a new type of expression, a `with` expression, to assist you.
+This pattern is referred to as non-destructive mutation (now *that* will make you seem smart at your next dinner party!). C# 9 has a new type of expression, a `with` expression, to assist you.
 
 This functionality is only available in records, and not structs or classes.
 {: .notice--info}
@@ -226,7 +228,7 @@ Watch what happens as we:
 
 - Create a new `Person` called `person`, Tony Stark
 - Create another `Person`, called `newPerson`, Howard Stark, with two different properties (`FirstName` and `City`)
-- Create a third `Person` called `anotherPerson`, and set `newPerson` to the same values as the original `person`
+- Create a third `Person` called `anotherPerson`, and set `anotherPerson` to the same values as the original `person`
 
 ```csharp
 class Program

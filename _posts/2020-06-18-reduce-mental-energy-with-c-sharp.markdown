@@ -78,9 +78,9 @@ var developer1 = new Developer
 // ...
 var developer2 = developer1;
 developer2.LastName = "Pine";
-Console.WriteLine(person2.FirstName); // David
-Console.WriteLine(person2.LastName); // Pine
-Console.WriteLine(person2.PreferredLanguage); // C#
+Console.WriteLine(developer2.FirstName); // David
+Console.WriteLine(developer2.LastName); // Pine
+Console.WriteLine(developer2.PreferredLanguage); // C#
 
 public class Developer
 {
