@@ -1,5 +1,5 @@
 ---
-date: "2020-07-06"
+date: "2020-07-07"
 title: "C# 9 Deep Dive: Records"
 excerpt: In a C# 9 deep dive, we go in-depth on records.
 tags: [csharp]
