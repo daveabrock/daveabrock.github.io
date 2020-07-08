@@ -49,6 +49,8 @@ Records are offering the following advantages, from what I can see:
 
 Of course you can do this with structs, and even classes, but this requires tedious boilerplate. The idea here is to have a construct that is simple and straightforward to implement.
 
+**UPDATE**: One of the biggest draws of records over structs is the reduced memory allocation that is required. Since C# records are compiled to reference types behind the scenes, they are accessed by a reference and not as a copy. As a result, no additional memory allocation is required other than the original record allocation. **Thanks to commenter Tecfield for mentioning this!**
+
 Hopefully by now, if I did my job, you know what records are and the rationale for them. Let's see some code.
 
 If you want to play along, the easiest way as of now is to [download LinqPad 6 Beta](https://www.linqpad.net/linqpad6.aspx#beta), then select **Edit** > **Preferences** > **Query** > **Use Roslyn Daily build for experimental C# 9 support).**
