@@ -79,7 +79,7 @@ As of this writing, the `record` declaration is not enough to get complete objec
 
 ## Use `with` expressions with records
 
-Before C# 9, you would do the following to represent new state using immutability.
+Before C# 9, you would likely represent new state by creating new values from existing ones.
 
 ```csharp
 var person = new Person
@@ -96,7 +96,7 @@ newPerson.FirstName = "Howard";
 newPerson.City = "Pasadena";
 ```
 
-This pattern—creating new values from existing ones to represent new state—is referred to as non-destructive mutation (now *that* will make you seem smart at your next dinner party!). C# 9 has a new type of expression, a `with` expression, to assist you.
+This pattern is referred to as non-destructive mutation (now *that* will make you seem smart at your next dinner party!). C# 9 has a new type of expression, a `with` expression, to assist you.
 
 This functionality is only available in records, and not structs or classes.
 {: .notice--info}
