@@ -16,7 +16,7 @@ Here's what we'll be walking through:
 
 - Post 1 (*this post*) - Init-only features
 - Post 2 - [Records](https://daveabrock.com/2020/07/06/c-sharp-9-deep-dive-records)
-- Post 3 (*future post*) - Pattern matching
+- Post 3 - [Pattern matching](https://daveabrock.com/2020/07/07/c-sharp-9-pattern-matching)
 - Post 4 (*future post*) - Target typing and covariant returns
 - Post 5 (*future post*) - Putting it all together: an all-in-one application
 
