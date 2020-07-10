@@ -10,7 +10,7 @@ header:
 
 In the [previous post of this series](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits), we discussed the init-only features of C# 9, which allowed you to make individual properties immutable. That works great on a case-by-case basis, but the real power in leveraging C# immutability is when you can do this for custom types. This is where records shine, and will be the focus of this post.
 
-This is the second post in a five-post series on C# 9 features in-depth:
+This is the second post in a six-post series on C# 9 features in-depth:
 
 - Post 1 - [Init-only features](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits)
 - Post 2 (*this post*) - Records

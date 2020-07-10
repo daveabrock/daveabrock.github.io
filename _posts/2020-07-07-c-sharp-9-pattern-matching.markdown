@@ -12,7 +12,7 @@ In the [previous post of this series](https://daveabrock.com/2020/06/29/c-sharp-
 
 For something completely different, we'll discuss improved pattern matching in C# 9. This is not a completely new feature, but something that has evolved since it was first released way back in C# 7, albeit in basic form. This [Microsoft article](https://docs.microsoft.com/dotnet/csharp/pattern-matching) runs down the basics of pattern matching, which improved greatly in C# 8 as well. The pattern matching works with the `is` operator and with `switch` expressions, much of which I showed off in my article [*C# 8, A Year Late.*](https://daveabrock.com/2020/03/29/csharp-8-year-late.html)
 
-This is the third post in a five-post series on C# 9 features in-depth:
+This is the third post in a six-post series on C# 9 features in-depth:
 
 - Post 1 - [Init-only features](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits)
 - Post 2 - [Records](https://daveabrock.com/2020/07/06/c-sharp-9-deep-dive-records)
