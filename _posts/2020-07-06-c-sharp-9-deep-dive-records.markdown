@@ -15,8 +15,9 @@ This is the second post in a five-post series on C# 9 features in-depth:
 - Post 1 - [Init-only features](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits)
 - Post 2 (*this post*) - Records
 - Post 3 - [Pattern matching](https://daveabrock.com/2020/07/06/c-sharp-9-pattern-matching)
-- Post 4 (*future post*) - Target typing and covariant returns
-- Post 5 (*future post*) - Putting it all together: an all-in-one application
+- Post 4 - [Top-level programs](https://daveabrock.com/2020/07/09/c-sharp-9-top-level-programs)
+- Post 5 (*future post*) - Target typing and covariant returns
+- Post 6 (*future post*) - Putting it all together: an all-in-one application
 
 **Heads up!** C# 9 is still in preview mode, so much of this content might change—this post was last updated on July 6, 2020. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
 {: .notice--danger}
