@@ -1,14 +1,19 @@
 ---
-date: "2020-06-26"
+date: "2020-07-10"
 title: "Dev Discussions - Michael Crump on contributing to the Azure community"
 excerpt: We talk with Michael Crump about his contributions to the Azure community!
 tags: [dotnet-stacks, dev-discussions]
+header:
+    overlay_image: /assets/images/michael-crump-post.png
+    overlay_filter: 0.8
 ---
 
 This is the full interview from my discussion with Michael Crump in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
 {: .notice--success}
 
-(An introduction from Michael Crump.)
+If you've worked on Azure, you've likely come across Michael Crump's work. He started [Azure Tips and Tricks](http://azuredev.tips), a collection of tips, videos, and talks—if it's Azure, it's probably there. He also runs a popular Twitch stream where he talks about various topics.
+
+I caught up with Michael to talk about how he got to working on Azure at Microsoft, his work for the developer community, and his programming advice. (We talk Silverlight, but only in passing—no need to click away.)
 
 ![Michael Crump]({{ site.url }}{{ site.baseurl }}/images/michael-crump.png)
 
@@ -35,7 +40,7 @@ I'd lean on two projects:
 
 **Tell us a little about Azure Tips and Tricks. What motivated you to get started, and how can people get involved?**
 
-Azure Tips and Tricks was created because I'd find a thing or two about Azure, and forget how to do it again. It was originally designed as something *just for me* but many blog aggregators starting picking up on the posts and we decided to go big with it - from e-books, blog posts, videos, conference talks and stickers.
+Azure Tips and Tricks was created because I'd find a thing or two about Azure, and forget how to do it again. It was originally designed as something *just for me* but many blog aggregators starting picking up on the posts and we decided to go big with it—from e-books, blog posts, videos, conference talks and stickers.
 
 The easiest way to contribute is by clicking on the **Edit Page** button at the bottom of each page. You can also go to *[http://source.azuredev.tips](http://source.azuredev.tips)* to learn more.
 
@@ -43,7 +48,7 @@ The easiest way to contribute is by clicking on the **Edit Page** button at the 
 
 I loved the ability to actually code and have someone watch you and help you code. The interactivity aspect and seeing the same folks come back gets you hooked.
 
-The stream is broken down into 3 streams a week:
+The [stream](https://twitch.tv/mbcrump) is broken down into three streams a week:
 
 - Azure Tips and Tricks, every Wednesday at 1 PM PST (Pacific Standard Time, America)
 - Live Interviews with Developers, every Friday at 9 AM PST (Pacific Standard Time, America)
