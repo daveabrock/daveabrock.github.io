@@ -1,5 +1,5 @@
 ---
-date: "2020-07-05"
+date: "2020-07-12"
 title: "The .NET Stacks #7: Azure SDKs, testing, community roundup, more!"
 tags: [dotnet-stacks]
 comments: false
