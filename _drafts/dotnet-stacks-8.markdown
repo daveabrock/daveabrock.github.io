@@ -1,8 +1,12 @@
 ---
 date: "2020-07-11"
-title: "The .NET Stacks: functional C# 9, .NET Foundation nominees, Azure community, more!"
+title: "The .NET Stacks #8: functional C# 9, .NET Foundation nominees, Azure community, more!"
 tags: [dotnet-stacks]
 comments: false
+header:
+    overlay_image: /assets/images/stacks-7-card.png
+    overlay_filter: 0.8
+excerpt: We discuss functional programming in C# 9, .NET Foundation updates, and more!
 ---
 
 This is an archive of my weekly (free!) newsletter, -The .NET Stacks-. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait a week to receive the content.
@@ -19,19 +23,23 @@ On tap this week:
 
 I've been writing a lot about C# 9 lately. *No, seriously: a lot.* This week I went a little nuts with three posts: I talked about [records](https://daveabrock.com/2020/07/06/c-sharp-9-deep-dive-records), [pattern matching](https://daveabrock.com/2020/07/06/c-sharp-9-pattern-matching), and [top-level programs](https://daveabrock.com/2020/07/09/c-sharp-9-top-level-programs). I've been learning a ton, which is always the main goal, but what's really interesting is how C# is starting to blur the lines between object-oriented and functional programming. Throughout the years, we've seen some FP concepts visit C#, but I feel this release is really kicking it up a notch.
 
-In the not-so-distant past, discussing FP and OO meant putting up with silly dogmatic arguments that they have to be mutually exclusive. It isn't hard to understand why: traditional concepts of OO constructs are grouping data and behavior (state) in single mutable objects, and FP draws a hard line between data and behavior in the name of purity and minimizing side effects (immutability by default). What works best for you? As any expensive consultant will tell you: *it depends.* On your requirements. On your use cases. Do you want immutability or mutability by default? There are definitely cases where you want to be flexible on both.
+In the not-so-distant past, discussing FP and OO meant putting up with silly dogmatic arguments that they have to be mutually exclusive. It isn't hard to understand why: traditional concepts of OO constructs are grouping data and behavior (state) in single mutable objects, and FP draws a hard line between data and behavior in the name of purity and minimizing side effects (immutability by default).
 
-So, as it goes, you've got two choices in .NET: C#, the flagship .NET language, and F#, a wonderful functional language. Let's look at a blog post from a few years ago that [maps C# concepts to F# concepts](https://devblogs.microsoft.com/dotnet/get-started-with-f-as-a-c-developer/). 
+So, typically as a .NET developer, this left you with two choices: C#, .NET's flagship language, or F#, a wonderful functional language that is concise (no curlies or semi-colons and great type inference), convenient (functions as first-class objects), and has default immutability.
+
+However, this is no longer a binary choice. For example, let's look at a blog post from a few years ago that [maps C# concepts to F# concepts](https://devblogs.microsoft.com/dotnet/get-started-with-f-as-a-c-developer/).
 
 - **C#/OO has variables, F#/FP has immutable values**. C# 9 init-only properties and records bring that ability to C#.
-- **C# has statements, F# has expressions**. C# 8 introduced switch expressions and enhanced pattern matching, and has more expressions littered throughout the language now
+- **C# has statements, F# has expressions**. C# 8 introduced switch expressions and enhanced pattern matching, and has more expressions littered throughout the language now.
 - **C# has objects with methods, F# has types and functions**. C# 9 records are also blurring the line in this regard.
 
-So here we are, just years after wondering if F# will ever take over C#, we see things illustrating the exact opposite: [will C# replace F#](https://www.compositional-it.com/news-blog/will-csharp-replace-fsharp/)?
+So here we are, just years after wondering if F# will ever take over C#, we see people wondering the exact opposite as Isaac Abraham asks: [will C# replace F#](https://www.compositional-it.com/news-blog/will-csharp-replace-fsharp/)? (Spoiler alert: no.)
 
-In the end, your choice might not boil down to functional programming at all. 
+There is definitely pushback in the community from C# 8 purists, to which I say: *why not both?* You now have the freedom to "bring in" the value of functional programming, while doing it in a familiar language. You can bring in these features, along with C#'s compatibility. These changes will not break the language. And if they don't appeal to you, you don't have to use them. (Of course, mixing FP and OO in C# is not always graceful and is definitely worth mentioning.)
 
-Soon, I'll be interviewing Phillip Carter, the PM for F# at Microsoft. Any questions? Let me know soon and I'll be sure to include them.
+This isn't a C# vs F# rant, but it comes down to this: is C# with functional bits "good enough" because of your team's skillset, comfort level, and OO needs? Or do you need a clean break, and immutability by default? As for me, I enjoy seeing these features gradually introduced. For example, C# 9 records allow you to build immutable structures but the language isn't imposing this on you for all your objects. You need to opt in.
+
+A more nuanced question to ask is: will C#'s functional concepts ever overpower the language and tilt the scales in FP's direction? Soon, I’ll be interviewing Phillip Carter (the PM for F# at Microsoft) and am curious to hear what he has to say about it. Any questions? Let me know soon and I’ll be sure to include them.
 
 ## The .NET Foundation nominees are out
 
@@ -103,6 +111,7 @@ An *extremely* busy week, full of great content!
 - The Visual Studio Toolbox [begins a series on performance profiling](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Performance-Profiling-Part-1-An-Introduction) and [continues their series on finding code in Visual Studio](https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Finding-Code-Part-2).
 - The Xamarin Show [discusses App Center and App Insights](https://channel9.msdn.com/Shows/XamarinShow/App-Center-plus-App-Insights?WT.mc_id=DX_MVP4025064).
 - Data Exposed [continues their "why Azure SQL is best for devs" series](https://channel9.msdn.com/Shows/Data-Exposed/Why-Azure-SQL-is-Best-for-Developers-Part-2).
+- So many community standups: we have the [Languages & Runtime one](https://www.youtube.com/watch?v=IVJgrLTG1WM), [Entity Framework](https://www.youtube.com/watch?v=5Oow3LlFjTQ), and [ASP.NET Core](https://www.youtube.com/watch?v=sYTH_xYH3iA).
 
 #### Blog posts
 
