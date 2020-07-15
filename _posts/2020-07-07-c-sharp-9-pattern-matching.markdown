@@ -50,7 +50,7 @@ public static string FindAProgrammingLanguage(string languageInput)
 }
 ```
 
-With switch statements, we can replace `case` and `:` with `=>` and replace the default statement with `_`. That "underscore operator" is *technically* [called a discard](https://docs.microsoft.com/dotnet/csharp/discards)—a temporary, dummy variable that you want intentionally unused. This gives us a much cleaner, expression-like syntax.
+With switch expressions, we can replace `case` and `:` with `=>` and replace the default statement with `_`. That "underscore operator" is *technically* [called a discard](https://docs.microsoft.com/dotnet/csharp/discards)—a temporary, dummy variable that you want intentionally unused. This gives us a much cleaner, expression-like syntax.
 
 Be honest: switch statements enable `goto`-like control flow (so we are clear on [how I feel about this](https://stackoverflow.com/questions/4756084/use-a-goto-in-a-switch)) and just executes code. I find the expressive style, which forces you to return a value, much better. You know that empty "well, better than a million `if`'s, I guess?" feeling you get with `switch` statements? This should make you feel better.
 
