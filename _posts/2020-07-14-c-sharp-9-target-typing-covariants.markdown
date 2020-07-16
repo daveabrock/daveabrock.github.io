@@ -83,7 +83,7 @@ class Program
 
 ### Target typing with conditional operators
 
-Speaking of ternary statements, we can now infer types by using the conditional operators. This works well with `??`, the [null-coalescing operator](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/null-coalescing-operator). The `??` operator returns the value of what's on the left if it is null. Otherwise, the right-hand side is evaluated and returned.
+Speaking of ternary statements, we can now infer types by using the conditional operators. This works well with `??`, the [null-coalescing operator](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/null-coalescing-operator). The `??` operator returns the value of what's on the left if it is *not null*. Otherwise, the right-hand side is evaluated and returned.
 
 So, imagine we have some objects that shared the same base class, like this:
 
