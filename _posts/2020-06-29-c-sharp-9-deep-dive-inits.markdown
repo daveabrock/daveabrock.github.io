@@ -18,7 +18,7 @@ Here's what we'll be walking through:
 - Post 2 - [Records](https://daveabrock.com/2020/07/06/c-sharp-9-deep-dive-records)
 - Post 3 - [Pattern matching](https://daveabrock.com/2020/07/06/c-sharp-9-pattern-matching)
 - Post 4 - [Top-level programs](https://daveabrock.com/2020/07/09/c-sharp-9-top-level-programs)
-- Post 5 - [Target typing and covariant returns](https://daveabrock.com/2020/07/13/c-sharp-9-target-typing-covariants)
+- Post 5 - [Target typing and covariant returns](https://daveabrock.com/2020/07/14/c-sharp-9-target-typing-covariants)
 - Post 6 (*future post*) - Putting it all together: an all-in-one application
 
 **Heads up!** C# 9 is still in preview mode, so much of this content might change. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
