@@ -1,10 +1,10 @@
 ---
-date: "2020-07-11"
+date: "2020-07-18"
 title: "The .NET Stacks #8: functional C# 9, .NET Foundation nominees, Azure community, more!"
 tags: [dotnet-stacks]
 comments: false
 header:
-    overlay_image: /assets/images/stacks-7-card.png
+    overlay_image: /assets/images/stacks-8-card.png
     overlay_filter: 0.8
 excerpt: We discuss functional programming in C# 9, .NET Foundation updates, and more!
 ---
