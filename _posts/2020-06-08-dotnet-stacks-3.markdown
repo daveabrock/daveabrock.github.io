@@ -9,7 +9,7 @@ header:
     overlay_filter: 0.8
 ---
 
-This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait a week to receive the content.
+This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away! Subscribers don't have to wait a week to receive the content.
 {: .notice--success}
 
 In this week's issue we will be talking about:
@@ -90,6 +90,6 @@ Need a Blazor fix? Register for [Blazor Day on June 18](https://blazorday.net/pl
 
 ## New subscribers and feedback
 
-Has this email been forwarded to you? Welcome! I'd love for you [to subscribe](https://www.dotnetstacks.com/register) and join the community. I promise to guard your email address with my life.
+Has this email been forwarded to you? Welcome! I'd love for you [to subscribe](https://www.dotnetstacks.com) and join the community. I promise to guard your email address with my life.
 
-I would love to hear any feedback you have for The .NET Stacks! My goal is to make this the one-stop shop for weekly updates on developing in the .NET ecosystem, so I look forward to any feedback you can provide. You can directly reply to this email, or [talk to me on Twitter as well](https://www.dotnetstacks.com/register). See you next week!
+I would love to hear any feedback you have for The .NET Stacks! My goal is to make this the one-stop shop for weekly updates on developing in the .NET ecosystem, so I look forward to any feedback you can provide. You can directly reply to this email, or [talk to me on Twitter as well](https://www.dotnetstacks.com). See you next week!

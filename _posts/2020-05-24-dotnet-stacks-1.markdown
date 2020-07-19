@@ -9,10 +9,10 @@ header:
     overlay_filter: 0.8
 ---
 
-This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait a week to receive the content.
+This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away! Subscribers don't have to wait a week to receive the content.
 {: .notice--success}
 
-Welcome to the very first issue of *The .NET Stacks*! I appreciate all of you for being my first subscribers—even before it was even launched. If you have any suggestions, you can simply reply to this email or [hit me up on Twitter](https://twitter.com/dotnetstacks). And if you like what you see, I would love for you to [share with others](https://www.dotnetstacks.com/register) as well. Let's get started!
+Welcome to the very first issue of *The .NET Stacks*! I appreciate all of you for being my first subscribers—even before it was even launched. If you have any suggestions, you can simply reply to this email or [hit me up on Twitter](https://twitter.com/dotnetstacks). And if you like what you see, I would love for you to [share with others](https://www.dotnetstacks.com) as well. Let's get started!
 
 ## 3 things to keep you informed
 
@@ -76,4 +76,4 @@ Care to show off what you're building? Reach out at hey@dotnetstacks.com, and it
 
 ## Feedback?
 
-I would love to hear any feedback you have for The .NET Stacks! For a little while, I'll be trying some new things—as with software, some might work and some might not. My goal is to make this the one-stop shop for weekly updates on developing in the .NET ecosystem, so I look forward to any feedback you can provide. You can directly reply to this email, or [talk to me on Twitter](https://www.dotnetstacks.com/register) as well. I'll talk to you next week!
+I would love to hear any feedback you have for The .NET Stacks! For a little while, I'll be trying some new things—as with software, some might work and some might not. My goal is to make this the one-stop shop for weekly updates on developing in the .NET ecosystem, so I look forward to any feedback you can provide. You can directly reply to this email, or [talk to me on Twitter](https://www.dotnetstacks.com) as well. I'll talk to you next week!

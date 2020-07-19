@@ -1,14 +1,14 @@
 ---
 date: "2020-06-28"
 title: "Dev Discussions - Shahed Chowdhuri talks about his ASP.NET Core A-Z blog series"
-excerpt: We talk with Shahed Showdhuri about ASP.NET Core blogging and more!
+excerpt: We talk with Shahed Chowdhuri about ASP.NET Core blogging and more!
 tags: [dotnet-stacks, dev-discussions]
 header:
     overlay_image: /assets/images/shahed-card.png
     overlay_filter: 0.8
 ---
 
-This is the full interview from my discussion with Shahed Chowdhuri in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away!
+This is the full interview from my discussion with Shahed Chowdhuri in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away!
 {: .notice--success}
 
 As a huge fan of the Marvel universe, Microsoft's Shahed Chowdhuri must feel like Captain America after publishing the last post of his [ASP.NET Core A-Z blog series](https://wakeupandcode.com/aspnetcore/#aspnetcore2020) this week. In these posts, he wrote 26 ASP.NET Core posts in 26 weeks, from A-Z (Authentication & Authorization to Zero-Downtime Web Apps). This was all using a single sample project!

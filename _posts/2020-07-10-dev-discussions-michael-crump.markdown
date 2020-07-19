@@ -8,7 +8,7 @@ header:
     overlay_filter: 0.8
 ---
 
-This is the full interview from my discussion with Michael Crump in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com/register) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
+This is the full interview from my discussion with Michael Crump in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
 {: .notice--success}
 
 If you've worked on Azure, you've likely come across Michael Crump's work. He started [Azure Tips and Tricks](http://azuredev.tips), a collection of tips, videos, and talks—if it's Azure, it's probably there. He also runs a popular Twitch stream where he talks about various topics.

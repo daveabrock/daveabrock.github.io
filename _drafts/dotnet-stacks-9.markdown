@@ -1,38 +1,60 @@
 ---
 date: "2020-07-18"
-title: "The .NET Stacks: Project Coyote, new Razor editor, and more!"
+title: "The .NET Stacks #9: Project Coyote, new Razor editor, and more!"
 tags: [dotnet-stacks]
 comments: false
 ---
 
-## Project Coyote
+![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
 
-psharp more than a resource project
+So, what do you think? I changed newsletter providers and got a new look (thanks to [@comfycoder](https://twitter.com/comfycoder) for the logo help). I hope you like it. It works on my machine, and I hope it works on yours too. 😎
 
-async await Task library - if not careful it hides abstractions
+Any suggestions? [Hit me up on Twitter](https://twitter.com/daveabrock) or just reply to this e-mail. I'm all ears on what content you'd like—I want to make this the best part of your Monday!
 
-maximize throughout minimize costs
+This week we're talking about debugging async with Coyote, an exciting new Razor editor in Visual Studio, a fun look at unit testing, and more!
 
-test every async test and explore by doing one thing at a time with thread serialization
+## Debug async issues faster with Coyote
 
-trying to find a bug in months
+Isn't async programming fun? It's so much fun, you can probably relate to this. (If you've spent months on a single concurrency issue, it might also make you cry.)
 
-kind of like time-travel debeggung but don't have to go back-in-time
+![Newsletter image]({{ site.url }}{{ site.baseurl }}/images/../../../assets/images/roses-are-red.png)
 
-This is an `inline` code fence.
+All jokes aside, it's a concurrent world and we just live in it. Our customers *demand* it. In this microservice-friendly, cloud-first world, we want things fast and efficient at the lowest cost possible. In the cloud, minimizing cost requires high throughput, which requires high concurrency. If you haven't pulled your hair out from a concurrency/threading issue, to that I say: welcome to our field. I hope you had a nice graduation party.
 
-```csharp
-public void AMethod()
-{
-    Console.WriteLine("It works!");
-}
-```
+We know this is hard, and that's why we rely on the .NET framework to handle most of the magic for us. With the [Task Parallel Library](https://docs.microsoft.com/dotnet/standard/parallel-programming/task-parallel-library-tpl) (TPL) and async/await, we don't have to worry about thread scheduling, state management, or other hard low-level details.
+
+However, we also get flexibility with APIs like [Task.Run](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run?view=netcore-3.1) that give us the power to queue work—if we don't know exactly what we're doing, we can get in loads of trouble. Even with high code coverage, powerful integration testing, and stress testing, we still know we're not too far from a concurrency issue that will cost our customers (and our employers) tons of time and money.
+
+Meet Coyote, a set of tools that help you find these seemingly impossible-to-reproduce bugs quicker. (It is an [evolution of the P# project](https://github.com/p-org/PSharp), and is moving out of research mode.)
+
+How does this work? After you write code that uses the Coyote programming model—the familiar task-based model in in preview—you can run `coyote test`, where the magic begins. When you run this, Coyote manages task scheduling and explores all the complexities of your code. Coyote runs tests repeatedly with "different scheduling choices" each time. If a bug is found, Coyote reports a reproducible bug trace, which can be replayed until you find the bug.
+
+Coyote has been put through its paces for [various Azure services](https://microsoft.github.io/coyote/case-studies/azure-batch-service) and promises integration with unit testing frameworks and minimal overhead. Is it worth it for internal CRUD apps? Maybe not. But if you are operating at tremendous scale where concurrency issues keep you up at night, it might be a game-changer.
+
+There's so much to take in! Check out the resources for more details on Project Coyote.
+
+* [Project Coyote site](https://microsoft.github.io/coyote/)
+* [Extreme programming meets systematic testing using Coyote](https://cloudblogs.microsoft.com/opensource/2020/07/14/extreme-programming-meets-systematic-testing-using-coyote/)
+* [GitHub repo](https://github.com/microsoft/coyote/)
+* [ON.NET - Reliable Async Systems with Coyote](https://channel9.msdn.com/Shows/On-NET/Reliable-Async-Systems-with-Coyote-Part-1)
 
 ## New Razor editor for Visual Studio in preview
 
-## Unit testing is dead, long live unit testing
+It seems like we're constantly getting news of a new Visual Studio preview feature, and this week is no exception. If you download Visual Studio 2019 16.7 Preview 4 (got all that?) you can [use a brand new Razor editor](https://devblogs.microsoft.com/aspnet/new-experimental-razor-editor-for-visual-studio/) to assist your local development with Blazor, MVC, and Razor Pages.
+
+Most of us know Razor but if you don't: it's a templating language (using HTML and, most frequently, C#) you use to define how you dynamically render content in your ASP.NET app. With Blazor, you can reuse UI components using *.razor* files. Razor in Visual Studio comes with IntelliSense, completions, and the like. Why a new editor, then?
+
+Today, Visual Studio does a lot of tricks behind the scenes with projection buffers for the different languages it supports. For example, if you have C# and HTML in a Razor file, Visual Studio reads the Razor file from disk, sends the code to a Razor buffer, a C# buffer, and an HTML buffer. Finally, each buffer uses its own independent language service for each language you use. *Oof.*
+
+Why should you care? If you've signed a lifetime contract to use Visual Studio and you're a team of one, fine—but if you want extensibility with Codespaces or Live Share in VS, you're in trouble. All these dependencies require a lot of work to coordinate and can hinder the speed of future improvements.
+
+To address this, Microsoft has been working on a Razor Language Server that implements the features you know and love through a common protocol. Wherever the extension exists (VS, VS Code, wherever), it coordinates with the Razor Language Server.
+
+This solution is currently used for Razor support in VS Code, and will be used for Codespaces and LiveShare for Visual Studio. And now, you can try the VS implementation today (in preview). It has some rough edges, but I look forward to see how it performs. I do know Razor mostly works well but can exhibit some inconsistent performance. Will this help?
 
 ## 🌎 Last week in the .NET world
+
+I'm trying a new format this week so you can sift through the links easier.
 
 ### 🔥 The Top 3
 
@@ -43,19 +65,20 @@ public void AMethod()
 ### 📢 Announcements
 
 * Microsoft [announces the release of WinUI 3 Preview 2](https://blogs.windows.com/windowsdeveloper/2020/07/15/announcing-winui-3-preview-2).
-* Some words [about the .NET Core July 2020 updates](https://devblogs.microsoft.com/dotnet/net-core-july-2020/).
-* Some notes on [.NET Framework security updates for July 2020](https://devblogs.microsoft.com/dotnet/net-framework-july-2020-security-and-quality-rollup-updates/).
+* Take a look at [the .NET Core](https://devblogs.microsoft.com/dotnet/net-core-july-2020/) and [.NET Framework](https://devblogs.microsoft.com/dotnet/net-framework-july-2020-security-and-quality-rollup-updates/) security updates for July 2020.
 * We have [a new version of the Azure CLI, v 2.9](https://techcommunity.microsoft.com/t5/azure-tools/introducing-azure-cli-v2-9-with-improved-performance-and-user/ba-p/1522141).
 * Microsoft [introduces Coyote](https://cloudblogs.microsoft.com/opensource/2020/07/14/extreme-programming-meets-systematic-testing-using-coyote/).
-
 * Microsoft [introduces C# markup for Xamarin.Forms](https://devblogs.microsoft.com/xamarin/c-sharp-markup-for-xamarin-forms/).
 * Ruben Rios [walks through authentication experience improvements in Visual Studio 2019 16.6](https://devblogs.microsoft.com/visualstudio/improving-the-authentication-experience-for-enterprises-leveraging-conditional-access-policies/).
 * Stephen Toub [does a rundown of performance improvements coming in .NET 5](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5/).
 
-### 📅 Events
+### 📅 Community and events
 
-The *.NET Conf - Focus on Microservices* event is on July 30, [and the sessions and speakers are live](https://focus.dotnetconf.net/).
-  
+* All the .NET Foundation nominees [were interviewed this week](https://www.youtube.com/playlist?list=PL1rZQsJPBU2Qjz-agkBKHon6BRnqlsoPN).
+* The *.NET Conf - Focus on Microservices* event is on July 30, [and the sessions and speakers are live](https://focus.dotnetconf.net/).
+* The DotNet Docs Show [talks to Jeremy Sinclair](https://www.youtube.com/watch?v=Crd-sP7ZJEU).
+* Two standups this week: [Visual Studio](https://www.youtube.com/watch?v=vtXLzbsbF7E) and [ASP.NET](https://www.youtube.com/watch?v=QuAdLWrv4HA).
+
 ### 😎 Blazor
 
 * Marco Dalla Libera [walks through the MVVM pattern in Blazor for state management](https://www.syncfusion.com/blogs/post/mvvm-pattern-in-blazor-for-state-management.aspx).
@@ -85,27 +108,24 @@ The *.NET Conf - Focus on Microservices* event is on July 30, [and the sessions 
 * Jay Krishna Reddy [has some tips to write clean C# code](https://www.c-sharpcorner.com/article/tips-to-write-clean-c-sharp-code/).
 * Matthias Koch [bypasses polymorphism with reflection in .NET](https://ithrowexceptions.com/2020/07/13/bypassing-polymorphism-with-reflection-in-dotnet.html).
 * Ian Griffiths [discusses DisallowNull in C# 8](https://endjin.com/blog/2020/07/dotnet-csharp-8-nullable-references-more-type-system-transcendence-with-disallownull.html).
+* Urs Enzler [discusses his journey to learning F# basics](https://www.planetgeek.ch/2020/07/14/our-journey-to-f-learning-the-basics-of-f/).
+* Ian Russell [begins a series on web programming in F#](https://www.softwarepark.cc/blog/2020/7/13/introduction-to-web-programming-in-f-with-giraffe-part-1).
 
 ### 🔧 Tools
 
 * Patrick Smacchia [offers his 10 Visual Studio navigation productivity tips](https://blog.ndepend.com/10-visual-studio-navigation-productivity-tips/).
 * Adam Bertram [customizes the Microsoft Terminal](https://petri.com/how-to-customize-the-microsoft-terminal).
 
-### 👩🏻‍💻 F#
-
-* Urs Enzler [discusses his journey to learning F# basics](https://www.planetgeek.ch/2020/07/14/our-journey-to-f-learning-the-basics-of-f/).
-* Ian Russell [begins a series on web programming in F#](https://www.softwarepark.cc/blog/2020/7/13/introduction-to-web-programming-in-f-with-giraffe-part-1).
-
 ### 📱 Xamarin
 
-* Leomaris Reyes [learns about SwipeView in Xamarin Forms](https://www.telerik.com/blogs/learning-swipeview-xamarin-forms).
-* David Ortinau [discusses new app themes for Xamarin Forms](https://devblogs.microsoft.com/xamarin/app-themes-xamarin-forms/).
-* Delpin Susai Raj [debugs WebView in Xamarin.Forms](https://xamarinmonkeys.blogspot.com/2020/07/xamarinforms-debugging-webview.html).
+* Leomaris Reyes [learns about SwipeView](https://www.telerik.com/blogs/learning-swipeview-xamarin-forms).
+* David Ortinau [discusses new app themes](https://devblogs.microsoft.com/xamarin/app-themes-xamarin-forms/).
+* Delpin Susai Raj [debugs WebView](https://xamarinmonkeys.blogspot.com/2020/07/xamarinforms-debugging-webview.html).
 * Selva Ganapathy Kathiresan [discusses the Xamarin.Forms signature pad control](https://www.syncfusion.com/blogs/post/the-all-new-xamarin-forms-signature-pad-control-is-here.aspx).
-* Leomaris Reyes [replicates real estate property details with Xamarin Forms](https://askxammy.com/replicating-real-estate-property-details-ui-in-xamarin-forms/).
+* Leomaris Reyes [replicates real estate property details](https://askxammy.com/replicating-real-estate-property-details-ui-in-xamarin-forms/).
 * Mark Allibone [creates a login flow with Xamarin Forms Shell](https://mallibone.com/post/xamarin-forms-shell-login).
-* Brandon Minnick [improves CollectionView scrolling in Xamarin.Forms](https://codetraveler.io/2020/07/12/improving-collectionview-scrolling/).
-* Daniel Hindrikes [builds a styleable content button using PancakeView](https://danielhindrikes.se/index.php/2020/07/14/building-a-styleable-content-button-with-pancakeview/) and [releases a new version of TinyMvvm](https://danielhindrikes.se/index.php/2020/07/13/tinymvvm-2-4-1/).
+* Brandon Minnick [improves CollectionView scrolling](https://codetraveler.io/2020/07/12/improving-collectionview-scrolling/).
+* Daniel Hindrikes [builds a styleable content button using PancakeView](https://danielhindrikes.se/index.php/2020/07/14/building-a-styleable-content-button-with-pancakeview/) *and* [releases a new version of TinyMvvm](https://danielhindrikes.se/index.php/2020/07/13/tinymvvm-2-4-1/).
 
 ### 🎤 Podcasts
 
@@ -119,9 +139,3 @@ The *.NET Conf - Focus on Microservices* event is on July 30, [and the sessions 
 * ON.NET discusses reliable async systems with Coyote in [two](https://channel9.msdn.com/Shows/On-NET/Reliable-Async-Systems-with-Coyote-Part-2) [parts](https://channel9.msdn.com/Shows/On-NET/Reliable-Async-Systems-with-Coyote-Part-1).
 * The ASP.NET Monsters [discuss record types in C# 9](https://www.youtube.com/watch?v=fEQbwwcoBuo).
 * Data Exposed [talks about Advanced Threat Protection in Azure SQL](https://channel9.msdn.com/Shows/Data-Exposed/The-Benefits-of-Advanced-Threat-Protection-in-Azure-SQL-Database).
-
-## New subscribers and feedback
-
-Has this email been forwarded to you? Welcome! I'd love for you [to subscribe](https://www.dotnetstacks.com/register) and join the community. I promise to guard your email address with my life.
-
-I would love to hear any feedback you have for The .NET Stacks! My goal is to make this the one-stop shop for weekly updates on developing in the .NET ecosystem, so I look forward to any feedback you can provide. You can directly reply to this email, or [talk to me on Twitter as well](https://www.dotnetstacks.com/register). See you next week!
