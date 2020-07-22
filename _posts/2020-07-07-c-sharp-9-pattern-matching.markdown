@@ -19,7 +19,7 @@ This is the third post in a six-post series on C# 9 features in-depth:
 - Post 3 (*this post*) - Pattern matching
 - Post 4 - [Top-level programs](https://daveabrock.com/2020/07/09/c-sharp-9-top-level-programs)
 - Post 5 - [Target typing and covariant returns](https://daveabrock.com/2020/07/14/c-sharp-9-target-typing-covariants)
-- Post 6 (*future post*) - Putting it all together: an all-in-one application
+- Post 6 - [Putting it all together with a scavenger hunt](https://daveabrock.com/2020/07/21/c-sharp-9-scavenger-hunt)
 
 **Heads up!** C# 9 is still in preview mode, so much of this content might change—this post was last updated on July 6, 2020. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
 {: .notice--danger}
