@@ -368,7 +368,7 @@ static int CalculateInsuranceCost(Hulk hulk) =>
   hulk.AngerLevel switch
   {
     > 90 => 10000,
-    < 20 and < 80 => 100,
+    > 20 and < 90 => 100,
     _ => 1000,
   };
 ```
