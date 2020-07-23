@@ -109,27 +109,6 @@ Console.WriteLine($"The Hulk is {hulk.FirstName} {hulk.LastName}.");
 Console.WriteLine($"The Black Widow is {blackWidow.FirstName} {blackWidow.LastName}.");
 ```
 
-Great! Let's scratch another quick one off the list with some target typing. We can leave `ironMan` alone, but for the others we'll replace `new Avenger` with just `new` and it'll work the same.
-
-```csharp
-using System;
-
-var ironMan = new Avenger { FirstName = "Tony", LastName = "Stark" };
-Avenger hulk = new { FirstName = "Bruce", LastName = "Banner" };
-Avenger blackWidow = new { FirstName = "Natasha", LastName = "Romanova"};
-
-Console.WriteLine($"Iron Man is {ironMan.FirstName} {ironMan.LastName}.");
-Console.WriteLine($"The Hulk is {hulk.FirstName} {hulk.LastName}.");
-Console.WriteLine($"The Black Widow is {blackWidow.FirstName} {blackWidow.LastName}.");
-```
-
-**UPDATE:** As of now, it even works with the `var` usage, like below. However, for clarity sake I prefer declaring the type before using target typing.
-
-```csharp
-var hulk = new { FirstName = "Bruce", LastName = "Banner" };
-var blackWidow = new { FirstName = "Natasha", LastName = "Romanova"};
-```
-
 Now we have two more off the list, hooray!
 
 - [x] ~~Init-only properties~~
@@ -145,8 +124,8 @@ Now we have two more off the list, hooray!
   - [ ] Simple type patterns
   - [ ] Relational patterns
   - [ ] Logical patterns
-- [x] ~~Improved target typing~~
-  - [x] ~~Target-typed `new` expressions~~
+- [ ] Improved target typing
+  - [ ] Target-typed `new` expressions
 - [ ] Covariant returns
 
 ## Init accessors and readonly fields
@@ -193,8 +172,8 @@ OK, one more gone. On to records!
   - [ ] Simple type patterns
   - [ ] Relational patterns
   - [ ] Logical patterns
-- [x] ~~Improved target typing~~
-  - [x] ~~Target-typed `new` expressions~~
+- [ ] Improved target typing
+  - [ ] Target-typed `new` expressions
 - [ ] Covariant returns
 
 ## Records
@@ -327,8 +306,8 @@ That should do it for records! How are we doing so far?
   - [ ] Simple type patterns
   - [ ] Relational patterns
   - [ ] Logical patterns
-- [x] ~~Improved target typing~~
-  - [x] ~~Target-typed `new` expressions~~
+- [ ] Improved target typing
+  - [ ] Target-typed `new` expressions
 - [ ] Covariant returns
 
 ## Improved pattern matching
@@ -409,9 +388,52 @@ How's our scavenger hunt going? Are we done yet?
   - [x] ~~Simple type patterns~~
   - [x] ~~Relational patterns~~
   - [x] ~~Logical patterns~~
-- [x] ~~Improved target typing~~
-  - [x] ~~Target-typed `new` expressions~~
+- [ ] Improved target typing
+  - [ ] Target-typed `new` expressions
 - [ ] Covariant returns
+
+## Target typing with `new` expressions
+
+Great! Let's scratch another quick one off the list with some target typing.
+
+Let's have an `Avenger` class like so:
+
+```csharp
+public class Avenger
+{
+    private string _firstName;
+    private string _lastName;
+
+    public Avenger(string firstName, string lastName)
+    {
+        _firstName = firstName;
+        _lastName = lastName;
+    }
+}
+```
+
+Now we can use it with `new` expressions:
+
+```csharp
+using System;
+
+Avenger ironMan = new ("Tony", "Stark");
+Avenger hulk = new ("Bruce", "Banner");
+Avenger blackWidow = new ("Natasha", "Romanova");
+```
+
+We can also see its benefit when creating collections:
+
+```csharp
+using System;
+
+var avengerList = new List<Avenger>
+{
+  new ("Tony", "Stark"),
+  new ("Bruce", "Banner"),
+  new ("Natasha", "Romanova"),
+};
+```
 
 ## Covariant returns
 
