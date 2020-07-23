@@ -115,12 +115,19 @@ Great! Let's scratch another quick one off the list with some target typing. We 
 using System;
 
 var ironMan = new Avenger { FirstName = "Tony", LastName = "Stark" };
-var hulk = new { FirstName = "Bruce", LastName = "Banner" };
-var blackWidow = new { FirstName = "Natasha", LastName = "Romanova"};
+Avenger hulk = new { FirstName = "Bruce", LastName = "Banner" };
+Avenger blackWidow = new { FirstName = "Natasha", LastName = "Romanova"};
 
 Console.WriteLine($"Iron Man is {ironMan.FirstName} {ironMan.LastName}.");
 Console.WriteLine($"The Hulk is {hulk.FirstName} {hulk.LastName}.");
 Console.WriteLine($"The Black Widow is {blackWidow.FirstName} {blackWidow.LastName}.");
+```
+
+**UPDATE:** As of now, it even works with the `var` usage, like below. However, for clarity sake I prefer declaring the type before using target typing.
+
+```csharp
+var hulk = new { FirstName = "Bruce", LastName = "Banner" };
+var blackWidow = new { FirstName = "Natasha", LastName = "Romanova"};
 ```
 
 Now we have two more off the list, hooray!

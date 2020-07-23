@@ -1,0 +1,92 @@
+---
+date: "2020-07-22"
+title: "The .NET Stacks: <fill in later>"
+tags: [dotnet-stacks]
+comments: false
+---
+
+## 🌎 Last week in the .NET world
+
+### The Top 3
+
+### 📢 Announcements
+
+* Tara Overfield [announces the .NET Framework July 2020 update preview](https://devblogs.microsoft.com/dotnet/net-framework-july-2020-cumulative-update-preview/).
+* Jeremy Likness [announces EF Core 5 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-ef-core-5-0-preview-7/).
+* Richard Lander [announces .NET 5 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-preview-7/).
+* Microsoft announces [ASP.NET Core updates in .NET 5 Preview 7](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-preview-7/).
+* The Azure Service Fabric 7.1 [announced a second refresh release](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-second-refresh-release/ba-p/1534246).
+* The Windows team [announced the first update to the Windows Package Manager](https://devblogs.microsoft.com/commandline/windows-package-manager-preview-v0-1-41821/).
+* Daniel Jurek [talks about the July release of the Azure SDK](https://devblogs.microsoft.com/azure-sdk/azure-sdk-release-july-2020/).
+
+### 📅 Community and events
+
+* The .NET Foundation [has begun the voting process for board elections](https://dotnetfoundation.org/blog/2020/07/20/director-election-2020-voting-starts-tomorrow).
+
+### 😎 Blazor
+
+* Marinko Spasojevic [discusses Blazor WebAssembly forms, form validation, and @ref directives](https://code-maze.com/blazor-webassembly-forms-form-validation/).
+* Andrea Chiarelli [secures Blazor WebAssembly apps](https://auth0.com/blog/securing-blazor-webassembly-apps/).
+* Marinko Spasojevic [sorts in Blazor WebAssembly and ASP.NET Core Web API](https://code-maze.com/blazor-webassembly-sorting/).
+* Matthew Jones [builds Conway's Game of Life in C# and Blazor WASM](https://exceptionnotfound.net/conways-game-of-life-with-emojis-in-csharp-and-blazor-webassembly).
+
+### 🚀 .NET Core
+
+* Carl Rippon [does integration testing on ASP.NET Core Web API controllers with SQL](https://www.carlrippon.com/integration-testing-on-asp.net-web-api-controllers-with-a-sql-backend/).
+* Michal Bialecki [adds EF Core 5 migrations to a .NET 5 project](http://www.michalbialecki.com/2020/07/20/adding-entity-framework-core-5-migrations-to-net-5-project).
+* Jon P. Smith [talks tips and techniques for configuring EF Core](https://www.thereformedprogrammer.net/ef-core-in-depth-tips-and-techniques-for-configuring-ef-core/).
+* Jason Gaylord [talks about adding Newtonsoft.JSON back to .NET Core 3.1 and later](https://www.jasongaylord.com/blog/2020/07/17/adding-newtonsoft-json-to-services).
+* David Grace [uses hosted services in ASP.NET Core to create a "most viewed" background service](https://www.roundthecode.com/dotnet/hosted-services-asp-net-core-create-a-most-viewed-background-service).
+
+### ⛅ The cloud
+
+* Chris Noring [learns durable functions with .NET Core and C#](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-durable-functions-with-net-core-and-c-stateful-serverless/ba-p/1533559).
+* Jason Gaylord [creates an Alexa skill using .NET Core and Azure](https://www.jasongaylord.com/blog/2020/07/21/creating-alexa-skill-using-dotnet-azure).
+* Daniel Krzyczkowski [talks event sourcing with Azure SQL and EF Core](https://daniel-krzyczkowski.github.io/Event-Sourcing-With-Azure-SQL-And-Entity-Framework-Core/).
+* Aaron Powell [continues working with GraphQL on Azure](https://www.aaron-powell.com/posts/2020-07-21-graphql-on-azure-part-2-app-service-with-dotnet/).
+* Microsoft appears to be [working on an Azure-powered cloud PC service](https://www.zdnet.com/article/microsoft-is-working-on-an-azure-powered-cloud-pc-service/#ftag=RSSbaffb68).
+* Steve Gordon [introduces Docker ECS integration for AWS](https://www.stevejgordon.co.uk/dotnet-on-aws-introducing-docker-ecs-integration).
+* Itay Podhajcer [deploys a serverless RabbitMQ cluster on Azure with .NET](https://www.pulumi.com/blog/rabbitmq-azure/).
+* Damien Bowden [uses Azure Key Vault and managed identities with Azure Functions](https://damienbod.com/2020/07/20/using-key-vault-and-managed-identities-with-azure-functions/).
+* Azure Tips and Tricks [has a new article about Azure Functions and secure configuration with Azure Key Vault](https://microsoft.github.io/AzureTipsAndTricks/blog/tip271.html).
+* Over at AWS, Steve Roberts [talks about AWS X-Ray for tracing distributed .NET apps](https://aws.amazon.com/blogs/developer/a-new-more-simplified-setup-for-x-ray-tracing-of-net-applications/).
+
+### 📔 Languages
+
+* Khalid Abuhakmeh [has fun with LINQ expression visitors](https://khalidabuhakmeh.com/linq-expression-visitors).
+* Dave Brock [goes on a C# 9 scavenger hunt](https://daveabrock.com/2020/07/21/c-sharp-9-scavenger-hunt).
+* Jeremy Likness [looks behind the IQueryable curtain](https://blog.jeremylikness.com/blog/look-behind-the-iqueryable-curtain/).
+* Jonathan Allen [talks about lambda improvements with C# 9](https://www.infoq.com/news/2020/07/CSharp-Lambdas).
+* Anand Gupta [dives deep on .NET garbage collection](https://hackernoon.com/net-garbage-collection-here-we-go-gl1q3uui?source=rss).
+* Jonathan Allen [talks about range operators and pattern-matching in C# 9](https://www.infoq.com/news/2020/07/CSharp-9-Range-Patterns).
+* Ian Griffiths [talks about supporting older runtimes with C# 8 nullable references](https://endjin.com/blog/2020/07/dotnet-csharp-8-nullable-references-supporting-older-runtimes.html).
+* Jonathan Channon [talks about applicatives and custom operators in F#](https://blog.jonathanchannon.com/2020-07-17-understanding-fsharp-applicatives-custom-operators/).
+
+### 🔧 Tools
+
+* Michael Shpilt [offers some tricks on working with the Immediate Window in Visual Studio](https://michaelscodingspot.com/visual-studio-immediate-window/).
+* Adam Storr [loves Resharper 2](https://adamstorr.azurewebsites.net/blog/why-i-love-resharper-2).
+* Joseph Guadagno [debugs Azure Function Event Grid triggers locally with JetBrains Rider](https://www.josephguadagno.net/2020/07/20/debugging-azure-function-event-grid-trigger-locally-with-jetbrains-rider).
+* Over at the NDepend blog, [some tips for working with Visual Studio files and layouts](https://blog.ndepend.com/10-visual-studio-files-and-layout-productivity-tips/).
+* j2i.net does a review [of the Windows Terminal Preview](https://blog.j2i.net/2020/07/18/windows-terminal-preview/).
+* Scott Hanselman [explores RepoDB, a .NET open source hybrid ORM library](https://www.hanselman.com/blog/ExploringTheNETOpenSourceHybridORMLibraryRepoDB.aspx).
+
+### 📱 Xamarin
+
+* Charlin Agramonte [works through multilingual support in Xamarin.Forms](https://devblogs.microsoft.com/xamarin/mastering-multilingual-in-xamarin-forms/).
+* Rendy Del Rosario [creates a Xamarin Binding Library for iOS And Android](https://www.xamboy.com/2020/07/20/creating-a-xamarin-binding-library-for-ios-and-android-part-1/).
+* Nick Randolph [says: Xamarin.Forms is not just a XAML platform](https://nicksnettravels.builttoroam.com/dotnetmaui-not-a-xaml-platform).
+* The Xamarin Podcast [talks about Xamarin.Forms 4.7](https://devblogs.microsoft.com/xamarin/xamarin-podcast-inverter-converter/).
+
+### 🎤 Podcasts
+
+* The Microsoft 365 Developer Podcast [discusses using Blazor to create Microsoft Teams tabs](https://www.m365devpodcast.com/e/using-blazor-to-create-microsoft-teams-tabs-with-thomy-golles/).
+* The 6-Figure Developer podcast [talks with Edward Thomson about GitHub Actions](https://6figuredev.com/podcast/episode-153-github-actions-with-edward-thomson/).
+* The Coding Blocks Podcast [talks about architecting for low-risk releases](https://www.codingblocks.net/podcast/the-devops-handbook-architecting-for-low-risk-releases/).
+* At Technology and Friends, David Giard [talks with Dave Pine about .NET 5 and the Docs team](http://davidgiard.com/2020/07/20/DavePineOnNET5AndTheDocsTeam.aspx).
+* The Azure DevOps Podcast [talks with Jimmy Bogard about AutoMapper and MediatR](http://azuredevopspodcast.clear-measure.com/jimmy-bogard-on-automapper-and-mediatr-episode-98).
+
+
+### 🎥 Videos
+
+
