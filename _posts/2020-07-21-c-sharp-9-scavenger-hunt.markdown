@@ -277,8 +277,8 @@ using System;
 var hulk = new Avenger("Bruce", "Banner");
 var (first, last) = hulk;
 
-Console.WriteLine(first); // false
-Console.WriteLine(last); // false
+Console.WriteLine(first);
+Console.WriteLine(last);
 
 public record Avenger
 {
