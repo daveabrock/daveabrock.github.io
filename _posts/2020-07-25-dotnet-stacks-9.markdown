@@ -1,8 +1,12 @@
 ---
-date: "2020-07-18"
+date: "2020-07-25"
 title: "The .NET Stacks #9: Project Coyote, new Razor editor, and more!"
 tags: [dotnet-stacks]
 comments: false
+header:
+    overlay_image: /assets/images/stacks-9-card.png
+    overlay_filter: 0.8
+excerpt: We discuss Project Coyote, a new Visual Studio Razor editor, and more!
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
@@ -17,7 +21,7 @@ This week we're talking about debugging async with Coyote, an exciting new Razor
 
 Isn't async programming fun? It's so much fun, you can probably relate to this. (If you've spent months on a single concurrency issue, it might also make you cry.)
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/images/../../../assets/images/roses-are-red.png)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Roses are red<br>And so are you<br>Violets are blue<br>Asynchronous operations are great</p>&mdash; I Am Devloper (@iamdevloper) <a href="https://twitter.com/iamdevloper/status/1096059902101868544?ref_src=twsrc%5Etfw">February 14, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 All jokes aside, it's a concurrent world and we just live in it. Our customers *demand* it. In this microservice-friendly, cloud-first world, we want things fast and efficient at the lowest cost possible. In the cloud, minimizing cost requires high throughput, which requires high concurrency. If you haven't pulled your hair out from a concurrency/threading issue, to that I say: welcome to our field. I hope you had a nice graduation party.
 
