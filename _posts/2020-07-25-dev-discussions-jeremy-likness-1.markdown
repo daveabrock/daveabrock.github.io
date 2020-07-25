@@ -1,5 +1,5 @@
 ---
-date: "2020-07-24"
+date: "2020-07-25"
 title: "Dev Discussions - Jeremy Likness (1 of 2)"
 excerpt: We get to know Jeremy Likness, the senior PM of .NET Data at Microsoft.
 tags: [dotnet-stacks, dev-discussions]
@@ -11,13 +11,11 @@ header:
 This is the full interview from my discussion with Jeremy Likness in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away!
 {: .notice--success}
 
-If you've worked on Azure or .NET for awhile—like Azure Functions and Entity Framework—you're probably familiar with Jeremy Likness and his community involvement. He's spoken at several conferences (remember those?), [writes about various topics at his site](https://blog.jeremylikness.com/), is a familiar face on various .NET-related videos, and, as of late, can be seen on the Entity Framework community standups (and more!).
+If you've worked on Azure or .NET for awhile—like Azure Functions and Entity Framework—you're probably familiar with Jeremy Likness, the senior PM for .NET data at Microsoft. He's spoken at several conferences (remember those?), [writes about various topics at his site](https://blog.jeremylikness.com/), is a familiar face on various .NET-related videos, and, as of late, can be seen in the Entity Framework community standups (and more!).
 
 I caught up with Jeremy to talk about his path to software development and all that's going on with Entity Framework and .NET 5. After you get through this week's interview, I think we can all agree his path to Microsoft is both inspiring and absolutely crazy.
 
 Jeremy was very generous with his time! Because there's so much to cover, I've split this into two different parts. This week, we get to know Jeremy. Next week, we'll get into his work and discuss Entity Framework and .NET 5.
-
-*You can follow Jeremy [at his site](https://blog.jeremylikness.com/) and [on Twitter](https://twitter.com/jeremylikness).*
 
 ![Jeremy Likness]({{ site.url }}{{ site.baseurl }}/images/jeremy-likness.jpg)
 
@@ -31,13 +29,13 @@ My personal break came when I interviewed for a job at an insurance company and 
 
 We’d call tech support, and they’d come over and basically break into a command line and restart the app. I decided to close the loop and fix it myself, and when IT figured out what I was doing, they called me up. **I expected to get disciplined but instead was offered a job in IT.** It was a night shift position mostly focused on reloading printer cartridges in refrigerator-sized printers, but that gave me time to study the language they used, RPG, and eventually earn a spot on the programming team.
 
-To make a short story boring, I worked at various positions and had job titles ranging from Technical Team Lead to Director of IT. I even owned my own company for a few years. It was an online fitness business that I scaled up doing online coaching, delivering seminars and selling CDs and books.
+I worked at various positions and had job titles ranging from Technical Team Lead to Director of IT. I even owned my own company for a few years. It was an online fitness business that I scaled up doing online coaching, delivering seminars and selling CDs and books.
 
 I sold the company when I had the opportunity to join a startup focused on custom hotspot portals back in 2006. My first day there, the CEO took me to Ikea, bought a desk then dropped me off at a loft in downtown Atlanta. “Find a spot you like, assemble the desk and get to work.” The company later pivoted to mobile device management.
 
-After five years of startup mode working 12 hour days and most weekends, I had to make a change. I left the company with nothing vested and they were acquired a few years later for $1.5 billion. I was very proud of the infrastructure and product I helped build to position them for the acquisition, but also extremely happy to have my health, time, and sanity back.
+After five years of startup mode working 12-hour days and most weekends, I had to make a change. I left the company with nothing vested and they were acquired a few years later for $1.5 billion. I was very proud of the infrastructure and product I helped build to position them for the acquisition, but also extremely happy to have my health, time, and sanity back.
 
-I went into consulting at a company named Wintellect that was entirely remote. I went from not being home for weeks at a time to being home all the time, and working over 80 hours a week to 40-hour weeks with bonuses if I had to work more. This strengthened my relationship with my wife and daughter and taught me the importance of balance. I was invited by another local Atlanta company to build their application consulting practice and joined as their director of application development. **Over three years, I built up a multi-million dollar practice and had the opportunity to hire and mentor some amazing developers.**
+I went into consulting at a company named Wintellect that was entirely remote. I went from not being home for weeks at a time to being home all the time, and working over 80 hours a week to 40-hour weeks with bonuses if I had to work more. This strengthened my relationship with my wife and daughter and taught me the importance of balance. I was invited by another local Atlanta company to build their application consulting practice and joined as their director of application development. Over three years, I built up a multi-million dollar practice and had the opportunity to hire and mentor some amazing developers.
 
 I was very happy in that role and regularly ignored recruiting emails, but one came in from Microsoft and I couldn’t ignore it. **I watched the positive cultural transformation under Satya Nadella over social media and just a week earlier had told my wife, “Some great things are happening at Microsoft.” The timing was perfect, so I thought, “It can’t hurt to try.”**
 
@@ -57,7 +55,9 @@ My first consulting projects at Wintellect involved XAML via WPF then Silverligh
 
 Silverlight raised productivity orders of magnitude and XAML made it possible to work in parallel with designers. It was a game-changer and I dedicated time to learn it inside and out. Silverlight was an implicit promise to write C# code that could run anywhere, and for many reasons probably more political than technical, the promise was not fulfilled. 
 
-I believe it has been realized with .NET Core and more specifically, Blazor. I resisted Blazor when it came out due to the existence of mature web frameworks available like Angular, React, Vue.js and Svelte, but colleagues convinced me to give it a spin and I was blown away by two things: first, how productive I could be and produce so much in a short period of time. Second, how many existing packages work with it and run inside the browser “as is."
+I believe it has been realized with .NET Core and more specifically, Blazor. 
+
+> I resisted Blazor when it came out due to the existence of mature web frameworks available like Angular, React, Vue.js and Svelte, but colleagues convinced me to give it a spin and I was blown away by two things: first, how productive I could be and produce so much in a short period of time. Second, how many existing packages work with it and run inside the browser “as is."
 
 Want to build a Markdown engine? No worries, take your pick of libraries to pull in. For personal learning (and as a result, education for others) I’ve been building a lot of Blazor apps to explore different protocols, ways of interacting with data, application of the MVVM pattern and more. I’m working to publish some reference applications that show how to use Blazor with Entity Framework Core [and have published seven articles](https://blog.jeremylikness.com/series/blazor-and-ef-core/).
 
@@ -73,6 +73,22 @@ After decades of building software my biggest piece of advice is that **your fir
 
 Have you worked on that project that forced an architecture so that one change involves updating five projects and the majority of them are just default “pass through” implementations? I am a fan of solving for the solution, and only then if you find some code is repeated, refactor. Don’t over-engineer or complicate. One of my favorite starting points for a solution is to consider, “What is the ideal way I’d like to code for this?”
 
-For example, I am building a Blazor MVVM implementation. For testing the filtering and sorting that the view model applies, I would love to pass an `IQueryable<Entity>` then do something like this: `Assert.That(query.CalledMethod(nameof(Enumerable.Take)).WithValue(5))` to verify that the view model applied the right extensions for paging. I start with what is easy to read and understand, then work backwards to provide an API that satisfies it.
+For example, I am building a Blazor MVVM implementation. For testing the filtering and sorting that the view model applies, I would love to pass an `IQueryable<Entity>` then do something like this...
 
-As another example, when you raise property change notifications, you often have dependencies. If I have `Quantity` and `CostPerItem`, then `TotalCost` changes whenever `Quantity` or `CostPerItem` does. I’d love to say `TotalCost.DependsOn(CostPerItem).AndAlso(Quantity)` … so I start with that, then build the appropriate interfaces to make it work. That in my opinion leads to readable, maintainable code.
+```csharp
+Assert.That(query.CalledMethod(nameof(Enumerable.Take)).WithValue(5))
+```
+
+...to verify that the view model applied the right extensions for paging. I start with what is easy to read and understand, then work backwards to provide an API that satisfies it.
+
+As another example, when you raise property change notifications, you often have dependencies. If I have `Quantity` and `CostPerItem`, then `TotalCost` changes whenever `Quantity` or `CostPerItem` does. 
+
+I’d love to say ...
+
+```csharp
+TotalCost.DependsOn(CostPerItem).AndAlso(Quantity)
+```
+
+... so I start with that, then build the appropriate interfaces to make it work. That in my opinion leads to readable, maintainable code.
+
+*You can follow Jeremy Likness [at his site](https://blog.jeremylikness.com/) and [on Twitter](https://twitter.com/jeremylikness).*
