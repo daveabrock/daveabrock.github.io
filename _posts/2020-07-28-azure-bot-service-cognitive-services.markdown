@@ -111,7 +111,7 @@ Then, we want to call the client's `AnalyzeSentiment` method. When we call this,
 We can work with confidence scores, a sentiment for each sentence, or any warnings that occur. For our purposes, we want to work with the `Sentiment` property. This property has a `TextSentiment`, [an enum with valid values as Mixed, Negative, Neutral, or Positive](https://docs.microsoft.com/dotnet/api/azure.ai.textanalytics.textsentiment?view=azure-dotnet). This should be fine for our purposes. Then, we can make a decision on what to send back to the user.
 
 ```csharp
-var sentiment = client.AnalyzeSentiment(userInput).Value.Sentiment.ToString();
+var sentiment = client.AnalyzeSentiment(userInput).Value.Sentiment;
 ```
 
 Now, we can write a local function in C# ([thanks for the inspiration, David Pine](https://github.com/shahedc/GruutChatbot/pull/2)) that leverages switch expressions. We send back specific responses for `Positive`, `Negative`, and `Neutral` results. If we get anything else back, we have a fallback.
