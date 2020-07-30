@@ -1,0 +1,66 @@
+---
+date: "2020-07-28"
+title: "The .NET Stacks: <fill in later>"
+tags: [dotnet-stacks]
+comments: false
+---
+
+## 🌎 Last week in the .NET world
+
+### The Top 3
+
+### 📢 Announcements
+
+
+### 📅 Community and events
+
+
+### 😎 Blazor
+
+* Marinko Spasojevic [uploads a file with Blazor WASM and ASP.NET Core Web API](https://code-maze.com/blazor-webassembly-file-upload/).
+* Jon Hilton [takes Blazor's EditForms up a notch with Tailwind CSS](https://jonhilton.net/pimp-up-blazor-edit-forms-with-tailwind-css/).
+
+### 🚀 .NET Core
+
+* Jason Robert [looks in the ASP.NET Core MVC template](https://espressocoder.com/2020/07/27/whats-in-the-asp-net-core-mvc-template/).
+
+### ⛅ The cloud
+
+* The Microsoft 365 Developer Podcast [discusses the Bot Framework Virtual Assistant](https://www.m365devpodcast.com/e/bot-framework-virtual-assistant-with-dewain-robinson-and-gary-pretty/).
+* David Grace [lists and download the contents of a Google Drive shared folder in C#](https://markheath.net/post/list-and-download-google-drive-cs).
+* Azure Tips and Tricks [has a new article on Azure security best practices](https://microsoft.github.io/AzureTipsAndTricks/blog/tip272.html).
+
+### 📔 Languages
+
+* Jeremy Miller [calls generic methods from non-generic code in .NET](https://jeremydmiller.com/2020/07/27/calling-generic-methods-from-non-generic-code-in-net/).
+* Adam Storr [returns different values from a method call in C#](https://adamstorr.azurewebsites.net/blog/returning-different-values-from-a-method-call).
+* Mark Seemann [looks at task async programming as an IO surrogate](https://blog.ploeh.dk/2020/07/27/task-asynchronous-programming-as-an-io-surrogate/).
+* Honey the Codewitch [works through the .NET SynchronizationContext in .NET with C#](https://www.codeproject.com/Articles/5274751/Understanding-the-SynchronizationContext-in-NET-wi).
+* Eirik Tsarpalis [talks about effect programming in C#](https://eiriktsarpalis.wordpress.com/2020/07/20/effect-programming-in-csharp/).
+* Isaac Abraham [discusses how to write more succinct C#, in F#](https://www.compositional-it.com/news-blog/writing-more-succinct-c-in-f-part-1/).
+
+### 🔧 Tools
+
+* Patrick Smacchia is back [with 14 Visual Studio web development productivity tips](https://blog.ndepend.com/14-visual-studio-web-development-productivity-tips/).
+* Scott Hanselman [talks about how you can remote debug a .NET Core Linux app in WSL2 from Visual Studio on Windows](https://www.hanselman.com/blog/OfficialSupportForRemoteDebuggingANETCoreLinuxAppInWSL2FromVisualStudioOnWindows.aspx).
+* The full data set [for the Stack Overflow 2020 Developer Survey is available](https://stackoverflow.blog/2020/07/27/public-data-release-of-stack-overflows-2020-developer-survey/).
+* Sean Killeen [asks when it makes sense to use containers in a development workflow](https://seankilleen.com/2020/07/when-does-it-make-sense-to-use-containers/).
+* Bertrand Le Roy [introduces LunrCore, a lightweight search library for .NET](https://weblogs.asp.net/bleroy/lunrcore).
+* Rick Strahl [excludes files and folders in a Visual Studio Web Site project](https://weblog.west-wind.com/posts/2020/Jul/25/Excluding-Files-and-Folders-in-Visual-Studio-Web-Site-Project).
+
+### 📱 Xamarin
+
+
+### 🎤 Podcasts
+
+* The Azure DevOps podcast [discusses Infrastructure as Code](http://azuredevopspodcast.clear-measure.com/joe-duffy-on-infrastructure-as-code-episode-99).
+* The Azure Podcast [talks about Durable Functions](http://azpodcast.azurewebsites.net/post/Episode-339-Durable-Functions).
+* The Merge Conflict podcast [talks about Model-View-Update](https://www.mergeconflict.fm/212).
+
+
+### 🎥 Videos
+
+* The ASP.NET Monsters [talk about YARP, the new .NET reverse proxy](https://www.youtube.com/watch?v=3hOzV_-k-LM).
+* At The Maintainers, [Shawn Wildermuth talks to Brad Wilson about xUnit](http://wildermuth.com/2020/07/27/The-Maintainers-Brad-Wilson-and-xUnit).
+* The Loosely Coupled Show [discusses when to use CQRS](https://www.youtube.com/watch?v=bX5KRmzkokE).
+

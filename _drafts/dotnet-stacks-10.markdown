@@ -1,17 +1,88 @@
 ---
-date: "2020-07-24"
-title: "The .NET Stacks: <fill in later>"
+date: "2020-07-26"
+title: "The .NET Stacks #10: .NET 5 taking shape, how approachable is .NET, a talk with Jeremy Likness, more!"
 tags: [dotnet-stacks]
+header:
+    overlay_image: /assets/images/stacks-10-card.png
+    overlay_filter: 0.8
+excerpt: We discuss the latest on .NET 5, the approachability of .NET, a talk with Jeremy Likness, and more!
 comments: false
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
 
+We had a tremendously busy week in .NET and it shows in this week's edition.
+
+This week, we:
+
+* Discuss the latest in .NET 5
+* Think about what it's like to be a beginner in the .NET ecosystem
+* Kick off an interview with Jeremy Likness, Microsoft's Sr. PM of .NET Data
+* Take a trip around the community
+
+Also, say 👋🏻 to my parents! They just subscribed and this is the only line they'll understand. 🤓
+
 ## .NET 5 is close, so close
 
-## Do you *love* .NET or are you stuck with it?
+This week, we hit the preview 7 release for .NET 5 (see the notes for [.NET 5 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-preview-7), [EF Core 5 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-ef-core-5-0-preview-7), and [ASP.NET Core updates in the new preview](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-preview-7/), as well as Steven Toub's post on [.NET 5 performance improvements](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-5/)). The next release for .NET 5 will be Release 8, and then there will the two RCs (each with "go live" licenses). .NET 5 is slated for official release in early November.
 
-## Interview with Jeremy Likness
+What's new in these previews? A few items of note:
+
+* Blazor WASM apps now target .NET 5
+* Blazor improvements in debugging, accessibility, and performance
+* In EF, a `DbContextFactory`, ability to clear the `DbContext` state, and transaction savepoints
+
+It looks like single-file apps, the ability for .NET Core apps to be [published and distributed as a single executable file](https://github.com/dotnet/runtime/issues/36590), is coming in the next release (release 8).
+
+## How would *you* help a beginner get started on .NET?
+
+Dustin Gorski published a great post last week called [.NET for Beginners](https://dusted.codes/dotnet-for-beginners). It certainly isn't a quick read, but I would recommend giving it a read when you get a few minutes. He discusses why many feel that .NET isn't very approachable for newcomers. It opened my eyes: I was aware of most of his criticisms, but I've been dealing with them for so long I haven't thought about how difficult it can be for newcomers coming into .NET for the first time.
+
+From my perspective, what I agreed most with was:
+
+* How you have to know a lot to get started
+* How feature bloat really prevents beginners from knowing the best way to do something, when there are so many ways to do it (with varying performance impacts)
+* How the constant change and re-architecting of the platform makes it almost impossible to keep up
+
+Think about it: if someone can to you and asked how to get started in .NET using a sample application, *what would you say?*
+
+Would you start by explaining .NET Core and how it's different than .NET Framework? And mention .NET Standard as a bridge between them? Or get them excited about .NET 5? Would you also bring up C# and F# and VB and the differences between them? What about Xamarin and Mono? What about a simple web site? Should they get started with Blazor? Traditional MVC? Razor Pages? One of my biggest takeaways from the piece: *you have to know a lot of trivia to start developing in .NET.*
+
+Feature bloat is real, especially when it comes to C#. Take, for example, the promise of immutability in C# 9 with records ([which I've written about](https://daveabrock.com/2020/07/06/c-sharp-9-deep-dive-records)). Records are similar to—but have immutable features over—structs. The exact reasons aren't important here (that records are meant for immutability and prevent boilerplate code) but a [valid complaint shows](https://stackoverflow.com/questions/61939693/when-to-use-c9-records): why are we introducing a new construct into the language where we could have improved on what already exists? If someone wanted to use immutability in .NET, what would you say now? Use records in C# 9? Use readonly structs? What about a tuple class? Or use F#?
+
+This is not to say Microsoft isn't aware of all these challenges and isn't trying to improve. They definitely are! You can head over to [*try.dot.net*](https://try.dot.net/) to run C# in the browser ([with an in-browser tutorial](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/)). You can run code in the docs and in Microsoft Learn modules. C# 9 top-level statements take away that pesky `Main` method in console apps ([yet another shameless plug](https://daveabrock.com/2020/07/09/c-sharp-9-top-level-programs)).
+
+Coming from the slow-moving days from the bloated `System.Web` namespace, I never thought I would be hearing (and agreeing) about gripes of .NET moving too fast. This is a testament to the hard work by the folks at Microsoft. Taking hints from .NET 5, I hope .NET allows developers to focus on what's important, not try to be everything to everyone, and avoid feature bloat in C#. I think a continued focus on approachability positively impacts all .NET developers.  
+
+## Dev Discussions: Jeremy Likness, Sr. PM of Data at Microsoft
+
+If you’ve worked on Azure or .NET for awhile—like Azure Functions and Entity Framework—you’re probably familiar with Jeremy Likness, the senior PM for .NET data at Microsoft. He’s spoken at several conferences (remember those?), [writes about various topics at his site](https://blog.jeremylikness.com/), is a familiar face on various .NET-related videos, and, as of late, can be seen in the Entity Framework community standups (and more!).
+
+I caught up with Jeremy to talk about his path to software development and all that’s going on with Entity Framework and .NET 5. After you get through this week’s interview, I think we can all agree his path to Microsoft is both inspiring and absolutely crazy.
+
+Jeremy was very generous with his time! Because there’s so much to cover, I’ve split this into two different parts. This week, we get to know Jeremy. Next week, we’ll get into his work and discuss Entity Framework and .NET 5.
+
+![Jeremy Likness]({{ site.url }}{{ site.baseurl }}/images/jeremy-likness.jpg)
+
+**As a developer at heart, what kind of projects have you been tinkering with?**
+
+My first consulting projects ... involved XAML via WPF then Silverlight. I was a strong advocate of Silverlight because I had built some very complex web apps using JavaScript and managing them across browsers was a nightmare. ... Silverlight was an implicit promise to write C# code that could run anywhere, and for many reasons probably more political than technical, the promise was not fulfilled.
+
+I believe it has been realized with .NET Core and more specifically, Blazor. I resisted Blazor when it came out due to the existence of mature web frameworks available like Angular, React, Vue.js and Svelte, but colleagues convinced me to give it a spin and I was blown away by two things: first, how productive I could be and produce so much in a short period of time. Second, how many existing packages work with it and run inside the browser “as is.”
+
+I’ve been building a lot of Blazor apps to explore different protocols, ways of interacting with data, application of the MVVM pattern and more. I’m working to publish some reference applications that show how to use Blazor with Entity Framework Core [and have published seven articles](https://blog.jeremylikness.com/series/blazor-and-ef-core/).
+
+I am also diving into expressions. I [published a blog post](https://blog.jeremylikness.com/blog/dynamically-build-linq-expressions/) about parsing JSON and turning it into an expression tree to evaluate. I’ve also [written about the inverse](https://blog.jeremylikness.com/blog/look-behind-the-iqueryable-curtain/): parsing an `IQueryable` LINQ expression to pull out the various pieces. Imagine you have a queryable source that you send to a component that then applies ordering, filtering, and sorting. How do you inspect the result to verify how the query was manipulated?
+
+**What is your one piece of programming advice?**
+
+After decades of building software my biggest piece of advice is that your first step shouldn’t be to find the library or framework or tool, but to solve the problem.
+
+Too often people add frameworks or tools or patterns because they’re recommended, rather than actually determining if they add value. Many times the overhead outweighs the benefit. I’m often told, “That solution isn’t right because you don’t have a business logic layer.” My response is, “So?” It’s not that I don’t see value in that layer for certain implementations, but that it’s not always necessary.
+
+Have you worked on that project that forced an architecture so that one change involves updating five projects and the majority of them are just default “pass through” implementations? I am a fan of solving for the solution, and only then if you find some code is repeated, refactor. Don’t over-engineer or complicate. One of my favorite starting points for a solution is to consider, “What is the ideal way I’d like to code for this?”
+
+This is just a small portion of my interview with Jeremy. There is [so much more at my site](https://daveabrock.com/2020/07/25/dev-discussions-jeremy-likness-1), including Jeremy's unusual path and a crazy story about his interview!
 
 ## 🌎 Last week in the .NET world
 
@@ -22,6 +93,7 @@ comments: false
 * Kayla Cinnamon [announces the release of Windows Terminal Preview 1.2](https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-2-release/).
 * Tara Overfield [announces the .NET Framework July 2020 update preview](https://devblogs.microsoft.com/dotnet/net-framework-july-2020-cumulative-update-preview/).
 * We're getting so close to .NET 5: Jeremy Likness [announces EF Core 5 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-ef-core-5-0-preview-7/), Richard Lander [announces .NET 5 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-preview-7/), and Microsoft also announces [ASP.NET Core updates in .NET 5 Preview 7](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-preview-7/).
+* It looks like [many-to-many is now working in the EF daily builds](https://github.com/dotnet/efcore/issues/19549#issuecomment-663237077).
 * The Azure Service Fabric 7.1 [announced a second refresh release](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-second-refresh-release/ba-p/1534246).
 * The Windows team [announced the first update to the Windows Package Manager](https://devblogs.microsoft.com/commandline/windows-package-manager-preview-v0-1-41821/).
 * Daniel Jurek [talks about the July release of the Azure SDK](https://devblogs.microsoft.com/azure-sdk/azure-sdk-release-july-2020/).
