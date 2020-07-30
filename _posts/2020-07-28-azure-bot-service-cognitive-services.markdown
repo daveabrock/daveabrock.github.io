@@ -156,7 +156,7 @@ namespace GruutChatbot.Bots
         {
             var client = new TextAnalyticsClient(endpoint, credentials);
             string userInput = turnContext.Activity.Text;
-            var sentiment = client.AnalyzeSentiment(userInput).ToString();
+            var sentiment = client.AnalyzeSentiment(userInput).Value.Sentiment;
 
             static string GetReplyText(TextSentiment sentiment) => sentiment switch
             {
