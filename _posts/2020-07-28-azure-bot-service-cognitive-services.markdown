@@ -117,11 +117,11 @@ var sentiment = client.AnalyzeSentiment(userInput).Value.Sentiment.ToString();
 Now, we can write a local function in C# ([thanks for the inspiration, David Pine](https://github.com/shahedc/GruutChatbot/pull/2)) that leverages switch expressions. We send back specific responses for `Positive`, `Negative`, and `Neutral` results. If we get anything else back, we have a fallback.
 
 ```csharp
-static string GetReplyText(string sentiment) => sentiment switch
+static string GetReplyText(TextSentiment sentiment) => sentiment switch
 {
-    "Positive" => "I am Gruut.",
-    "Negative" => "I AM GRUUUUUTTT!!",
-    "Neutral" => "I am Gruut?",
+    TextSentiment.Positive => "I am Gruut.",
+    TextSentiment.Negative => "I AM GRUUUUUTTT!!",
+    TextSentiment.Neutral => "I am Gruut?",
     _ => "I. AM. GRUUUUUT"
 };
 ```
@@ -158,11 +158,11 @@ namespace GruutChatbot.Bots
             string userInput = turnContext.Activity.Text;
             var sentiment = client.AnalyzeSentiment(userInput).ToString();
 
-            static string GetReplyText(string sentiment) => sentiment switch
+            static string GetReplyText(TextSentiment sentiment) => sentiment switch
             {
-                "Positive" => "I am Gruut.",
-                "Negative" => "I AM GRUUUUUTTT!!",
-                "Neutral" => "I am Gruut?",
+                TextSentiment.Positive => "I am Gruut.",
+                TextSentiment.Negative => "I AM GRUUUUUTTT!!",
+                TextSentiment.Neutral => "I am Gruut?",
                 _ => "I. AM. GRUUUUUT"
             };
 
