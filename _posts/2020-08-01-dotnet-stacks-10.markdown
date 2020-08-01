@@ -1,5 +1,5 @@
 ---
-date: "2020-07-26"
+date: "2020-08-01"
 title: "The .NET Stacks #10: .NET 5 taking shape, how approachable is .NET, a talk with Jeremy Likness, more!"
 tags: [dotnet-stacks]
 header:
@@ -86,13 +86,16 @@ This is just a small portion of my interview with Jeremy. There is [so much more
 
 ## 🌎 Last week in the .NET world
 
-### The Top 3
+### 🔥 The Top 3
+
+* We’re getting so close to .NET 5: Jeremy Likness [announces EF Core 5 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-ef-core-5-0-preview-7/), Richard Lander [announces .NET 5 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-preview-7/), and Microsoft also announces [ASP.NET Core updates in .NET 5 Preview 7](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-preview-7/).
+* The .NET Foundation [has begun the voting process for board elections](https://dotnetfoundation.org/blog/2020/07/20/director-election-2020-voting-starts-tomorrow).
+* Jon Hilton [asks if Blazor EditForms is essential or too much magic](https://jonhilton.net/why-use-blazor-edit-forms/).
 
 ### 📢 Announcements
 
 * Kayla Cinnamon [announces the release of Windows Terminal Preview 1.2](https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-2-release/).
 * Tara Overfield [announces the .NET Framework July 2020 update preview](https://devblogs.microsoft.com/dotnet/net-framework-july-2020-cumulative-update-preview/).
-* We're getting so close to .NET 5: Jeremy Likness [announces EF Core 5 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-ef-core-5-0-preview-7/), Richard Lander [announces .NET 5 Preview 7](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-preview-7/), and Microsoft also announces [ASP.NET Core updates in .NET 5 Preview 7](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-preview-7/).
 * It looks like [many-to-many is now working in the EF daily builds](https://github.com/dotnet/efcore/issues/19549#issuecomment-663237077).
 * The Azure Service Fabric 7.1 [announced a second refresh release](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-second-refresh-release/ba-p/1534246).
 * The Windows team [announced the first update to the Windows Package Manager](https://devblogs.microsoft.com/commandline/windows-package-manager-preview-v0-1-41821/).
@@ -100,14 +103,12 @@ This is just a small portion of my interview with Jeremy. There is [so much more
 
 ### 📅 Community and events
 
-* The .NET Foundation [has begun the voting process for board elections](https://dotnetfoundation.org/blog/2020/07/20/director-election-2020-voting-starts-tomorrow).
 * SciFiDevCon is [coming next week](https://www.scifidevcon.com/).
 * We had three community standups this week: Desktop [discusses EF Core 5 updates](https://www.youtube.com/watch?v=4QnbYkQ1WNw), Entity Framework [discusses scaffolding with Handlebars](https://www.youtube.com/watch?v=6Ux7EpgiWXE), and ASP .NET [discusses web tools with Sayed Hashimi](https://www.youtube.com/watch?v=j4yIHg9l4QQ).
 * The DotNet Docs Show talks [.NET desktop app development with Olia Gavrysh](https://www.youtube.com/watch?v=mWhSgasKVhE).
 
 ### 😎 Blazor
 
-* Jon Hilton [asks if Blazor EditForms is essential or too much magic](https://jonhilton.net/why-use-blazor-edit-forms/).
 * Lee Richardson [compares Blazor WASM with Angular](http://www.leerichardson.com/2020/07/blazor-webassembly-vs-angular-client.html).
 * Ramkumar Shanmugam [discusses how to use bUnit for Blazor and integrating it into your Azure pipeline](https://www.syncfusion.com/blogs/post/bunit-for-blazor-and-how-to-integrate-it-in-azure-pipeline.aspx).
 * Eilon Lipton [provides a monthly update for hybrid Blazor apps in Mobile Blazor Bindings](https://devblogs.microsoft.com/aspnet/hybrid-blazor-mobile-blazor-bindings-july-update/).

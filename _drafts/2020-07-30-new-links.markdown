@@ -1,5 +1,5 @@
 ---
-date: "2020-07-28"
+date: "2020-07-30"
 title: "The .NET Stacks: <fill in later>"
 tags: [dotnet-stacks]
 comments: false
@@ -11,27 +11,35 @@ comments: false
 
 ### 📢 Announcements
 
+* GitHub [announced a public roadmap](https://github.blog/2020-07-28-announcing-the-github-public-roadmap/).
+* For Windows devs, Rich Turner [announces a new developer landing page and issues repo](https://blogs.windows.com/windowsdeveloper/2020/07/28/new-developer-landing-page-and-issues-repo).
 
 ### 📅 Community and events
 
 
 ### 😎 Blazor
 
+* Marinko Spasojevic [talks about PUT and DELETE actions and calling JS in Blazor WASM](https://code-maze.com/blazor-webassembly-put-delete-calling-javascript-functions/).
 * Marinko Spasojevic [uploads a file with Blazor WASM and ASP.NET Core Web API](https://code-maze.com/blazor-webassembly-file-upload/).
 * Jon Hilton [takes Blazor's EditForms up a notch with Tailwind CSS](https://jonhilton.net/pimp-up-blazor-edit-forms-with-tailwind-css/).
 
 ### 🚀 .NET Core
 
+* Carl Rippon [handles concurrency in an ASP.NET Core Web API with Dapper](https://www.carlrippon.com/handling-concurrency-in-an-asp-net-core-web-api-with-dapper/).
 * Jason Robert [looks in the ASP.NET Core MVC template](https://espressocoder.com/2020/07/27/whats-in-the-asp-net-core-mvc-template/).
 
 ### ⛅ The cloud
 
+* The Azure Podcast [discusses messaging patterns](http://azpodcast.azurewebsites.net/default.aspx).
 * The Microsoft 365 Developer Podcast [discusses the Bot Framework Virtual Assistant](https://www.m365devpodcast.com/e/bot-framework-virtual-assistant-with-dewain-robinson-and-gary-pretty/).
 * David Grace [lists and download the contents of a Google Drive shared folder in C#](https://markheath.net/post/list-and-download-google-drive-cs).
 * Azure Tips and Tricks [has a new article on Azure security best practices](https://microsoft.github.io/AzureTipsAndTricks/blog/tip272.html).
 
 ### 📔 Languages
 
+* At Visual Studio Magazine, David Ramel [talks about how Newtonsoft.JSON is still the top dog](https://visualstudiomagazine.com/articles/2020/07/28/json-serializers.aspx).
+* Khalid Abuhakmeh [works on sentiment analysis With C#, ML.NET, and Oakton commands](https://khalidabuhakmeh.com/sentiment-analysis-with-csharp-mldotnet-and-oakton-commands).
+* Nick Randolph [discusses DataContext in WPF](https://nicksnettravels.builttoroam.com/back-to-basics-1-data-context).
 * Jeremy Miller [calls generic methods from non-generic code in .NET](https://jeremydmiller.com/2020/07/27/calling-generic-methods-from-non-generic-code-in-net/).
 * Adam Storr [returns different values from a method call in C#](https://adamstorr.azurewebsites.net/blog/returning-different-values-from-a-method-call).
 * Mark Seemann [looks at task async programming as an IO surrogate](https://blog.ploeh.dk/2020/07/27/task-asynchronous-programming-as-an-io-surrogate/).
@@ -50,6 +58,8 @@ comments: false
 
 ### 📱 Xamarin
 
+* Lance McCarthy [builds a CRM with Xamarin.Forms and Azure](https://www.telerik.com/blogs/building-a-crm-xamarin-forms-azure-part-1).
+* Rendy Del Rosario [continues talking about creating a binding library in Xamarin](https://www.xamboy.com/2020/07/28/creating-a-binding-library-in-xamarin-part-2/).
 
 ### 🎤 Podcasts
 
@@ -60,6 +70,9 @@ comments: false
 
 ### 🎥 Videos
 
+* The ON.NET Show [packages and deploys .NET Core for Linux](https://channel9.msdn.com/Shows/On-NET/Packaging-and-deploying-NET-Core-for-Linux-Part-1).
+* Data Exposed [talks about .NET Interactive notebooks](https://channel9.msdn.com/Shows/Data-Exposed/Jupyter-Launch-NET-Interactive-Notebooks--Data-Exposed-MVP-Edition).
+* Kayla Cinnamon [shares how the Windows Terminal logo came to be](https://www.youtube.com/watch?v=eAnbO02ZD1E).
 * The ASP.NET Monsters [talk about YARP, the new .NET reverse proxy](https://www.youtube.com/watch?v=3hOzV_-k-LM).
 * At The Maintainers, [Shawn Wildermuth talks to Brad Wilson about xUnit](http://wildermuth.com/2020/07/27/The-Maintainers-Brad-Wilson-and-xUnit).
 * The Loosely Coupled Show [discusses when to use CQRS](https://www.youtube.com/watch?v=bX5KRmzkokE).
