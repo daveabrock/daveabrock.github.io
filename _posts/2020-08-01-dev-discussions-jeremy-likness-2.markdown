@@ -71,7 +71,7 @@ The many-to-many implementation that makes it possible to define relationships i
 
 Split includes provide flexibility over the way you handle sub-collections (like a subquery vs. separate SQL call to fetch the collection). There has been significant effort put into improving the experience for managing schemas via migrations, from additional command line options and support to enhanced documentation. A huge feature is table-per-type mapping, and another is filtered includes that provide far more control over the data sets you return.
 
-Honestly I’m excited about [everything that’s coming out](https://aka.ms/efcore5). I’ve personally been working on end-to-end scenarios and will be very happy to see clear guidance for using EF Core in Xamarin (should be ready soon), Blazor, WinForms, WPF, UWP, and other platforms in addition to the documentation we already have.
+Honestly I’m excited about [everything that’s coming out](https://aka.ms/efcore5). I’ve personally been working on end-to-end scenarios and will be very happy to see [clear guidance for using EF Core in Xamarin](https://docs.microsoft.com/ef/core/get-started/xamarin), Blazor, WinForms, WPF, UWP, and other platforms in addition to the documentation we already have.
 
 **What have you discovered about things like EF Core that you weren't aware of, before you joined the team?**
 
