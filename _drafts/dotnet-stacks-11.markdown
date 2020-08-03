@@ -17,11 +17,11 @@ This week, we:
 
 ## Newtonsoft.Json is still #1
 
-If you [scan NuGet statistics](https://www.nuget.org/stats/packages) from time-to-time (what, this isn't how you spend your Sunday evenings?), you'll see `Newtonsoft.Json`, the popular JSON serializer/deserializer, still takes the #1 spot. It's been downloaded almost 52.2 million times in the last six weeks. That is almost *five times* more than Serilog, the #2 finisher.
+If you [scan NuGet statistics](https://www.nuget.org/stats/packages) from time to time (what, this isn't how you spend your Sunday evenings?), you'll see `Newtonsoft.Json`, the popular JSON serializer/deserializer, still takes the #1 spot. It's been downloaded almost 52.2 million times in the last six weeks. That's almost *five times* more than Serilog, the #2 finisher.
 
-While this library was deprecated by Microsoft as of .NET Core 3.0, this can't be too surprising—after all, I'm about 90% sure jQuery will outlive me.
+While Microsoft scrapped this library in favor of `System.Text.Json` with .NET Core 3.0, this can't be too surprising—after all, I'm about 90% sure Web Forms and jQuery will outlive me.
 
-In [this week's Visual Studio Magazine this week](https://visualstudiomagazine.com/articles/2020/07/28/json-serializers.aspx), they also take a look. The library was scrapped in .NET Core 3.0 in favor of `System.Text.Json`. Why? Last year, [Immo Landwerth gave three reasons](https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/):
+In [this week's Visual Studio Magazine this week](https://visualstudiomagazine.com/articles/2020/07/28/json-serializers.aspx), they also take a look. Why the new-ish library? Last year, [Immo Landwerth gave three reasons](https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-apis/):
 
 * Better performance for higher throughput in .NET Core
 * Remove the library dependency and potential versioning headaches
@@ -35,7 +35,7 @@ This isn't to say Newtonsoft.Json is slow - it's not, it's very fast! According 
  
 ## Why `async void` is bad
 
-C# is full of "just because you *can* do it, doesn't mean *should"* pitfalls. Across Twitter these days, a lot of folks in the C# community are talking about why you shouldn't use `async void` methods. Let's dive in.
+C# is full of "just because you *can* do it, doesn't mean you *should"* pitfalls. Across Twitter these days, a lot of folks in the C# community are talking about why you shouldn't use `async void` methods. 
 
 This isn't an original, new, or groundbreaking idea: Stephen Cleary asked you to not do this in 2013 and Phil Haack talked about these methods being a "[scourge upon your code](https://haacked.com/archive/2014/11/11/async-void-methods/)" in 2014.
 
@@ -49,7 +49,7 @@ In short, don't do this and do `async Task<T>` instead. Thank you for coming to 
 
 ## Last chance to vote for the .NET Foundation board
 
-The voting for the .NET Foundation Board of Directors ends at 11:59pm on August 3 (PST, in the US). If you are a member, you should have received an email. If you aren't a member, [it isn't too late](https://dotnetfoundation.org/member/become-a-member)! (The donation level is suggested but should not be a barrier to joining.)
+The voting for the .NET Foundation Board of Directors ends at 11:59pm on August 3 (PST, in the US). If you're a member, you should have received an email. If you aren't a member, [it isn't too late](https://dotnetfoundation.org/member/become-a-member)! (The donation level is suggested but should not be a barrier to joining.)
 
 A lot of people (including myself) have been asking the Foundation for increased communication and transparency. They're listening: this week, they released their [first public budget](https://t.co/FcFdhh6dhg?amp=1) and [also wrote a "State of the Union" post](https://dotnetfoundation.org/blog/2020/07/30/state-of-the-net-foundation-summer-2020).
 
@@ -127,6 +127,7 @@ The team has great relationships across the board—we have conversations with t
 * Mika Dumont [walks through some new productivity improvements in Visual Studio](https://devblogs.microsoft.com/dotnet/learn-about-the-latest-net-productivity-features/).
 * GitHub [announced a public roadmap](https://github.blog/2020-07-28-announcing-the-github-public-roadmap/).
 * For Windows devs, Rich Turner [announces a new developer landing page and issues repo](https://blogs.windows.com/windowsdeveloper/2020/07/28/new-developer-landing-page-and-issues-repo).
+* Jamie Maguire [introduces a public preview of his Social Opinion library](https://www.jamiemaguire.net/index.php/2020/08/02/introduction-to-social-opinion-public-preview/), a way to consume Twitter Labs API endpoints and work with dashboards.
 
 ### 📅 Community and events
 

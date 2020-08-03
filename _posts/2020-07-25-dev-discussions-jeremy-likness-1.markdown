@@ -15,7 +15,7 @@ If you've worked on Azure or .NET for awhile—like Azure Functions and Entity F
 
 I caught up with Jeremy to talk about his path to software development and all that's going on with Entity Framework and .NET 5. After you get through this week's interview, I think we can all agree his path to Microsoft is both inspiring and absolutely crazy.
 
-Jeremy was very generous with his time! Because there's so much to cover, I've split this into two different parts. This week, we get to know Jeremy. Next week, [we'll get into his work and discuss Entity Framework and .NET 5](https://daveabrock.com/2020/07/25/dev-discussions-jeremy-likness-2).
+Jeremy was very generous with his time! Because there's so much to cover, I've split this into two different parts. This week, we get to know Jeremy. Next week, [we'll get into his work and discuss Entity Framework and .NET 5](https://daveabrock.com/2020/08/01/dev-discussions-jeremy-likness-2).
 
 ![Jeremy Likness]({{ site.url }}{{ site.baseurl }}/images/jeremy-likness.jpg)
 
