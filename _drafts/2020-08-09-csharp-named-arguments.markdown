@@ -1,5 +1,5 @@
 ---
-date: "2020-08-04"
+date: "2020-08-09"
 title: "C# named arguments: not new, but still great"
 excerpt: "We discuss the value of named arguments in the C# language."
 tags: [dotnet-stacks]
@@ -11,7 +11,26 @@ header:
 
 I hope you enjoyed my posts about all the cool, new C# 9 features [that are coming with .NET 5](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits). For this post, I want to talk about something that's been around for years, since C# 4, but have been using a lot of late: named arguments.
 
-Until recently, I've been using them when I *had to*: when working with optional arguments. Now, I'm appreciating how they can help with readability as well.
+Until recently, I've been using them when I *had to*: when working with optional arguments. Now, I'm appreciating how they can help with readability as well. Let's talk about what they are, when you can use them, and the advantages they provide.
+
+## Our code sample
+
+We will start with this code sample. I just created a .NET console app in Visual Studio but you can use your tool of choice (LinqPad, VS Code, whatever).
+
+```csharp
+private static void AnnounceYourself(string firstName, string lastName, DateTime birthday, 
+                                     string job, string hobby, string city)
+{
+    string formattedBirthday = birthday.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
+    Console.WriteLine($"Hi! I am {firstName} {lastName}. I am a {job} in {city} and like to {hobby}. " +
+                      $" My birthday is {formattedBirthday}.");
+}
+```
+
+This will not any awards for complexity, but will hopefully show off why named arguments are useful.
+
+## When you have to use them: with optional arguments
+
 
 
 ## Why named arguments?

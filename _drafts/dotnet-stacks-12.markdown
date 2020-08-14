@@ -1,16 +1,48 @@
 ---
-date: "2020-08-07"
-title: "The .NET Stacks: <fill in later>"
+date: "2020-08-09"
+title: "The .NET Stacks #12: Azure DevOps or GitHub Actions, .NET Foundation results, community links!"
 tags: [dotnet-stacks]
 comments: false
+header:
+    overlay_image: /assets/images/stacks-11-card.png
+    overlay_filter: 0.8
+excerpt: We discuss Microsoft CI/CD options, find out who's on the .NET Foundation board, and look at the busy week in the .NET community!
 ---
 
-Happy Monday, everyone! Current status: still wondering if I'm [just a JSON pusher](https://twitter.com/thomas_k_r/status/1291076179693363206) (**warning**: link has the f-word).
+Happy Monday, everyone! Current status: still wondering if I'm [just a JSON pusher](https://twitter.com/thomas_k_r/status/1291076179693363206) (**warning**: link has a naughty word).
 
 This week, we:
 
-* Wonder about who will rule CI
+* Discuss how Azure DevOps and GitHub Actions will be ironed out
 * Discuss the .NET Foundation election results
+* Check out a busy week in the community
+
+## GitHub Actions or Azure DevOps?
+
+Hopefully by now, in 2020, you know that [friends don't let friends right-click publish](https://damianbrady.com.au/2018/02/01/friends-dont-let-friends-right-click-publish/). There are so many tools you can use to work with [continuous integration and continuous deployment](https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html) pipelines—I'd like to talk about two under Microsoft's ownership: Azure DevOps and GitHub Actions.
+
+As a .NET developer, you're probably familiar with [Azure DevOps](https://azure.microsoft.com/services/devops/) (previously Team Foundation Server). It's got a decade of battle-tested use in enterprises, with well-featured CI/CD pipelines. If you want best-in-class Microsoft tooling with either your on-prem or cloud deployments, it's always been a clear choice.
+
+The lines blurred a little when, in 2018, [Microsoft acquired GitHub](https://news.microsoft.com/announcement/microsoft-acquires-github/). GitHub, traditionally known for being the community's preferred way to share code, was now bought by a company invested in open source development and an interest in bringing Microsoft-ness to new audiences. GitHub's own CI/CD solution, GitHub Actions, is getting a lot of well-deserved recognition. And with [npm joining GitHub](https://github.blog/2020-03-16-npm-is-joining-github/), GitHub will definitely help improve experiences with dependency management. To further blur the lines, a lot of folks don't know about their GitHub Enterprise offering, an on-prem solution that even has integration capabilities with Active Directory!
+
+So what does this say for the future of Microsoft CI/CD pipelines? As a long-term strategy, Microsoft can't expect to run two similar products with internal competition. I actually [wondered about this not so long ago](https://twitter.com/daveabrock/status/1253462315397251074) and was referred to an [insightful conversation that occurred on the Azure Podcast with GitHub PM Sasha Rosenbaum](http://azpodcast.com/post/Episode-321-GitHub). 
+
+She agreed that, yes, the investments will be geared toward GitHub and its vibrant community and long-term GitHub will probably win out. This isn't to say that you need to migrate in 6 months or anything—she even mentioned a 5-year timeframe—but the future is definitely with GitHub Actions. As such, her recommendation was that there's nothing wrong with using Azure DevOps today, but if you're starting a new project to look into using GitHub. 
+
+Until the time comes when Microsoft has one CI/CD tool, you'll likely see GitHub Actions build out with a stronger feature set. It's already robust—and with its CI capabilities are right there with Azure DevOps—but has some work to do until it's on-par with its continuous deployment functionality (release pipelines, gates, advanced permissions, and whatnot).
+
+## .NET Foundation Board of Directors election results are in
+
+This week, we found out who [would serve on the .NET Foundation Board of Directors](https://dotnetfoundation.org/blog/2020/08/04/net-foundation-board-of-directors-election-results-2020). Out of 17 nominees, these six folks came out on top (with Beth Massi on the 7th spot as Microsoft's one appointed board member):
+
+* [Rodney Littles, II](https://twitter.com/rlittlesii)
+* [Javier Lozano](https://twitter.com/jglozano)
+* [Layla Porter](https://twitter.com/LaylaCodesIt)
+* [Jeff Strauss](https://twitter.com/jeffreystrauss)
+* [Bill Wagner](https://twitter.com/billwagner)
+* [Shawn Wildermuth](https://twitter.com/shawnwildermuth)
+
+It's great to see an entirely new Board and am looking forward to seeing what comes from these fresh perspectives.
 
 ## 🌎 Last week in the .NET world
 
