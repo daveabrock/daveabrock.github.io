@@ -1,8 +1,12 @@
 ---
-date: "2020-08-15"
+date: "2020-08-22"
 title: "The .NET Stacks #13: .NET 5 Preview 8 and Blazor, interview with Scott Addie, community links!"
 tags: [dotnet-stacks]
 comments: false
+header:
+    overlay_image: /assets/images/stacks-13-card.png
+    overlay_filter: 0.8
+excerpt: We discuss Blazor and .NET 5 Preview 8, talk with Scott Addie, and look at the busy week in the .NET community!
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
