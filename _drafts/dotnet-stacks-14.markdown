@@ -1,9 +1,108 @@
 ---
-date: "2020-08-21"
-title: "The .NET Stacks: <fill in later>"
+date: "2020-08-23"
+title: "The .NET Stacks #14: Checking in on NuGet changes, many-to-many in EF Core, community roundup, and more!"
 tags: [dotnet-stacks]
 comments: false
 ---
+
+![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+
+Happy Monday. Do you ever [watch a satire and think it's a documentary](https://www.youtube.com/watch?v=y8OnoxKotPQ)?
+
+This week, we'll:
+
+* Get excited about many-to-many in EF Core
+* Take a look at some current and upcoming NuGet changes
+* Check in on the community
+
+## Many-to-many in EF Core 5
+
+So this is exciting: many-to-many support is now included in the Entity Framework Core daily builds, and the team [spent this week's community standup showing it off](https://www.youtube.com/watch?v=W1sxepfIMRM).
+
+A big part of this work includes the concept of skip navigations, or many-to-many navigation properties. For example, here's a basic model that assigns links in a newsletter (what can I say, it's fresh on my mind) and is a good use case for many-to-many and is ... [heavily inspired and/or outright stolen](https://github.com/dotnet/efcore/issues/19003) from the GitHub issue:
+
+```csharp
+public class Link
+{
+    public int LinkId { get; set; }
+    public string Url { get; set; }
+    public string Description { get; set; }
+
+    public List<LinkTag> LinkTags { get; set; }
+}
+
+public class Tag
+{
+    public string TagId { get; set; }
+    public string Description { get; set; }
+
+    public List<LinkTag> LinkTags { get; set; }
+}
+
+public class LinkTag
+{
+    public int LinkId { get; set; }
+    public Link Link { get; set; }
+
+    public string TagId { get; set; }
+    public Tag Tag { get; set; }
+
+    public DateTime LinkCreated { get; set; }
+}
+```
+
+So, to load a link and its tags, I'd need to use two navigation properties, and refer to the joining table when performing queries:
+
+```csharp
+var linksAndTags
+    = context.Links
+        .Include(e => e.LinkTags)
+        .ThenInclude(e => e.Tag)
+        .ToList();
+```
+
+With many-to-many in EF Core 5, I can skip over the join table and use direct navigation properties. We can instead get a little more direct:
+
+```csharp
+public class Link
+{
+    public int LinkId { get; set; }
+    public string Description { get; set; }
+
+    public List<Tag> Tags { get; set; } // Skips right to Tag
+    public List<LinkTag> LinkTags { get; set; }
+}
+
+public class Tag
+{
+    public string TagId { get; set; }
+    public string Description { get; set; }
+
+    public List<Link> Links { get; set; } // Skips right to Link
+    public List<LinkTag> LinkTags { get; set; }
+}
+```
+
+Look how easy querying is now:
+
+```csharp
+var linksAndTags 
+    = context.Links
+        .Include(e => e.Tags)
+        .ToList();
+```
+
+In the standup, Arthur Vickers mentioned an important fact that's easy to overlook: while the release timing is similar, EF Core 5 is not bound to .NET 5. It targets .NET Standard 2.1, so can be used in any .NET Core 3.*x* apps (and of course is available for use in .NET 5). Take a look at [the docs](https://docs.microsoft.com/dotnet/standard/net-standard) to learn more about .NET Standard compatibility.
+
+## Checking in on NuGet changes
+
+This week, the .NET Tooling community standup [brought in the NuGet team](https://www.youtube.com/watch?v=fijQkqWssn0) to talk about what they're working on. They mentioned three key things: UX enhancements to *nuget.org*, improvements to package compatibility in Visual Studio, and better README support for package authors.
+
+The team has been working on improving the experience on nuget.org—in the last few weeks, they've blogged about how you can [use advanced search](https://devblogs.microsoft.com/nuget/advanced-search-on-nuget-org/) and also [view dependent packages](https://devblogs.microsoft.com/nuget/view-dependent-packages-on-nuget-org/). While I prefer to work with packages in my IDE, you can hit up *nuget.org* for a better view, but it's hard to filter through the noise. The new filtering options are a welcome improvement: I can filter by dependencies, tools, templates, relevance, downloads, and prereleases. Whether I value stability or finding out what's new, the experience is a lot better now.
+
+I was most interested to hear about tooling support, as that's how a lot of us use NuGet most. The team discussed upcoming changes to floating version support. Floating version support means you're using the latest version of a range you specify: for example, if you say you want version `2.*` of a package, and it rolled out `1.0`, `2.0`, and `2.1` versions, you're using `2.1`. Soon, you'll be able to specify this in the `Version` field in the NuGet UI—preventing you from hacking away from the project file. As a whole, the `Version` field will allow more flexibility and not just be a drop-down.
+
+Lastly, if you author NuGet packages, README links will no longer be a post-package upload but built right into the Visual Studio Package Properties. That will allow you to easily have your package documentation on *nuget.org*, and the NuGet UI in Visual Studio will have a link to it.
 
 ## 🌎 Last week in the .NET world
 
@@ -17,7 +116,7 @@ comments: false
 
 * Phillip Carter [is looking for feedback on the .NET project system in Visual Studio](https://devblogs.microsoft.com/dotnet/help-us-improve-visual-studio-project-tooling-for-net-core/).
 * Jon Gallant [talks about the August release of the Azure SDKs](https://devblogs.microsoft.com/azure-sdk/azure-sdk-release-august-2020/), and Jianghao Lu [shows us what's new in the Azure Identity release](https://devblogs.microsoft.com/azure-sdk/azure-identity-august-2020-ga/).
-* Azure Cosmos DB serverless [is now in preview](https://azure.microsoft.com/en-us/updates/serverless-offer-for-azure-cosmos-db-now-in-public-preview/).
+* Azure Cosmos DB serverless [is now in preview](https://azure.microsoft.com/updates/serverless-offer-for-azure-cosmos-db-now-in-public-preview/).
 * You can now [view dependent packages on nuget.org](https://devblogs.microsoft.com/nuget/view-dependent-packages-on-nuget-org/).
 * AWS SDK for .NET v3.5 [is generally available](https://aws.amazon.com/blogs/developer/aws-sdk-for-net-v3-5-now-generally-available).
 * Mads Kristensen [announces his new stream, where he writes or updates Visual Studio extensions](https://devblogs.microsoft.com/visualstudio/live-coding-visual-studio-extensions/).
