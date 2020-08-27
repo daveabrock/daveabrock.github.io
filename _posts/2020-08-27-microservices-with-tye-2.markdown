@@ -8,7 +8,7 @@ header:
 tags: [tools, aspnet-core]
 ---
 
-In the last post, I gave a [introduced Project Tye](https://daveabrock.com/2020/08/19/microservices-with-tye-1): what it is, the Blazor-powered dashboard, monitoring services, adding dependencies, and working with the optional configuration file. In my opinion, the content of that post alone made Tye worth it, but a huge use case is cutting through the complexities of containerized applications and being able to simplify deployment scenarios.
+In the last post, I [introduced Project Tye](https://daveabrock.com/2020/08/19/microservices-with-tye-1): what it is, the Blazor-powered dashboard, monitoring services, adding dependencies, and working with the optional configuration file. In my opinion, the content of that post alone made Tye worth it, but a huge use case is cutting through the complexities of containerized applications and being able to simplify deployment scenarios.
 
 You're probably aware of the reputation of Kubernetes of [being extremely complex](https://twitter.com/condrong/status/1298653011351179266). My experience with it is that of many: [bewildering at first, but ultimately beneficial](https://thenewstack.io/has-kubernetes-already-become-too-unnecessarily-complex-for-enterprise-it/). For many of us, we want to take advantage of Kubernetes without having to worry about being an expert, or spending hours (or days) on configuration.
 
