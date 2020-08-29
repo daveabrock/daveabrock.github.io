@@ -1,5 +1,5 @@
 ---
-date: "2020-08-23"
+date: "2020-08-29"
 title: "The .NET Stacks #14: Checking in on NuGet changes, many-to-many in EF Core, community roundup, and more!"
 tags: [dotnet-stacks]
 comments: false
