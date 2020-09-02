@@ -90,7 +90,7 @@ If you want full control over your machine learning pipeline, you can use the ML
 
 One of the nice things is, none of the ways of using ML.NET is mutually exclusive. You can start off with the tooling to bootstrap the model training process and from there use the ML.NET API to make further refinements. In the end, it's all about choice and depending on your experience with machine learning and preferred workflow, there's an option for you.
 
-*Check out the full interview with Luis at my site.*
+*[Check out the full interview with Luis at my site](https://daveabrock.com/2020/08/29/dev-discussions-luis-quintanilla-1).*
 
 ## 🌎 Last week in the .NET world
 
@@ -98,7 +98,7 @@ One of the nice things is, none of the ways of using ML.NET is mutually exclusiv
 
 * .NET 5 Preview 8 all the things: Richard Lander [makes the announcement](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-preview-8/), Daniel Roth [provides an update on ASP.NET Core updates in the new preview](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-preview-8/), and Jeremy Likness [announces the new preview for EF Core 5](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-ef-core-5-0-preview-8/).
 * Jonathon Marolf [talks about how to automatically find latent bugs in .NET 5](https://devblogs.microsoft.com/dotnet/automatically-find-latent-bugs-in-your-code-with-net-5/).
-* Andrew Lock asks: [should you unit-test API.MVC controllers in ASP.NET Core](https://andrewlock.net/should-you-unit-test-controllers-in-aspnetcore/).
+* Andrew Lock asks: [should you unit-test API.MVC controllers in ASP.NET Core](https://andrewlock.net/should-you-unit-test-controllers-in-aspnetcore/)?
 
 ### 📢 Announcements
 
