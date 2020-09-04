@@ -2,6 +2,10 @@
 date: "2020-09-04"
 title: "NDepend: Boost Your Team's Code Quality"
 tags: [tools]
+header:
+    overlay_image: /assets/images/ndepend-card.png
+    overlay_filter: 0.8
+excerpt: I take a look at what's new with NDepend, the robust static code analysis tool.
 ---
 Have you used NDepend before? If you've been working on .NET for some time, you may have either used it or heard of it—I believe it's been around since 2007 or so.
 
