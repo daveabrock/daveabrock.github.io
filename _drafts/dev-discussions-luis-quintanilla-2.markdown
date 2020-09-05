@@ -68,16 +68,14 @@ I would suggest for users interested in seeing how companies are using ML.NET in
 
 My interests are too many. If only there was enough time to do them all! Most recently we’ve started doing the [Machine Learning Community Standup](https://www.youtube.com/watch?v=2gjMrZ9XbRQ). This is a place where folks who are interested in machine learning within the .NET ecosystem can come and meet other members of the community, learn what’s new in the space and ask questions. You can tune in every other Wednesday to check that out. If you’re working on projects with ML.NET or other .NET machine learning libraries, we’d love to hear from you!​
 
-Also, I mentioned it earlier but folks should stay tuned for the next [Virtual ML.NET Conference](https://www.youtube.com/channel/UClv1sloNF4mzWQiQbemHXRw). The first one took place earlier this year and it was a great success. Not only was engagement high
-during the conference but interest and excitement has increased since then which can only mean good things for ML.NET. For this next version, instead of workshops and presentations, it’ll be
+Also, I mentioned it earlier but folks should stay tuned for the next [Virtual ML.NET Conference](https://www.youtube.com/channel/UClv1sloNF4mzWQiQbemHXRw). The first one took place earlier this year and it was a great success. Not only was engagement high during the conference but interest and excitement has increased since then which can only mean good things for ML.NET. For this next version, instead of workshops and presentations, it’ll be
 hands-on in the form of a hackathon. Again, at the moment there aren’t many details, but make sure to stay in touch on [Twitter](https://twitter.com/virtualmlnet) or join the [Slack](https://join.slack.com/t/virtual-mlnet/shared_invite/zt-galp4khg-gUJiri5yvEfTD2vkLa9v0w) community to get the latest updates.
 
 Personally, I've been dabbling in reinforcement learning, which is another form of artificial intelligence. Though many of the concepts don't transfer over, there are some areas where my prior knowledge is applicable, especially when it comes to the use of neural networks as part of deep reinforcement learning.
 
 Much of that work takes me away from .NET, which I always try to get a healthy dose of. As a result, I've been doing more F# development. I still have a ways to go, but I really like the language and always try to get better at it.
 
-For throwaway projects and learning exercises, I've been playing around with Racket. In some ways, my learnings from F# have made me a better Lisp developer. I've always been fond of the language considering for the longest time it was THE language for artificial intelligence. Though I'm far from building Lisp bindings for ML.NET (which I think is feasible), it's always fun to get outside
-of your comfort zone.
+For throwaway projects and learning exercises, I've been playing around with Racket. In some ways, my learnings from F# have made me a better Lisp developer. I've always been fond of the language considering for the longest time it was THE language for artificial intelligence. Though I'm far from building Lisp bindings for ML.NET (which I think is feasible), it's always fun to get outside of your comfort zone.
 
 Of course, ML.NET is never far away either and I'm always trying to find new ways of creatively using ML.NET.
 
