@@ -15,7 +15,7 @@ Machine learning is a fascinating world and, to many, a complicated one. As .NET
 
 That changed in 2018, when Microsoft launched ML.NET—a free, open source, x-plat machine learning framework for .NET. With ML.NET, you can use your favorite languages like C# or F# to work with your custom machine learning models. The idea is to meet you where you are and make ML more accessible.
 
-There's no one better to talk to about this than Luis Quintanilla. Luis has been with ML.NET since the beginning and was eventually scooped up by Microsoft to work on the docs for ML.NET. Luis had so much great stuff to share that we'll split this interview up into two parts. Today, we'll talk about his path to Microsoft, the value of ML.NET, and how to get started. Next week, we'll talk about using ML.NET over something like Azure Cognitive Services, use cases for ML.NET, and more.
+There's no one better to talk to about this than Luis Quintanilla. Luis has been with ML.NET since the beginning and was eventually scooped up by Microsoft to work on the docs for ML.NET. Luis had so much great stuff to share that we'll split this interview up into two parts. Today, we'll talk about his path to Microsoft, the value of ML.NET, and how to get started. Next week, [we'll talk about using ML.NET over something like Azure Cognitive Services, use cases for ML.NET, and more](https://daveabrock.com/2020/09/05/dev-discussions-luis-quintanilla-2).
 
 ![Luis Quintanilla]({{ site.url }}{{ site.baseurl }}/images/luisquintanilla-picture.jpg)
 
