@@ -58,6 +58,8 @@ Here you'll see a nice visualization view where you can hover over "trouble spot
 
 This capability isn't just for cyclomatic complexity—you can do it for documentation (comments), test coverage, and more. It's a great way to see the high-level state of your application.
 
+I can personally see a lot of value in using the [code coverage visualization](https://www.ndepend.com/docs/monitor-test-coverage#identify-which-code-need-more-test), as it easily shows which components are in need of more coverage.
+
 ## Understand dependencies
 
 NDepend ships with a dependencies view that allows you to visualize the relationships between your projects. It's an interactive view, where you can click and hover over dependencies, to see how tightly or loosely coupled your dependencies are.
@@ -68,7 +70,7 @@ If you tell your boss something is taking a while because it's a "bowl of spaghe
 
 ## Query code with the CQLinq syntax
 
-NDepend offers Code Query LINQ (CQLinq) to query .NET code through the use of LINQ queries. If you want greater control of the metrics, or want a one-off result, it's a great capability.
+NDepend offers Code Query LINQ (CQLinq) to query .NET code through the use of LINQ queries. If you want greater control of the metrics, or want a one-off result, it's a great capability. You can use any C# LINQ syntax.
 
 Let's say I want to find any methods where the cyclomatic complexity is greater than 10.
 
@@ -80,7 +82,7 @@ Now, I can execute the query like this:
 
 ```csharp
 from m in Methods where m.CyclomaticComplexity > 10
-select m
+select new { m, m.CyclomaticComplexity }
 ```
 
 I don't need to click a Run button or anything—the results will populate automatically.
@@ -95,7 +97,7 @@ To make the greatest impact to your team, you can use NDepend with your CI tools
 
 If you are using something like Azure DevOps, you can use an extension that contains a build task. This will produce the dashboard at a moment's notice, just like we saw in our local Visual Studio.
 
-Much like how you can enforce quality gates in your CI tooling for code coverage and coding conventions, you can also do for NDepend. The extension ships with a dozen quality gates for things such as technical debt amount or issues with a particular severity—for example, you could enforce a gate where developers don't push any code with Major or Critical issues.
+Much like how you can enforce quality gates in your CI tooling for code coverage and coding conventions, you can also do for NDepend. The extension ships with a dozen quality gates for things such as technical debt amount or issues with a particular severity—for example, you could enforce a gate where developers don't push any code with Major or Critical issues. The quality gates are also C# LINQ queries, so you [can easily tweak existing gates or create new ones](https://mailstat.us/tr/t/2elpw4ntkesbnhaa/9/https://www.ndepend.com/docs/quality-gates#Customization).
 
 On top of enforcing code quality across the team, you have the advantage of the metrics in one place (and not scattered across dev machines) and also can report progress up the chain, if needed.
 
