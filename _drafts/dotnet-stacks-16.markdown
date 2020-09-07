@@ -1,6 +1,6 @@
 ---
 date: "2020-09-04"
-title: "The .NET Stacks #16: <fill in later>"
+title: "The .NET Stacks #16: App trimming and more on ML.NET"
 tags: [dotnet-stacks]
 comments: false
 ---
@@ -9,16 +9,35 @@ comments: false
 
 Welcome to 2020, where [Thomas Running is finally getting the credit he deserves](https://twitter.com/codinghorror/status/1301970691135160321).
 
-This week, we:
+With the .NET 5 last preview hitting last week, you'd think we wouldn't have much to talk about! Oh, no—there is *always* something to talk about.
 
-* Do Thing 1
-* Do Thing 2
+This week:
+
+* App trimming in .NET 5
 * More with Luis Quintanilla on ML.NET
 * Community roundup
 
+## App trimming in .NET 5
+
+With .NET 5 preview 8 shipped last week, Microsoft has been pushing a lot of articles about the performance improvements. This week was no exception as Sam Spencer [discussed how app trimming will work in .NET 5](https://devblogs.microsoft.com/dotnet/app-trimming-in-net-5/). It's not as sexy as Blazor, but crucially important.
+
+A huge driver for .NET Core over .NET Framework, among several other things, is self-contained deployments. There's no dependency on a framework installation, so setup is easier but the size of the apps is much larger. With .NET Core 3, Microsoft introduced [app trimming, or assembly linking, that optimizes your deployment size](https://docs.microsoft.com/dotnet/core/deploying/trim-self-contained). Long story short, it only packages assemblies that are used.
+
+That's great if you forget to remove dependencies you're no longer using, but the real value comes in opening those assemblies. That's what's coming with .NET 5: they've expanded app trimming to remove types and members unused by your application as well. This seems both exciting and scary: it's quite risky with extensive testing required and as a result, Spencer notes it's an experimental feature not ready for large adoption yet. With that in mind, the default trimming in .NET is assembly-level, but you can use a `<TrimMode>Link</TrimMode>` setting in your project file to enable member-level trimming.
+
+This is not setting and forgetting, though: it only does a static analysis of your code and, as you likely know, .NET Core depends heavily on dynamic code patterns like reflection—especially for dependency injection and object serialization. Because the trimmer can't discover types at runtime that leverage these patterns, it could lead to disastrous results. What if you dynamically discover an interface at runtime and the analyzer doesn't find it, then the types are trimmed out? Instead of trying to resolve all your problems for you, which will never be a perfect process, the approach in .NET 5 is to both provide feedback to you if the trimmer isn't sure about something, and also annotations for you to use that will help the trimmer—especially when dealing with these dynamic behaviors.
+
+Speaking of reflection, do you remember [when we talked about source generators last week](https://daveabrock.com/2020/09/05/dotnet-stacks-15)? The .NET team is looking at implementing source generators to move functionality from reflection at runtime to build-time. This speeds up performance but also allows the trimmer to better analyze your code—and with a higher level of accuracy.
+
+A big winner here is Blazor—with the release in May, Blazor now utilizes .NET 5 instead of Mono (and with it, it's increased size). Blazor WebAssembly is still a little heavy and this will go a long way to making the size more manageable.
+
+Until native AOT comes to .NET—[and boy, we're impatiently waiting](https://visualstudiomagazine.com/articles/2020/08/31/aot-survey.aspx)—this will hopefully clear the path for its success. I'm cautiously optimistic. I know app trimming has been a bumpy road this far, but the annotations might provide for a better experience—and allow us to confidently trim our apps without sacrificing reliability.
+
+Take a look [at the introductory article](https://devblogs.microsoft.com/dotnet/app-trimming-in-net-5/) as well as [a deep dive on customization](https://devblogs.microsoft.com/dotnet/customizing-trimming-in-net-core-5/).
+
 ## Dev Discussions: More with Luis Quintanilla
 
-Last week, we began a conversation with Luis Quintilla about ML.NET. This week, we discussing when to use ML.NET over something like Azure Cognitive Services, practical uses, and more.
+Last week, we began a conversation with Luis Quintanilla about ML.NET. This week, we discussing when to use ML.NET over something like Azure Cognitive Services, practical uses, and more.
 
 ![Luis Quintanilla]({{ site.url }}{{ site.baseurl }}/images/luisquintanilla-picture.jpg)
 
@@ -28,7 +47,7 @@ This is a really tough one to answer because there's so many ways you can make t
 
 #### Custom Training vs Consumption
 
-If you're looking to add machine learning into your application to solve a fairly generic problem, such as language translation or identifying popular landmarks, Azure Cognitive Services is an excellent option. The only knowledge you need to have is how to call an API over HTTP. 
+If you're looking to add machine learning into your application to solve a fairly generic problem, such as language translation or identifying popular landmarks, Azure Cognitive Services is an excellent option. The only knowledge you need to have is how to call an API over HTTP.
 
 Azure Cognitive Services provides a set of robust, state-of-the-art, pretrained models for a wide variety of scenarios. However, there’s always edge cases. Suppose you have a set of documents that you want to classify and the terminology in your industry is rare or niche. In that scenario, the performance of Azure Cognitive Services may vary because the pretrained models most likely have never encountered some of your industry terms. At that point, training your own model may be a better option, which for this particular scenario, Azure Cognitive Services does not allow you to do.
 
@@ -72,8 +91,9 @@ If any of that sounds remotely interesting, feel free to check out and follow th
 
 ### What is your one piece of programming advice?
 
-Just do it! Everyone has different learning styles, but I strongly believe no amount of videos, books or blog posts compare to actually getting your hands dirty. It can definitely be daunting at first, but no matter how small or basic the application is, uilding things is always a good learning experience. Often there is a lot of work that goes into producing content, so end users typically get the polished product and the happy path. When you're not sure of where to start or would like to go more in depth, these resources are excellent. However, once you stray from that guided environment, you start making mistakes. Embrace these mistakes because they’re a learning experience.
+Just do it! Everyone has different learning styles, but I strongly believe no amount of videos, books or blog posts compare to actually getting your hands dirty. It can definitely be daunting at first, but no matter how small or basic the application is, building things is always a good learning experience. Often there is a lot of work that goes into producing content, so end users typically get the polished product and the happy path. When you're not sure of where to start or would like to go more in depth, these resources are excellent. However, once you stray from that guided environment, you start making mistakes. Embrace these mistakes because they’re a learning experience.
 
+*[Check out the full interview with Luis at my site](https://daveabrock.com/2020/09/05/dev-discussions-luis-quintanilla-2).*
 
 ## 🌎 Last week in the .NET world
 
