@@ -1,0 +1,70 @@
+---
+date: "2020-09-10"
+title: "The .NET Stacks: <fill in later>"
+tags: [dotnet-stacks]
+comments: false
+---
+
+## 🌎 Last week in the .NET world
+
+### The Top 3
+
+### 📢 Announcements
+
+* Rahul Bhandari [announces the release of the .NET Core September 2020 security update](https://devblogs.microsoft.com/dotnet/net-core-september-2020/?WT.mc_id=DOP-MVP-4025064).
+* Tara Overfield [announces the September 2020 security and quality updates for .NET Framework](https://devblogs.microsoft.com/dotnet/net-framework-september-2020-security-and-quality-rollup-updates).
+* The .NET docs team [shows off what's new from the month of August](https://docs.microsoft.com/en-us/dotnet/whats-new/2020-08).
+* Visual Studio Codespaces [is consolidating into GitHub Codespaces](https://devblogs.microsoft.com/visualstudio/visual-studio-codespaces-is-consolidating-into-github-codespaces/).
+
+### 📅 Community and events
+
+
+### 😎 Blazor
+
+* Julio Sampaio [gets started with Blazor](https://www.red-gate.com/simple-talk/dotnet/c-programming/first-steps-with-blazor/).
+
+### 🚀 .NET Core
+
+* Michał Białecki [works with view in EF Core 5](http://www.michalbialecki.com/2020/09/09/working-with-views-in-entity-framework-core-5/).
+* Tomasz Pęczek [works with HTTP trailers in ASP.NET Core](https://www.tpeczek.com/2020/09/little-known-aspnet-core-features-http.html).
+* Mark Heath [migrates from ASP.NET to ASP.NET Core](https://markheath.net/post/migrate-aspnet-core).
+
+### ⛅ The cloud
+
+* Jason Farrell [continues his work on Azure Durable Functions](https://jfarrell.net/2020/09/05/durable-functions-part-4-analyze-and-download/).
+* Siva Ramani and Naveen Balaraman [deploy a .NET Core Web API container to Amazon EKS](https://aws.amazon.com/blogs/developer/build-and-deploy-net-core-webapi-container-to-amazon-eks-using-cdk-cdk8s).
+* Jamie Maguire [adds speech to a chatbot using the Bot Framework and Azure Speech Services](http://www.jamiemaguire.net/index.php/2020/09/05/adding-speech-capability-to-your-chatbot-using-bot-framework-and-azure-speech-services/).
+
+### 📔 Languages
+
+* Thomas Claudius Huber [discusses target-typed new expressions in C# 9](https://www.thomasclaudiushuber.com/2020/09/08/c-9-0-target-typed-new-expressions/).
+* Andrew Nosenko [works on async subroutines with C# 8 and IAsyncEnumerable](https://dev.to/noseratio/asynchronous-coroutines-with-c-8-0-and-iasyncenumerable-2e04).
+* Michael Shpilt [discusses assembly versioning and "DLL hell" in .NET](https://michaelscodingspot.com/dotnet-dll-hell/).
+
+### 🔧 Tools
+
+* Andrew Lock [continues his k8s series: this time, configuring resources with YAML manifests](https://andrewlock.net/deploying-asp-net-core-applications-to-kubernetes-part-2-configuring-resources-with-yaml-manifests/).
+* Matthew Jones [uses a Dapper base repository in C#](https://exceptionnotfound.net/using-a-dapper-base-repository-in-c-to-improve-readability).
+* ErikEJ uses [EF Core Power Tools to rename entities and properties when reverse engineering a database](https://erikej.github.io/efcore/2020/09/07/ef-core-power-tools-renaming-advanced.html).
+* Jason Gaylord [adds architecture icons to diagrams](https://www.jasongaylord.com/blog/2020/09/06/azure-architecture-icons).
+* Adam Storr [uses Project Tye to run dependent services with ASP.NET Core](https://adamstorr.azurewebsites.net/blog/using-project-tye-to-run-dependent-services-for-use-with-aspnetcore).
+
+### 📱 Xamarin
+
+* Vicente Gerardo Guzmán Lucio [creates custom renderers for a control](https://www.syncfusion.com/blogs/post/how-to-create-custom-renderers-for-a-control-in-xamarin-forms.aspx).
+* James Montemagno [quickly discusses modal navigation](https://devblogs.microsoft.com/xamarin/xamarin-forms-shell-quick-tip-modal-navigation/).
+
+### 🎤 Podcasts
+
+* The Merge Conflict podcast [discusses Blazor](https://www.mergeconflict.fm/218).
+* The .NET Core Podcast [talks about IoT and .NET Core with Pete Gallagher](https://dotnetcore.show/episode-59-iot-and-net-core-with-pete-gallagher/).
+* The Loosely Coupled Show [talks about loosely-coupled monoliths](https://www.youtube.com/watch?v=xODJrIYDxA4).
+
+
+### 🎥 Videos
+
+* The AI Show [discusses OSS framework support in the Azure Machine Learning service](https://channel9.msdn.com/Shows/AI-Show/OSS-Framework-Support-in-Azure-Machine-Learning-Service).
+* Data Exposed [works with Power BI and Azure Synapse](https://channel9.msdn.com/Shows/Data-Exposed/Analyzing-your-Data-Lake-with-Power-BI-and-Azure-Synapse).
+* The ON.NET Show [uses .NET microservices with Steeltoe](https://channel9.msdn.com/Shows/On-NET/NET-Microservices-with-Steeltoe).
+* The ASP.NET Monsters [work on subdomain routing in ASP.NET Core](https://www.youtube.com/watch?v=SmItxjIUiLc).
+
