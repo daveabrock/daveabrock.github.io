@@ -252,11 +252,17 @@ During the build, the `.scss` file is compiled to `Index.razor.css` and we see t
 
 ![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/red.png)
 
-## How to disable automatic bundling
+## Disable automatic bundling
 
 If you have a process that works for you, fantastic. If you want to opt-out of how Blazor publishes and loads scoped files at runtime, you can disable it by using an MSBuild property. As [mentioned in the GitHub issue](https://github.com/dotnet/aspnetcore/issues/10170#issuecomment-671342247), this means it's *your* responsibility to grab the scoped CSS files from the `obj` directory and do the required steps to publish and load them during runtime.
 
-If you're good with that, add the `DisableScopedCssBundling` MSBuild property to your project file. I wasn't able to discover the exact syntax, but can see the exact property [by looking at the .targets file](https://github.com/dotnet/aspnetcore/search?q=DisableScopedCssBundling&unscoped_q=DisableScopedCssBundling). Once I find the exact syntax, I will update this post.
+If you're good with that, add the `DisableScopedCssBundling` MSBuild property to your project file.
+
+```xml
+<PropertyGroup>
+  <DisableScopedCssBundling>true</DisableScopedCssBundling>
+</PropertyGroup>
+```
 
 ## Wrap up
 
