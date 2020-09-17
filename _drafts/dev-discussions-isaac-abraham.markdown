@@ -78,6 +78,6 @@ You still can (and people do) write entire systems that are functionally pure, a
 
 I’d always love for there to be more F# coverage! If I think back to when I first started looking into F# though, it’s come a long way—there’s more awareness of this language out there, especially from some of the bigger names in the .NET team. People are starting to realise that F# isn’t some crazy maths-and-science language, but it’s a general purpose language—it’s just that it takes a different approach towards how you organise your code. It still frustrates me to occasionally see people refer to use C# and .NET interchangeably, of course, but it’s getting better.
 
-# Something I ask everybody: what is your one piece of programming advice?
+## What is your one piece of programming advice?
 
 Great question. I think one thing I try to keep in mind is to avoid premature optimisation and design. Design systems for what you know is going to be needed, with extension points for what will most likely be required. You can never design for every eventuality, and you’ll sometimes get it wrong, that’s life—optimise for what is the most likely outcome.
