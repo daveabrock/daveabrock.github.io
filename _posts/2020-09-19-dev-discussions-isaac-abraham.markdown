@@ -1,14 +1,17 @@
 ---
-date: "2020-09-17"
+date: "2020-09-19"
 title: "Dev Discussions - Isaac Abraham"
 excerpt: In the latest interview, I talk with Isaac Abraham about his journey to F#.
 tags: [dotnet-stacks, dev-discussions]
+header:
+    overlay_image: /assets/images/abraham-card.png
+    overlay_filter: 0.8
 ---
 
 This is the full interview from my discussion with Isaac Abraham in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com)!
 {: .notice--success}
 
-As much as we all love C#, there's something that needs reminding from time to time: C# is *not* .NET. It is a large and important part of .NET, for sure, but also supports two other languages: Visual Basic and F#. As for F#, it's been gaining quite a bit of popularity over the last several years, and for good reason: it's approachable, concise, and allows you to embrace a functional-first language while leveraging the power of the .NET ecosystem.
+As much as we all love C#, there's something that needs reminding from time to time: C# is *not* .NET. It is a large and important part of .NET, for sure, but .NET also supports two other languages: Visual Basic and F#. As for F#, it's been gaining quite a bit of popularity over the last several years, and for good reason: it's approachable, concise, and allows you to embrace a functional-first language while leveraging the power of the .NET ecosystem.
 
 I caught up with Isaac Abraham to learn more about F#. After spending a decade as a C# developer, Isaac embraced the power of F# and founded [Compositional IT](https://www.compositional-it.com/), a functional-first consultancy. He's also the author of [*Get Programming with F#: A Guide for .NET Developers*](https://www.manning.com/books/get-programming-with-f-sharp).
 

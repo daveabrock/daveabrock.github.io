@@ -88,6 +88,7 @@ Great question. I think one thing I try to keep in mind is to avoid premature op
 * Rick Strahl [warns about missing await calls for async code in ASP.NET Code middleware](https://weblog.west-wind.com/posts/2020/Sep/14/Dont-get-burned-by-missing-await-Calls-for-Async-Code-in-ASPNET-Core-Middleware).
 * Dominique St-Amand [secures an ASP.NET Core Web API with an API key](https://www.domstamand.com/securing-asp-net-core-webapi-with-an-api-key/).
 * Vladimir Pecanac [discusses how to secure sensitive data locally with ASP.NET Core](https://code-maze.com/aspnet-configuration-securing-sensitive-data/).
+* David Grace [explores why you app might not be working in IIS](https://www.roundthecode.com/dotnet/four-reasons-why-your-asp-net-core-application-is-not-working-in-iis).
 
 ### 🚀 .NET Core
 
@@ -107,12 +108,17 @@ Great question. I think one thing I try to keep in mind is to avoid premature op
 * Matt Small [finds a gotcha: you can't use an Azure Key Vault firewall if you're in a situation where you're using App Gateway along with a Key Vault certificate for SSL termination](https://azidentity.azurewebsites.net/post/2020/09/14/key-vault-app-gateway-and-the-kv-firewall).
 * Gunnar Peipman [hosts applications on Azure B-series virtual machines](https://gunnarpeipman.com/azure-b-series-virtual-machines/).
 
-### 📔 Languages
-
+### 📔 C#
 
 * Jeremy Clark [shows how to see all the exceptions when calling "await Task.WhenAll."](https://jeremybytes.blogspot.com/2020/09/await-taskwhenall-shows-one-exception.html).
 * Jerome Laban [uses MSBuild items and properties in C# 9 source generators](https://jaylee.org/archive/2020/09/13/msbuild-items-and-properties-in-csharp9-sourcegenerators.html).
-* David Grace [explores why you app might not be working in IIS](https://www.roundthecode.com/dotnet/four-reasons-why-your-asp-net-core-application-is-not-working-in-iis).
+
+### 📗 F#
+
+* A nice rundown of [10 ways to try F# in the browser](https://fsharp.org/use/browser/).
+* Daniel Bykat talks about [the PORK framework and its use with F#](https://medium.com/rocket-mortgage-technology-blog/pork-a-technology-resilience-framework-745207bd28d5).
+* Alican Demirtas [discusses string interpolation in F#](https://www.compositional-it.com/news-blog/string-interpolation-in-f/).
+* Paul Biggar [talks about his async adventures](https://blog.darklang.com/adventures-in-async/).
 
 ### 🔧 Tools
 
