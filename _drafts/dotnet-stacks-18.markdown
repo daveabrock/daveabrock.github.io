@@ -53,7 +53,7 @@ No, it doesn’t enforce it. There’s some parts of the language which make it 
 
 You still can (and people do) write entire systems that are functionally pure, and the benefits of pure functions are certainly something that most F# folks are aware of (it's much easier to reason about and test, for example). It just means that the language won’t force you to do it.
 
-## What is your one piece of programming advice?
+### What is your one piece of programming advice?
 
 Great question. I think one thing I try to keep in mind is to avoid premature optimisation and design. Design systems for what you know is going to be needed, with extension points for what will most likely be required. You can never design for every eventuality, and you’ll sometimes get it wrong, that’s life—optimise for what is the most likely outcome.
 
