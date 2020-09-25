@@ -1,13 +1,33 @@
 ---
 date: "2020-09-18"
-title: "The .NET Stacks: <fill in later>"
+title: "The .NET Stacks #18: RC1 is here, the fate of .NET Standard, and F# with Isaac Abraham"
 tags: [dotnet-stacks]
 comments: false
 ---
 
+![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+
+## .NET 5 RC1 is here
+
+This week, Microsoft pushed out the [RC1 release for .NET 5](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-rc-1), which is scheduled to officially "go live" in early November. RC1 comes with a "go live" license, which means you get production support for it. With that, RC1 versions were released for [ASP.NET Core](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-release-candidate-1/) and [EF Core](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-efcore-5-0-rc1/) as well. 
+
+I've dug deep on a variety of new features in the last few months or so—I won't  rehash them here. However, the links are worth checking out. For example, Richard Lander [goes in-depth](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-rc-1/) on C# 9 records and `System.Text.Json`.
+
 ## The fate of .NET Standard
 
-Talk about Immo's post here
+While there are many great updates to the upcoming .NET 5 release, a big selling point is at a higher level: the promise of a [unified SDK experience for all of .NET](https://devblogs.microsoft.com/dotnet/introducing-net-5/). The idea is that you'll be able to use *one* platform regardless of your needs—whether it's Windows, Linux, macOS, Android, WebAssembly, and more. (Because of internal resourcing constraints, [Xamarin will join the party](https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/) in 2021, with .NET 6.)
+
+Microsoft has definitely struggled in communicating a clear direction for .NET the last several years, so when you pair a unified experience with predictable releases and roadmaps, it's music to our ears.
+
+You've probably wondered: *what does this mean for .NET Standard*? The unified experience is great, but what about when you have .NET Framework apps to support? (If you're new to .NET Standard, it's [more-or-less a specification](https://docs.microsoft.com/dotnet/standard/net-standard) where you can target a version of Standard, and all .NET implementations that target it are guaranteed to support all its .NET APIs.)
+
+Immo Landwerth [shed some light on the subject this week](https://devblogs.microsoft.com/dotnet/the-future-of-net-standard/). .NET Standard is being thrown to the .NET purgatory with .NET Framework: it'll still technically be around, and .NET 5 will support it—but the current version, 2.1, will be its last.
+
+As a result, we have some new target framework names: `net5.0`, for apps that run anywhere, combines and replaces `netcoreapp` and `netstandard`. There's also `net5.0-windows` (with Android and iOS flavors to come) for Windows-specific use cases, like UWP.
+
+OK, so .NET Standard is still around but we have new target framework names. What should you do? With .NET Standard 2.0 being the last version to support .NET Framework, use `netstandard2.0` for code sharing between .NET Framework and other platforms. You can use `netstandard2.1` to share between Mono, Xamarin, and .NET Core 3.*x*, and then `net5.0` for anything else (and especially when you want to use .NET 5 improvements and new language features). You'll definitely want to [check out the post for all the details](https://devblogs.microsoft.com/dotnet/the-future-of-net-standard).
+
+What a mess: .NET Standard promised API uniformity and now we're even having to choose between that and a new way of doing things. The post lays out why .NET Standard is problematic, and it makes sense. But when you're trying to innovate at a feverish pace but still support customers on .NET Framework, the cost is complexity—and the irony is that with uniformity with .NET 5, that won't apply when you have legacy apps to support.
 
 ## Dev Discussions: Isaac Abraham
 
@@ -57,7 +77,7 @@ You still can (and people do) write entire systems that are functionally pure, a
 
 Great question. I think one thing I try to keep in mind is to avoid premature optimisation and design. Design systems for what you know is going to be needed, with extension points for what will most likely be required. You can never design for every eventuality, and you’ll sometimes get it wrong, that’s life—optimise for what is the most likely outcome.
 
-*To read the entire interview, head on over to my site.*
+*To read the entire interview, [head on over to my site](https://daveabrock.com/2020/09/19/dev-discussions-isaac-abraham).*
 
 ## 🌎 Last week in the .NET world
 
