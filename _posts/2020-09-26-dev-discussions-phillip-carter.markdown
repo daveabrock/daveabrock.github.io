@@ -57,7 +57,7 @@ For those who use visual designer tooling heavily, F# may not be to your liking.
 
 For anyone who uses Visual Studio to primarily edit code, then F# may take some getting used to, but most of the things you’re used to using are present. In that sense, it is first class. Project integration, semantic colors, IntelliSense, tooltips (more advanced than those in C#), some refactorings and analyzers, and so on.
 
-C# has objectively more IDE features than F#, and I would be lying if I said that the number of refactorings available in F# tooling absolutely pales in comparison to C# tooling. Some of these come down to how each language works, though, so it’s not quite so simple as “F# could just have XYZ features that C# has.” But overall, I think people tend to feel mostly satisfied by the kinds of tooling available to them.
+C# has objectively more IDE features than F#, and the number of refactorings available in F# tooling absolutely pales in comparison to C# tooling. Some of these come down to how each language works, though, so it’s not quite so simple as “F# could just have XYZ features that C# has.” But overall, I think people tend to feel mostly satisfied by the kinds of tooling available to them.
 
 It’s often claimed that F# needs less refactoring tools because the language tends to guide programmers into one way to do things, and the combination of the F# type system and language design lends itself towards the idiom, “if it compiles, it works right.” This is mostly true, though I do feel like there are entire classes of refactoring tools that F# developers would love to use, and they’d be unique to F# and functional programming.
 
