@@ -17,7 +17,7 @@ Last week, we [talked to Isaac Abraham about F# from a C# developer's perspectiv
 
 In this interview, we talk to Phillip about Microsoft F# support, F# tooling (and how it might compare to C#), good advice for learning F#, and more.
 
-![Isaac Abraham]({{ site.url }}{{ site.baseurl }}/images/phillip-carter.jpg)
+![Phillip Carter]({{ site.url }}{{ site.baseurl }}/images/phillip-carter.jpg)
 
 ## Can you talk about what you've done at Microsoft, and how you landed on F#?
 
