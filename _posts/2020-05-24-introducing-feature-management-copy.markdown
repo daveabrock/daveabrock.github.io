@@ -18,7 +18,7 @@ I'll be writing a few posts on this topic:
 - Part 1, this post: Introducing the `Microsoft.FeatureManagement` library
 - Part 2: [Use Microsoft.FeatureManagement.AspNetCore to filter actions and HTML](https://daveabrock.com/2020/05/30/introducing-feature-management-aspnetcore)
 - Part 3: [Implement custom filters in your ASP.NET Core feature flags](https://daveabrock.com/2020/06/07/custom-filters-in-core-flags)
-- Part 4: [Manage feature flags with Azure App Configuration](https://daveabrock.com/2020/06/15/use-feature-flags-azure-app-config)
+- Part 4: [Manage feature flags with Azure App Configuration](https://daveabrock.com/2020/06/17/use-feature-flags-azure-app-config)
 
 ## Create sample application and add NuGet packages
 

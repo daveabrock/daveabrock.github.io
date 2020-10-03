@@ -53,7 +53,7 @@ I can’t speak to the full history of the EF team, but my impression is they ha
 
 We do everything in the open. Everything is tracked via our issues and/or discussions. We prioritize features based on community feedback, including upvotes and comments. We use issues and discussions for design decisions. The roadmap is publicly available and updated whenever priorities shift. 
 
-There are a few ways to keep track with what’s new and to interface directly with the team. First, most of the team is active on Twitter. You can use [the alias to find profiles and ask questions directly](https://aka.ms/efteam-twitter). Second, we are active on GitHub. Perhaps the most useful link is [the issue that is pinned to the issues list and updated weekly with progress](https://github.com/dotnet/efcore/issues/19549). You can access [discussions here](https://github.com/dotnet/efcore/discussions). For major releases, [keep an eye on the .NET blog](https://devblogs.microsoft.com/dotnet/author/jeremy-likness/)  - it’s not just a list of what’s new, but also an opportunity to recognize our many community contributors. You might be amazed to see how many people are involved in code and documentation updates for EF Core 5.0!
+There are a few ways to keep track with what’s new and to interface directly with the team. First, most of the team is active on Twitter. You can use [the alias to find profiles and ask questions directly](https://aka.ms/efteam-twitter). Second, we are active on GitHub. Perhaps the most useful link is [the issue that is pinned to the issues list and updated weekly with progress](https://github.com/dotnet/efcore/issues/19549). For major releases, [keep an eye on the .NET blog](https://devblogs.microsoft.com/dotnet/author/jeremy-likness/)  - it’s not just a list of what’s new, but also an opportunity to recognize our many community contributors. You might be amazed to see how many people are involved in code and documentation updates for EF Core 5.0!
 
 The other way to keep in touch, and one I am very excited about, is our EF Core Community Standup. We host these every other Wednesday at 10am PT (17:00 UTC). During the standup, we highlight updates, community blog posts, projects, and contributions. It is a live stream and we encourage live Q&A so we can interact directly and answer the community questions that come up. We also take suggestions for shows and bring on guests when we can. You can find the standup schedules and watch previous recorded standups at *[live.dot.net](https://live.dot.net/)*.
 
@@ -90,7 +90,6 @@ The team has great relationships across the board—we have conversations with t
 * [GitHub issue for new .NET Data landing page](https://github.com/dotnet/docs/issues/19029)
 * [The EF Team on Twitter](https://twitter.com/i/lists/1253069921669410818)
 * [EF weekly status updates](https://github.com/dotnet/efcore/issues/19549)
-* [EF Core discussions](https://github.com/dotnet/efcore/discussions)
 * [Jeremy's posts at the .NET Blog](https://devblogs.microsoft.com/dotnet/author/jeremy-likness/)
 * [.NET community standup page](https://dotnet.microsoft.com/platform/community/standup)
 * [What's New in EF Core 5.0](https://docs.microsoft.com/ef/core/what-is-new/ef-core-5.0/whatsnew)

@@ -5,7 +5,7 @@ excerpt: Use Microsoft.FeatureManagement.AspNetCore to filter HTML and controlle
 tags: [csharp, dotnet-core, feature-flags]
 ---
 
-In our previous post, we introduced `Microsoft.FeatureManagement` as a way to [manage feature flag functionality in your .NET applications](https://daveabrock.com/2020/05/24/introducing-feature-management.html). As mentioned in the post, this library is compatible with any .NET Standard application.
+In our previous post, we introduced `Microsoft.FeatureManagement` as a way to [manage feature flag functionality in your .NET applications](https://daveabrock.com/2020/05/24/introducing-feature-management-copy). As mentioned in the post, this library is compatible with any .NET Standard application.
 
 In this post, we'll kick things up a notch and show how you can pair this with an ASP.NET Core-only library, `Microsoft.FeatureManagement.AspNetCore`, to perform the following tasks with minimal required configuration:
 
@@ -17,11 +17,11 @@ This is part 2 in a four-part series on .NET native feature flags:
 - Part 1: [Introducing the `Microsoft.FeatureManagement` library](https://daveabrock.com/2020/05/24/introducing-feature-management-copy)
 - Part 2, this post: Use Microsoft.FeatureManagement.AspNetCore to filter actions and HTML
 - Part 3: [Implement custom filters in your ASP.NET Core feature flags](https://daveabrock.com/2020/06/07/custom-filters-in-core-flags)
-- Part 4: [Manage feature flags with Azure App Configuration](https://daveabrock.com/2020/06/15/use-feature-flags-azure-app-config)
+- Part 4: [Manage feature flags with Azure App Configuration](https://daveabrock.com/2020/06/17/use-feature-flags-azure-app-config)
 
 ## Set up the sample application
 
-If you wish to follow along, refer to the previous post for details on [how we set up our sample application](https://daveabrock.com/2020/05/24/introducing-feature-management.html). In addition, you'll need to add the `Microsoft.FeatureManagement.AspNetCore` library by performing one of the following two steps:
+If you wish to follow along, refer to the previous post for details on [how we set up our sample application](https://daveabrock.com/2020/05/24/introducing-feature-management-copy). In addition, you'll need to add the `Microsoft.FeatureManagement.AspNetCore` library by performing one of the following two steps:
 
 - From the NuGet Package Manager (easiest way is to right-click your solution in Visual Studio, then clicking Manage NuGet Packages), search for and install `Microsoft.FeatureManagement.AspNetCore`
 - From the `dotnet` CLI, you can execute the `dotnet add package Microsoft.FeatureManagement.AspNetCore` command

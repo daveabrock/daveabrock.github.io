@@ -8,7 +8,7 @@ header:
     overlay_filter: 0.8
 ---
 
-So far in this series, we introduced `Microsoft.FeatureManagement` as a way to [manage feature flag functionality in your .NET applications](https://daveabrock.com/2020/05/26/introducing-feature-management-copy.html) and used the `Microsoft.FeatureManagement.AspNetCore` library to [conditionally filter HTML components and apply filters across controller action methods and classes](https://daveabrock.com/2020/05/30/introducing-feature-management-aspnetcore.html).
+So far in this series, we introduced `Microsoft.FeatureManagement` as a way to [manage feature flag functionality in your .NET applications](https://daveabrock.com/2020/05/24/introducing-feature-management-copy) and used the `Microsoft.FeatureManagement.AspNetCore` library to [conditionally filter HTML components and apply filters across controller action methods and classes](https://daveabrock.com/2020/05/30/introducing-feature-management-aspnetcore.html).
 
 These examples are great to show off how to get started with native feature flags, but you might be wondering if you can do something more powerful than simply checking booleans. And, you can! Using feature filters you can use three feature filters provided out of the box, and can also write your own.
 
@@ -22,7 +22,7 @@ This is part 3 in a four-part series on .NET native feature flags:
 - Part 1: [Introducing the `Microsoft.FeatureManagement` library](https://daveabrock.com/2020/05/24/introducing-feature-management-copy)
 - Part 2: [Use Microsoft.FeatureManagement.AspNetCore to filter actions and HTML](https://daveabrock.com/2020/05/30/introducing-feature-management-aspnetcore)
 - Part 3, this post: Implement custom filters in your ASP.NET Core feature flags
-- Part 4: [Manage feature flags with Azure App Configuration](https://daveabrock.com/2020/06/15/use-feature-flags-azure-app-config)
+- Part 4: [Manage feature flags with Azure App Configuration](https://daveabrock.com/2020/06/17/use-feature-flags-azure-app-config)
 
 ## Implement IFeatureFilter using provided filters
 
@@ -32,7 +32,7 @@ The `Microsoft.FeatureManagement` library includes support for the `IFeatureFilt
 - TargetingFilter - allows you to [activate features for targeted audiences](https://docs.microsoft.com/dotnet/api/microsoft.featuremanagement.featurefilters.targetingfilter?view=azure-dotnet-preview)
 - TimeWindowFilter - activate a feature [based on a time window](https://docs.microsoft.com/dotnet/api/microsoft.featuremanagement.featurefilters.timewindowfilter?view=azure-dotnet-preview)
 
-In this example, we'll be showing off the `TimeWindowFilter`. Before getting started, make sure that you have set up our sample app as we did in the [first post in this series](https://daveabrock.com/2020/05/26/introducing-feature-management-copy.html).
+In this example, we'll be showing off the `TimeWindowFilter`. Before getting started, make sure that you have set up our sample app as we did in the [first post in this series](https://daveabrock.com/2020/05/24/introducing-feature-management-copy).
 
 ### Implement TimeWindowFilter
 
