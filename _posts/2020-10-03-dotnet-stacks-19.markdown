@@ -1,5 +1,5 @@
 ---
-date: "2020-09-26"
+date: "2020-10-03"
 title: "The .NET Stacks #19: An Ignite recap and F# with Phillip Carter"
 tags: [dotnet-stacks]
 comments: false

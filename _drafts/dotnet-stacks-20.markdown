@@ -7,11 +7,21 @@ comments: false
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
 
-## Topic 1
+## Understand Blazor Web Assembly performance best practices
 
-## Topic 2
+This week, Steve Sanderson—the architect at Microsoft behind Blazor—announced he's working on [documenting Blazor Web Assembly performance best practices](https://github.com/dotnet/AspNetCore.Docs/blob/1e199f340780f407a685695e6c4d953f173fa891/aspnetcore/blazor/webassembly-performance-best-practices.md#aspnet-core-blazor-webassembly-performance-best-practices). While performance is always important, it appears doubly so when you're loading a complete .NET runtime into the browser.
 
-## Topic 3
+It's definitely worth your time. 
+
+**Add more stuff about that here.**
+
+## Use "route to code" with ASP.NET Core
+
+**Add more stuff about that here.**
+
+## Surveys are in for .NET repos in GitHub
+
+**Add more stuff about that here.**
 
 ## 🌎 Last week in the .NET world
 
