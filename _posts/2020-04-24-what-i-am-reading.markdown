@@ -11,7 +11,6 @@ Here's a weekly Friday shout-out of articles, videos, and other content I found 
 - [Production Tips for ASP.NET Core 3.1 Web Apps](https://wakeupandcode.com/production-tips-for-asp-net-core-3-1-web-apps/) (Shahed Chowdhuri)
 - [Can JavaScript Detect the Browser’s Zoom Level?](https://css-tricks.com/can-javascript-detect-the-browsers-zoom-level/) (Chris Coyier)
 - [TypeScript Assertion Signatures](https://www.carlrippon.com/typescript-assertion-signatures/) (Carl Rippon)
-- [Advanced Blazor Templating](http://blazorhelpwebsite.com/Blog/tabid/61/EntryId/4375/Advanced-Blazor-Templating.aspx) (Michael Washington)
 - [The Most Exciting Promise of .NET 5](https://developer.okta.com/blog/2020/04/17/most-exciting-promise-dotnet-5) (Heather Downing)
 - [98.css - a design system for building faithful recreations of old UIs](https://jdan.github.io/98.css/) (Jordan Scales)
 - [Demystifying Memory Profilers in C# .NET Part 1: The Principles](https://michaelscodingspot.com/memory-profilers-principles/) (Michael Shpilt)

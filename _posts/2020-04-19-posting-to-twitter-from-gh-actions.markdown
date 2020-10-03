@@ -16,7 +16,7 @@ A thought occurred to me: if I'm using GitHub, shouldn't I be able to use their 
 
 Alas, being forced to manually tweet about a new post a few times a month wasn't one of my life's biggest regrets—but if I could spend a few hours learning about GitHub Actions while saving a few minutes every month, why not?
 
-**This post is about learning**. Sure, you could [look at my 16-line YAML file](https://github.com/daveabrock/daveabrock.github.io/blob/master/.github/workflows/blank.yml) and say, "looks pretty simple" and maybe it is, in retrospect. But when you try something new, you stumble and you learn—and that's what this post is about.
+**This post is about learning**. Sure, you could look at my 16-line YAML file say, "looks pretty simple" and maybe it is, in retrospect. But when you try something new, you stumble and you learn—and that's what this post is about.
 
 ## The perfect world, and what I can do now
 

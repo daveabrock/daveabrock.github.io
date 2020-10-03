@@ -32,11 +32,11 @@ I initially started blogging so I could fill knowledge gaps while preparing for 
 
 Here's a list of my most popular posts this year, according to Google Analytics.
 
-* [Full-Stack Development in Visual Studio Code with ASP.NET Core](https://daveabrock.com/2018/03/05/full-stack-development-in-vs-code-with-asp-net-core/)
-* [Level Up Your GitHub Experience with Chrome Extensions](https://daveabrock.com/2018/11/25/level-up-github-experience-with-chrome-extensions/)
-* [Share Blazor Components with Shared Class Libraries](https://daveabrock.com/2018/11/11/using-blazor-shared-libraries/)
-* [Razor Support for ASP.NET Core Apps in Visual Studio Code](https://daveabrock.com/2018/11/19/net-core-apps-in-visual-studio-code-now-have-razor-support/)
-* [JavaScript Scope Can Be Tricky](https://daveabrock.com/2018/04/29/javascript-scope-can-be-tricky/)
+* [Full-Stack Development in Visual Studio Code with ASP.NET Core](https://daveabrock.com/2018/03/05/full-stack-development-in-vs-code-with-asp-net-core)
+* [Level Up Your GitHub Experience with Chrome Extensions](https://daveabrock.com/2018/11/26/level-up-github-experience-with-chrome-extensions)
+* [Share Blazor Components with Shared Class Libraries](https://daveabrock.com/2018/11/12/using-blazor-shared-libraries)
+* [Razor Support for ASP.NET Core Apps in Visual Studio Code](https://daveabrock.com/2018/11/19/net-core-apps-in-visual-studio-code-now-have-razor-support)
+* [JavaScript Scope Can Be Tricky](https://daveabrock.com/2018/04/30/javascript-scope-can-be-tricky)
 
 #### Speaking events
 

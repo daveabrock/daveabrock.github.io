@@ -86,7 +86,7 @@ localStorage.setItem('player', 'Kris');
 
 ### The fine print ###
 
-While web storage offers many benefits over cookies, it is not the end-all, be-all solution, and comes with serious drawbacks as [others](https://hacks.mozilla.org/2012/03/there-is-no-simple-solution-for-local-storage/) [have](https://blog.mozilla.com/tglek/2012/02/22/psa-dom-local-storage-considered-harmful/) [noted](http://webreflection.blogspot.com/2012/03/whats-localstorage-about.html).
+While web storage offers many benefits over cookies, it is not the end-all, be-all solution, and comes with serious drawbacks as [others](https://hacks.mozilla.org/2012/03/there-is-no-simple-solution-for-local-storage/) have [noted](http://webreflection.blogspot.com/2012/03/whats-localstorage-about.html).
 
 * **Web storage is synchronous** - because web storage runs synchronously, it can block the DOM from rendering while I/O is occurring.
 * **No indexing or transactional features** - web storage does not have indexing, which may incur performance bottlenecks on large data queries. If a user is modifying the same storage data in multiple browser tabs, one tab could potentially overwrite the value in another.

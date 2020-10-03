@@ -9,7 +9,7 @@ The beauty of a cross-platform framework like ASP.NET Core is your ability to ch
 
 With ASP.NET Core, the days of being locked down to writing .NET in Visual Studio are over. For example, you can write your applications on editors like [Visual Studio Code,](https://code.visualstudio.com/) whether you are on Mac, Windows, or a flavor of Linux.
 
-Earlier this year, I spoke and wrote extensively about [how to write an ASP.NET Core app with Visual Studio Code.](https://daveabrock.com/2018/03/05/full-stack-development-in-vs-code-with-asp-net-core/) As this support is evolving, you may notice experiences here and there that do not compare to using a full-fledged editor like Visual Studio—but if you are using Code for your Core apps you may find the trade-off worth it.
+Earlier this year, I spoke and wrote extensively about [how to write an ASP.NET Core app with Visual Studio Code.](https://daveabrock.com/2018/03/05/full-stack-development-in-vs-code-with-asp-net-core) As this support is evolving, you may notice experiences here and there that do not compare to using a full-fledged editor like Visual Studio—but if you are using Code for your Core apps you may find the trade-off worth it.
 
 That gap is narrowing with the announcement that Visual Studio Code [now has support for Razor,](https://blogs.msdn.microsoft.com/webdev/2018/11/16/razor-support-in-visual-studio-code-now-in-preview/) the .NET markup syntax engine that allows you to write dynamic views using .NET code and HTML markup.
 
@@ -17,7 +17,7 @@ As discussed in the announcement, this is very much in preview and has limitatio
 
 ## Take advantage of Razor support in Code
 
-Before you look at Razor support in Code, create an ASP.NET Core application in Visual Studio Code. We will just create an application based on the ASP.NET Core web application template. For an in-depth tutorial on using ASP.NET Core with Code, you can review [my blog post](https://daveabrock.com/2018/03/05/full-stack-development-in-vs-code-with-asp-net-core/) or an in-depth tutorial at [the official Microsoft Docs site.](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages-vsc/?view=aspnetcore-2.1)
+Before you look at Razor support in Code, create an ASP.NET Core application in Visual Studio Code. We will just create an application based on the ASP.NET Core web application template. For an in-depth tutorial on using ASP.NET Core with Code, you can review [my blog post](https://daveabrock.com/2018/03/05/full-stack-development-in-vs-code-with-asp-net-core) or an in-depth tutorial at [the official Microsoft Docs site.](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages-vsc/?view=aspnetcore-2.1)
 
 As prerequisites, make sure you have [Visual Studio Code,](https://code.visualstudio.com/) the [C# extension,](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) and the [.NET Core SDK](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) installed.
 
