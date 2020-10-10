@@ -14,11 +14,13 @@ Happy Monday! It looks like my pun from last week received some attention (and s
 This week:
 
 * Catch up with Azure Static Web Apps
-* Thing 2
+* Use `dotnet-monitor`
 * Provide input on .NET 6
 * Last week in the .NET world
 
 ## ⛅ Catch up with Azure Static Web Apps
+
+## Use `dotnet-monitor`
 
 ## 👨‍💻 Provide input on .NET 6
 
