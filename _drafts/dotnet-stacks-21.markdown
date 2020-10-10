@@ -1,11 +1,11 @@
 ---
 date: "2020-10-09"
-title: "The .NET Stacks #21: Some stuff"
+title: "The .NET Stacks #21: Azure Static Web Apps, .NET 6 feedback, and more!"
 tags: [dotnet-stacks]
 header:
     overlay_image: /assets/images/stacks-21-card.png
     overlay_filter: 0.8
-excerpt: This week, we look at some stuff.
+excerpt: This week, we take a look at Azure Static Web Apps, dotnet-monitor, and more.
 comments: false
 ---
 
@@ -13,20 +13,31 @@ Happy Monday! It looks like my pun from last week received some attention (and s
 
 This week:
 
-* Catch up with Azure Static Web Apps
-* Use `dotnet-monitor`
+* Catch up on Azure Static Web Apps
 * Provide input on .NET 6
 * Last week in the .NET world
 
-## ⛅ Catch up with Azure Static Web Apps
+## ⛅ Catch up on Azure Static Web Apps
 
-## Use `dotnet-monitor`
+This week, Anthony Chu joined the ASP.NET community standup to [talk about Azure Static Web Apps](https://www.youtube.com/watch?v=8xsp6Z_HjIg). Azure Static Web Apps has been at the top of my "I really need to take a look at this" list, so the timing was right. 😎
+
+Static sites are definitely the new hotness, and have been for awhile. If content on your site doesn't change that often, you'll just need to serve up some static HTML files. For example, on my site I utilize a static site generator called Jekyll and host the content on GitHub Pages—this helps my site load super fast and with little overhead. Why introduce database overhead and the like if you don't need it? (If it wasn't clear I'm talking about you, WordPress.)
+
+Many times, though, you'll also need to call off to an API eventually—this is quite common with SPAs like Vue, Angular, React, and now Blazor: you have a super-lightweight front-end that calls off to some APIs. A common architecture is serving up files statically with a serverless backend, such as Azure Functions.
+
+Enter Azure Static Web Apps. Introduced at Ignite this year, Azure Static Web Apps allow you to leverage this architecture with one easy solution. If you're good with GitHub lock-in and are looking for a static hosting solution, it's worth a look.
+
+You can [check out the docs for the full treatment](https://docs.microsoft.com/azure/static-web-apps/overview), but Azure Static Web Apps offers web hosting (duh), native Azure Functions support, GitHub triggers over GitHub Actions, free renewable SSL certificates, custom domains, and a bunch of auth integrations, and fallback routes.
+
+My favorite feature is GitHub PR testing sites. Once a PR kicks off, a GitHub Action executes and creates a temporary test staging site to view changes (it goes away once the PR is merged or discarded). This is a wonderful tool for you and others to test any changes to your app. Are you working on a complicated PR and want to have testers put your app through its paces? Send them the staging link.
+
+It's nice to have all this integrated in Azure, especially if that's where you do a lot of business. But why not just use GitHub Pages if you don't have a lot of complexity? That's a fair question. With the just announced Blazor Web Assembly support, Azure Static Web Apps is the clear winner. With Azure Static Web Apps, the GitHub Actions step becomes aware of a Blazor WebAssembly app and can do Blazor-specific precompression steps. Otherwise, you'd have to integrate an additional workflow to your app. With Azure Static Web Apps, it's available out of the box.
 
 ## 👨‍💻 Provide input on .NET 6
 
-With the general release of .NET 5 not even a month away, Microsoft is setting its sights on .NET 6. 
+With the general release of .NET 5 not even a month away, Microsoft is setting its sights on .NET 6.
 
-Check out [this GitHub issue](https://github.com/dotnet/aspnetcore/issues/26625) to provide feedback on what features you want to see. Unsurprisingly, [AoT compilation is leading the charge](https://github.com/dotnet/aspnetcore/issues/5466).
+Check out [this GitHub issue](https://github.com/dotnet/aspnetcore/issues/26625) to provide feedback on what features you want to see. Unsurprisingly, [Blazor AoT compilation is leading the charge](https://github.com/dotnet/aspnetcore/issues/5466). As a whole, the ASP.NET folks have noted that speeding up the developer feedback loop is a big priority for .NET 6.
 
 ## 🎂 Happy birthday, Mom
 
@@ -90,7 +101,10 @@ Here's a picture of us when I was young. I think she's trying to convince me to 
 
 ### 📗 F#
 
-* Jeremie Chassaing [works with applicative computation expressions in F#](https://thinkbeforecoding.com/post/2020/10/07/applicative-computation-expressions).
+* Jeremie Chassaing works with applicative computation expressions in F# in [two](https://thinkbeforecoding.com/post/2020/10/07/applicative-computation-expressions) [posts](https://thinkbeforecoding-uk.azurewebsites.net/post/2020/10/08/applicative-computation-expressions-2).
+* Alican Demirtas [works with React components in F#](https://www.compositional-it.com/news-blog/working-with-react-components-in-fsharp/).
+* James Randall [talks about creating FableTrek](https://www.azurefromthetrenches.com/creating-fabletrek-part-1/).
+* Callum Linington [gets a Node.js experience in F#](https://www.linkedin.com/pulse/f-get-nodejs-experience-callum-linington/).
 
 ### 🔧 Tools
 
@@ -102,7 +116,7 @@ Here's a picture of us when I was young. I think she's trying to convince me to 
 * Thomas Ardal [compares .NET mocking libraries](https://blog.elmah.io/moq-vs-nsubstitute-vs-fakeiteasy-which-one-to-choose/).
 * Mark Seemann [doesn't squash his commits](https://blog.ploeh.dk/2020/10/05/fortunately-i-dont-squash-my-commits/).
 * Jon Smith [creates a .NET Core global tool](https://solrevdev.com/2020/10/05/creating-a.net-core-global-tool.html).
-* Ron Powell asks: [do I really need Kubernetes?](https://thenewstack.io/do-i-really-need-kubernetes/).
+* Ron Powell asks: [do I really need Kubernetes](https://thenewstack.io/do-i-really-need-kubernetes/)?
 * Rick Strahl [creates custom .NET project types with dotnet new project templates](https://weblog.west-wind.com/posts/2020/Oct/05/Creating-a-dotnet-new-Project-Template).
 * Michał Białecki [configures relationships in Entity Framework Core 5](https://www.michalbialecki.com/2020/10/02/how-to-configure-relationships-in-entity-framework-core-5/).
 
