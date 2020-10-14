@@ -31,7 +31,7 @@ You can [check out the docs for the full treatment](https://docs.microsoft.com/a
 
 My favorite feature is GitHub PR testing sites. Once a PR kicks off, a GitHub Action executes and creates a temporary test staging site to view changes (it goes away once the PR is merged or discarded). This is a wonderful tool for you and others to test any changes to your app. Are you working on a complicated PR and want to have testers put your app through its paces? Send them the staging link.
 
-It's nice to have all this integrated in Azure, especially if that's where you do a lot of business. But why not just use GitHub Pages if you don't have a lot of complexity? That's a fair question. With the just announced Blazor Web Assembly support, Azure Static Web Apps is the clear winner. With Azure Static Web Apps, the GitHub Actions step becomes aware of a Blazor WebAssembly app and can do Blazor-specific precompression steps. Otherwise, you'd have to integrate an additional workflow to your app. With Azure Static Web Apps, it's available out of the box.
+It's nice to have all this integrated in Azure, especially if that's where you do a lot of business. But why not just use GitHub Pages if you don't have a lot of complexity? That's a fair question. With the [just announced Blazor Web Assembly support](https://devblogs.microsoft.com/aspnet/azure-static-web-apps-with-blazor/), Azure Static Web Apps is the clear winner. With Azure Static Web Apps, the GitHub Actions step becomes aware of a Blazor WebAssembly app and can do Blazor-specific precompression steps. Otherwise, you'd have to integrate an additional workflow to your app. With Azure Static Web Apps, it's available out of the box.
 
 ## 👨‍💻 Provide input on .NET 6
 
@@ -108,6 +108,7 @@ Here's a picture of us when I was young. I think she's trying to convince me to 
 
 ### 🔧 Tools
 
+* Dave Brock (ahem) [starts a series on Docker for .NET developers](https://daveabrock.com/2020/10/10/docker-aspnet-core-intro).
 * Mark Downie [discusses cross-platform managed memory dump debugging in Visual Studio](https://devblogs.microsoft.com/visualstudio/linux-managed-memory-dump-debugging/), [collects dumps with dotnet-monitor](https://www.poppastring.com/blog/collecting-dumps-anywhere-with-dotnetmonitor), and [finds the address of an object in Visual Studio](https://www.poppastring.com/blog/find-the-address-of-an-object-in-visual-studio).
 * John Petersen [discusses interactive unit testing with .NET Core and VS Code](https://codemag.com/Article/2009101/Interactive-Unit-Testing-with-.NET-Core-and-VS-Code).
 * Franco Tiveron [deploys a .NET container with Azure DevOps](https://developer.okta.com/blog/2020/10/07/dotnet-container-azure-devops).
