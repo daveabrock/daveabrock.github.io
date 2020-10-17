@@ -1,5 +1,5 @@
 ---
-date: "2020-10-09"
+date: "2020-10-16"
 title: "The .NET Stacks #21: Azure Static Web Apps, .NET 6 feedback, and more!"
 tags: [dotnet-stacks]
 header:
@@ -8,6 +8,8 @@ header:
 excerpt: This week, we take a look at Azure Static Web Apps, dotnet-monitor, and more.
 comments: false
 ---
+
+![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
 
 Happy Monday! It looks like my pun from last week received some attention (and some new subscribers). I'm glad you all joined the newsletter before it gets code outside.
 

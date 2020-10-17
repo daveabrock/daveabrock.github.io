@@ -1,0 +1,96 @@
+---
+date: "2020-10-16"
+title: "The .NET Stacks: <fill in later>"
+tags: [dotnet-stacks]
+comments: false
+---
+
+## 🚢 .NET 5 RC 2 shipped
+
+## .NET Foundation updates
+
+## 🌎 Last week in the .NET world
+
+### 🔥 The Top 3
+
+* .NET 5 RC 2 is out—[Richard Lander has the details](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-rc-2), Daniel Roth [updates us on ASP.NET Core](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-release-candidate-2), and Jeremy Likness [runs through EF Core](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-ef-core-5-rc2).
+* Andrew Lock [runs database migrations when deploying to Kubernetes](https://andrewlock.net/deploying-asp-net-core-applications-to-kubernetes-part-7-running-database-migrations/).
+* Manuel Grundner [writes a static site comment system with .NET Core and GitHub Actions](https://blog.delegate.at/2020/10/11/comment-system-on-static-sites-with-dotnet-core-and-github-actions.html).
+
+### 📢 Announcements
+
+* The Azure SDK team [offers an October update](https://devblogs.microsoft.com/azure-sdk/october-2020-release).
+* Jimmy Bogard [releases MediatR 9.0](https://jimmybogard.com/mediatr-9-0-released).
+* Rahul Bhandari [releases the .NET Core October 2020 update for reliability and other non-security fixes](https://devblogs.microsoft.com/dotnet/net-core-october-2020), and Tara Overfield [republishes the July 2020 Security Only Updates for .NET Framework to resolve a known issue that affected the original release](https://devblogs.microsoft.com/dotnet/net-framework-republishing-of-july-2020-security-only-updates) as well as [the .NET Framework October 2020 security and quality rollup updates](https://devblogs.microsoft.com/dotnet/net-framework-october-2020-security-and-quality-rollup-updates).
+
+### 📅 Community and events
+
+* The .NET Foundation [provides a September/October 2020 update](https://dotnetfoundation.org/blog/2020/10/14/blog/posts/net-foundation-september-october-2020-update), and also [holds an "All Hands" meeting](https://www.youtube.com/watch?v=CX8wT0mO5qg).
+* Speaking of, [.NET Foundation executive director Claire Novotny talks to the .NET Docs Show](https://www.youtube.com/watch?v=RBb-iuElZxI).
+* For .NET standups, Entity Framework [talks to David Pine about his new SDK](https://www.youtube.com/watch?v=KenrBgNg8jk) and [ASP.NET discusses .NET 6 planning](https://www.youtube.com/watch?v=euM0GtPpbyc).
+* Microsoft rolls out [.NET Live TV](https://devblogs.microsoft.com/dotnet/dotnet-live-tv).
+* GitHub shows off [its new mobile PR capabilities](https://github.blog/2020-10-14-even-better-code-review-in-github-for-mobile/).
+* Hadi Hariri [talks more about his issues with Git](https://hadihariri.com/2020/10/14/a-few-words-on-git/).
+* Octopus Deploy [is now a corporate sponsor of the .NET Foundation](https://octopus.com/blog/dotnet-foundation).
+
+### 😎 ASP.NET Core / Blazor
+
+* Richard Reedy [adds gRPC to his Blazor app](https://www.telerik.com/blogs/how-to-add-grpc-to-your-blazor-app).
+* Marinko Spasojevic [uses an access token with Blazor WASM HttpClient](https://code-maze.com/using-access-token-with-blazor-webassembly-httpclient/) and also [secures Blazor WebAssembly with IdentityServer4](https://code-maze.com/how-to-secure-blazor-webassembly-with-identityserver4/).
+* Claudio Bernasconi [introduces Blazor Server](https://www.claudiobernasconi.ch/2020/10/14/introduction-to-blazor-server/).
+* Niels Swimberghe [pushes UI changes from Blazor Server to browser on server raised events](https://swimburger.net/blog/dotnet/pushing-ui-changes-from-blazor-server-to-browser-on-server-raised-events).
+* Jon Hilton [renders a Blazor WASM components in your existing MVC/Razor Pages application](https://jonhilton.net/blazor-wasm-in-razor-pages/), and also [continues prerendering Blazor WASM with .NET 5](https://jonhilton.net/blazor-wasm-prerendering-missing-http-client/).
+* Steve Fenton [writes about simple conditional updates to entities in ASP.NET Core MVC](https://www.stevefenton.co.uk/2020/10/simple-conditional-updates-to-entities-in-asp-net-core-mvc/).
+
+### ⛅ The cloud
+
+* Dave Brock (ahem) [deploys an Azure Static Web App using Blazor and Azure Functions](https://daveabrock.com/2020/10/13/azure-functions-static-apps-blazor).
+* Abel Wang [creates the Static Web App PR Workflow for Azure App Service using Azure DevOps](https://devblogs.microsoft.com/devops/static-web-app-pr-workflow-for-azure-app-service-using-azure-devops).
+* Mickaël Derriey [uses Azure Identity with Azure SQL, Graph, and Entity Framework](https://devblogs.microsoft.com/azure-sdk/azure-identity-with-sql-graph-ef).
+* Scott Hanselman [migrated his blog to Azure, and the work is just beginning](https://www.hanselman.com/blog/migrating-this-blog-to-azure-its-done-now-the-work-begins).
+
+### 📔 C#
+
+* Matthew Jones [discusses classes and members in C#](https://exceptionnotfound.net/csharp-in-simple-terms-7-class-basics-properties-methods-access), and also [talks about methods, parameters, and arguments in C#](https://exceptionnotfound.net/csharp-in-simple-terms-6-methods-parameters-and-arguments).
+* Steve Gordon [continues his series on System.Threading.Channels](https://www.stevejgordon.co.uk/dotnet-internals-system-threading-channels-unboundedchannelt-part-3).
+* Carmel Eve [runs through the Decorator pattern in C#](https://endjin.com/blog/2020/10/design-patterns-in-csharp-the-decorator-pattern.html).
+* Michael Shpilt [works with dynamic Queries with expressions Trees in C#](https://michaelscodingspot.com/dynamic-queries/).
+* Khalid Abuhakmeh [works through switch expressions in C# 8](https://khalidabuhakmeh.com/switch-expressions-in-csharp-8).
+* Marco Siccardi [writes about helpful extensions with dealing with types](https://msicc.net/some-helpful-extensions-when-dealing-with-types-in-net/).
+* Jerome Laban [profiles C# 9 source generators](https://jaylee.org/archive/2020/10/10/profiling-csharp-9-source-generators.html).
+* Cezary Piatek [tracks down async code smells with analyzers](https://cezarypiatek.github.io/post/async-analyzers-p1/).
+* Anthony Giretti [introduces covariant returns in C# 9](https://anthonygiretti.com/2020/10/12/introducing-c-9-covariant-returns/).
+* Patrick Smacchia [discusses immutable classes with C# 9 records](https://blog.ndepend.com/c9-records-immutable-classes/).
+
+### 🔧 Tools
+
+* Mark Downie [steps into a specific method in Visual Studio](https://www.poppastring.com/blog/debugger-tip-step-into-a-specific-method).
+* Kayla Cinnamon [offers Windows Terminal tips and tricks](https://devblogs.microsoft.com/commandline/windows-terminal-tips-and-tricks).
+* Georg Dangl [runs SQL Server integration tests in .NET Core with Docker](https://blog.dangl.me/archive/running-sql-server-integration-tests-in-net-core-projects-via-docker/).
+* ErikEJ discusses [EF Core Database First gotchas and workarounds](https://erikej.github.io/efcore/2020/10/12/ef-core-sqlserver-scaffolding-gotchas.html).
+* Kevin Griffin [has a quick post about upgrading .NET CLI templates](https://consultwithgriff.com/how-to-upgrade-dotnet-cli-templates).
+* Michael Shpilt [writes about four awesome tools for debugging .NET in production](https://oz-code.com/blog/production-debugging/4-awesome-tools-for-net-debugging-in-production).
+* Steve Fenton [executes raw SQL scripts in EF Core](https://www.stevefenton.co.uk/2020/10/execute-raw-sql-scripts-in-entity-framework-core/).
+* Shahed Chowdhuri [debugs multiple .NET Core projects in VS Code](https://wakeupandcode.com/debugging-multiple-net-core-projects-in-vs-code/).
+* David Grace [sets up a Blazor WASM and ASP.NET Core Web API in Azure DevOps](https://www.roundthecode.com/dotnet/setup-your-blazor-wasm-and-asp-net-core-web-api-in-azure-devops).
+* Paul Michaels [executes dynamically generated SQL in EF Core](https://www.pmichaels.net/2020/10/10/executing-dynamically-generated-sql-in-ef-core).
+* Nicholas Blumhardt [bootstraps logging with Serilog + ASP.NET Core](https://nblumhardt.com/2020/10/bootstrap-logger/).
+* Scott Hanselman [keeps his WSL Linux instances up to date automatically within Windows 10](https://www.hanselman.com/blog/keeping-your-wsl-linux-instances-up-to-date-automatically-within-windows-10).
+
+### 📱 Xamarin
+
+* Mitchel Sellers [adds dark theme support for Xamarin Forms Shell](https://www.mitchelsellers.com/blog/article/adding-dark-theme-support-for-xamarin-forms-shell).
+* Leomaris Reyes [offers 5 tips to use the grid for layouts](https://www.syncfusion.com/blogs/post/5-tips-to-easily-use-the-grid-for-layouts-in-xamarin-forms.aspx).
+* Yana Kerpecheva [chooses a time duration with Telerik TimeSpan Picker for Xamarin](https://www.telerik.com/blogs/choose-time-duration-telerik-timespan-picker-xamarin).
+* Delpin Susai Raj [supports dark mode](https://xamarinmonkeys.blogspot.com/2020/10/xamarinforms-support-dark-mode.html).
+
+### 🎤 Podcasts
+
+* The .NET Rocks podcast [talks about migrating .NET Applications to Azure with Mike Richter](https://www.dotnetrocks.com/default.aspx?ShowNum=1709).
+* The Changelog [talks to Spotify about shipping at scale](https://changelog.com/podcast/415).
+* The Azure DevOps Podcast [talks about what's new in Azure App Service](http://azuredevopspodcast.clear-measure.com/stefan-schackow-on-whats-new-in-azure-app-service-episode-110).
+* The Coding Blocks podcast [continues talking about the DevOps Handbook](https://www.codingblocks.net/podcast/the-devops-handbook-enable-daily-learning/).
+
+### 🎥 Videos
+
+The ON.NET Show talks about [PWAs with Blazor](https://channel9.msdn.com/Shows/On-NET/ASPNET-Core-Series-PWAs-with-Blazor), the [YARP reverse proxy](https://www.youtube.com/watch?v=1IqQkNcsqWE), and [Azure Static Web Apps](https://www.youtube.com/watch?v=bVSq1rKcW-o).
