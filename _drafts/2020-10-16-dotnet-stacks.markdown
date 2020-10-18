@@ -1,13 +1,51 @@
 ---
-date: "2020-10-16"
-title: "The .NET Stacks: <fill in later>"
+date: "2020-10-18"
+title: "The .NET Stacks #22: .NET 5 RC 2 ships, .NET Foundation all hands, and links"
 tags: [dotnet-stacks]
 comments: false
 ---
 
-## 🚢 .NET 5 RC 2 shipped
+I messaged a developer friend to see if he liked my puns, and he said "false." I told him I didn't appreciate the cyber boolean.
 
-## .NET Foundation updates
+On tap this week:
+
+* .NET 5 RC 2 ships
+* .NET Foundation updates
+* Last week in the .NET world
+
+## 🚢 .NET 5 RC 2 ships
+
+On Tuesday, Microsoft announced the release of [.NET 5.0 RC 2](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-rc-2/). With the general release of .NET 5 on November 10, it's the last release candidate ("near-final," as Richard Lander puts it). You can [download it here](https://dotnet.microsoft.com/download/dotnet/5.0) (and will also need the latest Visual Studio preview on [Windows](https://visualstudio.microsoft.com/vs/preview/) or [Mac](https://visualstudio.microsoft.com/vs/mac/)).
+
+The biggest news out of the general announcement post? MSI installers are now available for ARM64 (yes!)—however, note the .NET 5 SDK [does not contain the Windows Desktop components on ARM64](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-preview-8/#windows-arm64). As a bonus, I learned that [ClickOnce](https://docs.microsoft.com/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application?view=vs-2019) is still a thing and available for .NET Core 3.1 and .NET 5 Windows apps.
+
+### ASP.NET Core updates for Blazor
+
+For being so late in the release cycle, ASP.NET Core [was able to ship quite a few Blazor updates for RC 2](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-release-candidate-2/).
+
+As I've [written about extensively](https://daveabrock.com/2020/09/10/blazor-css-isolation), Blazor now ships with CSS isolation—the ability to scope styles to only a single component. Previously, [when the feature was released in .NET 5 Preview 8](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-preview-8/), all scoped files were bundled into a big `scoped.styles.css` file. If you were styling a lot of components, the bundle could get quite heavy. Now, Blazor produces one bundle for each referenced project or package with the format `MyProject.styles.css`. (The official Microsoft doc on CSS isolation, [which I'm writing](https://github.com/dotnet/AspNetCore.Docs/pull/19956), should be live in the next week or two.)
+
+In addition, RC 2 comes with a bunch of Blazor tooling updates. The [pesky static port issue](https://github.com/dotnet/aspnetcore/issues/25887) was resolved, you can step out and over async methods, and can debug lazy loaded assemblies. Also, your tools can now throw warnings when using unsupported Blazor Web Assembly APIs from a browser. (This is part of a larger .NET 5 effort that annotates which APIs are supported [with a platform compatability analyzer](https://docs.microsoft.com/dotnet/standard/analyzers/api-analyzer#discover-cross-platform-issues).)
+
+### Entity Framework Core 5 updates
+
+Because EF Core 5 RC1 [was so feature-rich](https://docs.microsoft.com/ef/core/what-is-new/ef-core-5.0/whatsnew)—with many-to-many, mapping entity types to queries, event counters, `SaveChanges` interception and much more, RC2 was spent on bug fixes. (Also, if Jeremy Likness's callouts in every update haven't gotten your attention, know that EF Core 5 requires .NET Standard 2.1, meaning it won't run on .NET Standard 2.0 platforms like .NET Framework.)
+
+Next week, I'll talk about the .NET 5 release cycles and how Microsoft is supporting them.
+
+## 🧭 .NET Foundation "all hands" meeting recap
+
+The .NET Foundation provided a [September/October update this week](https://dotnetfoundation.org/blog/2020/10/14/blog/posts/net-foundation-september-october-2020-update), and also [hosted an "all hands meeting"](https://www.youtube.com/watch?v=CX8wT0mO5qg) with the Board of Directors (which was live-streamed and open to all).
+
+In the past, the Foundation has heard loud and clear that they need to work on better communication and openness. They've responded with regular updates, releasing budget info, a State of the Union update, and more. There's a proposal to change the mission statement ([and you can chime in on the open GitHub issue until October 26](https://github.com/dotnet-foundation/website/pull/388)):
+
+>Our mission is to build and educate producers and consumers, both new and old of the .NET platform. We will grow a trusted OSS ecosystem adopted by education, commercial entities, and all users. We will lead by example creating a world-wide, healthy, vibrant, and diverse OSS community.
+
+There was some mention of the [.NET Foundation maturity model](https://github.com/dotnet-foundation/project-maturity-model), which is currently sitting on the back burner. This model helps to improve the quality and quantity of .NET open source projects (and .NET in general). A big driver of this model is to get corporate sponsors to pay for .NET Foundation projects and there's some open work on seeing that through—how do you make the projects sustainable without lazily asking maintainers to keep working hard on them?
+
+Rodney Littles II made a great point in saying: "There are people in the community that are asking a lot of the .NET Foundation ... We are the .NET community, what are we going to do for ourselves? We have to get past this concept of a Microsoft-driven construct."
+
+It's easy to get skeptical about the "Microsoft-driven construct" comment—Microsoft owns .NET and has a huge financial stake in seeing it do well, so hoping for complete independence isn't realistic. As a result, when it comes to the .NET Foundation Microsoft is both an asset and a liability. But it's important for the community to not view the Foundation as something that needs to be driven by Microsoft. Yes, there will always be questions on Microsoft's independence, but at a certain point the growth of the Foundation depends on the community.
 
 ## 🌎 Last week in the .NET world
 
@@ -62,6 +100,17 @@ comments: false
 * Anthony Giretti [introduces covariant returns in C# 9](https://anthonygiretti.com/2020/10/12/introducing-c-9-covariant-returns/).
 * Patrick Smacchia [discusses immutable classes with C# 9 records](https://blog.ndepend.com/c9-records-immutable-classes/).
 
+### 📗 F#
+
+* Isaac Abraham says [you shouldn't be skeptical about F# tooling](https://www.compositional-it.com/news-blog/sceptical-about-f-tooling-these-days-you-shouldnt-be/), and also [creates Azure Functions with Farmer](https://www.compositional-it.com/news-blog/creating-azure-functions-with-farmer/).
+* Istvan walks through [why he chose F# for his AWS Lambda project](https://dev.to/l1x/why-i-chose-f-for-our-aws-lambda-project-4978).
+* Christian Findlay [discusses how to use F# from C#](https://christianfindlay.com/2020/10/17/how-to-use-fsharp-and-csharp/).
+* Nabeel Valley [walks through scripting with F#](https://nabeelvalley.netlify.app/stdout/2020/13-10/launch-fsi-from-terminal/).
+* Mariusz [discusses file order in F#](https://dev.to/klimcio/file-order-in-f-the-most-annoying-thing-for-a-beginner-38dc).
+* Christina Ljungberg [unit tests with F#](https://christinaljungberg-independent.com/2020/10/15/unit-testing-with-f/).
+
+
+
 ### 🔧 Tools
 
 * Mark Downie [steps into a specific method in Visual Studio](https://www.poppastring.com/blog/debugger-tip-step-into-a-specific-method).
@@ -93,4 +142,5 @@ comments: false
 
 ### 🎥 Videos
 
-The ON.NET Show talks about [PWAs with Blazor](https://channel9.msdn.com/Shows/On-NET/ASPNET-Core-Series-PWAs-with-Blazor), the [YARP reverse proxy](https://www.youtube.com/watch?v=1IqQkNcsqWE), and [Azure Static Web Apps](https://www.youtube.com/watch?v=bVSq1rKcW-o).
+* The ON.NET Show talks about [PWAs with Blazor](https://channel9.msdn.com/Shows/On-NET/ASPNET-Core-Series-PWAs-with-Blazor), the [YARP reverse proxy](https://www.youtube.com/watch?v=1IqQkNcsqWE), and [Azure Static Web Apps](https://www.youtube.com/watch?v=bVSq1rKcW-o).
+* Immo Landwerth discusses [the journey to .NET 5](https://www.youtube.com/watch?v=-kAr21i11f4) and also [.NET 5 cross-plat development](https://www.youtube.com/watch?v=A_y1gIzzRT8).
