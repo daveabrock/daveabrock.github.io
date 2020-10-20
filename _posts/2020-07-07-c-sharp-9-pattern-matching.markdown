@@ -24,7 +24,16 @@ This is the third post in a six-post series on C# 9 features in-depth:
 **Heads up!** C# 9 is still in preview mode, so much of this content might change—this post was last updated on July 6, 2020. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
 {: .notice--danger}
 
-## First, get to know the C# 8 `switch` expression syntax
+This post covers the following topics.
+
+- [First, get to know the C# 8 `switch` expression syntax](#first-get-to-know-the-c-8-switch-expression-syntax)
+- [How pattern matching helps you](#how-pattern-matching-helps-you)
+- [Our C# 8 baseline example](#our-c-8-baseline-example)
+  - [Relational patterns](#relational-patterns)
+  - [Logical patterns](#logical-patterns)
+- [Wrapping up](#wrapping-up)
+
+# First, get to know the C# 8 `switch` expression syntax
 
 Before we get started with pattern matching enhancements in C# 9, much of it is based off the improved `switch` syntax from C# 8. (If you are already familiar, you can scroll to the next section.)
 
@@ -69,7 +78,7 @@ public static string FindAProgrammingLanguage(string languageInput)
 
 Now that we see how this improved C# 8 `switch` behavior helps you, let's move on to pattern matching.
 
-## How pattern matching helps you
+# How pattern matching helps you
 
 Pattern matching allows you to simplify scenarios where you need to cohesively manage data from different sources. An obvious example is when you call an external API where you don't have any control over the types of data you are getting back. Of course, typically you would create types in your application for all the different types you could get back from this API. Then, you would build an object model off those types. This is *a lot* of work. What's that old joke about object-oriented programming about [the gorilla and the banana](https://www.johndcook.com/blog/2011/07/19/you-wanted-banana/)?
 
@@ -82,7 +91,7 @@ To make our lives easier, let's sprinkle some functional, C# 9 magic on top of o
 If you want to play along, the easiest way as of now is to [download LinqPad 6 Beta](https://www.linqpad.net/linqpad6.aspx#beta), then select **Edit** > **Preferences** > **Query** > **Use Roslyn Daily build for experimental C# 9 support).**
 {: .notice--info}
 
-## Our C# 8 baseline example
+# Our C# 8 baseline example
 
 To build off our previous posts, let's stick with the Iron Man theme. Here's some C# 8 code we use to calculate a superhero's fuel cost based on a maximum speed.
 
@@ -124,7 +133,7 @@ public class Superhero : Person
 }
 ```
 
-### Relational patterns
+## Relational patterns
 
 With C# 9, we can simplify our switch expression using relational patterns. This allows us to use the relational operators such as `<`, `<=`, `>`, and `>=`. We can simplify our program—take a look at our new `GetFuelCost` method:
 
@@ -137,7 +146,7 @@ static decimal GetFuelCost(Superhero hero) => hero.MaxSpeed switch
 };
 ```
 
-### Logical patterns
+## Logical patterns
 
 Similarly, you can use logical operators, like `and`, `or`, and `not`, as a complement to using relational patterns. This might be a more readable option for you if relational operators are not your jam. 
 
@@ -174,7 +183,7 @@ Your co-workers will help you, if you change it to this:
 if (hero is not Person) { ... }
 ```
 
-## Wrapping up
+# Wrapping up
 
 In this post, we discussed the advantages of pattern matching, especially with coupled with powerful switch expressions, which were introduced in C# 8. We then discussed how C# 9 can help clean up your syntax with its relational and logical patterns.
 

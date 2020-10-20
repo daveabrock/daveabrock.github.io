@@ -14,7 +14,7 @@ With .NET 5 [fast approaching](https://devblogs.microsoft.com/dotnet/announcing-
 
 I wanted to quickly share with you some new things I came across while scanning the records proposal.
 
-## What are records?
+# What are records?
 
 What are records?
 
@@ -22,12 +22,12 @@ Short-ish answer: a record is a construct that allows you to encapsulate propert
 
 Long answer: [check out last month's post for a deep dive on the topic](https://daveabrock.com/2020/07/06/c-sharp-9-deep-dive-records).
 
-## Random facts that I assumed but am glad are in writing
+# Random facts that I assumed but am glad are in writing
 
 * Record parameters can't use `ref`, `out`, or `this`, but can use `in` and `params`
 * Records can inherit from other records, but *cannot* inherit from classes (unless it's `object`) and classes can't inherit from records
 
-## Print a record's members
+# Print a record's members
 
 It looks like, as long as the record derives from `object`, records do include a synthesized method that allows you to inspect all the members for that record:
 
@@ -41,6 +41,6 @@ I think using `PrintMembers` will definitely come in handy when you are working 
 
 (It looks like the synthesized `ToString` method that ships with records invokes the `PrintMembers` method.)
 
-## Wrap up
+# Wrap up
 
 This was a quick post to show a few things I came across while reading the specification. Take [a look yourself](https://docs.microsoft.com/dotnet/csharp/language-reference/proposals/csharp-9.0/records) to check out details on how it works.

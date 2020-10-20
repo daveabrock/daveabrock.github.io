@@ -19,7 +19,13 @@ This is part 2 in a four-part series on .NET native feature flags:
 - Part 3: [Implement custom filters in your ASP.NET Core feature flags](https://daveabrock.com/2020/06/07/custom-filters-in-core-flags)
 - Part 4: [Manage feature flags with Azure App Configuration](https://daveabrock.com/2020/06/17/use-feature-flags-azure-app-config)
 
-## Set up the sample application
+This post contains the following content.
+
+- [Set up the sample application](#set-up-the-sample-application)
+- [Filter out controller action methods and classes](#filter-out-controller-action-methods-and-classes)
+- [Conditionally render HTML in your views](#conditionally-render-html-in-your-views)
+
+# Set up the sample application
 
 If you wish to follow along, refer to the previous post for details on [how we set up our sample application](https://daveabrock.com/2020/05/24/introducing-feature-management-copy). In addition, you'll need to add the `Microsoft.FeatureManagement.AspNetCore` library by performing one of the following two steps:
 
@@ -40,7 +46,7 @@ Here is what the project file looks like now:
 </Project>
 ```
 
-## Filter out controller action methods and classes
+# Filter out controller action methods and classes
 
 To better manage your feature flags, you can filter from the level of an action method, or even a class, using the `FeatureGate` attribute.
 
@@ -127,7 +133,7 @@ Now, if you go to your `appsettings.json` and set the flag to `false`, then relo
 
 Of course, if you want to provide a better experience for your users, you can add something like `UseStatusCodePages` [middleware](https://docs.microsoft.com/aspnet/core/fundamentals/error-handling?view=aspnetcore-3.1#usestatuscodepages) to render something friendlier.
 
-## Conditionally render HTML in your views
+# Conditionally render HTML in your views
 
 Let's say you want to only render a component on your site if a certain condition applies: for example, that someone is viewing a beta environment. You could definitely mimic what we did in our controllers, right in your razor view, with something like this:
 

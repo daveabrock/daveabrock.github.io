@@ -16,11 +16,11 @@ I keep track of a few, but knowing I was missing some folks I sent out a tweet:
 
 As a result of my responses, I thought I'd keep a collection of awesome .NET streams for everyone to reference. If I left out your favorite stream, it wasn't intentional—please [respond to the tweet](https://twitter.com/daveabrock/status/1304792412678651906) or leave a comment below to get added to the list. I just ask that you suggest streams that are somewhat active (every few months or so).
 
-## The Live Coders
+# The Live Coders
 
 For a good first stop, hit up [The Live Coders](https://livecoders.dev/members), a group of tech streamers across all platforms (not just .NET). You can [browse the members page](https://livecoders.dev/members) for folks tagged with .NET categories (or learn more about non-.NET tech).
 
-## General .NET topics
+# General .NET topics
 
 * [The 425 Show](https://www.twitch.tv/425Show)
 * [Alex Slotte](https://www.twitch.tv/alexslotte)
@@ -42,7 +42,7 @@ For a good first stop, hit up [The Live Coders](https://livecoders.dev/members),
 * [Michael Jolley](https://www.twitch.tv/baldbeardedbuilder)
 * [Steve Smith](https://www.twitch.tv/ardalis)
 
-## Microsoft
+# Microsoft
 
 * [The .NET Docs](https://www.twitch.tv/thedotnetdocs)
 * [.NET Community Standups](https://dotnet.microsoft.com/platform/community/standup)

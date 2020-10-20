@@ -31,11 +31,29 @@ In this post, we'll do the following:
 
 Many [thanks to Shahed](https://twitter.com/shahedC) for the inspiration for this post.
 
-## Before you get started
+This post covers the following topics.
+
+- [Before you get started](#before-you-get-started)
+  - [Install Bot Framework SDK templates](#install-bot-framework-sdk-templates)
+  - [Install Bot Framework Emulator](#install-bot-framework-emulator)
+- [Create a Text Analytics Service](#create-a-text-analytics-service)
+- [Create your bot project](#create-your-bot-project)
+- [Introducing your EchoBot](#introducing-your-echobot)
+- [First pass: getting it working](#first-pass-getting-it-working)
+- [Let's try it out](#lets-try-it-out)
+- [Second pass: working with credentials safely](#second-pass-working-with-credentials-safely)
+  - [Add secrets to Key Vault](#add-secrets-to-key-vault)
+  - [Set up app registration in Azure Active Directory](#set-up-app-registration-in-azure-active-directory)
+    - [Create client secret](#create-client-secret)
+  - [Give your app rights to the Key Vault](#give-your-app-rights-to-the-key-vault)
+  - [Update your app](#update-your-app)
+- [Wrapping up](#wrapping-up)
+
+# Before you get started
 
 While there are multiple ways to develop with the Bot Framework, we'll use Visual Studio tooling. So before you get started with this tutorial, you'll need to install Bot Framework templates and the Bot Framework Emulator.
 
-### Install Bot Framework SDK templates
+## Install Bot Framework SDK templates
 
 To make project generation easier, you'll need to install the Bot Framework v4 SDK Templates for Visual Studio. In your Visual Studio, go to **Extensions** > **Manage Extensions,** and search for **bot**. It should be the first result.
 
@@ -43,11 +61,11 @@ To make project generation easier, you'll need to install the Bot Framework v4 S
 
 Alternatively, you can find the [direct download at this location](https://marketplace.visualstudio.com/items?itemName=BotBuilder.botbuilderv4).
 
-### Install Bot Framework Emulator
+## Install Bot Framework Emulator
 
 To test and debug your bots (either locally or remotely), you'll need to install the Bot Framework Emulator. Head on over to the GitHub releases [to install the emulator for your specific environment](https://github.com/Microsoft/BotFramework-Emulator/releases).
 
-## Create a Text Analytics Service
+# Create a Text Analytics Service
 
 Now, we can head out to Azure to create a Text Analytics instance. Assuming you have an Azure account (if not, you can [go to the Azure site to sign up and get free credits](https://azure.microsoft.com/)), head on over to the Azure Portal at *[portal.azure.com](https://portal.azure.com/).*
 
@@ -65,7 +83,7 @@ After the deployment completes, click **Go to resource**. Then, click **Keys and
 
 Excellent! Let's move on to Visual Studio to create our chatbot.
 
-## Create your bot project
+# Create your bot project
 
 After you install the Bot Framework v4 Templates for Visual Studio, create a new project as you typically would.
 
@@ -73,7 +91,7 @@ From the Project Types drop-down, select **AI Bots** and select the **Echo Bot**
 
 ![echo bot template]({{ site.url }}{{ site.baseurl }}/images/echo-bot-template.png)
 
-## Introducing your EchoBot
+# Introducing your EchoBot
 
 When your project loads, navigate over to `EchoBot.cs` (in your `Bots` folder). You'll see the `EchoBot` implements the [Microsoft.Bot.Builder.ActivityHandler interface](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.activityhandler?view=botbuilder-dotnet-stable), and has two methods implemented for you.
 
@@ -82,7 +100,7 @@ When your project loads, navigate over to `EchoBot.cs` (in your `Bots` folder). 
 
 We'll be working with the `Azure.AI.TextAnalytics` package. You can install it now from the NuGet Package Manager or get Visual Studio assistance to install when you get errors. Your choice. 😎
 
-## First pass: getting it working
+# First pass: getting it working
 
 Now, still in `EchoBot.cs`, find the Text Analytics key and endpoint you copied when you created your instance in Azure. At the beginning of your class, declare a `credentials` and `endpoint` static class variable:
 
@@ -173,7 +191,7 @@ namespace GruutChatbot.Bots
 }
 ```
 
-## Let's try it out
+# Let's try it out
 
 Let's see how this works. Before we debug this, set a breakpoint at the declaration of `GetReplyText`. Now, start debugging your app in Visual Studio. A browser will launch—take note of the port number after localhost (`https://localhost:xxxx`). 
 
@@ -193,7 +211,7 @@ Great! Hit *Continue* in Visual Studio, go back to the Bot Framework Emulator, a
 
 Excellent! This is great—however, before we ship an app with hard-coded credentials in the source code, we should probably clean that up. Let's do that now.
 
-## Second pass: working with credentials safely
+# Second pass: working with credentials safely
 
 Clearly, we do not want to hard-code our credentials. Instead, here's what we'll do:
 
@@ -206,11 +224,11 @@ Of course, there are even more, enterprise-y ways to do it, like managed identit
 
 Before we proceed, you'll need to create a Key Vault or use an existing one. For details on how to create a Key Vault, [check out the docs](https://docs.microsoft.com/azure/key-vault/general/quick-create-portal) and come back when you're done. I'll wait.
 
-### Add secrets to Key Vault
+## Add secrets to Key Vault
 
 From your Key Vault, click **Secrets** and then **Generate/Import** to create two secrets: `AzureKeyCredential` and `CognitiveServicesEndpoint` I won't be showing you my setup for security reasons, but it's pretty straight-forward.
 
-### Set up app registration in Azure Active Directory
+## Set up app registration in Azure Active Directory
 
 We're now ready to set up our app registration. Head on over to Azure Active Directory (I just use the search box), and click **App Registrations**, then **New registration**. Give your registration the name and accept the default supported account type, then click **Register**.
 
@@ -218,7 +236,7 @@ We're now ready to set up our app registration. Head on over to Azure Active Dir
 
 Copy the `Application (client) ID`, as we will need it later.
 
-#### Create client secret
+### Create client secret
 
 Of course, this registration does nothing by its own, so we'll need to create a client secret so our app can know about it. While still in the App Registrations section, click **Certificates & secrets**, then click **New client secret**.
 
@@ -230,7 +248,7 @@ You should see your new client secret. Copy this value somewhere—we will also 
 
 ![echo bot template]({{ site.url }}{{ site.baseurl }}/images/key-vault-client-secret.png)
 
-### Give your app rights to the Key Vault
+## Give your app rights to the Key Vault
 
 Now, we're ready to head over to the Key Vault to give our chatbot access to use it via the app registration. Once you get to the Key Vault, click Access policies, then **+ Add Access Policy**.
 
@@ -241,7 +259,7 @@ Accept the defaults other than the following, then click **Add**:
 
 We're done with Azure. Now, all we need to do is update our app.
 
-### Update your app
+## Update your app
 
 In your `appsettings.json` file, update it to include the name of your key vault (whatever is before *.vault.azure.net*) and the client ID and secret you just copied.
 
@@ -295,7 +313,7 @@ var client = new TextAnalyticsClient(
 
 Run your app again and you'll see it should be working the same as before—except this time, our Text Analytics credentials are stored away in our Key Vault.
 
-## Wrapping up
+# Wrapping up
 
 In this post, we got our feet wet with the Microsoft Bot Framework. We incorporated Azure Cognitive Services to detect the sentiment of a user, and also worked on safeguarding our credentials using the Azure Key Vault and Azure Active Directory.
 

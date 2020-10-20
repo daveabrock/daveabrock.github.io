@@ -29,7 +29,26 @@ This is the sixth—and last!—post on my C# 9 deep dive series.
 **Heads up!** C# 9 is still in preview mode, so much of this content might change. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
 {: .notice--danger}
 
-## Our scavenger hunt: the list
+This post covers the following topics.
+
+- [Our scavenger hunt: the list](#our-scavenger-hunt-the-list)
+- [The low-hanging fruit: top-level programs](#the-low-hanging-fruit-top-level-programs)
+- [Init-only properties](#init-only-properties)
+- [Init accessors and readonly fields](#init-accessors-and-readonly-fields)
+- [Records](#records)
+  - [Use `with` expressions](#use-with-expressions)
+    - [Use `with` expressions with inheritance](#use-with-expressions-with-inheritance)
+    - [Use value-based equality and inheritance](#use-value-based-equality-and-inheritance)
+  - [Positional records](#positional-records)
+- [Improved pattern matching](#improved-pattern-matching)
+  - [Simple type patterns](#simple-type-patterns)
+  - [Relational patterns](#relational-patterns)
+  - [Logical patterns](#logical-patterns)
+- [Target typing with `new` expressions](#target-typing-with-new-expressions)
+- [Covariant returns](#covariant-returns)
+- [And that's it, friends](#and-thats-it-friends)
+
+# Our scavenger hunt: the list
 
 Here's our list for our scavenger hunt. We'll check it off as we go!
 
@@ -52,7 +71,7 @@ Here's our list for our scavenger hunt. We'll check it off as we go!
   - [ ] Target-typed `new` expressions
 - [ ] Covariant returns  
 
-## The low-hanging fruit: top-level programs
+# The low-hanging fruit: top-level programs
 
 For a quick win, let's make a top-level program. If you remember, this allows us to run a program without that pesky `Main` method.
 
@@ -81,7 +100,7 @@ Well, that was easy! Knock one off the list.
   - [ ] Target-typed `new` expressions
 - [ ] Covariant returns
 
-## Init-only properties
+# Init-only properties
 
 With init-only properties, we can use object initializers with immutable fields.
 
@@ -128,7 +147,7 @@ Now we have two more off the list, hooray!
   - [ ] Target-typed `new` expressions
 - [ ] Covariant returns
 
-## Init accessors and readonly fields
+# Init accessors and readonly fields
 
 As we've learned, `init` accessors can only be called when you initialize. If you try it after, you'll be greeted with this:
 
@@ -176,7 +195,7 @@ OK, one more gone. On to records!
   - [ ] Target-typed `new` expressions
 - [ ] Covariant returns
 
-## Records
+# Records
 
 Let's convert our object to a record. This allows an entire object-like construct to be immutable and act like a value.
 
@@ -190,7 +209,7 @@ record Avenger
 }
 ```
 
-### Use `with` expressions
+## Use `with` expressions
 
 With records, we can leverage *non-destructive mutation*, or a way to create new values from existing ones to resemble new state. We can make a copy of a record, and then change what we need. What if the Hulk had a little boy, who joins him and also turns green when he's angry?
 
@@ -206,7 +225,7 @@ Console.WriteLine($"The Hulk is {hulk.FirstName} {hulk.LastName}.");
 Console.WriteLine($"The Baby Hulk is {babyHulk.FirstName} {babyHulk.LastName}.");
 ```
 
-#### Use `with` expressions with inheritance
+### Use `with` expressions with inheritance
 
 Records support inheritance. Structs do not. We can even use it with the `with` expression.
 
@@ -235,7 +254,7 @@ record Avenger
 }
 ```
 
-#### Use value-based equality and inheritance
+### Use value-based equality and inheritance
 
 When it comes to records, C# 9 takes care of value-based equality for you through an `EqualityContract`. Every derived record overrides it and for equal comparison to occur the two objects must both have an `EqualityContract.`
 
@@ -267,7 +286,7 @@ record Avenger
 }
 ```
 
-### Positional records
+## Positional records
 
 We can take a positional approach, where we hand out data from constructor arguments and we can use deconstruction to extract data.
 
@@ -310,7 +329,7 @@ That should do it for records! How are we doing so far?
   - [ ] Target-typed `new` expressions
 - [ ] Covariant returns
 
-## Improved pattern matching
+# Improved pattern matching
 
 C# 9 offers improved pattern matching for simple type patterns, relational patterns, and logical patterns.
 
@@ -329,7 +348,7 @@ record Avenger
 }
 ```
 
-### Simple type patterns
+## Simple type patterns
 
 Using simple type patterns, we don't need that discard (`_`) operator to just declare the type. Now, we can just say `Hulk => 1000` in `CalculateInsuranceCost`:
 
@@ -345,7 +364,7 @@ static int CalculateInsuranceCost(object hulk) =>
     ;
 ```
 
-### Relational patterns
+## Relational patterns
 
 With relational patterns, we can use `<`, `>`, and so on with pattern matching. Take a look at this `CalculateInsuranceCost` method:
 
@@ -359,7 +378,7 @@ static int CalculateInsuranceCost(Hulk hulk) =>
   };
 ```
 
-### Logical patterns
+## Logical patterns
 
 With logical patterns, you can use `and`, `or`, and `not`:
 
@@ -392,7 +411,7 @@ How's our scavenger hunt going? Are we done yet?
   - [ ] Target-typed `new` expressions
 - [ ] Covariant returns
 
-## Target typing with `new` expressions
+# Target typing with `new` expressions
 
 Great! Let's scratch another quick one off the list with some target typing.
 
@@ -435,7 +454,7 @@ var avengerList = new List<Avenger>
 };
 ```
 
-## Covariant returns
+# Covariant returns
 
 One item left: covariant returns. If you read the last post, this should be familiar to you. With return type covariance, you can override a base class method (that has a less-specific type) with one that returns a more specific type. To return some new objects, you could try this.
 
@@ -472,6 +491,6 @@ We did it!
   - [x] ~~Target-typed `new` expressions~~
 - [x] ~~Covariant returns~~
 
-## And that's it, friends  
+# And that's it, friends  
 
 Thank you so much for reading and providing feedback on all these articles. This won't be the last I write about C#, obviously, but it does conclude my first pass on C# 9 features. As always, I'm excited to hear how things are going for you—don't be shy!

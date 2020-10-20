@@ -22,13 +22,21 @@ This is the fifth post in a six-post series on C# 9 features in-depth:
 **Heads up!** C# 9 is still in preview mode, so much of this content might change. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
 {: .notice--danger}
 
-## Improved target typing
+This post covers the following topics.
+
+- [Improved target typing](#improved-target-typing)
+  - [Target-typed `new` expressions](#target-typed-new-expressions)
+  - [Target typing with conditional operators](#target-typing-with-conditional-operators)
+- [Covariant returns](#covariant-returns)
+- [Wrapping up](#wrapping-up)
+
+# Improved target typing
 
 C# 9 includes improved support for target typing. What is target typing, you say? It's what C# uses, normally in expressions, for getting a type from its context. A common example would be the use of the `var` keyword. The type can be inferred from its context, without you needing to explicitly declare it.
 
 The improved target typing in C# 9 comes in two flavors: `new` expressions and target-typing `??` and `?:`.
 
-### Target-typed `new` expressions
+## Target-typed `new` expressions
 
 With target-typed `new` expressions, you can leave out the type you instantiate. At first glance, this appears to only work with direct instantiation and not coupled with `var` or constructs like ternary statements.
 
@@ -81,7 +89,7 @@ class Program
 }
 ```
 
-### Target typing with conditional operators
+## Target typing with conditional operators
 
 Speaking of ternary statements, we can now infer types by using the conditional operators. This works well with `??`, the [null-coalescing operator](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/null-coalescing-operator). The `??` operator returns the value of what's on the left if it is *not null*. Otherwise, the right-hand side is evaluated and returned.
 
@@ -136,7 +144,7 @@ static void Main(string[] args)
 **NOTE!** As of today (07/14/20), this actually throws a compiler error. Based on the Microsoft post and other posts across the .NET community, this is the expected use case so this might be a temporary issue. *Ah, the joys of playing with things in preview!* While you may not be able to run this successfully today, the hope is that this is the end state. If not, I will update this section once I learn more.
 {: .notice--danger}
 
-## Covariant returns
+# Covariant returns
 
 It has been a long time, coming—almost two decades of begging and pleading, actually. With C# 9, it looks like return type covariance is finally coming to the language. You can now say bye-bye to implementing some interface workarounds. OK, so just saying *return type covariance* makes me sound super smart, but what is it?
 
@@ -174,7 +182,7 @@ public override Student GetPerson()
 }
 ```
 
-## Wrapping up
+# Wrapping up
 
 In this post, we discussed how C# 9 makes improvements with target types and covariant returns. We discussed target-typing `new` expressions and their benefits (especially when initializing collections). We also discussed target typing with conditional operators. Finally, we discussed the long-awaited return type covariance feature in C# 9.
 

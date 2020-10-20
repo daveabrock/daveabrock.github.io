@@ -24,7 +24,20 @@ This is part 3 in a four-part series on .NET native feature flags:
 - Part 3, this post: Implement custom filters in your ASP.NET Core feature flags
 - Part 4: [Manage feature flags with Azure App Configuration](https://daveabrock.com/2020/06/17/use-feature-flags-azure-app-config)
 
-## Implement IFeatureFilter using provided filters
+This post contains the following content.
+
+- [Implement IFeatureFilter using provided filters](#implement-ifeaturefilter-using-provided-filters)
+  - [Implement TimeWindowFilter](#implement-timewindowfilter)
+    - [Update Startup class](#update-startup-class)
+    - [Update FeatureFlags.cs](#update-featureflagscs)
+    - [Add TimeWindow configuration to appsettings.json](#add-timewindow-configuration-to-appsettingsjson)
+    - [Update the M, the C, and the V](#update-the-m-the-c-and-the-v)
+- [Write a custom filter](#write-a-custom-filter)
+  - [Parameters, a second look](#parameters-a-second-look)
+  - [Creating your filter](#creating-your-filter)
+  - [Add a flag check in your view](#add-a-flag-check-in-your-view)
+
+# Implement IFeatureFilter using provided filters
 
 The `Microsoft.FeatureManagement` library includes support for the `IFeatureFilter` interface, which allows you to define whether criteria is met to enable (or disable) a feature. Included with this interface are three filters you can plug in without custom code:
 
@@ -34,13 +47,13 @@ The `Microsoft.FeatureManagement` library includes support for the `IFeatureFilt
 
 In this example, we'll be showing off the `TimeWindowFilter`. Before getting started, make sure that you have set up our sample app as we did in the [first post in this series](https://daveabrock.com/2020/05/24/introducing-feature-management-copy).
 
-### Implement TimeWindowFilter
+## Implement TimeWindowFilter
 
 The `TimeWindowFilter` does exactly as its name suggests. You provide a start and end time in your configuration, as `DateTime` objects, and if the current date is in the window the feature flag will be activated.
 
 Especially in these times, you might see a scenario where you'd like to have a temporary banner on your page that says something like, *Because of unexpected delays, your deliveries might take longer. Thank you for your patience*. Let's set that up.
 
-#### Update Startup class
+### Update Startup class
 
 Previously in the series, you added the following to the `ConfigureServices` method in `Startup.cs`:
 
@@ -65,7 +78,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-#### Update FeatureFlags.cs
+### Update FeatureFlags.cs
 
 As we've done throughout this series, you'll want to update our list of feature flags in our `FeatureFlags.cs` to avoid hard-coding strings in our controller:
 
@@ -76,7 +89,7 @@ public static class FeatureFlags
 }
 ```
 
-#### Add TimeWindow configuration to appsettings.json
+### Add TimeWindow configuration to appsettings.json
 
 Under the `FeatureManagement` section in your `appsettings.json`, you'll add a section for our `EmergencyBanner`.
 
@@ -104,7 +117,7 @@ Here's what the `FeatureManagement` section looks like:
 
 If users are viewing this page between January 1 and July 1 of 2020, the feature flag will be activated and the users will see the warning.
 
-#### Update the M, the C, and the V
+### Update the M, the C, and the V
 
 Don't worry, the hard part is over. Let's update our `IndexViewModel.cs` to take a boolean:
 
@@ -151,11 +164,11 @@ Fire up the app and see your hard work. Good job, you.
 
 ![After turning on flag]({{ site.url }}{{ site.baseurl }}/images/timewindow.png)
 
-## Write a custom filter
+# Write a custom filter
 
 With a handle on how we use the shipped filters, we're now ready to write our own. Let's imagine a scenario where you only want a subset of users to access your feature. You could do the `PercentageFilter`, but we can also detect a user's browser and, say, only ship a feature to Chrome users. Let's give it a shot.
 
-### Parameters, a second look
+## Parameters, a second look
 
 When we write our own, we'll get to see the structure of what you need to specify in `appsettings.json`.
 
@@ -206,7 +219,7 @@ As we've done throughout the series, let's add a constant to `FeatureFlags.cs`:
 public const string BrowserFilter = "BrowserFilter";
 ```
 
-### Creating your filter
+## Creating your filter
 
 Now we're ready to write our actual filter - let's create `BrowserFilter.cs`. You'll need to implement the `IFeatureFilter` interface, which requires a single `EvaluateAsync` call.
 
@@ -261,7 +274,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-### Add a flag check in your view
+## Add a flag check in your view
 
 Now, if you add a check similar to the following, you will see your filter in action!
 

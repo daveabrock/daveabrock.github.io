@@ -1,0 +1,53 @@
+---
+date: "2020-10-19"
+title: "The .NET Stacks: <fill in later>"
+tags: [dotnet-stacks]
+comments: false
+---
+
+## 🌎 Last week in the .NET world
+
+### The Top 3
+
+### 📢 Announcements
+
+
+### 📅 Community and events
+
+
+### 😎 Blazor
+
+* Niels Swimberghe [works on real-time apps with Blazor Server and Firestore](https://swimburger.net/blog/dotnet/real-time-applications-with-blazor-server-and-firestore).
+
+### 🚀 .NET Core
+
+
+### ⛅ The cloud
+
+* Szymon Kulec [offers tips for improving Azure Functions performance](https://blog.scooletz.com/2020/10/19/improving-Azure-Functions-performance).
+* Daniel Krzyczkowski [monitors solutions with Azure Application Insights](https://daniel-krzyczkowski.github.io/Monitor-Azure-Solution-With-Azure-Application-Insights/).
+* Damien Bowden [implements a full-text search using Azure Cognitive Search in ASP.NET Core](https://damienbod.com/2020/10/19/implement-a-full-text-search-using-azure-cognitive-search-in-asp-net-core/).
+
+### 📔 Languages
+
+* David Hayden [discusses C# 9 init-only properties](https://www.davidhayden.me/blog/csharp-9-init-only-properties).
+* Anthony Giretti [runs through local function attributes in C# 9](https://anthonygiretti.com/2020/10/19/introducing-c-9-attributes-on-local-functions/).
+* Matthew MacDonald [runs through C# throughout its 20-year history](https://medium.com/young-coder/c-sharp-language-changes-from-1-0-to-9-0-b2282e8e30fd).
+* Jeremy Smith [clears up some things about C# abstract classes and interfaces](https://jeremybytes.blogspot.com/2020/10/abstract-classes-vs-interfaces-in-c.html).
+
+### 🔧 Tools
+
+* Tyler Hakes [compares GitHub Actions and Azure DevOps](https://www.7pace.com/blog/azure-devops-vs-github).
+
+### 📱 Xamarin
+
+
+### 🎤 Podcasts
+
+
+
+### 🎥 Videos
+
+* The Loosely Coupled Show [discusses different types of events in distributed systems](https://www.youtube.com/watch?v=PJPxdl-1ucg).
+* Christopher Harrison [works with Codespaces](https://www.youtube.com/watch?v=E2vWF48SaQE).
+

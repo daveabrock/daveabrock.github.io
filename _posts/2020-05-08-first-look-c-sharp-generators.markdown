@@ -10,7 +10,17 @@ Last week, Microsoft introduced a preview of [C# Source Generators](https://devb
 **Heads up!** as you can imagine, this is in preview so this content is definitely subject to change. Be aware, especially with feedback [from](https://twitter.com/andrewlocknet/status/1255963536041402369) [the](https://twitter.com/ChaseAucoin/status/1256259137291333632) [community](https://twitter.com/daveabrock/status/1257847659525804032), that the samples aren't always working 100%.
 {: .notice--warning}
 
-## Source generators overview
+This post contains the following content.
+
+- [Source generators overview](#source-generators-overview)
+- [The ISourceGenerator interface](#the-isourcegenerator-interface)
+- [Try it out](#try-it-out)
+  - [Your first source generator](#your-first-source-generator)
+  - [Implement the INotifyPropertyChangedPattern](#implement-the-inotifypropertychangedpattern)
+- [Wrapping up](#wrapping-up)
+- [References](#references)
+
+# Source generators overview
 
 From the Microsoft blog post, they define source generators as "a piece of code that runs during compilation and can inspect your program to produce additional files that are compiled together with the rest of your code." It's a compilation step that generates code *for you* based on your existing code. The benefit here, [straight from Microsoft's design document](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md), is that source generators can read the contents of the compilation before runtime and access any additional files—meaning C# can now read both C# code and files specific to source generation.
 
@@ -26,7 +36,7 @@ How else can this help you? Microsoft is developing a [source generators cookboo
 
 It is important to note that source generators are *additive only*, meaning generators add new code to your compilation but do not modify existing user code. You can [reference the design document](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md) for details.
 
-## The ISourceGenerator interface
+# The ISourceGenerator interface
 
 Source generators implement the `ISourceGenerator` interface, in the `Microsoft.CodeAnalysis` namespace. It looks like this:
 
@@ -59,14 +69,14 @@ public readonly struct SourceGeneratorContext
 
 OK, enough explanation—let's try it out!
 
-## Try it out
+# Try it out
 
 In this post, we will get our feet wet by trying out:
 
 - A simple, "hello world" example
 - Implementing the `INotifyPropertyChanged` pattern
 
-### Your first source generator
+## Your first source generator
 
 After you confirm you're on the [latest version of Visual Studio 2019 preview](https://dotnet.microsoft.com/download/dotnet/5.0) and the [latest .NET 5 preview](https://dotnet.microsoft.com/download/dotnet/5.0), crack open Visual Studio 2019 preview and create a new .NET Standard 2.0 class library. Call it something like *MyFirstGenerator*.
 
@@ -172,7 +182,7 @@ namespace MyFirstSourceGeneratorConsole
 
 **Note**: In many cases, as of now you may need to restart Visual Studio to get IntelliSense support.
 
-### Implement the INotifyPropertyChangedPattern
+## Implement the INotifyPropertyChangedPattern
 
 In the C# community, a common request is the ability to automatically implement interfaces for classes with an attribute attached to them. Source generators will make this possible, with the use of the `INotifyPropertyChanged` pattern. Let's look at a basic use of this.
 
@@ -237,11 +247,11 @@ public partial class MyClass : INotifyPropertyChanged
 
 For a deeper dive, the Roslyn team [has a good example of this in their GitHub repository](https://github.com/dotnet/roslyn-sdk/blob/master/samples/CSharp/SourceGenerators/SourceGeneratorSamples/AutoNotifyGenerator.cs).
 
-## Wrapping up
+# Wrapping up
 
 This is really early, but I hope you can see the obvious benefits C# source generators can offer you. To be honest: the developer experience is not refined yet, but once that happens you'll really see the power they provide.
 
-### References
+# References
 
 - [Introducing C# Source Generators](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/) (Microsoft)
 - [Source Generators design document](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md) (Roslyn GitHub repo)

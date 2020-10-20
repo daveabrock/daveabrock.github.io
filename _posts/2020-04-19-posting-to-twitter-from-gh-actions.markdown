@@ -18,7 +18,17 @@ Alas, being forced to manually tweet about a new post a few times a month wasn't
 
 **This post is about learning**. Sure, you could look at my 16-line YAML file say, "looks pretty simple" and maybe it is, in retrospect. But when you try something new, you stumble and you learn—and that's what this post is about.
 
-## The perfect world, and what I can do now
+This post contains the following content.
+
+- [The perfect world, and what I can do now](#the-perfect-world-and-what-i-can-do-now)
+- [What you need before you get started](#what-you-need-before-you-get-started)
+- [Add Twitter API secrets to GitHub](#add-twitter-api-secrets-to-github)
+- [Create your first GitHub Action](#create-your-first-github-action)
+- [How to get just the commit message from Git](#how-to-get-just-the-commit-message-from-git)
+- [Passing commit message to my GitHub action](#passing-commit-message-to-my-github-action)
+- [Wrapping up](#wrapping-up)
+
+# The perfect world, and what I can do now
 
 Without knowing much about GitHub Actions, here's the workflow I envisioned:
 
@@ -38,7 +48,7 @@ Did I mention I didn't want to write any additional code or scripts, or spend mo
 
 Let's get started.
 
-## What you need before you get started
+# What you need before you get started
 
 If you're playing along at home, you need to do the following before proceeding with this post:
 
@@ -46,7 +56,7 @@ If you're playing along at home, you need to do the following before proceeding 
 - Once the registration is approved, head over to [developer.twitter.com/apps](https://developer.twitter.com/apps) and create a Twitter application. You'll need to do this so the Send Tweet Action can call the Twitter API on your behalf
 - A GitHub repository (this demo works for any push, but the obvious use case is a GitHub Pages site)
 
-## Add Twitter API secrets to GitHub
+# Add Twitter API secrets to GitHub
 
 We will be using the [Send Tweet Action](https://github.com/marketplace/actions/send-tweet-action), developed by GitHub's [Edward Thomson](https://twitter.com/ethomson). This action handles connecting to Twitter API to send the tweet. We need to provide it the Twitter consumer API key, Twitter consumer API secret, Twitter access token, and Twitter access token secret.
 
@@ -54,7 +64,7 @@ To retrieve those, go to [developer.twitter.com/apps](https://developer.twitter.
 
 You need to add those to GitHub as encrypted secrets. From GitHub, go to **Settings** > **Secrets**. I recommend calling them `TWITTER_CONSUMER_API_KEY`, `TWITTER_CONSUMER_API_SECRET`, `TWITTER_ACCESS_TOKEN`, and `TWITTER_ACCESS_TOKEN_SECRET`, so you can easily follow the code in this post. For details on storing encrypted secrets in GitHub, read [this GitHub article](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets).
 
-## Create your first GitHub Action
+# Create your first GitHub Action
 
 To get started, you'll need to set up a GitHub Action. To do that, click the `Actions` link at the top of your repository, right next to `Pull Requests`. From there, you'll see the power of GitHub Actions—there are so many CI workflows and automation processes to choose!
 
@@ -96,7 +106,7 @@ With any luck, you should see a tweet that says "NEW POST!" Let's break down wha
 
 So, this is great! However, your followers aren't mind readers. Tweeting "NEW POST!" doesn't do much. We now have to figure out how to tweet the commit message.
 
-## How to get just the commit message from Git
+# How to get just the commit message from Git
 
 To get the latest commit from Git, I know I can use `git log 1`. Here's what I get back:
 
@@ -129,7 +139,7 @@ my commit
 
 Victory! (Or you could have googled it, but what fun is that?)
 
-## Passing commit message to my GitHub action
+# Passing commit message to my GitHub action
 
 So now, I know how to do things: how to tweet when I push and how to get my commit message. How do we connect them? From my `blank.yml` file, I want a way to run `git log` and save the output, then pass the output to the action's `status` field.
 
@@ -194,6 +204,6 @@ jobs:
 
 It works! So now, in the future, if I push a commit message to `master` in the format `<Post title> <url>` it will push to Twitter right away. (I can now customize based on PR or other policies, as well.)
 
-## Wrapping up
+# Wrapping up
 
 I hope you enjoyed reading this post as much as I did writing it. This was my first foray into this, so if you know of a better and simpler way to do this, leave a comment below ([or on Twitter, obviously](https://twitter.com/daveabrock)).

@@ -24,7 +24,22 @@ I'll be walking through Docker containers in three posts:
 
 Armed with this knowledge, I'll then be writing about container orchestration using Kubernetes.
 
-## Ensure Docker and Git is installed
+This post covers the following topics.
+
+- [Ensure Docker and Git is installed](#ensure-docker-and-git-is-installed)
+- [How Docker works](#how-docker-works)
+  - [What is a host?](#what-is-a-host)
+  - [Base images and parent images](#base-images-and-parent-images)
+  - [Using a Dockerfile](#using-a-dockerfile)
+  - [A note on ports](#a-note-on-ports)
+- [Fetch, build, and run a prebuilt Docker image](#fetch-build-and-run-a-prebuilt-docker-image)
+  - [Serve image over HTTPS](#serve-image-over-https)
+    - [Windows](#windows)
+    - [MacOS/Linux](#macoslinux)
+- [Image cleanup](#image-cleanup)
+- [Wrap up](#wrap-up)
+
+# Ensure Docker and Git is installed
 
 Before starting this post, make sure you have the following installed:
 
@@ -33,19 +48,19 @@ Before starting this post, make sure you have the following installed:
 
 Confirm your Docker install by executing `docker -v` in your terminal.
 
-## How Docker works
+# How Docker works
 
 When we talk about packaging our software, we're not just talking about code (if only it was that simple). There's our operating system, the code itself, packages, libraries, binaries, and more. For example, you might be developing a .NET Core app on Linux with a database, while using a reverse proxy configuration. That sentence alone should be rationale enough for standardized environments.
 
 When we're running an image, that's our container. If an image is our blueprint, the container is an instance of it running in memory. These images are immutable: you can't change them once they're built. This guarantees isolation, consistency, and performance.
 
-### What is a host?
+## What is a host?
 
 A host is the OS where Docker is run. If you're running Linux containers like most of the world, Docker shares the host kernel if the binary can access the kernel directly—preventing a need for a container OS.
 
 Windows containers do need a container OS that is part of the packaged image, however, for file system access and memory management. Windows containers come in handy (and are essential) if you're running things dependent on Windows APIs, like legacy .NET Framework apps. If you don't have those needs, Linux containers are almost always the way to go.
 
-### Base images and parent images
+## Base images and parent images
 
 To Docker, a *base image* utilizes their minimal image, called `scratch`. It's an [empty container image](https://docs.docker.com/develop/develop-images/baseimages/). It's the equivalent of a piece of white paper: you've got something to draw with, but you'll need to do the sketching.
 
@@ -53,7 +68,7 @@ Typically, you'll instead build from a *parent image*, an image you can use as a
 
 Much like the [IaaS vs. PaaS arguments in the cloud space](https://www.bmc.com/blogs/saas-vs-paas-vs-iaas-whats-the-difference-and-how-to-choose/), it comes down to control and how dirty you want your hands to get.
 
-### Using a Dockerfile
+## Using a Dockerfile
 
 Docker uses a `Dockerfile`, a file that contains instructions on how to build an image. In a `Dockerfile` you'll specify the image to use, commands to run, artifacts (your app and its dependencies), exposed ports, and what to run when the container starts running.
 
@@ -90,7 +105,7 @@ ENTRYPOINT ["dotnet", "MyCoolApp.dll"]
 
 With this `Dockerfile`, you'll then be able to run something like `docker build -t mycoolapp .` to build your image.
 
-### A note on ports
+## A note on ports
 
 Pay special attention to Step 7, where we open a port on the Docker container. You might think a common port, 80, should be open by default. It is not. By default, Docker doesn't allow inbound requests to your container. You will need to *explicitly* tell Docker. 
 
@@ -98,7 +113,7 @@ If you fetch and run a pre-built image from Docker Hub using `docker run` and ge
 
 Armed with this knowledge, we're ready to get our feet wet by running a pre-built ASP.NET Core image. (In the next post, we'll Docker-ize an app we wrote.)
 
-## Fetch, build, and run a prebuilt Docker image
+# Fetch, build, and run a prebuilt Docker image
 
 To access existing Docker images, they must be hosted in a container registry. The most common public registry is [Docker Hub](https://hub.docker.com/search?q=&type=image). When I go to the Docker Hub and search for **.net core**, you'll see quite a few repositories hosted by Microsoft.
 
@@ -168,7 +183,7 @@ mcr.microsoft.com/dotnet/aspnet  5.0      c946cb101055        3 weeks ago       
 
 You'll notice that the app is served over HTTP by default (and good catch, by the way).
 
-### Serve image over HTTPS
+## Serve image over HTTPS
 
 When we're playing around locally, HTTP is fine. But if we want to mimic real-world scenarios—and with containerization, the whole point is predictable environments!—we should get in the habit of running our containers over HTTPS. The instructions are *slightly* different between Windows and macOS/Linux (and with the assumption you are using a pre-built Linux container).
 
@@ -177,7 +192,7 @@ In either platform, the behavior is the same: self-signed development certificat
 * http://localhost:8000
 * https://localhost:8001
 
-#### Windows
+### Windows
 
 From your Windows terminal, execute the following commands (and replace `mypassword` with something more memorable):
 
@@ -192,7 +207,7 @@ Then, execute `docker run` doing the following (changing `mypassword` accordingl
 docker run --rm -it -p 8000:80 -p 8001:443 -e ASPNETCORE_URLS="https://+;http://+" -e ASPNETCORE_HTTPS_PORT=8001 -e ASPNETCORE_Kestrel__Certificates__Default__Password="mypassword" -e ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx -v %USERPROFILE%\.aspnet\https:/https/ mcr.microsoft.com/dotnet/core/samples:aspnetapp
 ```
 
-#### MacOS/Linux
+### MacOS/Linux
 
 From your Mac/Linux terminal, execute the following commands (and replace `mypassword` with something more memorable):
 
@@ -209,7 +224,7 @@ docker run --rm -it -p 8000:80 -p 8001:443 -e ASPNETCORE_URLS="https://+;http://
 
 Check out the Microsoft documentation [for the complete details](https://github.com/dotnet/dotnet-docker/blob/master/samples/host-aspnetcore-https.md).
 
-## Image cleanup
+# Image cleanup
 
 If you're done playing with your image, you can get rid of it. To do so, we will stop and then remove the image (if it's stopped, you can always skip to the last part).
 
@@ -240,7 +255,7 @@ You just removed the containers you created. If you also want to delete the imag
 docker image rm mcr.microsoft.com/dotnet/core/samples:aspnetapp
 ```
 
-## Wrap up
+# Wrap up
 
 In this post, we got our feet wet with Docker. We discussed its value and core concepts such as hosts, base and parent images, and using a `Dockerfile`. Then, we fetched, built, and ran a pre-built ASP.NET Core container image. We served the container over HTTPs, and then discarded the container and its image.
 

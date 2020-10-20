@@ -14,7 +14,21 @@ This works great for blogs like this one, but in many cases you'll still need a 
 
 Now, with Azure Static Web Apps, we've got the best of both worlds: a light front-end paired with a serverless API in one pretty package. (The API is optional, if you're wondering.) With the recently announced Blazor support, I had to give it a shot.
 
-## Prerequisites
+In this post, we'll cover the following topics:
+
+- [Prerequisites](#prerequisites)
+- [Our application](#our-application)
+  - [Fallback route support](#fallback-route-support)
+  - [CORS support](#cors-support)
+- [Create an Azure Static Web App](#create-an-azure-static-web-app)
+- [Inspect the workflow file](#inspect-the-workflow-file)
+  - [A gotcha about `package.json`](#a-gotcha-about-packagejson)
+- [Pull request sites](#pull-request-sites)
+- [A note on custom domains](#a-note-on-custom-domains)
+- [Wrap up](#wrap-up)
+- [References](#references)
+
+# Prerequisites
 
 To work with this post, you'll need:
 
@@ -23,7 +37,7 @@ To work with this post, you'll need:
 
 While .NET 5 is weeks from going live at the time of this post, you aren't able to deploy .NET 5 code to Azure Static Web Apps yet. 
 
-## Our application
+# Our application
 
 Before you create an Azure Static Web App instance, you'll need an application hosted in GitHub—when you create the instance in Azure, it'll ask for a repo and its details. 
 
@@ -70,7 +84,7 @@ Here's the application in action. Puts stars in your eyes, doesn't it?
 
 Before we blast off, let's explore some app configuration.
 
-### Fallback route support
+## Fallback route support
 
 In single-page applications, fallback routes are important. Let's assume I have a special path called `/nasa`. When I access the page, it'll display the path, including `/nasa` in my browser, but if I refresh the page manually, by default my app won't reload with `/nasa`. Instead, a 404 error can display because there isn't a `/nasa` page on the "server" (or, in our case, there isn't a server at all).
 
@@ -90,7 +104,7 @@ Luckily, Azure Static Web Apps supports fallback routing. Drop a `routes.json` f
 
 The `route` key makes sure to match all routes.
 
-### CORS support
+## CORS support
 
 Because Azure Static Web Apps is configured with Azure Functions, you don't have to deal with Cross-Origin Resource Sharing (CORS) issues—in short, this is when your browser blocks your request unless the API server allows it. 
 
@@ -111,7 +125,7 @@ I'm using Visual Studio tooling. If you instead want to use Azure Functions from
 
 With the application ready to go, let's head on over to the Azure Portal at *[portal.azure.com](https://portal.azure.com)* to create our Azure Static Web App.
 
-## Create an Azure Static Web App
+# Create an Azure Static Web App
 
 Once you're at the Azure Portal, search for **static** until you see **Static Web Apps (Preview)** show up—click that, and create a new instance.
 
@@ -134,7 +148,7 @@ Your completed form should look similar to this:
 
 After the deployment completes, click **Go to resource**. You'll see a bunch of links to your new URL, deployment history, and a workflow file. Before your site is ready, the workflow file executes right away (it resides in the `.github/workflows` directory of your repo). 
 
-## Inspect the workflow file
+# Inspect the workflow file
 
 The workflow file is a YAML file that instructs Azure Static Web Apps how to build your site. Here's mine:
 
@@ -192,7 +206,7 @@ Of course, you can modify this file to your liking.
 
 You can head over to the **Actions** section of your GitHub repository to monitor the status of your workflow and view any logging.
 
-### A gotcha about `package.json`
+## A gotcha about `package.json`
 
 I'd love to tell you the build succeeded on the first try, but it kept spacing out:
 
@@ -202,7 +216,7 @@ In my project, I use Gulp to build and deploy Tailwind CSS styles ([thanks, Chri
 
 This was a silly mistake on my end, but I can definitely see other scenarios where this could be an issue. Azure Static Web Apps is in preview, so they are ironing out some things, so this might get addressed—but now you know. If you want to push your `package.json` you would need to edit your workflow file to change build order, or a new `app_build_command` parameter.
 
-## Pull request sites
+# Pull request sites
 
 This is my favorite thing about Azure Static Web Apps: when you create a pull request against your main branch, **GitHub Actions creates a temporary URL for you to view changes**. (When the PR is merged and closed, the workflow runs and deletes your temporary environment.)
 
@@ -214,13 +228,13 @@ Additionally, if you hit up the **Environments** link in the Azure Portal, it'll
 
 ![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/images/environments.png)
 
-## A note on custom domains
+# A note on custom domains
 
 Azure Static Web Apps supports custom domains. Sort of. I can have `https://www.blastoffwithblazor.com` but not `https://blastoffwithblazor.com`. That's right: root domain support is not included.
 
 Luckily, [Burke Holland has you covered](https://burkeholland.github.io/posts/static-app-root-domain/). I understand this impact of this change reaches greater than Azure Static Web Apps, so it might take some time to support.
 
-## Wrap up
+# Wrap up
 
 This was ... a blast. I hope it eclipsed your expectations. In this post, we discussed the value of Azure Static Web Apps. We walked through our out-of-this-world sample app, created an Azure Static Web app solution, explored the workflow file, explained some gotchas, and explored how pull request sites work.
 
@@ -228,7 +242,7 @@ If you're big on Blazor stay tuned—the app will be getting some enhancements a
 
 Of course, if you have any questions [comet me on Twitter](https://twitter.com/daveabrock).
 
-## References
+# References
 
 * [Azure Static Web Apps with .NET and Blazor](https://devblogs.microsoft.com/aspnet/azure-static-web-apps-with-blazor/) (Aaron Powell)
 * [Blazor WebAssembly on Azure Static Web Apps](https://www.hanselman.com/blog/blazor-webassembly-on-azure-static-web-apps) (Scott Hanselman)

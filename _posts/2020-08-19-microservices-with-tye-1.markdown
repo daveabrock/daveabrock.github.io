@@ -21,9 +21,21 @@ We'll be walking through Project Tye in two separate posts. This post will focus
 Before we get started, make sure you have the [.NET Core 3.1 SDK installed](https://dotnet.microsoft.com/download/dotnet-core/3.1). You won't get very far if you don't.
 {: .notice--info}
 
+This post covers the following topics.
+
+- [Install Tye](#install-tye)
+- [Set up our projects](#set-up-our-projects)
+- [Build out a simple API](#build-out-a-simple-api)
+- [Build out web project](#build-out-web-project)
+- [Adding a dependency](#adding-a-dependency)
+  - [Using a configuration file](#using-a-configuration-file)
+  - [Working with Redis](#working-with-redis)
+- [Learn more](#learn-more)
+- [Wrapping up](#wrapping-up)
+
 Now, fire up your terminal and let's get started!
 
-## Install Tye
+# Install Tye
 
 First, we must install Tye. Tye is a [global .NET tool](https://docs.microsoft.com/dotnet/core/tools/global-tools).
 
@@ -36,7 +48,7 @@ dotnet tool install -g Microsoft.Tye --version "0.4.0-alpha.20371.1"
 Because Tye isn't stable yet, you need to append `--version` to it with your desired version. Depending when you read this, the version above might not be the latest. If you leave off `--version` you'll get a listing of the available current versions.
 {: .notice--warning}
 
-## Set up our projects
+# Set up our projects
 
 Now, we'll create two projects under a single solution: a web project and an API project. Create a folder for this (or just do a `mkdir my-project` from the terminal).
 
@@ -83,7 +95,7 @@ And, of course, what would a dashboard be without logs?
 
 Of course, this is cool but not very exciting. Let's add some code to our apps.
 
-## Build out a simple API
+# Build out a simple API
 
 Now, open up the `marvel-api` project with your favorite editor (like Visual Studio or Visual Studio Code). At the root, rename the `WeatherForecast.cs` file to `Character.cs` and replace the contents of the file with this:
 
@@ -196,7 +208,7 @@ namespace marvel_api.Controllers
 
 That should be all we need for the API for the time being. Now, let's open the `marvel-web` project.
 
-## Build out web project
+# Build out web project
 
 In this project, also add a `Character` class (or you could always create a shared project, as it's identical between the API and web projects):
 
@@ -324,11 +336,11 @@ This is where the service discovery takes place. (Feel free to [geek out on how 
 
 ![random characters]({{ site.url }}{{ site.baseurl }}/images/randos.png)
 
-## Adding a dependency  
+# Adding a dependency  
 
 At this point, things are great—we've been able to take a better look at code we manage and write. In the real world, that is rarely the case. You use libraries and dependencies you don't manage—as a matter of fact, the whole point is to have the complexity managed for you, but how can Tye discover these dependencies?
 
-### Using a configuration file
+## Using a configuration file
 
 Now that things are getting a little more involved, it'd be a good time to ask you to run `tye init`. When you do this, Tye drops an optional configuration file (`tye.yaml`) that allows you to customize your settings. When I did this, Tye populated the file with information about my current setup. (Tye provides [documentation on the schema](https://github.com/dotnet/tye/blob/master/docs/reference/schema.md), as well.)
 
@@ -347,7 +359,7 @@ services:
   project: marvel-api/marvel-api.csproj
 ```
 
-### Working with Redis
+## Working with Redis
 
 To see how Tye works with external dependencies, we'll add a Redis cache (thanks [to the announcement](https://devblogs.microsoft.com/aspnet/introducing-project-tye/) for the inspiration). First, we'll refactor our API's `Get` method to use our `IDistributedCache` interface.
 
@@ -412,11 +424,11 @@ services:
 
 Now, if you do a `tye run`, pull up the dashboard and note the addition of our redis components. If you go to the web project, we should see new randomized characters every three seconds.
 
-## Learn more
+# Learn more
 
 There are so many possibilities with Tye—[head on over to the GitHub repository](https://github.com/dotnet/tye) to learn more. There's tons of samples there to get you started, including apps with Angular, MongoDB, nginx, Azure Functions, and much more. And if it's missing something, let me team know using a GitHub issue or the feedback button in the Tye dashboard.
 
-## Wrapping up
+# Wrapping up
 
 In this post, we introduced Project Tye and talked about how it can improve your experience when building .NET distributed applications. We installed Tye, toured the dashboard, and built out a simple web and API project. We showed how easy service discovery is with Tye, and also added a dependency.
 

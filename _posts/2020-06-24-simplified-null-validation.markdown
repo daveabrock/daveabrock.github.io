@@ -16,7 +16,7 @@ In my last post, I took a [test drive through some C# 9 features](https://daveab
 not null => throw new ArgumentNullException($"Not sure what this is: {yourArgument}", nameof(yourArgument))
 ```
 
-## Championed proposal: simplified null-parameter checking
+# Championed proposal: simplified null-parameter checking
 
 As it turns out, there is a new championed proposal which appears to gain some traction called [simplified null-parameter checking](https://github.com/dotnet/csharplang/issues/2145). Some folks have written about this, making it seem like it's a sure thing in C# 9, so I'd like to clarify some things I learned after doing some research (and, of course, hit up the comments if I'm incorrect as things are changing frequently).
 
@@ -34,7 +34,7 @@ public void DoSomethingCool(string coolString)
 }
 ```
 
-### Initial approach: add `!` to your parameter name
+## Initial approach: add `!` to your parameter name
 
 In this C# 9 proposal, you can add `!` to your parameter name to simplify things. Try this one instead:
 
@@ -55,7 +55,7 @@ But, there's a lot here:
 - It's very single-use and not very extensible
 - There seems to be other approaches that make more sense like a `[NullCheck]` attribute, as was suggested, or using asserts, or even a project file directive
 
-### New approach: use `!!` instead
+## New approach: use `!!` instead
 
 Late last week, around June 25-*ish* of 2020, the C# team will be changing to use `!!` instead ([meeting notes here](https://github.com/dotnet/csharplang/blob/master/meetings/2020/LDM-2020-06-24.md#parameter-null-checking)).
 

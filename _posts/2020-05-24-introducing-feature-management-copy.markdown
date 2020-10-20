@@ -20,7 +20,7 @@ I'll be writing a few posts on this topic:
 - Part 3: [Implement custom filters in your ASP.NET Core feature flags](https://daveabrock.com/2020/06/07/custom-filters-in-core-flags)
 - Part 4: [Manage feature flags with Azure App Configuration](https://daveabrock.com/2020/06/17/use-feature-flags-azure-app-config)
 
-## Create sample application and add NuGet packages
+# Create sample application and add NuGet packages
 
 For this post, I'll be using an ASP.NET Core Web Application with the traditional `Model-View-Controller` scaffolding. If you want to code along with me, make sure to create a new project. You can do this from the Visual Studio UI, or if VS Code is your style, the `dotnet` CLI by executing `dotnet new mvc`.
 Once you create your project, you'll need to install `Microsoft.FeatureManagement`. You can do this in one of two ways:
@@ -43,7 +43,7 @@ public void ConfigureServices(IServiceCollection services)
 
 You're now ready to get this party started!
 
-## A simple example
+# A simple example
 
 To get the gist of feature flags, we can just update the default message for the app that ships with the default ASP.NET Core scaffolding. Out of the box, the message says, `Welcome`. Let's change it so that the message says `Welcome to Feature Flags` when the functionality is enabled.
 The `Microsoft.FeatureManagement` library will check your `appsettings.json` file for its configuration. By default, it will look for a `FeatureManagement` section. Let's add an entry now.

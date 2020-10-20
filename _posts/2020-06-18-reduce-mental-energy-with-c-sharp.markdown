@@ -31,7 +31,17 @@ If you aren't aware, *you can*. This syntax, and other improvements, are availab
 
 Let's take a look at what's coming. This is just scratching the surface, and I'll write about more features in-depth as I come across them. I think you'll find the more you dive into C# 9, the more you appreciate its adoption of the [functional programming](https://en.wikipedia.org/wiki/Functional_programming), "no side effects" model.
 
-## Records
+This post covers the following topics.
+
+- [Records](#records)
+  - [Data member simplification](#data-member-simplification)
+  - [With-expressions](#with-expressions)
+- [Top-level programs](#top-level-programs)
+- [Logical patterns](#logical-patterns)
+- [New expressions for target types](#new-expressions-for-target-types)
+- [Playing with the C# 9 preview bits](#playing-with-the-c-9-preview-bits)
+
+# Records
 
 One of the biggest features coming out of C# 9 is the concept of records. Records allow an entire object to be immutable, meaning you can do value-like things on them. Think data, not objects.
 
@@ -53,7 +63,7 @@ Wait, what is `init` doing there? That is an init-only property, also new to C# 
 
 Anyway, our record now gives us access to some other cool stuff that makes for some clean code.
 
-### Data member simplification
+## Data member simplification
 
 With C# 9, we can initialize our `Developer` record this way instead:
 
@@ -61,7 +71,7 @@ With C# 9, we can initialize our `Developer` record this way instead:
 public record Developer { string FirstName; string LastName; string PreferredLanguage; }
 ```
 
-### With-expressions
+## With-expressions
 
 Much of your data is immutable, so if you wanted to create a new object with much, but not all, of the same data, you ~~would do something like this (your use cases would be much more complicated, hopefully)~~ are probably used to doing something like this in regular C# 8 with classes.
 
@@ -119,7 +129,7 @@ You can even specify multiple properties to just include what you need changed.
 
 This C# 9 example above is actually an example of a top-level program! Speaking of which...
 
-## Top-level programs
+# Top-level programs
 
 This is my favorite, even if I don't write a lot of console applications. Inside your `Main` method you would typically see:
 
@@ -145,7 +155,7 @@ Console.WriteLine("Hello, Wisconsin!");
 
 This will need to follow the [Highlander rule](https://highlander.fandom.com/wiki/There_can_be_only_one#:~:text=There%20can%20be%20only%20one,one%22%20shall%20receive%20The%20Prize.) - there can only be one - but the same argument applies to the `Main()` entry method in your console applications today.
 
-## Logical patterns
+# Logical patterns
 
 OK, moving on from records (for now). With the `is not` pattern we used to kick off this post, we showcased some logical pattern improvements. You can officially combine any operators with `and`, `or`, and `not`.
 
@@ -155,7 +165,7 @@ A great use case would be for every developer's battle: null checking. For examp
 not null => throw new ArgumentException($"Not sure what this is: {yourArgument}", nameof(yourArgument))
 ```
 
-## New expressions for target types
+# New expressions for target types
 
 Let's say I had a `Developer` type that takes in a first and last name from a constructor. To create the object, I'd do something like this:
 
@@ -170,7 +180,7 @@ With C# 9, you can leave out the type.
 Developer dave = new ("Dave", "Brock", "C#");
 ```
 
-## Playing with the C# 9 preview bits
+# Playing with the C# 9 preview bits
 
 Are you reading this before the C# 9 release in November 2020? If you want to play with the C# 9 bits, some good news: you can use [the LinqPad tool](https://www.linqpad.net/) to do so with a click of a checkbox - no install required!
 

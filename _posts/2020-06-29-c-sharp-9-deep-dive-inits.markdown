@@ -24,11 +24,18 @@ Here's what we'll be walking through:
 **Heads up!** C# 9 is still in preview mode, so much of this content might change. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
 {: .notice--danger}
 
-## Init-only features
+This post covers the following topics.
+
+- [Init-only features](#init-only-features)
+  - [Init-only properties](#init-only-properties)
+  - [Init accessors and read-only fields](#init-accessors-and-read-only-fields)
+- [What's next](#whats-next)
+
+# Init-only features
 
 With C# 9, the team is shipping a bunch of great init-only features. This includes init-only properties, init accessors, and readonly fields.
 
-### Init-only properties
+## Init-only properties
 
 For virtually all of your C# life, you've done something like the following:
 
@@ -102,7 +109,7 @@ person.FirstName = "Howard";
 
 The compiler will not be happy.
 
-### Init accessors and read-only fields
+## Init accessors and read-only fields
 
 As we just saw, `init` accessors can only be called when you initialize. If you wish to work with `readonly` fields, the mutability only applies during initialization, just as with non-read-only ones.
 
@@ -145,6 +152,6 @@ public class Person
 }
 ```
 
-## What's next
+# What's next
 
 In this post, we learned how to make individual properties become immutable. If you want this behavior for your entire object, you'll want to work with records - one of the best new features in C# 9, in my opinion. Stay tuned for my next post to discuss this.

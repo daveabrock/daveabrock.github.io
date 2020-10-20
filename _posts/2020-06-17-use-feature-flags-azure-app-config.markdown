@@ -40,9 +40,22 @@ In [the last post](https://daveabrock.com/2020/06/07/custom-filters-in-core-flag
 
 With our feature in Azure App Configuration, we can remove this from our application and manage the feature, including specific time window and whether it is on or off, right in Azure. This post will refactor what we built in the last post to a cleaner solution using Azure App Configuration.
 
+This post covers the following content.
+
+- [Project setup](#project-setup)
+- [Set up Azure App Configuration](#set-up-azure-app-configuration)
+  - [Create new Azure App Configuration instance](#create-new-azure-app-configuration-instance)
+  - [Add feature to Azure App Configuration](#add-feature-to-azure-app-configuration)
+- [Refactor (and simplify!) your application](#refactor-and-simplify-your-application)
+  - [Add connection string to your local secrets](#add-connection-string-to-your-local-secrets)
+  - [Update host builder configuration](#update-host-builder-configuration)
+  - [Change view](#change-view)
+  - [Clean up controller and configuration](#clean-up-controller-and-configuration)
+- [Next steps](#next-steps)
+
 Ready to party in the cloud? Of course you are. Let's get started.
 
-## Project setup
+# Project setup
 
 Before getting started, please refer to the [the last post](https://daveabrock.com/2020/06/07/custom-filters-in-core-flags) by implementing the emergency banner functionality. 
 
@@ -60,14 +73,14 @@ public void ConfigureServices(IServiceCollection services)
 
 Now that we have our application set up, let's go set up Azure App Configuration.
 
-## Set up Azure App Configuration
+# Set up Azure App Configuration
 
 Before you get started with this section, confirm that you have an [Azure account ready to go](https://azure.microsoft.com/free). Once it is, head on over to the Azure Portal at [portal.azure.com](https://portal.azure.com). Now you're ready to create a new Azure App Configuration instance.
 
 **Heads up!** Azure is famous for continuously tweaking their UI, so screenshots may not always be up to date, but shouldn't change too much.
 {: .notice--warning}
 
-### Create new Azure App Configuration instance
+## Create new Azure App Configuration instance
 
 Once you're in the portal, do the following to create a new Azure App Configuration instance:
 
@@ -82,7 +95,7 @@ Once you're in the portal, do the following to create a new Azure App Configurat
 
 After a few minutes, your instance is live. Click the **Go to resource** button to navigate to it.
 
-### Add feature to Azure App Configuration
+## Add feature to Azure App Configuration
 
 With an instance of Azure App Configuration, we're now ready to add our **EmergencyBanner** feature flag to it.
 
@@ -104,11 +117,11 @@ To add our feature flag in Azure App Configuration, perform the following steps:
 
 Great! We are now ready for refactor our application to see this in action. Before you do this, however, navigate to **Access keys** from your Azure App Configuration instance, and copy a connection string (primary or secondary is fine).
 
-## Refactor (and simplify!) your application
+# Refactor (and simplify!) your application
 
 Now, we're ready to refactor our application to reflect the new value in Azure App Configuration.
 
-### Add connection string to your local secrets 
+## Add connection string to your local secrets 
 
 How do we bring in the feature flag we created? Well, we could paste the connection string right into our `appsettings.json` file, but that's neither safe nor secure. Instead, let's use [our Secret Manager](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=windows). To get started with this, right-click your solution and click **Manage User Secrets**. That will open a blank JSON file, where you can safely store your application secrets outside of your application configuration. 
 
@@ -120,7 +133,7 @@ Update the file to the following:
 }
 ```
 
-### Update host builder configuration
+## Update host builder configuration
 
 Next, you will update your host builder configuration to connect to your Azure Application instance. Modify your `CreateHostBuilder` method in `Program.cs` to the following:
 
@@ -142,7 +155,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 What did you do here? At startup, you are connecting to your Azure App Configuration instance, with your feature flag that you specified in the Secret Manager. (For performance, if you are loading a bunch of feature flag configurations, you should consider [using a sentinel key here](https://docs.microsoft.com/azure/azure-app-configuration/enable-dynamic-configuration-aspnet-core?tabs=core3x).)
 
-### Change view
+## Change view
 
 In the previous post, we had a model property that checked if a flag was active. Now, we can just do a simple check in `Views/Home/Index.cshtml`:
 
@@ -161,7 +174,7 @@ In the previous post, we had a model property that checked if a flag was active.
 
 Excellent! Before we run this, let's clean up what we don't need.
 
-### Clean up controller and configuration
+## Clean up controller and configuration
 
 Remember this mess in `appsettings.json`? Delete it, you don't need it!
 
@@ -198,7 +211,7 @@ Now, run the app!
 
 ![After turning on flag]({{ site.url }}{{ site.baseurl }}/images/timewindow.png)
 
-## Next steps
+# Next steps
 
 I hope you enjoyed walking through setting feature flags in Azure App Configuration. Working with the Azure UI was great, but to take it to the next level consider scripting this using the Azure CLI. Microsoft [has some sample scripts](https://docs.microsoft.com/azure/azure-app-configuration/scripts/cli-create-service) to help you get started.
 

@@ -40,7 +40,16 @@ Imagine you're trying to teach someone how a program works. Before you even exec
 
 Sure, to you and me it likely won't be long before that needs to come up but the barrier for entry becomes higher—especially when you look at how simple it is to get started with something like Python or JavaScript.
 
-## The simple, obligatory "Hello, world" example
+This post covers the following topics.
+
+- [The simple, obligatory "Hello, world" example](#the-simple-obligatory-hello-world-example)
+- [Return a status code](#return-a-status-code)
+- [Await things](#await-things)
+- [Access command-line arguments](#access-command-line-arguments)
+- [Local functions](#local-functions)
+- [Wrapping up](#wrapping-up)
+
+# The simple, obligatory "Hello, world" example
 
 With C# 9 top-level programs, you can take away the `Main` method and condense it to something like this:
 
@@ -77,7 +86,7 @@ Can we be honest? I thought this was where it ended: a nice, clean way to simpli
 
 That is super interesting. Let's try it out and see what happens in Sharplab.
 
-## Return a status code
+# Return a status code
 
 We can return anything from our top-level program. If we return 0 like we did in the good old days, let's do this:
 
@@ -100,7 +109,7 @@ internal static class $Program
 }
 ```
 
-## Await things
+# Await things
 
 Mads says we can `await` things. Let's await something—let's call the [`icanhazdadjoke` API](https://icanhazdadjoke.com/api), shall we?
 
@@ -242,7 +251,7 @@ internal static class $Program
 }
 ```
 
-## Access command-line arguments
+# Access command-line arguments
 
 A nice benefit here is that, like with a command line program, you can specify command line arguments. This is typically done by parsing the `args[]` that you pass into your `Main` method, but how is this possible with no `Main` method to speak of?
 
@@ -280,7 +289,7 @@ internal static class $Program
 }
 ```
 
-## Local functions
+# Local functions
 
 Now, for my last trick, local functions.
 
@@ -328,7 +337,7 @@ internal static class $Program
 
 Or not. They are just split out into different functions in my class. Carry on.
 
-## Wrapping up
+# Wrapping up
 
 In this post, we've put top-level programs through its paces by seeing how it works with status code, async calls, command line arguments, and local functions. I've found that this can be a lot more powerful that slimming down lines of code.
 

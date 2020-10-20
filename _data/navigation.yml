@@ -2,8 +2,6 @@
 main:
   - title: "Posts"
     url: https://daveabrock.com
-  - title: "Dev Advice"
-    url: /dev-advice
   #- title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   - title: "The .NET Stacks"

@@ -18,7 +18,18 @@ I couldn't possibly go through **all** the features and functionality that NDepe
 *Disclaimer*: I am reviewing NDepend with a free review license.
 {: .notice--info}
 
-## Attach NDepend to your .NET solution
+This post covers the following topics.
+
+- [Attach NDepend to your .NET solution](#attach-ndepend-to-your-net-solution)
+- [Review the NDepend dashboard](#review-the-ndepend-dashboard)
+  - [Technical debt severity levels](#technical-debt-severity-levels)
+- [Visualizing complexity](#visualizing-complexity)
+- [Understand dependencies](#understand-dependencies)
+- [Query code with the CQLinq syntax](#query-code-with-the-cqlinq-syntax)
+- [Integrate NDepend with your continuous integration pipeline](#integrate-ndepend-with-your-continuous-integration-pipeline)
+- [Wrap up](#wrap-up)
+
+# Attach NDepend to your .NET solution
 
 Once you install NDepend, the easiest way to get started is to attach NDepend to an existing .NET solution in Visual Studio.
 
@@ -28,7 +39,7 @@ The first time you analyze, a beginner-friendly screen will ask you how you want
 
 ![go to NDepend dashboard]({{ site.url }}{{ site.baseurl }}/images/ndepend-what-to-do.png)
 
-## Review the NDepend dashboard
+# Review the NDepend dashboard
 
 The dashboard gives you a nice view of overall tech debt, quality gates, and issue and rule estimation. My sample app needs some work but ... in my career, I've definitely seen worse.
 
@@ -36,7 +47,7 @@ The dashboard gives you a nice view of overall tech debt, quality gates, and iss
 
 You can drill into the dashboard to get details about any violations.
 
-### Technical debt severity levels
+## Technical debt severity levels
 
 If you're wondering about the NDepend severity levels, here's some guides:
 
@@ -48,7 +59,7 @@ If you're wondering about the NDepend severity levels, here's some guides:
 
 Once you improve your code, you can rerun the analysis again and NDepend will show you how you improved from the last baseline.
 
-## Visualizing complexity
+# Visualizing complexity
 
 It's been a few years since I last worked with NDepend, and a welcome new addition I noticed is the visualization of cyclomatic complexity. While it doesn't tell the whole story, high complexity numbers are typically bad news for code quality and testability.
 
@@ -60,7 +71,7 @@ This capability isn't just for cyclomatic complexity—you can do it for documen
 
 I can personally see a lot of value in using the [code coverage visualization](https://www.ndepend.com/docs/monitor-test-coverage#identify-which-code-need-more-test), as it easily shows which components are in need of more coverage.
 
-## Understand dependencies
+# Understand dependencies
 
 NDepend ships with a dependencies view that allows you to visualize the relationships between your projects. It's an interactive view, where you can click and hover over dependencies, to see how tightly or loosely coupled your dependencies are.
 
@@ -68,7 +79,7 @@ NDepend ships with a dependencies view that allows you to visualize the relation
 
 If you tell your boss something is taking a while because it's a "bowl of spaghetti" and he or she wants evidence, here's where you can get it.
 
-## Query code with the CQLinq syntax
+# Query code with the CQLinq syntax
 
 NDepend offers Code Query LINQ (CQLinq) to query .NET code through the use of LINQ queries. If you want greater control of the metrics, or want a one-off result, it's a great capability. You can use any C# LINQ syntax.
 
@@ -91,7 +102,7 @@ I don't need to click a Run button or anything—the results will populate autom
 
 I can run this just once, or even save my queries for later use. As a C# developer you're likely familiar with the LINQ syntax, so this offers a great and quick way for you to grab just the data you need.
 
-## Integrate NDepend with your continuous integration pipeline
+# Integrate NDepend with your continuous integration pipeline
 
 To make the greatest impact to your team, you can use NDepend with your CI tools—it supports any major CI tool like Azure DevOps/TFS, TeamCity, Jenkins, SonarQube, and more. You will need to purchase a [Build Machine Edition *or* Azure DevOps/TFS Edition license for this capability](https://www.ndepend.com/editions).
 
@@ -105,7 +116,7 @@ This is a powerful capability and if you're paying for NDepend already, you shou
 
 Take a look at the [NDepend CI documentation](https://www.ndepend.com/docs/azure-devops-tfs-vsts-integration-ndepend) for more details.
 
-## Wrap up
+# Wrap up
 
 In this article, I took a test drive through the latest version of NDepend. Once we attached NDepend to a sample solution, we discussed the NDepend dashboard, complexity visualization, the dependency graphs, querying code with the CQLinq syntax, and reviewed its CI capabilities.
 

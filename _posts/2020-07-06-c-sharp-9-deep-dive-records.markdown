@@ -22,7 +22,19 @@ This is the second post in a six-post series on C# 9 features in-depth:
 **Heads up!** C# 9 is still in preview mode, so much of this content might change—this post was last updated on July 6, 2020. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
 {: .notice--danger}
 
-## A quick primer on immutable types
+This post covers the following topics.
+
+- [A quick primer on immutable types](#a-quick-primer-on-immutable-types)
+- [OK, so what is a record?](#ok-so-what-is-a-record)
+- [What is the difference between structs and records?](#what-is-the-difference-between-structs-and-records)
+- [Create your first record](#create-your-first-record)
+- [Use `with` expressions with records](#use-with-expressions-with-records)
+  - [Use inheritance with the `with` expression](#use-inheritance-with-the-with-expression)
+- [Implementing positional records](#implementing-positional-records)
+- [Evaluating record equality](#evaluating-record-equality)
+- [Wrapping up](#wrapping-up)
+
+# A quick primer on immutable types
 
 Before we get started, let's briefly talk about the concept of immutable types. For sure, immutability is a stuffy word to some but the premise here is simple: once instantiated or initialized, immutable types never change.
 
@@ -32,13 +44,13 @@ Put another way: **immutable types reduce risk, are safer, and help to prevent a
 
 Even if you aren't familiar with this concept yet, or haven't been forced to think this way, you're already using it in the .NET world. For example, `System.DateTime` is immutable, as are strings. And now with records in C# 9, you can create your own immutable types.
 
-## OK, so what is a record?
+# OK, so what is a record?
 
 What is a record, exactly? A record is a construct that allows you to encapsulate property state. (I am avoiding the use of the word object, for clarity.) Or, put in less geeky terms, records allow you to perform value-like behaviors on properties. This is why I'm avoiding saying "objects" when I speak of records. We need to start thinking in terms of data, and not objects. Records aren't meant for mutable state—if you want to represent change, create a new record. That way, you define them by working with the data, and not passing around a single object that gets changed by multiple functions.
 
 Records appear to be super flexible. Anthony Giretti [found that classes can have records as properties, and also that records can contain structs and objects](https://anthonygiretti.com/2020/06/19/introducing-c-9-questions-answers-about-records/).
 
-## What is the difference between structs and records?
+# What is the difference between structs and records?
 
 Allow me to read your mind—you might be asking: how is this different than structs? If you haven't used it before, we can define a value type, called a `struct`, in C# today. So, why don't we just build on the `struct` functionality instead of introducing a new member (ha!) to C#? After all, you can declare an immutable value type by saying `readonly struct`.
 
@@ -56,7 +68,7 @@ Hopefully by now, if I did my job, you know what records are and the rationale f
 
 If you want to play along, the easiest way as of now is to [download LinqPad 6 Beta](https://www.linqpad.net/linqpad6.aspx#beta), then select **Edit** > **Preferences** > **Query** > **Use Roslyn Daily build for experimental C# 9 support).**
 
-## Create your first record
+# Create your first record
 
 To declare a record, you use the new `record` keyword. Brilliant, right?
 
@@ -80,7 +92,7 @@ public record Person
 As of this writing, the `record` declaration is not enough to get complete object immutability. You will also need to use the `{ get; init; }` syntax for your properties, as well. Likewise, if you've read about auto-property improvements (for example, changing `public string FirstName { get; init; }` to `public string FirstName;`), this does not make the fields immutable-by-default either. This allows you the flexibility to have some properties mutable on a case-by-case basis. The compiler team is considering implementing something like `public data string FirstName;` to improve on this, but [from the latest discussion](https://github.com/dotnet/csharplang/blob/master/meetings/2020/LDM-2020-06-22.md), appears this will stay in the preview bits and not make it to the initial C# 9 release in November 2020.
 {: .notice--info}
 
-## Use `with` expressions with records
+# Use `with` expressions with records
 
 Before C# 9, you would likely represent new state by creating new values from existing ones.
 
@@ -119,7 +131,7 @@ var newPerson = person with { FirstName = "Howard", City = "Pasadena" };
 
 You can easily use your familiar object initializer syntax to differentiate what has changed between objects, including multiple properties. Under the covers, the record has a `protected` copy constructor. If you wish, you can change the default behavior of the copy constructor but the default behavior should be suitable in most of your cases (to create a copy, change properties to what you passed in, and copy the properties that you don't).
 
-### Use inheritance with the `with` expression
+## Use inheritance with the `with` expression
 
 Remember when I said records support inheritance, while structs do not? I wasn't lying. We can use inheritance with our `with` expression. Let's say we have a `Superhero` class that inherits from `Person` and has a new `MaxSpeed` property.
 
@@ -162,7 +174,7 @@ public record Superhero : Person
 
 Hey, this works! How? Records actually have a hidden virtual method that clones the *entire* object. An inherited record overrides this method to call the copy constructor of that type, chaining to the copy constructor of the base record.
 
-## Implementing positional records
+# Implementing positional records
 
 Sometimes, you'll need to take a positional approach—meaning data is supplied from constructor arguments. You can definitely do this with records.
 
@@ -217,7 +229,7 @@ public record Person(string FirstName, string LastName, string Address, string C
 
 ```
 
-## Evaluating record equality
+# Evaluating record equality
 
 If we're being honest, *technically* records are a kind of class, which also means they are *technically* reference types. But that's OK—like structs, records override the `Equals(object)` method that every class has, to achieve the value-ness we are after. This means we can work with value-based equality as well.
 
@@ -267,7 +279,7 @@ public record Person
 
 Nice! Also, along with the `Equals` override records ship with a `GetHashCode()` override if you're so inclined.
 
-## Wrapping up
+# Wrapping up
 
 In this post, we discussed a lot about records in C# 9. We discussed what a record is, how it compares to a struct, `with` expressions, inheritance, positional records, and how to evaluate equality.
 

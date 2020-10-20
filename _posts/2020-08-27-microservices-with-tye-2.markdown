@@ -20,7 +20,18 @@ Docker is [a technology](https://www.docker.com/) that allows you to deploy and 
 Before we get started, make sure you have the [.NET Core 3.1 SDK installed](https://dotnet.microsoft.com/download/dotnet-core/3.1). You won't get very far if you don't.
 {: .notice--info}
 
-## Prerequisites before starting
+This post covers the following topics.
+
+- [Prerequisites before starting](#prerequisites-before-starting)
+- [Create ACR and AKS instances](#create-acr-and-aks-instances)
+- [Deploy our dependency ourselves](#deploy-our-dependency-ourselves)
+- [Our first deploy](#our-first-deploy)
+- [Port-forward to access our application](#port-forward-to-access-our-application)
+- [Clean up](#clean-up)
+- [Wrapping up](#wrapping-up)
+- [References](#references)
+
+# Prerequisites before starting
 
 Fun fact: if you want to get up and running with Tye quickly, you can execute `tye run` and not have to worry about containerizing your apps. In the last post, to keep things simple, that's exactly what we did. (If we wanted, we could have executed `tye build` to build containers for our application.)
 
@@ -34,7 +45,7 @@ Before deploying with Project Tye, you need the following:
 
 We will perform the last two steps now.
   
-## Create ACR and AKS instances
+# Create ACR and AKS instances
 
 We'll need some sort of container registry and Kubernetes cluster for Tye to use. I'll be using the Azure Container Registry (ACR) and Azure Kubernetes Service (AKS), both Azure services. Here's how to set that up. (If you've got a registry and cluster all ready, feel free to skip past this section.)
 
@@ -65,7 +76,7 @@ Once that completes, you can execute `kubectl config view` to view and verify yo
 
 ![tye run]({{ site.url }}{{ site.baseurl }}/images/kubectl.png)
 
-## Deploy our dependency ourselves
+# Deploy our dependency ourselves
 
 Remember our Redis dependency from the last post? We will have to deploy this ourselves. Why doesn't Tye do this for us? This is by design. Your dependencies are *your dependencies*, likely already configured with ports and connection strings. The assumption is that these are already set up by you, so Tye doesn't need to make assumptions or create a new instance for you.
 
@@ -75,9 +86,9 @@ Borrowing from [the Tye introductory post from Microsoft](https://devblogs.micro
 kubectl apply -f https://raw.githubusercontent.com/dotnet/tye/master/docs/tutorials/hello-tye/redis.yaml
 ```
 
-## Our first deploy
+# Our first deploy
 
-We're ready to try out our first deploy! 
+We're ready to try out our first deploy!
 
 Before we run `tye deploy` it's important to note that Tye will use your existing credentials to push to Docker and access your Kubernetes clusters—so Tye *will* be using your existing context if you do nothing.
 {: .notice--warning}
@@ -120,7 +131,7 @@ registry: {my-registry-name}
 
 This customization is ideal for CI/CD scenarios.
 
-## Port-forward to access our application
+# Port-forward to access our application
 
 We are deployed! So, how do we access our app? We'll want to access the web app from outside of our Kubernetes cluster. To do so, we'll use port-forwarding from the Kubernetes CLI:
 
@@ -132,7 +143,7 @@ We're in business! Project Tye deployed our app to AKS for us. If you browse to 
 
 In a world where "simple" and "Kubernetes" hardly ever share the same sentence, Project Tye was able to do it with just a `tye.yaml` file. Tye was able to set up all the environment variables to us, for all our services to communicate with each other, without any intervention from us.
 
-## Clean up
+# Clean up
 
 If you'd like to clean up after trying this out, here's what to do:
 
@@ -140,13 +151,13 @@ If you'd like to clean up after trying this out, here's what to do:
 * **Delete Redis deployment** - run `kubectl delete deployment/redis svc/redis`
 * **Delete AKS cluster** - from the Azure CLI, run `az aks delete --name {my-cluster} --resource-group {my-resource-group}`
 
-## Wrapping up
+# Wrapping up
 
 In this post, we created Azure Container Registry (ACR) and Azure Kubernetes Services (AKS) instances, deployed an external dependency, and deployed our app to Kubernetes from Project Tye. Then, we used port-forwarding to provide the ability to run our app locally outside of our cluster.
 
 I hope you enjoyed this introductory two-part series on Project Tye. I realize it was simple with just two applications and a dependency—this was intentional. As Tye evolves, I'd like to dig a little deeper on a complex real-world app and put debugging through its paces (which is [still being worked on](https://twitter.com/condrong/status/1298653011351179266)). It's early but hopefully you can already see that this powerful tool takes a lot of headaches out of developing microservices in .NET, which is all you can ask.
 
-## References
+# References
 
 Some content that was helpful in writing this post, and some supplementary information that might assist you:
 
@@ -159,5 +170,3 @@ Some content that was helpful in writing this post, and some supplementary infor
 * [Project Tye – easier development with .NET for Kubernetes](https://csharp.christiannagel.com/2020/05/11/tye/) (Christian Nagel)
 * [Kubernetes docs](https://kubernetes.io/docs/home/)
 * [Docker docs](https://docs.docker.com/)
-
-

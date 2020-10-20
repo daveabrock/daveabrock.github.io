@@ -15,7 +15,7 @@ After publishing all these posts, I received a lot of great questions in my Disq
 **Heads up!** I have tried to answer these questions the best I can by playing with the code and asking the language design folks on Gitter. However: C# 9 is still in preview mode, so much of this content might change. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
 {: .notice--danger}
 
-## Init-only features
+# Init-only features
 
 From the post on [init-only features](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits), we had two questions:
 
@@ -29,7 +29,7 @@ The Microsoft announcement says: *"The one big limitation today is that the prop
 
 Similar to the last question, using init-only properties allow for initialization, while get-only properties are read-only and do not.
 
-## Records
+# Records
 
 From the post on [record types](https://daveabrock.com/2020/07/06/c-sharp-9-deep-dive-records), we also had one and a half questions:
 
@@ -58,7 +58,7 @@ Here is what Cyrus Najmabadi says:
 
 > in general, the basic approach of implementing this would likely mean you pay more CPU for equality checks. Though the language doesn't concern itself with that. It would be an implementation detail of the compiler.
 
-## Target typing and covariant returns
+# Target typing and covariant returns
 
 From my post on [target typing and covariant returns](https://daveabrock.com/2020/07/14/c-sharp-9-target-typing-covariants), we had one question from two different readers.
 

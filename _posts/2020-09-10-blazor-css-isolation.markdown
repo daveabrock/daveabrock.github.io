@@ -15,7 +15,20 @@ This post will discuss how to use CSS isolation with the latest preview bits, a 
 **Heads up!** While .NET 5 is "feature complete", we are still working with preview bits so some of this content might change. As always, I will do my best to update it as things evolve—but if not, here's your warning. 🤞
 {: .notice--danger}
 
-## Prerequisites
+This post covers the following topics.
+
+- [Prerequisites](#prerequisites)
+- [The problem](#the-problem)
+- [Use CSS isolation](#use-css-isolation)
+  - [How does this magic work?](#how-does-this-magic-work)
+  - [Reminder: CSS isolation is a build-time step](#reminder-css-isolation-is-a-build-time-step)
+- [How to work with child components](#how-to-work-with-child-components)
+- [Integrate with your favorite preprocessors](#integrate-with-your-favorite-preprocessors)
+- [Disable automatic bundling](#disable-automatic-bundling)
+- [Wrap up](#wrap-up)
+- [References](#references)
+
+# Prerequisites
 
 Before we get started, make sure you've installed the latest preview bits. To do this, [install the latest .NET 5 SDK](https://dotnet.microsoft.com/download/dotnet/5.0).
 
@@ -31,7 +44,7 @@ Of course, you can use Visual Studio tooling as well—do whatever works for you
 
 Once you verify the app is up and running, you'll be ready to go.
 
-## The problem
+# The problem
 
 The beauty of Blazor is in its component model. With [components](https://docs.microsoft.com/aspnet/core/blazor/components/?view=aspnetcore-3.1), you get a self-contained "chunk" of your UI that allows you to share and reuse them across your projects (not to mention with [shared class libraries](https://docs.microsoft.com/aspnet/core/blazor/components/class-libraries?view=aspnetcore-3.1&tabs=visual-studio)). Until Blazor CSS isolation came along, using CSS with your components went against a lot of that, which can lead to a frustrating experience. Let's walk through an example to explain why.
 
@@ -97,7 +110,7 @@ There are ways to get around this by bringing in external libraries and tools fr
 
 With a knowledge of our pain points, let's add CSS isolation to our sample application.
 
-## Use CSS isolation with our components
+# Use CSS isolation
 
 It's quite easy to bind your CSS to your component. To do this, inside of your Pages directory (**and not with the global CSS file**), add new files with the format `MyComponent.razor.css`. So, add these three files to the project:
 
@@ -129,7 +142,7 @@ h1 {
 
 I'm incredibly happy with the simplicity of this solution. Many folks have asked about using `@css` blocks in components, but it involved integrating a CSS parser into the Razor compiler—which appears to be quite expensive.
 
-### How does this magic work?
+## How does this magic work?
 
 For this to work, Blazor appends a special attribute to your CSS classes, which binds your classes to the specific component.
 
@@ -151,11 +164,11 @@ Armed with this knowledge, if we take a larger view of the DOM it'll make a lot 
 
 This pattern has [worked well with Vue](https://vue-loader.vuejs.org/guide/scoped-css.html#scoped-css) and there was no sense in reinventing the wheel.
 
-### Reminder: CSS isolation is a build-time step
+## Reminder: CSS isolation is a build-time step
 
 To support isolation, Blazor rewrites all the CSS selectors during the build process. This makes prerendering a snap, since there's no reliance on existing .NET or JavaScript code. On the other side of the coin, this means you'll need to recompile to see any new changes—if you're used to saving a CSS change and seeing your changes immediately, it's a drag.
 
-## How to work with child components
+# How to work with child components
 
 Call me a mind reader, but you're probably wondering how this works with child components. Thanks so much for asking. There's only one way to find out.
 
@@ -220,7 +233,7 @@ Blazor identifies the child style as "belonging" to the parent component in `sco
 
 ![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/scoped-styles-inheritance.png)
 
-## Integrate with your favorite preprocessors
+# Integrate with your favorite preprocessors
 
 You may be leveraging your own CSS preprocessor. A popular preprocessor, [like SASS](https://sass-lang.com/guide), makes the writing of CSS more enjoyable with support for things that CSS doesn't provide out of the box—like variables, nesting, modules, mixins, and inheritance.
 
@@ -252,7 +265,7 @@ During the build, the `.scss` file is compiled to `Index.razor.css` and we see t
 
 ![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/red.png)
 
-## Disable automatic bundling
+# Disable automatic bundling
 
 If you have a process that works for you, fantastic. If you want to opt-out of how Blazor publishes and loads scoped files at runtime, you can disable it by using an MSBuild property. As [mentioned in the GitHub issue](https://github.com/dotnet/aspnetcore/issues/10170#issuecomment-671342247), this means it's *your* responsibility to grab the scoped CSS files from the `obj` directory and do the required steps to publish and load them during runtime.
 
@@ -264,13 +277,13 @@ If you're good with that, add the `DisableScopedCssBundling` MSBuild property to
 </PropertyGroup>
 ```
 
-## Wrap up
+# Wrap up
 
 In this post, we reviewed the new CSS isolation feature for Blazor. We discussed its benefits, the problems it solves, how to use it, and how you can pass styles to child components. We also talked about how to use CSS isolation with preprocessors and how to disable automatic bundling.
 
 This was a fun post to write—there isn't a lot of content out there, so it was a lot of trial and error. While that's always fun, it also means I could be missing some details. Let me know if you come across anything, and happy hacking!
 
-## References
+# References
 
 When writing this post, a lot of the content came from the [GitHub issue](https://github.com/dotnet/aspnetcore/issues/10170) as well as Steve Sanderson's demo from a recent ASP.NET weekly standup.
 

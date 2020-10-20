@@ -26,13 +26,28 @@ So, allow me to share with you a few things that, once I learned them, made me u
 
 By the end, if you dig deep into these concepts my hope is that you can appreciate and understand JavaScript a little more, for the good and the bad.
 
-## Understand execution context
+This post covers the following topics.
+
+- [Understand execution context](#understand-execution-context)
+  - [The global context](#the-global-context)
+  - [Functional execution context](#functional-execution-context)
+- [Know the event loop](#know-the-event-loop)
+- [Know `async` and `await`](#know-async-and-await)
+- [Know the big three array methods](#know-the-big-three-array-methods)
+  - [.map()](#map)
+  - [.filter()](#filter)
+  - [.reduce()](#reduce)
+  - [When to use `map`, `filter`, and `reduce`, in one sentence](#when-to-use-map-filter-and-reduce-in-one-sentence)
+- [Understand that arrow functions aren't just for conciseness](#understand-that-arrow-functions-arent-just-for-conciseness)
+- [Wrap up](#wrap-up)
+
+# Understand execution context
 
 To completely understand and work with advanced JavaScript concepts like closures, scopes, and hoisting, you need to understand how JavaScript's execution contexts work. If you ever have trouble understanding why a variable is `undefined` when you do not want it to be, the execution context is a good place to start.
 
 When talking about execution context, we need to understand two things: the global context and the function execution context.
 
-### The global context
+## The global context
 
 The global context is the default context, where code resides that does not sit inside a function. The context contains two items at the beginning before you run any code at all: the global object (which is `window` in browser-based JS or `global` for Node.js) and the `this` variable—which is set to the global object.
 
@@ -78,7 +93,7 @@ function getDetails() {
 
 This is [what hoisting is](https://scotch.io/tutorials/understanding-hoisting-in-javascript): assigning variables `undefined` while being created. Our industry is full of using fancy words for such simple things. I hope this clears things up.
 
-### Functional execution context
+## Functional execution context
 
 The other context you need to know is the functional context (for, of course, functions). This is created whenever functions are called (or invoked, to be fancy). We'll have one for every function, and since the global object (and execution context) are in place it doesn't need to create it again. This context creates an `arguments` object and then, just like the global context, creates a `this` object, sets up space for variables and functions, and sets variables to `undefined` and puts any declarations in memory.
 
@@ -86,7 +101,7 @@ When a function is invoked, a new functional execution context is created for it
 
 For more details, check out [Tyler McGinnis's wonderful article](https://ui.dev/ultimate-guide-to-execution-contexts-hoisting-scopes-and-closures-in-javascript/).
 
-## Know the event loop
+# Know the event loop
 
 If I can pick one thing I wish I knew when I started working on JavaScript, it's the event loop. How I would have *loved* for someone to find my bug as a junior engineer, pull me aside, and say: "Hey, stop what you're doing and take the rest of the day to learn the event loop. Thank me later."
 
@@ -112,7 +127,7 @@ Your knowledge of the call stack is vital as your code becomes more complex. The
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8aGhZQkoFbQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Know what `async` and `await` are doing
+# Know `async` and `await`
 
 If you're a regular reader here, you're likely a C# developer—so I don't need to tell you about [how awesome the `async` and `await` paradigm is](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await). The excitement is ever-present in the JavaScript community as well. From callbacks, to promises, and now async await, the JS async capabilities have come a long way.
 
@@ -152,11 +167,11 @@ If this sounds like something you face, the [wonderful MDN async/await article s
 
 As with anything, know the drawbacks and try not to use async/await without knowing what's *really* happening.
 
-## Know the big three array methods
+# Know the big three array methods
 
 There are [so many array methods in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). For most of them, you should be able to reference the docs and apply your knowledge. But the three you must truly master and wrap your mind around are `map()`, `filter()`, and `reduce()`. These are used so frequently and are so important. They will take you far.
 
-### .map()
+## .map()
 
 A lot of us know this one, but as a recap: [the `map()` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) creates a new array based on a previous array. Here, I would just like to send city names to a new array. The important thing to note with these methods is that a new array is created (and it does not update your existing array).
 
@@ -173,7 +188,7 @@ const cities = [
 const justCityNames = cities.map(cities => cities.name);
 ```
 
-### .filter()
+## .filter()
 
 To take it a step further, we can use `filter()` to create a new array based on some criteria. For example, let's get back all cities with a population more than 1 million people.
 
@@ -190,7 +205,7 @@ const cities = [
 const bigCities = cities.filter(city => city.population > 1000000);
 ```
 
-### .reduce()
+## .reduce()
 
 To be honest, `.map` and `.filter` aren't too difficult to grasp—it's `reduce()` that will hold the key to your glory (and your frustration, if you don't understand it). While methods like `map()` and `filter()` make you another array, `reduce()` has greater ambitions. It says: "you give me an array, and I'll transform it for you to whatever you want." This can be an object, an array, an int, a calculation. Anything.
 
@@ -221,11 +236,11 @@ For each iteration, `num` will be what's in the array—in our situation, the po
 
 This is a simple example, and even this is a little trippy. My advice? Do `reduce()` calls until you can't see straight, then do some some more. Pass in an array, transform into anything imaginable. Because once you master reduce, you rule the JavaScript world.
 
-### When to use `map`, `filter`, and `reduce`, in one sentence
+## When to use `map`, `filter`, and `reduce`, in one sentence
 
 Use `map()` when you are turning an array into another array, `.filter()` to turn an array into another array by filtering (or removing, most likely) elements, and `reduce()` to transform an array into something magical (specifically, not an array).
 
-## Understand that arrow functions aren't just for conciseness
+# Understand that arrow functions aren't just for conciseness
 
 Starting [with ES6](http://es6-features.org/), you can use arrow functions. Before ES6, here's how we'd write our previous filter function:
 
@@ -276,7 +291,7 @@ No hacks needed assuming you know that you'll need to use the `function()` synta
 
 You'll want to study Jason Orendorff's [ES6 In Depth: Arrow Functions](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/) piece until the proverbial light bulb goes off in your head.
 
-## Wrap up
+# Wrap up
 
 In this post, we covered ways to understand JavaScript a little better. We worked through execution contexts, the event loop, async/await, array methods, and the nuances of arrow functions.
 
