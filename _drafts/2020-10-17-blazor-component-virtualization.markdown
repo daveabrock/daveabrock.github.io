@@ -1,31 +1,42 @@
 ---
 date: "2020-10-19"
-title: "Increase rendering performance with Blazor component virtualization"
-excerpt: "Use Blazor component virtualization to increase perceived performance of components that work with large data sets."
+title: "Improve rendering performance with Blazor component virtualization"
+excerpt: "Use Blazor component virtualization to improve perceived performance of components that work with large data sets."
 tags: [blazor, aspnet-core]
 header:
     overlay_image: /assets/images/virtualization-card.png
     overlay_filter: 0.8
 ---
 
-This is an introduction.
+When measuring web performance—especially on page load—it's not always about a consistent metric, such as how quickly the entire HTML tree loads from the server. It's helpful to think in terms of [perceived performance](https://developer.mozilla.org/en-US/docs/Learn/Performance/perceived_performance)—do you understand what needs to be rendered now, and what can be rendered later? End users should never have to wait for something that, well, can wait.
 
-We'll cover the following content in this post:
+The ASP.NET Core team recently rolled out [Blazor component virtualization](https://docs.microsoft.com/aspnet/core/blazor/components/virtualization?view=aspnetcore-5.0), a technique for limiting UI rendering to the visible page elements only. You can easily leverage this through a built-in `Virtualize` component.
+
+Here's a common scenario: let's say you have a requirement to list a bunch of items on a table, and you might be stuck with a lot of data. If you're listing several thousand items on a page, users often have to sit and wait for the entire site to load. With Blazor component virtualization, the app will load only the records in the user's window, then render more only when scrolling.
+
+This post will discuss the following content.
 
 - [Prerequisites](#prerequisites)
 - [The "up and running in 30 seconds" solution](#the-up-and-running-in-30-seconds-solution)
-- [Our application](#our-application)
-- [Deep dive: understand the internal code](#deep-dive-understand-the-internal-code)
+- [Our sample app](#our-sample-app)
+- [Additional parameters](#additional-parameters)
+  - [OverscanCount](#overscancount)
+  - [Lazy loading with `ItemsProvider` and `Placeholder`](#lazy-loading-with-itemsprovider-and-placeholder)
+  - [ItemSize](#itemsize)
+- [Reminder: this isn't a catch-all](#reminder-this-isnt-a-catch-all)
 - [Wrap up](#wrap-up)
 - [References](#references)
 
+**Heads up!** This post assumes you have [some familiarity with Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor), like how to create and render a basic component.
+{: .notice--warning}
+
 # Prerequisites
 
-To work with Blazor component virtualization, you'll need to be using .NET 5 RC1 and greater. Head on over to the [.NET 5 SDK downloads](https://dotnet.microsoft.com/download/dotnet/5.0), or have Visual Studio 2019 Preview 3 (v16.8) or greater installed.
+To work with Blazor component virtualization, you need .NET 5 RC1 or greater. Head on over to the [.NET 5 SDK downloads](https://dotnet.microsoft.com/download/dotnet/5.0), or have Visual Studio 2019 Preview 3 (v16.8) or greater installed.
 
 # The "up and running in 30 seconds" solution
 
-Assume you have a collection called `people` that's a list of `Person` objects with properties like `FirstName`, `LastName`, and so on. Replace your traditional for-each loop...
+Assume you have a collection called `people` that's a list of `Person` objects with properties like `FirstName`, `LastName`, and so on. In your component's `.razor` file, replace your traditional for-each loop...
 
 ```csharp
 @foreach (var person in people)
@@ -56,11 +67,13 @@ Additionally, you could explicitly specify a context in your component:
 </Virtualize>
 ```
 
-That's really how easy it is, and will cover a majority of your use cases. Keep reading to understand the component in greater detail with a sample project, and learn how you can customize it even further.
+The component does the hard work of getting the height of your container and the size of the items to render. When we speak of the "container" we are talking about the rendered element: it can be one or more Razor components, a mix of HTML and Razor components, or plain old Razor code.
 
-# Our application
+That's really how easy it is, and will cover a majority of your use cases. Keep reading to understand the `Virtualize` component in greater detail—and how you can customize and extend it for your specific needs.
 
-To further illustrate the need for virtualization, let's take it to the extremes. In the Blazor app's `FetchData` component, let's make a bunch of objects in memory when the page loads (in `OnInitializedAsync`). In the `@code` block of the component, we'll populate a list of 10,000 cars to display on the page. (To state the obvious, we should never *actually* do this.)
+# Our sample app
+
+To further illustrate the need for Blazor component virtualization, let's kick things up a notch. In the sample Blazor app's `FetchData` component (or any component you'd like), let's make a bunch of objects in memory when the page loads (in `OnInitializedAsync`). In the `@code` block of the component, we'll populate a list of 10,000 cars to display on the page. (To state the obvious, we should never *actually* do this.)
 
 ```csharp
 private List<Car> cars;
@@ -96,12 +109,12 @@ public class Car
 }
 ```
 
-Then, in the markup: when we get all our cars, we'll lay them out in a single table. If you've ever worked with Razor, you should be familiar.
+Then, in the markup: when we get all our cars, we'll lay them out in a single table.
 
 ```html
 @if (cars == null)
 {
-  <p><em>Loading...</em></p>
+  <p><em>Loading so many cars...</em></p>
 }
 else
 {
@@ -129,14 +142,9 @@ else
 
 Launch your app, fire up your favorite dev tools, and head over to the **Fetch data** link at `http://localhost:xxxx/fetchdata`.
 
-According to my dev tools with the cache disabled, load ranges anywhere from 2.5 to 4 seconds (I refreshed ten times) and quite a bit of lag—just imagine if each row had button components, that can make the page lag even more.
+According to my dev tools with the cache disabled, load ranges anywhere from 2.5 to 4 seconds (I refreshed ten times) and quite a bit of lag.
 
-What I can do is replace my for-loop with a `<Virtualize>` component. This component takes two parameters:
-
-* Items
-* Context
-
-Replace the for-loop with the following, then re-launch your application. 
+As before, I can do is replace my for-loop with the following, then re-launch my application.
 
 ```html
 <Virtualize Items="cars" Context="car">
@@ -150,30 +158,117 @@ Replace the for-loop with the following, then re-launch your application.
 
 Now, we're looking at 1.2 to 1.9 seconds uncached, about twice the speed.
 
-This completes all you'll need to know to use Blazor component virtualization. If you really want to geek out, though, keep reading.
+In the following video, keep an eye on Chrome Developer tools. You'll see how the elements change as I scroll.
 
-# Deep dive: understand the internal code
+<video width="560" height="315" controls>
+  <source src="{{ site.url }}{{ site.baseurl }}/videos/Twitter.mp4" type="video/mp4">
+</video>
 
-The code for the `<Virtualize>` component [is out on GitHub if you really want to understand *everything*](https://github.com/dotnet/aspnetcore/blob/master/src/Components/Web/src/Virtualization/Virtualize.cs). 
+The `Items` and `Context` are the most common parameters to use here, but there's plenty more you can utilize.
 
-Obviously, you don't need to review and understand this code in order to use the component—the beauty of an out-of-the-box component is to provide a level of abstraction for you—but if you really want to see how everything works, let's dive in.
+# Additional parameters
 
-At the beginning of `Virtualize.cs`, you'll see the component can take several parameters (these are noted, as they are in your own components, with the `[Parameter]` annotation).
+We'll talk through four additional parameters: `OverscanCount`, `ItemsDelegate`, `Placeholder`, and `ItemSize`.
 
-* `RenderFragment<TItem>? ChildContent` - gets or sets the item template for the list (as you can see, it is optional and nullable)
-* `RenderFragment<TItem>? ItemContent` - gets or sets the item template for the list (as you can see, it is optional and nullable)
-* `RenderFragment<PlaceholderContext>? Placeholder` - gets or sets the template for items that have not yet been loaded in memory (optional and nullable)
-* `float ItemSize` - gets size of each item in memory (defaults to 50px)
-* `ItemsProviderDelegate<TItem>? ItemsProvider` - gets or sets the function providing items to the list
-* `ICollection<TItem>? Items` - gets or sets the fixed item source
-* `int OverscanCount` - gets or sets a value that determines how many additional items will be rendered before and after the visible region (the default is 3). This helps to reduce the frequency of rendering during scrolling. However, higher values mean that more elements will be present in the page.
+## OverscanCount
 
+You can also specify an `OverscanCount` parameter, which specifies how many more items to render before and after the viewable container. The default is currently three items ([src](https://github.com/dotnet/aspnetcore/blob/686150953f7ccd3f56afd4d7b2f0a934c3557a10/src/Components/Web/src/Virtualization/Virtualize.cs#L100)). You may want to tweak this to prevent excessive rendering when you know there will be a lot of scrolling.
 
+Here's how we would do it in our first example:
 
+```html
+<Virtualize Items="@cars" Context="car" OverscanCount="5">
+  <tr>
+    <td>@car.Id</td>
+    <td>@car.Name</td>
+    <td>@car.Cost</td>
+  </tr>
+</Virtualize>
+```
 
+Obviously, the higher the number the more elements you'll render—so use this cautiously.
 
+## Lazy loading with `ItemsProvider` and `Placeholder`
+
+To the casual observer, it might seem like the rendering fetches data periodically. In reality all data is queued up in memory by default. If you don't want to do this, you can work with an item provider delegate method—in C#, [a delegate](https://docs.microsoft.com/dotnet/csharp/programming-guide/delegates/) is a type that refers to methods with a parameter list and return type.
+
+For example, you might be calling an external API (or any other service) and not always know how much data you're getting back. With the `ItemsProvider` parameter, you can ask for requested items on demand.
+
+The provider asks for an `ItemsProviderRequest`, which contains a `StartIndex` (where to start) and  `Count` (how many items to provide), and a `CancellationToken`. After fetching the data, the data returns an `ItemsProviderResult<TItem>` along with a total item count.
+
+Let's add this method to our `@code` block in our Razor file:
+
+```csharp
+private async ValueTask<ItemsProviderResult<Car>> LoadCars(ItemsProviderRequest request)
+{
+  var cars = await MakeTenThousandCars();
+  return new ItemsProviderResult<Car>(cars.Skip(request.StartIndex).Take(request.Count), cars.Count());
+}
+```
+
+If you aren't familiar with the [LINQ syntax](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/):
+
+- The `Skip` operator [skips over](https://docs.microsoft.com/dotnet/api/system.linq.queryable.skip?view=netcore-3.1) elements until we get to the `StartIndex` and return the remainder
+- The `Take` operator takes the next *x* elements from what `Skip` returned, where *x* is the `Count` to return
+
+Before we update the Razor code, let's talk about `Placeholder`.
+
+Typically with Blazor components that run on initialization, you'll see this pattern to display a message while the collection is populating.
+
+```html
+@if (cars == null)
+{
+  <p><em>Loading so many cars...</em></p>
+}
+```
+
+In our case, you can remove that block and replace it with a `Placeholder`. Here's the updated code.
+
+```html
+<Virtualize Context="car" ItemsProvider="@LoadCars">
+    <ItemContent>
+        <tr>
+            <td>@car.Id</td>
+            <td>@car.Name</td>
+            <td>@car.Cost</td>
+        </tr>
+    </ItemContent>
+    <Placeholder>
+        <p>Loading so many cars...</p>
+    </Placeholder>
+</Virtualize>
+```
+
+## ItemSize
+
+You can also specify the size of each item, in pixels. The default is 50px ([src](https://github.com/dotnet/aspnetcore/blob/686150953f7ccd3f56afd4d7b2f0a934c3557a10/src/Components/Web/src/Virtualization/Virtualize.cs#L79)).
+
+Here's how we'd do it in our example:
+
+```html
+<Virtualize Items="@cars" Context="car" ItemSize="15">
+  <tr>
+    <td>@car.Id</td>
+    <td>@car.Name</td>
+    <td>@car.Cost</td>
+  </tr>
+</Virtualize>
+```
+
+# Reminder: this isn't a catch-all
+
+Considering how easy it is to use `Virtualize` it might be easy to use it as a catch-all: *I have to load a bunch of stuff, so I'll drop it here*. It's important to use this component thoughtfully. For example, all items must be a known height so that Blazor can calculate the total scroll range and, therefore, what to render. 
+
+For example, you might have elements that wrap unexpectedly when using different window sizes. In these cases, the virtualization logic won't work as you expect ([there's some chatter about how to handle this](https://github.com/dotnet/aspnetcore/issues/26099)).
+
+As with anything else in your codebase, it's a story of tradeoffs. Understand them before you implement.
 
 
 # Wrap up
 
+In this post, we talked about the `Virtualize` component and how it can help you. We worked through a quick and dirty example, then worked through a list with a lot of records. Then, we talked about other parameters available to you, such as `OverscanCount` and `ItemSize`. We then discussed how to perform lazy loading with the `ItemsDelegate` and `Placeholder` parameters.
+
 # References
+
+- [ASP.NET Core Blazor component virtualization](https://docs.microsoft.com/aspnet/core/blazor/components/virtualization?view=aspnetcore-5.0) (Microsoft Docs)
+- [Virtualize component source code](https://github.com/dotnet/aspnetcore/blob/master/src/Components/Web/src/Virtualization/Virtualize.cs#L79) (GitHub)
