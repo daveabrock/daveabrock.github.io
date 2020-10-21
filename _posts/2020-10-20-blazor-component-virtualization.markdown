@@ -1,5 +1,5 @@
 ---
-date: "2020-10-19"
+date: "2020-10-20"
 title: "Improve rendering performance with Blazor component virtualization"
 excerpt: "Use Blazor component virtualization to improve perceived performance of components that work with large data sets."
 tags: [blazor, aspnet-core]
