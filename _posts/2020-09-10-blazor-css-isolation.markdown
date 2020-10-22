@@ -23,7 +23,6 @@ This post covers the following topics.
 - [Integrate with your favorite preprocessors](#integrate-with-your-favorite-preprocessors)
 - [Disable automatic bundling](#disable-automatic-bundling)
 - [Wrap up](#wrap-up)
-- [References](#references)
 
 # Prerequisites
 
@@ -282,13 +281,6 @@ If you're good with that, add the `DisableScopedCssBundling` MSBuild property to
 
 In this post, we reviewed the new CSS isolation feature for Blazor. We discussed its benefits, the problems it solves, how to use it, and how you can pass styles to child components. We also talked about how to use CSS isolation with preprocessors and how to disable automatic bundling.
 
-This was a fun post to write—there isn't a lot of content out there, so it was a lot of trial and error. While that's always fun, it also means I could be missing some details. Let me know if you come across anything, and happy hacking!
+Thanks to the popularity of this post, it got turned into [official Microsoft ASP.NET Core documentation](https://docs.microsoft.com/aspnet/core/blazor/components/css-isolation?view=aspnetcore-5.0)!
 
-# References
-
-When writing this post, a lot of the content came from the [GitHub issue](https://github.com/dotnet/aspnetcore/issues/10170) as well as Steve Sanderson's demo from a recent ASP.NET weekly standup.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KRNd8JDRqRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-
+If you have any comments or feedback, please let me know by commenting or [connecting on Twitter](https://twitter.com/daveabrock).
