@@ -8,12 +8,9 @@ header:
 excerpt: We talk about scoping your CSS to your Blazor components—all without a stylesheet reference.
 ---
 
-With the [.NET 5 Preview 8 release a few weeks back](https://devblogs.microsoft.com/dotnet/announcing-net-5-0-preview-8/), things are basically "feature complete," except for the inevitable bug fixes. With the latest preview, we're seeing a [ton of great Blazor features](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-preview-8/). I was excited to see CSS isolation—also known as scoped CSS.
+I'm excited to see Blazor now supporting CSS isolation—also known as scoped CSS.
 
-This post will discuss how to use CSS isolation with the latest preview bits, a feature adored by those in the Angular and Vue space, and for good reason—once you have it, you'll soon wonder how you ever went without it. Also, the official [docs for CSS isolation aren't available until the RC1 release](https://github.com/dotnet/AspNetCore.Docs/issues/19360), so hopefully this post will lend a hand until then.
-
-**Heads up!** While .NET 5 is "feature complete", we are still working with preview bits so some of this content might change. As always, I will do my best to update it as things evolve—but if not, here's your warning. 🤞
-{: .notice--danger}
+This post discusses how to use CSS isolation with the latest preview bits, a feature adored by those in the Angular and Vue space, and for good reason—once you have it, you'll soon wonder how you ever went without it.
 
 This post covers the following topics.
 
@@ -148,15 +145,19 @@ For this to work, Blazor appends a special attribute to your CSS classes, which 
 
 ![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/css-identifier.png)
 
-If you're curious, you can head over to the Network panel of your favorite browser's developer tools. You'll see that Blazor loads in a `scoped.styles.css` file. Here, you'll see the styles for all our components, each referenced by that unique ID—as a bonus, it's super helpful to have the component's name commented for us.
+If you're curious, you can head over to the Network panel of your favorite browser's developer tools. You'll see that Blazor loads in a `MyProject.styles.css` file, where `MyProject` is the name of your project. Here, you'll see the styles for all our components, each referenced by that unique ID—as a bonus, it's super helpful to have the component's name commented for us.
 
 ![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/scoped-css.png)
 
-This `scoped.styles.css` file is the result of bundling all your isolated CSS files into a single output. Don't take my word for it: if you view the `<head>` on your page, you'll see the reference that's generated for you.
+This `styles.css` file is the result of bundling all your isolated CSS files for your project into a single output. Don't take my word for it: if you view the `<head>` on your page, you'll see the reference that's generated for you.
 
 ```html
-<link href="_framework/scoped.styles.css" rel="stylesheet">
+<link href="MyProject.styles.css" rel="stylesheet">
 ```
+
+Because each project has a different `styles.css` file, they'll need to know about each other somehow. This is accomplished using CSS imports. In this example, you'll see my project references a shared Razor component.
+
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/css-import.png)
 
 Armed with this knowledge, if we take a larger view of the DOM it'll make a lot more sense. The new `h1` class refers to our `Index` component (`b-dew6pvofzw`), and the other styles are brought in from the `Shared/MainLayout` component (`b-vtqmmfsxlh`).
 
