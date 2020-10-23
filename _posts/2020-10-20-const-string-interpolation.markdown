@@ -53,7 +53,7 @@ Constant interpolated strings would be super convenient when working with attrib
 
 # Why can't I do that now?
 
-When I learned string interpolation back in C# 6, I was excited to think I'd never have to do concatenation again—so this is a bummer. Why can't I do it, anyway?
+When I learned about string interpolation back in C# 6, I was excited to think I'd never have to do concatenation again—so this is a bummer. Why can't I do it, anyway?
 
 If you try to use constant string interpolation in C# 9, you'll get this error back:
 
@@ -61,7 +61,7 @@ If you try to use constant string interpolation in C# 9, you'll get this error b
 error CS0133: The expression being assigned to 'myFilePath' must be constant
 ```
 
-When you use string interpolation, the interpolated strings ends up getting converted to `string.Format` calls. Once you understand that point, you'll see it as:
+When you use string interpolation, the interpolated strings end up getting converted to `string.Format` calls. Once you understand that point, you'll see it as:
 
 ```csharp
 const string myFilePath = string.Format("{0}/README.md", myRootPath);
