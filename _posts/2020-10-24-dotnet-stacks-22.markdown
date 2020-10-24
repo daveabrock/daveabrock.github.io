@@ -8,6 +8,8 @@ header:
     overlay_filter: 0.8
 ---
 
+![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+
 I messaged a developer friend to see if he liked my puns, and he said "false." I told him I didn't appreciate the cyber boolean.
 
 On tap this week:
