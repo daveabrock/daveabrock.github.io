@@ -160,7 +160,7 @@ Now, we're looking at 1.2 to 1.9 seconds uncached, about twice the speed.
 
 In the following video, keep an eye on Chrome Developer tools. You'll see how the elements change as I scroll.
 
-<video width="560" height="315" controls>
+<video autoplay controls muted loop>
   <source src="{{ site.url }}{{ site.baseurl }}/videos/Twitter.mp4" type="video/mp4">
 </video>
 

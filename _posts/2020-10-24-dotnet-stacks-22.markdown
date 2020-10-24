@@ -1,8 +1,11 @@
 ---
-date: "2020-10-18"
+date: "2020-10-24"
 title: "The .NET Stacks #22: .NET 5 RC 2 ships, .NET Foundation all hands, and links"
 tags: [dotnet-stacks]
 comments: false
+header:
+    overlay_image: /assets/images/stacks-22-card.png
+    overlay_filter: 0.8
 ---
 
 I messaged a developer friend to see if he liked my puns, and he said "false." I told him I didn't appreciate the cyber boolean.
