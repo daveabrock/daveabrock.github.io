@@ -11,14 +11,33 @@ Get yourself a teammate that looks at your code [like Prince William looks at KF
 
 Here's what we have this week:
 
-* AWS releases open-source migration tool: did Microsoft drop the ball?
 * Understand the release cycles of .NET
+* AWS releases open-source migration tool
 * An update on ASP.NET Core feedback for .NET 6
 * Last week in the .NET world
 
 # 🕰 Understand the .NET release cycles
 
-Blah, blah, fill this in...
+It's hard to believe that two weeks from tomorrow, .NET 5 will be generally released. Week by week, we've been poking around the improvements between general .NET, ASP.NET Core and Blazor, and EF Core 5, which are all released together now. While the release candidates offer production licenses, on November 10 things will get real. 
+
+To that end, you might be wondering how Microsoft is supporting .NET 5, and what that means for older versions of .NET Core and .NET Framework.
+
+Before we dive in to what is supported, some terminology: 
+
+* **Current releases** - supported for 3 months after the next major or minor release ships
+* **Long Term Support (LTS) releases** - supported for a minimum of three years (or 1 year after the next LTS ships, whatever is longer). The current LTS releases are .NET Core 2.1 (with end of support on August 21, 2021), and .NET Core 3.1 (December 3, 2022).
+
+Thankfully, Microsoft has released [an official .NET 5 support policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-core):
+
+
+.NET Core releases alternate between LTS and Current releases. .NET 5 will be a Current release.
+
+* The current 
+
+
+## What about .NET Framework?
+
+While .NET Framework is not dead, it's basically done. All new features will be built on .NET Core. With .NET Framework 4.8 being the last major release for .NET Framework, it'll only be supported with reliability and security fixes. You aren't being forced to move .NET Framework apps to .NET Core, and there are no plans to remove .NET Framework from Windows, but you won't see any feature improvements.
 
 # 🔨 AWS open-sources .NET Core migration tool
 
@@ -26,7 +45,7 @@ This week, Amazon Web Services (AWS) [open-sourced](https://github.com/aws/porti
 
 AWS [says their differentiator](https://aws.amazon.com/blogs/aws/announcing-the-porting-assistant-for-net/) is assessing the entire tree of package dependencies and functionality like incompatible APIs—it uses solution files as the starting point, preventing the need to analyze individual binary files. Interestingly, this single tool appears to be more robust than Microsoft's migration tools. 
 
-You're probably wondering: what does Microsoft offer? For their part, Microsoft has a [comprehensive document about migrating from .NET Framework to .NET Core](https://docs.microsoft.com/dotnet/core/porting/). They also have a [list of tools you can utilize](https://docs.microsoft.com/dotnet/core/porting/tools).
+This begs the question: what does Microsoft offer? For their part, Microsoft has a [comprehensive document about migrating from .NET Framework to .NET Core](https://docs.microsoft.com/dotnet/core/porting/). They also have a [list of tools you can utilize](https://docs.microsoft.com/dotnet/core/porting/tools).
 
 * The [.NET Portability Analyzer](https://docs.microsoft.com/dotnet/standard/analyzers/portability-analyzer), which analyzes your code and provides a report about how portable your code is between Framework and Core
 * The [.NET API Analyzer](https://docs.microsoft.com/dotnet/standard/analyzers/api-analyzer), a Roslyn analyzer that detects compatibility in cross-platform libraries
@@ -57,6 +76,8 @@ While Blazor is awesome and the future of ASP.NET Core, there are tons of ASP.NE
 * My Blazor CSS isolation Microsoft doc [has been published](https://docs.microsoft.com/aspnet/core/blazor/components/css-isolation?view=aspnetcore-5.0).
 * Git 2.29 [is out](https://github.blog/2020-10-19-git-2-29-released/).
 * Tara Overfield [provides an October 2020 .NET Framework update](https://devblogs.microsoft.com/dotnet/net-framework-october-2020-cumulative-update-preview-update).
+* Jon Skeet [tours the .NET Functions Framework](https://codeblog.jonskeet.uk/2020/10/23/a-tour-of-the-net-functions-framework), a framework he built using Google Cloud Functions in C#.
+
 
 ## 📅 Community and events
 
@@ -73,12 +94,7 @@ While Blazor is awesome and the future of ASP.NET Core, there are tons of ASP.NE
 * Marinko Spasojevic [works with attribute-based access control with Blazor WebAssembly and IdentityServer4](https://code-maze.com/atribute-based-access-control-blazor-webassembly-identityserver4/), and also [integrates Blazor WebAssembly role-based security with IdentityServer4](https://code-maze.com/blazor-webassembly-role-based-security-with-identityserver4/).
 * Brian Lagunas [uses NPM packages in Blazor](https://brianlagunas.com/using-npm-packages-in-blazor/).
 * Tim Heuer [filters a Bootstrap table in C# and Blazor](https://timheuer.com/blog/filtering-data-table-with-blazor/).
-* Niels Swimberghe [works on real-time apps with Blazor Server and Firestore](https://swimburger.net/blog/dotnet/real-time-applications-with-blazor-server-and-firestore).
-
-## 🚀 .NET Core
-
-* Jon Skeet [tours the .NET Functions Framework](https://codeblog.jonskeet.uk/2020/10/23/a-tour-of-the-net-functions-framework).
-* Niels Swimberghe [configures ServicePointManager.SecurityProtocol through AppSettings](https://swimburger.net/blog/dotnet/configure-servicepointmanager-securityprotocol-through-appsettings).
+* Niels Swimberghe [works on real-time apps with Blazor Server and Firestore](https://swimburger.net/blog/dotnet/real-time-applications-with-blazor-server-and-firestore), and also [configures ServicePointManager.SecurityProtocol through AppSettings](https://swimburger.net/blog/dotnet/configure-servicepointmanager-securityprotocol-through-appsettings).
 * Damian Hickey [nests applications in ASP.NET Core 3.1](https://dhickey.ie/2020/10/20/aspnet-core-3-nested-apps/).
 * Khalid Abuhakmeh [adds headers to a response in ASP.NET 5](https://khalidabuhakmeh.com/add-headers-to-a-response-in-aspnet-5).
 
@@ -89,6 +105,7 @@ While Blazor is awesome and the future of ASP.NET Core, there are tons of ASP.NE
 * Damien Bowden [uses encrypted access tokens in Azure with Microsoft.Identity.Web and Azure app registrations](https://damienbod.com/2020/10/22/using-encrypted-access-tokens-in-azure-with-microsoft-identity-web-and-azure-app-registrations/), and also [implements a full-text search using Azure Cognitive Search in ASP.NET Core](https://damienbod.com/2020/10/19/implement-a-full-text-search-using-azure-cognitive-search-in-asp-net-core/).
 * Szymon Kulec [offers tips for improving Azure Functions performance](https://blog.scooletz.com/2020/10/19/improving-Azure-Functions-performance).
 * Daniel Krzyczkowski [monitors solutions with Azure Application Insights](https://daniel-krzyczkowski.github.io/Monitor-Azure-Solution-With-Azure-Application-Insights/), and also [manages release flow using Azure DevOps pipelines](https://daniel-krzyczkowski.github.io/Manage-Release-Flow-Using-Pipelines-In-Azure-DevOps/).
+* ~~Hulk Hogan~~ Joe Guadagno [authenticates an API secured with Azure AD, Microsoft Identity, and React Native](https://www.josephguadagno.net/2020/10/24/working-with-microsoft-identity-react-native-client).
 
 ## 📔 C#
 
