@@ -16,28 +16,26 @@ Here's what we have this week:
 * An update on ASP.NET Core feedback for .NET 6
 * Last week in the .NET world
 
-# 🕰 Understand the .NET release cycles
+# ⏲ Understand the .NET release cycles and support
 
-It's hard to believe that two weeks from tomorrow, .NET 5 will be generally released. Week by week, we've been poking around the improvements between general .NET, ASP.NET Core and Blazor, and EF Core 5, which are all released together now. While the release candidates offer production licenses, on November 10 things will get real. 
+It's hard to believe that two weeks from tomorrow, .NET 5 will be generally available. Week by week, we've been poking around the improvements between general .NET, ASP.NET Core and Blazor, and EF Core 5, which are all released together now. While the release candidates offer production licenses, on November 10 things will get real.
 
-To that end, you might be wondering how Microsoft is supporting .NET 5, and what that means for older versions of .NET Core and .NET Framework.
+To that end, you might be wondering when future releases will occur, how Microsoft is supporting .NET 5, and what that means for older versions of .NET Core and .NET Framework. (This isn't as sexy as Blazor, *I suppose*, but is important to understand as you plan your app's future.)
 
-Before we dive in to what is supported, some terminology: 
+In terms of future releases, new major releases will be released every November.
 
-* **Current releases** - supported for 3 months after the next major or minor release ships
+![.NET release schedule]({{ site.url }}{{ site.baseurl }}/images/release-schedule.png)
+
+As you can see, "LTS" and "Current" support will alternate between releases. As a refresher, let's walk through those.
+
 * **Long Term Support (LTS) releases** - supported for a minimum of three years (or 1 year after the next LTS ships, whatever is longer). The current LTS releases are .NET Core 2.1 (with end of support on August 21, 2021), and .NET Core 3.1 (December 3, 2022).
+* **Current releases** - supported for 3 months after the next major or minor release ships
 
-Thankfully, Microsoft has released [an official .NET 5 support policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-core):
+.NET 5 is a "Current" release. Typically, you'd have three months to upgrade to 5.1 but Microsoft says [they're no longer doing point releases](https://twitter.com/terrajobst/status/1315032612914618368). When it comes to .NET 6, it'll be LTS (supported for three years after general availability)—giving you a less hands-on approach. There's a [Twitter discussion](https://twitter.com/terrajobst/status/1315029878001950720) on the benefits and drawbacks.
 
+Microsoft has published an [official .NET 5 support policy](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) if you want to explore this further.
 
-.NET Core releases alternate between LTS and Current releases. .NET 5 will be a Current release.
-
-* The current 
-
-
-## What about .NET Framework?
-
-While .NET Framework is not dead, it's basically done. All new features will be built on .NET Core. With .NET Framework 4.8 being the last major release for .NET Framework, it'll only be supported with reliability and security fixes. You aren't being forced to move .NET Framework apps to .NET Core, and there are no plans to remove .NET Framework from Windows, but you won't see any feature improvements.
+**What about .NET Framework?** While .NET Framework is not dead, [it's basically done](https://devblogs.microsoft.com/dotnet/net-core-is-the-future-of-net/). All new features will be built on .NET Core. With .NET Framework 4.8 being the last major release for .NET Framework, it'll only be supported with reliability and security fixes. You aren't being forced to move .NET Framework apps to .NET Core, and there are no plans to remove .NET Framework from Windows, but you won't see any feature improvements.
 
 # 🔨 AWS open-sources .NET Core migration tool
 
