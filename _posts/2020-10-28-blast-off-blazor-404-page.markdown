@@ -1,7 +1,7 @@
 ---
 date: "2020-10-28"
 title: "Blast Off with Blazor: Learn components and testing with a custom 404 page"
-excerpt: "Let's We kick off our series by talking about Blazor, reviewing our code for the first time, and explaining how to run our project."
+excerpt: "In the latest post, we'll write our first component and get acclimated with bUnit."
 tags: [blazor, aspnet-core]
 header:
     overlay_image: /assets/images/404-card.png
