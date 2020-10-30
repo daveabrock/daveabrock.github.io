@@ -119,7 +119,7 @@ With our first component under our belt, let's discuss testing our component.
 
 # Test our component with the bUnit library
 
-Thanks to Emil Hansen, we can [use the bUnit library](https://github.com/egil/bUnit) to test our Blazor components. You can use bUnit to test everything about your components, no matter the complexity: you can test renders, event handlers, component state, async changes, mocking dependencies, and more.
+Thanks to Egil Hansen, we can [use the bUnit library](https://github.com/egil/bUnit) to test our Blazor components. You can use bUnit to test everything about your components, no matter the complexity: you can test renders, event handlers, component state, async changes, mocking dependencies, and more.
 
 Check out the [bUnit documentation](https://bunit.egilhansen.com/docs/getting-started/index.html) to learn more.
 {: .notice--info}
