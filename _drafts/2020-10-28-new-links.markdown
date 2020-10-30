@@ -1,0 +1,53 @@
+---
+date: "2020-10-28"
+title: "The .NET Stacks: <fill in later>"
+tags: [dotnet-stacks]
+comments: false
+---
+
+## 🌎 Last week in the .NET world
+
+### The Top 3
+
+### 📢 Announcements
+
+
+### 📅 Community and events
+
+
+### 😎 Blazor
+
+* BlazorGuy [cool game app](https://github.com/BlazorGuy/BlazorGalaga).
+* Scott Hanselman [uses the ASP.NET Core environment feature to manage development vs. production for any config file type](https://www.hanselman.com/blog/using-the-aspnet-core-environment-feature-to-manage-development-vs-production-for-any-config-file-type).
+
+### 🚀 .NET Core
+
+* Filip Woj [shows off compact APIs with C# 9, .NET 5, and ASP.NET Core](https://www.strathweb.com/2020/10/beautiful-and-compact-web-apis-with-c-9-net-5-0-and-asp-net-core/).
+* Eric Potter [upgrades a .NET Framework library to .NET 5](http://humbletoolsmith.com/2020/10/23/upgrading-a-_net-framework-library-to-_net-5/).
+
+### ⛅ The cloud
+
+
+### 📔 Languages
+
+* Nick Gamb [authenticates with SAML in ASP.NET Core and C#](https://developer.okta.com/blog/2020/10/23/how-to-authenticate-with-saml-in-aspnet-core-and-csharp).
+
+### 🔧 Tools
+
+* Rajeev Bera [talks about Git tips and tricks](https://opensource.com/article/20/10/advanced-git-tips).
+* Sanjay Modi [uses MiniProfiler in ASP.NET Core 3.1](https://procodeguide.com/programming/asp-net-core-code-profiling-using-miniprofiler/).
+* Jason Farrell [continues his series on unit testing](https://jfarrell.net/2020/10/25/test-series-part-2-unit-testing/).
+* Steve Smith [configures Visual Studio to name private fields with underscores](https://ardalis.com/configure-visual-studio-to-name-private-fields-with-underscore/).
+* Mark Seemann [talks about how to keep REST API URLs evolvable](https://blog.ploeh.dk/2020/10/26/fit-urls/).
+
+### 📱 Xamarin
+
+
+### 🎤 Podcasts
+
+
+
+### 🎥 Videos
+
+* Jay Gordon [shows off using Azure Web App Service and GitHub Actions](https://devblogs.microsoft.com/devops/azure-web-app-service-and-github-actions-video-tutorial).
+* On Azure Friday, [using EF Core with Azure SQL DB and Azure Cosmos DB](https://channel9.msdn.com/Shows/Azure-Friday/Using-Entity-Framework-Core-with-Azure-SQL-DB-and-Azure-Cosmos-DB).
