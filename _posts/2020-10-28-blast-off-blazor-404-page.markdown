@@ -6,6 +6,8 @@ tags: [blazor, aspnet-core]
 header:
     overlay_image: /assets/images/404-card.png
     overlay_filter: 0.8
+toc: true
+toc_label: "Our custom NotFound component"
 ---
 
 I hope you enjoyed the [introduction to our *Blast Off with Blazor* project](https://daveabrock.com/2020/10/26/blast-off-blazor-intro). It's time to get to work!
