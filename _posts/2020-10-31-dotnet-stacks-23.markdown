@@ -1,8 +1,12 @@
 ---
-date: "2020-10-24"
-title: "The .NET Stacks #23: Support cycle for .NET and more..."
+date: "2020-10-31"
+title: "The .NET Stacks #23: .NET 5 support, migration tools, and links"
 tags: [dotnet-stacks]
 comments: false
+header:
+    overlay_image: /assets/images/stacks-23-card.png
+    overlay_filter: 0.8
+excerpt: This week, .NET 5 RC 2 ships, we talk .NET Foundation, and look around the community.
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
