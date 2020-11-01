@@ -76,7 +76,7 @@ Generally, I stick with using a feature folder approach to structuring any proje
 
 I've given a talk on these topics [at the Florida .NET meetup](https://www.youtube.com/watch?v=36G6-vwwpe8&feature=youtu.be) if anyone's interested in hearing more about it.
 
-*Check out the full interview at my website.*
+*Check out the [full interview at my website](https://daveabrock.com/2020/11/01/dev-discussions-james-hickey).*
 
 ## What is your one piece of programming advice?
 
