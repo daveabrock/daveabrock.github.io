@@ -1,13 +1,13 @@
 ---
 date: "2020-11-01"
-title: "The .NET Stacks #24: Blazor readiness, a breaking .NET 5 change, and James Hickey on Coravel"
+title: "The .NET Stacks #24: Blazor readiness and James Hickey on Coravel"
 tags: [dotnet-stacks]
 comments: false
 ---
 
-RIP, [James Bond](https://www.nytimes.com/2020/10/31/movies/sean-connery-dead.html). While watching *Goldfinger* last night, I forgot about the best feature of Connery Bond films: if you're confused about the plot, the villain will explain it all to you right before the movie ends. Ah, the original "let's have retro before the sprint ends."
-
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+
+RIP, [James Bond](https://www.nytimes.com/2020/10/31/movies/sean-connery-dead.html). While watching *Goldfinger* last night, I forgot about the best feature of Connery Bond films: if you're confused about the plot, the villain will explain it all to you right before the movie ends. Ah, the original "let's have retro before the sprint ends."
 
 This week:
 
@@ -29,7 +29,7 @@ If you're slinging code for a decent-sized company, you [might be wondering if B
 
 **Is it supported with a good ecosystem?** Because Blazor lives in the .NET ecosystem, it comes with official Microsoft support just like any other product (and, last week, [we discussed .NET 5 support](https://daveabrock.com/2020/10/31/dotnet-stacks-23)). Additionally, Microsoft continues to devote significant investment in it and has a long history of backwards compatibility. The ecosystem is not as evolved as it is with Angular and React—they've had a head start—but is growing tremendously. As [Peter Vogel mentioned](https://www.telerik.com/blogs/is-blazor-safe-enterprise-bet), Blazor already has 25% of the interest that Vue has ([from Google Trends](https://trends.google.com/trends/explore?cat=31&geo=US&q=Blazor,Vue)).
 
-**Does it perform well?** Compared to other SPA frameworks, Blazor's performance is ... fine? It'll pass the eye test with Vue and whatnot in most cases but there will be *some* waiting—Blazor Web Assembly has a large-ish download size (as its loading .NET in the browser), and Blazor Server has a network hop for each user interaction. The team has [made a lot of progress in addressing performance](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-release-candidate-1/#blazor-webassembly-performance-improvements), and AOT compilation is the most popular request for ASP.NET in .NET 6 (and will impact non-Blazor apps in ASP.NET as well). If you're dealing with data-intensive apps with huge amounts of data, you might want to wait for these improvements—but should be suitable in most business cases.  
+**Does it perform well?** Compared to other SPA frameworks, Blazor's performance is ... fine? It'll pass the eye test with Vue and whatnot in most cases but there will be *some* waiting—Blazor Web Assembly has a large-ish download size (as its loading .NET in the browser), and Blazor Server has a network hop for each user interaction. The team has [made a lot of progress in addressing performance](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-release-candidate-1/#blazor-webassembly-performance-improvements), and AOT compilation is the most popular request for ASP.NET in .NET 6 (and will impact non-Blazor apps in ASP.NET as well). If you're dealing with huge amounts of data, you might want to wait for these improvements—but should be suitable in most business cases.  
 
 ## Dev Discussions: James Hickey
 
