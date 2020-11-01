@@ -1,5 +1,5 @@
 ---
-date: "2020-10-31"
+date: "2020-11-01"
 title: "Dev Discussions - James Hickey"
 tags: [dotnet-stacks, dev-discussions]
 excerpt: We talk to James Hickey about his Coravel project and software design.
