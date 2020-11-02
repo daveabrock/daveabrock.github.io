@@ -95,7 +95,7 @@ record Person
 }
 ```
 
-There are plenty of developers who will argue that records should either be completely immutable—but in a natural mutable language like C#, the option for both exists by design.
+There are plenty of developers who will argue that records should be completely immutable—but in a natural mutable language like C#, the option for both exists by design.
 
 # Whatever you use, records are better than a bunch of buggy ceremony
 
