@@ -1,8 +1,12 @@
 ---
-date: "2020-11-01"
+date: "2020-11-06"
 title: "The .NET Stacks #24: Blazor readiness and James Hickey on Coravel"
 tags: [dotnet-stacks]
 comments: false
+header:
+    overlay_image: /assets/images/stacks-24-card.png
+    overlay_filter: 0.8
+excerpt: This week, Blazor readiness and a talk with James Hickey.
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
