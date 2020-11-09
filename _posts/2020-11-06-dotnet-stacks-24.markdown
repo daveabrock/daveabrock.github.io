@@ -6,7 +6,7 @@ comments: false
 header:
     overlay_image: /assets/images/stacks-24-card.png
     overlay_filter: 0.8
-excerpt: This week, Blazor readiness and a talk with James Hickeybundle e.
+excerpt: This week, Blazor readiness and a talk with James Hickey.
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)

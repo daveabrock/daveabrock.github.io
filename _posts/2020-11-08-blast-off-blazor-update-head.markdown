@@ -167,11 +167,11 @@ export function setTitle(title) {
 
 So, this isn't doing anything too magical. It's doing it out-of-the-box and giving you one less component to maintain.
 
-With that done, let's add faviconsgit  to our app.
+With that done, let's add favicons to our app.
 
 # Add favicons to our app
 
-When you create a Blazor app (our any ASP.NET Core app, for that matter), a bland `favicon.ico` file is dropped in your `wwwroot` directory. (For the uninitiated, [a favicon](https://en.wikipedia.org/wiki/Favicon) is the small icon in the top-left corner of your browser tab, right next to the page title.) This might lead you to believe that if you want to use favicons, you can either use that file or overwrite it with one of your own—then move on with your life.
+When you create a Blazor app (or any ASP.NET Core app, for that matter), a bland `favicon.ico` file is dropped in your `wwwroot` directory. (For the uninitiated, [a favicon](https://en.wikipedia.org/wiki/Favicon) is the small icon in the top-left corner of your browser tab, right next to the page title.) This might lead you to believe that if you want to use favicons, you can either use that file or overwrite it with one of your own—then move on with your life.
 
 While you *can* do that, you probably shouldn't. These days you're dealing with different browser requirements and multiple platforms (Windows, iOS, Mac, Android) where just one *favicon.ico* will not get the job done. For example, iOS users can pin a site to their homescreen—and iOS will grab your favicon icon as the "app" image.
 
