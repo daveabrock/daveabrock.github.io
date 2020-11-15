@@ -8,8 +8,10 @@ header:
     overlay_filter: 0.8
 ---
 
-This is a humbling yet completely accurate fact: you spend much more time reading code than writing it. Any experienced programmer will tell you the reading-to-writing ratio is easily 5-to-1 or even 10-to-1. You're understanding how things work. You're hunting for bugs. You're scrolling past code with thoughts like, "*Nope, doesn't apply ... doesn't matter, doesn't matter ...*" until you have to pause and think, and spend a silly amount of time trying to understand how something works.
+**Note**: Originally published five months before the official release of C# 9, I've updated this post after the release to capture the latest updates.
+{: .notice--success}
 
+This is a humbling yet completely accurate fact: you spend much more time reading code than writing it. Any experienced programmer will tell you the reading-to-writing ratio is easily 5-to-1 or even 10-to-1. You're understanding how things work. You're hunting for bugs. You're scrolling past code with thoughts like, "*Nope, doesn't apply ... doesn't matter, doesn't matter ...*" until you have to pause and think, and spend a silly amount of time trying to understand how something works.
 
 It could be a developer trying to be clever, or an unfortunate function with an [arrow-shaped pattern](http://wiki.c2.com/?ArrowAntiPattern) ... you know, a variety of things. Whatever the case, it interrupts your flow. When you think how much time you spend reviewing code, it adds up and can turn into a big annoyance.
 
@@ -27,7 +29,7 @@ if (dave is not Developer)
 
 See? I completely understand this: I can keep scrolling or stop and know I've found my bug. *If only I could do this*, you think.
 
-If you aren't aware, *you can*. This syntax, and other improvements, are available in the [upcoming C# 9 release](https://devblogs.microsoft.com/dotnet/welcome-to-c-9-0/), slated to be released with .NET 5 in November 2020. C# 9 has a lot, but this post is going to focus on improvements that help restore valuable mental energy that is required in a mentally exhausting profession. And before you ask: no, C# 9 isn't full of FDA-approved health benefits, but I've found some great stuff that helps make code cleaner, more maintainable, and easier to understand, and prevents a lot of "wait, what?" moments.
+If you aren't aware, *you can*. This syntax, and other improvements, are available in the [C# 9 release](https://devblogs.microsoft.com/dotnet/c-9-0-on-the-record/), released with .NET 5 in November 2020. C# 9 has a lot, but this post is going to focus on improvements that help restore valuable mental energy that is required in a mentally exhausting profession. And before you ask: no, C# 9 isn't full of FDA-approved health benefits, but I've found some great stuff that helps make code cleaner, more maintainable, and easier to understand, and prevents a lot of "wait, what?" moments.
 
 Let's take a look at what's coming. This is just scratching the surface, and I'll write about more features in-depth as I come across them. I think you'll find the more you dive into C# 9, the more you appreciate its adoption of the [functional programming](https://en.wikipedia.org/wiki/Functional_programming), "no side effects" model.
 
@@ -44,9 +46,6 @@ This post covers the following topics.
 # Records
 
 One of the biggest features coming out of C# 9 is the concept of records. Records allow an entire object to be immutable, meaning you can do value-like things on them. Think data, not objects.
-
-**Heads up!** The [C# 9 Microsoft article](https://devblogs.microsoft.com/dotnet/welcome-to-c-9-0/) describes records with the `data` keyword. That has been replaced with `record`.
-{: .notice--warning}
 
 Let's take a `Developer` record:
 
@@ -65,10 +64,16 @@ Anyway, our record now gives us access to some other cool stuff that makes for s
 
 ## Data member simplification
 
-With C# 9, we can initialize our `Developer` record this way instead:
+If we initialize our objects using constructors like this:
 
 ```csharp
-public record Developer { string FirstName; string LastName; string PreferredLanguage; }
+var dev = new Developer("Dave", "Brock", "C#");
+```
+
+...we can declare a record this way instead:
+
+```csharp
+public record Developer(string FirstName, string LastName, string PreferredLanguage);
 ```
 
 ## With-expressions
@@ -92,7 +97,7 @@ Console.WriteLine(developer2.FirstName); // David
 Console.WriteLine(developer2.LastName); // Pine
 Console.WriteLine(developer2.PreferredLanguage); // C#
 
-public class Developer
+public class Developer(string FirstName, string LastName, string PreferredLanguage);
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }

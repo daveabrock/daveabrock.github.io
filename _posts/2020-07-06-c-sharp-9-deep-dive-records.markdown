@@ -1,12 +1,15 @@
 ---
 date: "2020-07-06"
 title: "C# 9 Deep Dive: Records"
-excerpt: In a C# 9 deep dive, we go in-depth on records.
+excerpt: In a C# 9 deep dive, we go in depth on records.
 tags: [csharp, csharp-9]
 header:
     overlay_image: /assets/images/records.png
     overlay_filter: 0.8
 ---
+
+**Note**: Originally published five months before the official release of C# 9, I've updated this post after the release to capture the latest updates.
+{: .notice--success}
 
 In the [previous post of this series](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits), we discussed the init-only features of C# 9, which allowed you to make individual properties immutable. That works great on a case-by-case basis, but the real power in leveraging C# immutability is when you can do this for custom types. This is where records shine, and will be the focus of this post.
 
@@ -19,14 +22,11 @@ This is the second post in a six-post series on C# 9 features in-depth:
 - Post 5 - [Target typing and covariant returns](https://daveabrock.com/2020/07/14/c-sharp-9-target-typing-covariants)
 - Post 6 - [Putting it all together with a scavenger hunt](https://daveabrock.com/2020/07/21/c-sharp-9-scavenger-hunt)
 
-**Heads up!** C# 9 is still in preview mode, so much of this content might change—this post was last updated on July 6, 2020. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
-{: .notice--danger}
-
 This post covers the following topics.
 
 - [A quick primer on immutable types](#a-quick-primer-on-immutable-types)
 - [OK, so what is a record?](#ok-so-what-is-a-record)
-- [What is the difference between structs and records?](#what-is-the-difference-between-structs-and-records)
+- [What's the difference between structs and records?](#whats-the-difference-between-structs-and-records)
 - [Create your first record](#create-your-first-record)
 - [Use `with` expressions with records](#use-with-expressions-with-records)
   - [Use inheritance with the `with` expression](#use-inheritance-with-the-with-expression)
@@ -48,9 +48,9 @@ Even if you aren't familiar with this concept yet, or haven't been forced to thi
 
 What is a record, exactly? A record is a construct that allows you to encapsulate property state. (I am avoiding the use of the word object, for clarity.) Or, put in less geeky terms, records allow you to perform value-like behaviors on properties. This is why I'm avoiding saying "objects" when I speak of records. We need to start thinking in terms of data, and not objects. Records aren't meant for mutable state—if you want to represent change, create a new record. That way, you define them by working with the data, and not passing around a single object that gets changed by multiple functions.
 
-Records appear to be super flexible. Anthony Giretti [found that classes can have records as properties, and also that records can contain structs and objects](https://anthonygiretti.com/2020/06/19/introducing-c-9-questions-answers-about-records/).
+Records are incredibly flexible. Anthony Giretti [found that classes can have records as properties, and also that records can contain structs and objects](https://anthonygiretti.com/2020/06/19/introducing-c-9-questions-answers-about-records/).
 
-# What is the difference between structs and records?
+# What's the difference between structs and records?
 
 Allow me to read your mind—you might be asking: how is this different than structs? If you haven't used it before, we can define a value type, called a `struct`, in C# today. So, why don't we just build on the `struct` functionality instead of introducing a new member (ha!) to C#? After all, you can declare an immutable value type by saying `readonly struct`.
 
@@ -58,24 +58,36 @@ Records are offering the following advantages, from what I can see:
 
 - An easy, simplified construct whose intent is to use as an immutable data structure with easy syntax, like `with` expressions to copy objects (keep reading for details!)
 - Robust equality support with `Equals(object)`, `IEquatable<T>`, and `GetHashCode()`
-- Constructor/deconstructor support with simplified positional records
+- Constructor/deconstructor support with simplified positional (constructor-based) records
 
 Of course you can do this with structs, and even classes, but this requires tedious boilerplate. The idea here is to have a construct that is simple and straightforward to implement.
 
-**UPDATE**: One of the biggest draws of records over structs is the reduced memory allocation that is required. Since C# records are compiled to reference types behind the scenes, they are accessed by a reference and not as a copy. As a result, no additional memory allocation is required other than the original record allocation. **Thanks to commenter Tecfield for mentioning this!**
+~~**UPDATE**: One of the biggest draws of records over structs is the reduced memory allocation that is required. Since C# records are compiled to reference types behind the scenes, they are accessed by a reference and not as a copy. As a result, no additional memory allocation is required other than the original record allocation. **Thanks to commenter Tecfield for mentioning this!**~~
+
+Thanks to Isaac Abraham for the correction concerning memory allocation (and [confirmed by C# lead designer Mads Torgersen](https://twitter.com/MadsTorgersen/status/1327033065168748545)):
+
+<blockquote class="twitter-tweet" data-conversation="none" data-theme="dark"><p lang="en" dir="ltr">Hmm. Not sure about the memory stuff - as with all reference vs struct, the former creates GC pressure whereas the latter is passed by value. There are good reasons for wanting both types.</p>&mdash; Isaac Abraham (@isaac_abraham) <a href="https://twitter.com/isaac_abraham/status/1327021232001323008?ref_src=twsrc%5Etfw">November 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 Hopefully by now, if I did my job, you know what records are and the rationale for them. Let's see some code.
-
-If you want to play along, the easiest way as of now is to [download LinqPad 6 Beta](https://www.linqpad.net/linqpad6.aspx#beta), then select **Edit** > **Preferences** > **Query** > **Use Roslyn Daily build for experimental C# 9 support).**
 
 # Create your first record
 
 To declare a record, you use the new `record` keyword. Brilliant, right?
 
-If you've read Microsoft's [*Welcome to C# 9.0 post,*](https://devblogs.microsoft.com/dotnet/welcome-to-c-9-0/) they declare records using the `data class` syntax instead of `record`. Since then, it has changed to `record` and their article has not been updated. The `data class` was considered because the compiler team was also considering `struct class` support as well but, [from these meeting notes](https://github.com/dotnet/csharplang/blob/master/meetings/2020/LDM-2020-05-27.md), it has been scrapped for now.
-{: .notice--danger}
+```csharp
+public record Person
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Address { get; set; }
+    public string City { get; set; }
+    public string FavoriteColor { get; set; }
+    // and so on...
+}
+```
 
-Here is a `Person` record using init-only properties.
+When you mark a type as `record` like this, it won't give you immutability on its own—you'll need to use `init` properties, like in the following example: 
 
 ```csharp
 public record Person
@@ -89,15 +101,20 @@ public record Person
 }
 ```
 
-As of this writing, the `record` declaration is not enough to get complete object immutability. You will also need to use the `{ get; init; }` syntax for your properties, as well. Likewise, if you've read about auto-property improvements (for example, changing `public string FirstName { get; init; }` to `public string FirstName;`), this does not make the fields immutable-by-default either. This allows you the flexibility to have some properties mutable on a case-by-case basis. The compiler team is considering implementing something like `public data string FirstName;` to improve on this, but [from the latest discussion](https://github.com/dotnet/csharplang/blob/master/meetings/2020/LDM-2020-06-22.md), appears this will stay in the preview bits and not make it to the initial C# 9 release in November 2020.
-{: .notice--info}
+To achieve default immutability, you can create objects by using positional arguments (constructor-like syntax). When you do this, you can declare records with one line:
+
+```csharp
+public record Person(string FirstName, string LastName, string Address, string City, string FavoriteColor);
+```
+
+For more details, check out my post: *[Are C# 9 records immutable by default](https://daveabrock.com/2020/11/02/csharp-9-records-immutable-default)*?
 
 # Use `with` expressions with records
 
 Before C# 9, you would likely represent new state by creating new values from existing ones.
 
 ```csharp
-var person = new Person
+var person = new Person("Tony", "Stark", "10880 Malibu Point", "Malibu", "red")
 {
     FirstName = "Tony",
     LastName = "Stark",
@@ -208,7 +225,7 @@ public record Person
 }
 ```
 
-You can clean this up with new simplified syntax.
+You can clean this up with new simplified syntax, as that one-liner will give you construction and deconstruction out-of-the-box.
 
 ```csharp
 class Program

@@ -8,7 +8,7 @@ header:
     overlay_filter: 0.8
 ---
 
-In the [previous post of this series](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits), we discussed the power of records. That was a heavy topic. 
+In the [previous post of this series](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits), we discussed the power of records. That was a heavy topic.
 
 For something completely different, we'll discuss improved pattern matching in C# 9. This is not a completely new feature, but something that has evolved since it was first released way back in C# 7, albeit in basic form. This [Microsoft article](https://docs.microsoft.com/dotnet/csharp/pattern-matching) runs down the basics of pattern matching, which improved greatly in C# 8 as well. The pattern matching works with the `is` operator and with `switch` expressions, much of which I showed off in my article [*C# 8, A Year Late.*](https://daveabrock.com/2020/03/29/csharp-8-year-late.html)
 
@@ -20,9 +20,6 @@ This is the third post in a six-post series on C# 9 features in-depth:
 - Post 4 - [Top-level programs](https://daveabrock.com/2020/07/09/c-sharp-9-top-level-programs)
 - Post 5 - [Target typing and covariant returns](https://daveabrock.com/2020/07/14/c-sharp-9-target-typing-covariants)
 - Post 6 - [Putting it all together with a scavenger hunt](https://daveabrock.com/2020/07/21/c-sharp-9-scavenger-hunt)
-
-**Heads up!** C# 9 is still in preview mode, so much of this content might change—this post was last updated on July 6, 2020. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
-{: .notice--danger}
 
 This post covers the following topics.
 
@@ -87,9 +84,6 @@ Imagine if you are working with multiple APIs! What if you provide shipping serv
 To make our lives easier, let's sprinkle some functional, C# 9 magic on top of our OO language and make your life simpler.
 
 (In-depth pattern matching techniques are beyond the scope of this post, but [do check out Bill Wagner's excellent work](https://docs.microsoft.com/dotnet/csharp/tutorials/pattern-matching).)
-
-If you want to play along, the easiest way as of now is to [download LinqPad 6 Beta](https://www.linqpad.net/linqpad6.aspx#beta), then select **Edit** > **Preferences** > **Query** > **Use Roslyn Daily build for experimental C# 9 support).**
-{: .notice--info}
 
 # Our C# 8 baseline example
 

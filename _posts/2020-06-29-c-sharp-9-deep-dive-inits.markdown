@@ -8,9 +8,12 @@ header:
     overlay_filter: 0.8
 ---
 
+**Note**: Originally published five months before the official release of C# 9, I've updated this post after the release to capture the latest updates.
+{: .notice--success}
+
 A few weeks ago, we took a quick tour of some upcoming C# 9 features that will [make your development life easier](https://daveabrock.com/2020/06/18/reduce-mental-energy-with-c-sharp). We dipped our toes in the water. But now it's time to dig a little deeper.
 
-I'm starting a new series over the next several weeks, that will showcase [all of the announced features](https://devblogs.microsoft.com/dotnet/welcome-to-c-9-0/) incrementally. Then, we will tie it all together with an all-in-one app. As for the features we are showing off, we could always dig deeper by what we see in the [Language Feature Status in GitHub](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md), but the publicly-announced-at-Build features will most likely make it when .NET 5.0 launches in November 2020.
+I'm starting a new series over the next several weeks, that will showcase [all of the announced features](https://devblogs.microsoft.com/dotnet/c-9-0-on-the-record/) incrementally. Then, we will tie it all together with an all-in-one app. As for the features we are showing off, we could always dig deeper by what we see in the [Language Feature Status in GitHub](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md), but the publicly-announced-at-Build features will most likely make it when .NET 5.0 launches in November 2020.
 
 Here's what we'll be walking through:
 
@@ -21,23 +24,15 @@ Here's what we'll be walking through:
 - Post 5 - [Target typing and covariant returns](https://daveabrock.com/2020/07/14/c-sharp-9-target-typing-covariants)
 - Post 6 - [Putting it all together with a scavenger hunt](https://daveabrock.com/2020/07/21/c-sharp-9-scavenger-hunt)
 
-**Heads up!** C# 9 is still in preview mode, so much of this content might change. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
-{: .notice--danger}
+# A focus on immutability
 
-This post covers the following topics.
+A big focus on C# 9 is enabling features that empower you to make immutability easy. The rise of functional programming has showed us how error-prone mutating objects can often be. While we can have immutability in previous versions of C#, it was a little hacky.
 
-- [Init-only features](#init-only-features)
-  - [Init-only properties](#init-only-properties)
-  - [Init accessors and read-only fields](#init-accessors-and-read-only-fields)
-- [What's next](#whats-next)
+With C# 9, the team is shipping a bunch of features that help with immutability. 
 
-# Init-only features
+# Doing immutability before C# 9
 
-With C# 9, the team is shipping a bunch of great init-only features. This includes init-only properties, init accessors, and readonly fields.
-
-## Init-only properties
-
-For virtually all of your C# life, you've done something like the following:
+So how would I do immutability before C# 9? For virtually all of your C# life, you've done something like the following:
 
 ```csharp
 public class Person
@@ -51,9 +46,43 @@ public class Person
 }
 ```
 
-Of course, you can throw a `private set` in there for access control, but your options have typically been limited for your getters and setters. However, this forces mutability when you perform object initialization. For this to work, properties must be mutable. To set values in a new `Person`, you'll need to call the object's constructor (in this case, as in most cases, a parameterless constructor) and then perform assignment from the setters.
+This gets and sets properties of my `Person` with no restrictions. To achieve immutability I'd modify my class to only include a `get` accessor:
 
-To initialize a new `Person`, you're used to doing this:
+```csharp
+public class Person
+{
+    public string FirstName { get; }
+    public string LastName { get; }
+    public string Address { get; }
+    public string City { get; }
+    public string FavoriteColor { get; }
+    // and so on...
+}
+```
+
+With that in place, I would use constructors to enforce this behavior:
+
+```csharp
+public class Person
+{
+    public Person(string firstName, string lastName, string address, string city, string favoriteColor)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Address = address;
+        City = city;
+        FavoriteColor = favoriteColor;
+    }
+
+    public string FirstName { get; }
+    public string LastName { get; }
+    public string Address { get; }
+    public string City { get; }
+    public string FavoriteColor { get; }
+}
+```
+
+That's great, but I can't do this with object initializers. If I wanted to initialize an object like this...
 
 ```csharp
 var person = new Person
@@ -66,13 +95,17 @@ var person = new Person
 };
 ```
 
-And since this is mutable, you can easily do this:
+...there's nothing that prevents me from mutating after the fact:
 
 ```csharp
 Console.WriteLine(person.FirstName); // Tony
 person.FirstName = "Howard";
 Console.WriteLine(person.FirstName); // Howard
 ```
+
+Previously, for object initialization to work, the properties must be mutable. To set values in a new `Person` in an immutable way, you'll need to call the object's constructor (in this case, as in most cases, a parameterless constructor) and then perform assignment from the setters.
+
+## Introducing the `init` accessor
 
 With C# 9, we can change this with an `init` accessor. This means you can only create and set a property when you initialize the object. If we modify our `Person` model like this, we can prevent the `FirstName` from being changed:
 
@@ -108,6 +141,26 @@ person.FirstName = "Howard";
 ```
 
 The compiler will not be happy.
+
+## Warning: init-only properties aren't mandatory
+
+The beauty of object initializers is the ability to set whatever you want, wherever you want, like so:
+
+```csharp
+var person = new Person
+{
+    FirstName = "Tony",
+    City = "Malibu",
+};
+```
+
+If you want to come in and set an `Address` that has an `init` property on it, thinking you can do so because you haven't set its value yet, you're wrong. For example, I can't come in and do this...
+
+```csharp
+person.FavoriteColor = "Red";
+```
+
+...because the object has already been initialized.
 
 ## Init accessors and read-only fields
 

@@ -8,12 +8,12 @@ header:
     overlay_filter: 0.8
 ---
 
+**Note**: Originally published five months before the official release of C# 9, I've updated this post after the release to capture the latest updates.
+{: .notice--success}
+
 In the last month or so, I've written almost 8,000 words about C# 9. That seems like a lot (and it is!) but there is so much to cover! I've talked about how it [reduces mental energy](https://daveabrock.com/2020/06/18/reduce-mental-energy-with-c-sharp), [simplifies null validation](https://daveabrock.com/2020/06/24/simplified-null-validation), and took on a deep dive series featuring [init-only features](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits), [records](https://daveabrock.com/2020/07/06/c-sharp-9-deep-dive-records), [pattern matching](https://daveabrock.com/2020/07/06/c-sharp-9-pattern-matching), [top-level programs](https://daveabrock.com/2020/07/09/c-sharp-9-top-level-programs), and [target typing and covariant returns](https://daveabrock.com/2020/07/14/c-sharp-9-target-typing-covariants).
 
 After publishing all these posts, I received a lot of great questions in my Disqus comment section. Instead of burying the conversations there, I'd like to discuss these questions in case you missed them. I learned a lot from the questions, so thank you all!
-
-**Heads up!** I have tried to answer these questions the best I can by playing with the code and asking the language design folks on Gitter. However: C# 9 is still in preview mode, so much of this content might change. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
-{: .notice--danger}
 
 # Init-only features
 
@@ -42,7 +42,6 @@ In the post itself, I explained the rationale for adding a new construct over bu
 - An easy, simplified construct whose intent is to use as an immutable data structure with easy syntax, like `with` expressions to copy objects
 - Robust equality support with `Equals(object)`, `IEquatable<T>`, and `GetHashCode()`
 - Constructor/deconstructor support with simplified positional records
-- Lightweight memory allocation (because they are compiled to reference types, no additional alloc is required after the original memory allocation)
 
 The endgame is not to complicate workarounds—it is to devote a construct for immutability that doesn't require a lot of wiring up from your end.
 

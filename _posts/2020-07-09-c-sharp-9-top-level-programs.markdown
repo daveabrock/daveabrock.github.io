@@ -17,9 +17,6 @@ This is the fourth post in a six-post series on C# 9 features in-depth:
 - Post 5 - [Target typing and covariant returns](https://daveabrock.com/2020/07/14/c-sharp-9-target-typing-covariants)
 - Post 6 - [Putting it all together with a scavenger hunt](https://daveabrock.com/2020/07/21/c-sharp-9-scavenger-hunt)
 
-**Heads up!** C# 9 is still in preview mode, so much of this content might change. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
-{: .notice--danger}
-
 Typically, when you learn to write a new C# console application, you are required by law to start with something like this:
 
 ```csharp

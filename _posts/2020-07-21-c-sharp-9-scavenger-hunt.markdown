@@ -14,9 +14,6 @@ So, let's go on a scavenger hunt! (I know I have readers from different countrie
 
 I'll be focusing on the how, not the why—you can see all my other posts for the full details on the concepts.
 
-Of course, the complete and up-to-date feature set on C# 9 can be found by reviewing the [Language Feature Status in GitHub](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md). As that moves along, I'll probably have some more posts on any new features that weren't covered during Build.
-{: .notice--info}
-
 This is the sixth—and last!—post on my C# 9 deep dive series.
 
 - Post 1 - [Init-only features](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits)
@@ -25,9 +22,6 @@ This is the sixth—and last!—post on my C# 9 deep dive series.
 - Post 4 - [Top-level programs](https://daveabrock.com/2020/07/09/c-sharp-9-top-level-programs)
 - Post 5 - [Target typing and covariant returns](https://daveabrock.com/2020/07/14/c-sharp-9-target-typing-covariants)
 - Post 6 (*this post*) - Putting it all together with a scavenger hunt
-
-**Heads up!** C# 9 is still in preview mode, so much of this content might change. I will do my best to update it as I come across it, but that is not guaranteed. Have fun, but your experience may vary.
-{: .notice--danger}
 
 This post covers the following topics.
 
