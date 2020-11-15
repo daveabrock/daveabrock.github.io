@@ -1,7 +1,7 @@
 ---
 date: "2020-08-14"
 title: "C# 9: Records Revisited"
-tags: [csharp,csharp-9]
+tags: [csharp, csharp-9]
 header:
     overlay_image: /assets/images/records-revisited.png
     overlay_filter: 0.8
