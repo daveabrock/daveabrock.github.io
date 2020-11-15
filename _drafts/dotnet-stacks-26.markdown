@@ -1,13 +1,17 @@
 ---
 date: "2020-11-13"
-title: "The .NET Stacks #26: Let's party, .NET 5 is official"
+title: "The .NET Stacks #26: .NET 5 has arrived, let's party"
 tags: [dotnet-stacks]
 comments: false
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
 
-# 🥳.NET 5 is really here
+Happy Monday, everybody! I hope you have a wonderful week.
+
+We've just got two things in today's newsletter: the craziness of .NET Conf and the weekly roundup across the .NET community.
+
+# 🥳.NET 5 has arrived
 
 Well, we made it: .NET 5 is [officially here](https://devblogs.microsoft.com/dotnet/announcing-net-5-0). This week, Microsoft showed off their hard work during three busy days of .NET Conf—and with it, some [swag](https://www.dotnetconf.net/swag) including my new [default Visual Studio Code theme](https://marketplace.visualstudio.com/items?itemName=dotnetconfteam.dotnet-purple-theme). I'm starting to wonder if overhyping Blazor is possible—as great as it is, I wish Microsoft would dial it back a bit.
 
@@ -15,11 +19,14 @@ Anyway: we've spent the better part of six months discussing all the updates (li
 
 As you can imagine, this week was light on news. As such, I know you're here for the .NET Conf links—so let me be of service.
 
+You can see all the talks [from this YouTube playlist](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVWop1HEOml2OdqbDs6IlcI), but the highlights are below.
+
 From the Microsoft perspective, we had the following sessions:
 
 * The Scotts [welcome you to .NET 5](http://www.youtube.com/watch?v=o-esVzL3YLI).
-* Mads Torgersen and Dustin Campbell [talk about C# 9](https://www.youtube.com/watch?v=x3kWzPKoRXc).
+* Mads Torgersen and Dustin Campbell [talk about C# 9](https://www.youtube.com/watch?v=x3kWzPKoRXc), and Phillip Carter [introduces F# 5](https://www.youtube.com/watch?v=MPlVE8WdD-0).
 * Immo Landwerth and Phillip Carter [port projects to .NET 5](http://www.youtube.com/watch?v=bvmd2F11jpA).
+* Jeremy Likness and Shay Rojansky [talk about Entity Framework Core 5](https://www.youtube.com/watch?v=BIImyq8qaD4).
 * James Newton-King [discusses high performance with gRPC](http://www.youtube.com/watch?v=EJ8M2Em5Zzc).
 * Steve Sanderson and Safia Abdalla [talk about Blazor in .NET 5](https://www.youtube.com/watch?v=Nag6u5TxjIA), and Daniel Roth and Javier Calvarro talk about [integrating it with ASP.NET Core](https://www.youtube.com/watch?v=CEjqhTGrqDY).
 * Rich Lander, Jan Kotas, and Stephen Toub [dive deep on the .NET 5 runtime](https://www.youtube.com/watch?v=qJXJnop1bZ0).
@@ -27,8 +34,27 @@ From the Microsoft perspective, we had the following sessions:
 * Chris Sfanos and Dmitry Lyalin [provide a .NET desktop development update](https://www.youtube.com/watch?v=NDYcq1yKhiA).
 * Claire Novotny and Layla Porter [provide a .NET Foundation update](http://www.youtube.com/watch?v=ppIBnjAdgik).
 * Maddy Leger and David Ortinau [roll out Xamarin.Forms 5](https://www.youtube.com/watch?v=M7UVz82dE90).
+* Glenn Condrong and David Fowler [talk about microservices with Project Tye](https://www.youtube.com/watch?v=_s8UdhGOGmY).
+* Kathleen Dollard and Rainer Sigwald [get to know the .NET 5 SDK](https://www.youtube.com/watch?v=WmOCtlvNaTQ).
+* Leslie Richardson talks about [debugging in Visual Studio with Mark Downie](https://www.youtube.com/watch?v=cOYFDD3tU38).
+* Robert Green and Brady Gaster talk about [HTTP API development with .NET, Azure, and OpenAPI](https://www.youtube.com/watch?v=G7Le65Ln_Qk).
+* Jon Galloway talks with David Wengier [about C# source generators](https://www.youtube.com/watch?v=3YwwdoRg2F4).
+* Eilon Lipton [shows off Blazor Mobile Bindings](https://www.youtube.com/watch?v=qTPHAlHom20).
 
-From the community, so many great sessions (hit this link for everything), but these were some of my favorites...
+From the community:
+
+* Carl Franklin [talks about application state in Blazor apps](https://www.youtube.com/watch?v=GIupo55GTro).
+* Ed Charbeneau [talks about Blazor stability testing tools](https://www.youtube.com/watch?v=WdB723tIWg0).
+* Vaibhav Gujral [talks about Azure Static Web Apps](https://www.youtube.com/watch?v=-hxQNjZfRYg).
+* Veronika Kolesnikova [talks about ML.NET, Azure, and Xamarin](https://www.youtube.com/watch?v=WKtUkZzi0jc).
+* Menaka Basker [architects cloud native apps in Azure with .NET Core](https://www.youtube.com/watch?v=espeHztMDS8).
+* Bryan Hogan [discusses Polly](https://www.youtube.com/watch?v=L9_fGJOqzbM).
+* Lizzy Gallagher [discusses .NET Core migration at enterprise scale](https://www.youtube.com/watch?v=C-2haqb60No).
+* Nico Paez talks about [testing with extension methods and fluent interfaces](https://www.youtube.com/watch?v=mF6qQCW_fOI).
+* Zaid Ajaj [builds React applications with F#](https://www.youtube.com/watch?v=a6Ct3CM_lj4).
+* Eduard Keilholz [gets real-time insights from serverless solutions](https://www.youtube.com/watch?v=PDMRaNoS2Xc).
+* Luis Beltran [discusses AI enrichment with Azure Cognitive Search](https://www.youtube.com/watch?v=YapSbK75_1w).
+* Florian Rappl [talks about microfrontends with Blazor](https://www.youtube.com/watch?v=npff2NjVXEE).
 
 # 🌎 Last week in the .NET world
 
@@ -83,7 +109,7 @@ With .NET Conf, no community standups so a light section except: The .NET Docs S
 * Justin Yoo [works with Azure Functions via GitHub Actions with no publish profile](https://techcommunity.microsoft.com/t5/apps-on-azure/azure-functions-via-github-actions-with-no-publish-profile).
 * Damien Bowden [implements a web app and an ASP.NET Core secure API using Azure AD](https://damienbod.com/2020/11/09/implement-a-web-app-and-an-asp-net-core-secure-api-using-azure-ad-which-delegates-to-second-api/).
 
-## 📔 C#
+## 📔 Languages
 
 * Miguel Bernard [writes about the unknown goodies for C# 9](https://blog.miguelbernard.com/c-9-the-unknown-goodies/).
 * Khalid Abuhakmeh [writes about ExceptionDispatchInfo and capturing exceptions](https://khalidabuhakmeh.com/exceptiondispatchinfo-and-capturing-exceptions).
@@ -92,9 +118,6 @@ With .NET Conf, no community standups so a light section except: The .NET Docs S
 * Dominique St-Amand [talks about handling being throttled by an API in C#](https://www.domstamand.com/csharp-ways-of-handling-when-being-throttled-by-an-api/).
 * Claudio Bernasconi [talks about C# 9 record types](https://www.claudiobernasconi.ch/2020/11/07/csharp-9-record-types-introduction-and-deep-dive/).
 * Oren Eini [profiles to investigate performance regression](https://ayende.com/blog/192325-A/always-profile-the-case-of-the-mysterious-performance-regression) and also [writes about the cost of serializing large object graphs in JSON](https://ayende.com/blog/192324-A/always-profile-the-hidden-cost-of-serializing-large-object-graphs-to-json).
-
-## 📗 F#
-
 * Bohdan Stupak [uses Span of T in F#](https://www.c-sharpcorner.com/article/using-spant-in-f-sharp/).
 * Mike Melanson [writes about when to choose F# over Rust](https://thenewstack.io/this-week-in-programming-when-to-choose-f-over-rust/).
 
