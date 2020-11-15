@@ -2,7 +2,7 @@
 date: "2020-07-06"
 title: "C# 9 Deep Dive: Records"
 excerpt: In a C# 9 deep dive, we go in-depth on records.
-tags: [csharp]
+tags: [csharp,csharp-9]
 header:
     overlay_image: /assets/images/records.png
     overlay_filter: 0.8

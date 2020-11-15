@@ -2,7 +2,7 @@
 date: "2020-07-17"
 title: "C# 9: Answering your questions"
 excerpt: In this post, I discuss the questions you had after I wrote my posts.
-tags: [csharp]
+tags: [csharp,csharp-9]
 header:
     overlay_image: /assets/images/q-and-a-card.png
     overlay_filter: 0.8

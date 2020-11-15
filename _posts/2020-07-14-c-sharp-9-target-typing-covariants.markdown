@@ -2,7 +2,7 @@
 date: "2020-07-14"
 title: "C# 9 Deep Dive: Target Typing and Covariant Returns"
 excerpt: In a C# 9 deep dive, we talk about target typing and covariant returns.
-tags: [csharp]
+tags: [csharp,csharp-9]
 header:
     overlay_image: /assets/images/target-typing-card.png
     overlay_filter: 0.8

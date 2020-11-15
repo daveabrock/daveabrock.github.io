@@ -2,7 +2,7 @@
 date: "2020-11-02"
 title: "Are C# 9 records immutable by default?"
 excerpt: "Kinda?"
-tags: [csharp,dotnet]
+tags: [csharp,csharp-9,dotnet]
 header:
     overlay_image: /assets/images/records-immutable.png
     overlay_filter: 0.8

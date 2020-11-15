@@ -5,7 +5,7 @@ excerpt: Let's go through the major C# 9 features in a single post.
 header:
     overlay_image: /assets/images/scavenger-card.png
     overlay_filter: 0.8
-tags: [csharp]
+tags: [csharp,csharp-9]
 ---
 
 Here we are, friends: our last post in our C# 9 deep dive series. We've discussed a lot of topics, so I thought it'd be fun to bundle all we've learned into a single post. (You can think of this as a [CliffsNotes](https://en.wikipedia.org/wiki/CliffsNotes) of the 10,000 or so words I've written about C# 9 so far.)
