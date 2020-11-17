@@ -1,5 +1,5 @@
 ---
-date: "2020-11-14"
+date: "2020-11-16"
 title: "Use OpenAPI, Swagger UI, and HttpRepl in ASP.NET Core 5 to supercharge your API development"
 excerpt: "In the latest post, we look at how easy it is to work with Swagger and HttpRepl in ASP.NET Core 5."
 tags: [aspnet-core]
