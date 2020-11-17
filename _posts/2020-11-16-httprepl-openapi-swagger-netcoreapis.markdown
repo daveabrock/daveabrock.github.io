@@ -145,7 +145,7 @@ You can use HttpRepl to test your ASP.NET Core Web APIs from the command-line qu
 
 ## Install
 
-You install HttpRepl as a .NET Core Global Tool, but executing the following from the .NET Core CLI:
+You install HttpRepl as a .NET Core Global Tool, by executing the following from the .NET Core CLI:
 
 ```bash
 dotnet tool install -g Microsoft.dotnet-httprepl
@@ -201,7 +201,7 @@ Now, when you say `post` from your endpoint, VS Code opens a `.tmp` file with a 
 
 ![Performing a post]({{ site.url }}{{ site.baseurl }}/images/post-brothers.png)
 
-With the ID in hand, I can do the same steps to modify using `post 5`, then run `get 5` to confirm my changes:
+With the ID in hand, I can do the same steps to modify using `put 5`, then run `get 5` to confirm my changes:
 
 ![Performing a put]({{ site.url }}{{ site.baseurl }}/images/put-get-brothers.png)
 
