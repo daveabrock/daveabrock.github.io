@@ -91,7 +91,7 @@ public async Task<ActionResult<Movie>> GetById(int id)
 {
     var movie = await _context.Movies.FindAsync(id);
 
-    if (movie == null)
+    if (movie is null)
     {
         return NotFound();
     }
