@@ -1,15 +1,23 @@
 ---
-date: "2020-11-13"
+date: "2020-11-21"
 title: "The .NET Stacks #26: .NET 5 has arrived, let's party"
 tags: [dotnet-stacks]
 comments: false
+header:
+    overlay_image: /assets/images/stacks-26-card.png
+    overlay_filter: 0.8
+excerpt: This week, .NET 5 arrives and ships and are C# 9 records actually immutable by default?
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
 
-Happy Monday, everybody! I hope you have a wonderful week.
+*Note: This is the published version of my free, weekly newsletter: The .NET Stacks—originally sent to subscribers on November 16, 2020. Subscribe at the bottom of this post to get the content right away!*
 
-We've just got two things in today's newsletter: the craziness of .NET Conf and the weekly roundup across the .NET community.
+Happy Monday, everybody! I hope you have a wonderful week. We'll be covering a few things this morning:
+
+* .NET 5 has arrived
+* Dependency injection gets a community review
+* Last week in .NET world
 
 # 🥳.NET 5 has arrived
 
@@ -17,9 +25,7 @@ Well, we made it: .NET 5 is [officially here](https://devblogs.microsoft.com/dot
 
 Anyway: we've spent the better part of six months discussing all the updates (like, [my favorite things](https://daveabrock.com/2020/11/13/dotnet-stacks-25), [Blazor's readiness](https://daveabrock.com/2020/11/06/dotnet-stacks-24), [the support model](https://daveabrock.com/2020/10/31/dotnet-stacks-23), [what's happening to .NET Standard](https://daveabrock.com/2020/09/26/dotnet-stacks-18), [EF Core 5](https://daveabrock.com/2020/09/19/dotnet-stacks-17), [app trimming](https://daveabrock.com/2020/09/12/dotnet-stacks-16), [System.Text.Json vs. Newtonsoft](https://daveabrock.com/2020/08/08/dotnet-stacks-11), and so much more).
 
-As you can imagine, this week was light on news. As such, I know you're here for the .NET Conf links—so let me be of service.
-
-You can see all the talks [from this YouTube playlist](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVWop1HEOml2OdqbDs6IlcI), but the highlights are below.
+I know you’re here for the .NET Conf links—so let me be of service. You can see all the talks [from this YouTube playlist](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oVWop1HEOml2OdqbDs6IlcI), but the highlights are below.
 
 From the Microsoft perspective, we had the following sessions:
 
@@ -55,6 +61,18 @@ From the community:
 * Eduard Keilholz [gets real-time insights from serverless solutions](https://www.youtube.com/watch?v=PDMRaNoS2Xc).
 * Luis Beltran [discusses AI enrichment with Azure Cognitive Search](https://www.youtube.com/watch?v=YapSbK75_1w).
 * Florian Rappl [talks about microfrontends with Blazor](https://www.youtube.com/watch?v=npff2NjVXEE).
+
+# 💉 Dependency injection gets a community review
+
+During the day job, I’ve been teaching infrastructure engineers how to code in C#. With plenty of experience with scripting languages like PowerShell, explaining variables, functions, and loops isn’t really a big deal. Next week, however, I’ll have to discuss dependency injection and I’m not looking forward to it. That’s not because they won’t understand it, because they’re very smart and they definitely will (eventually). It’s because it’s a head-spinning topic to beginners but is essential to learn because ASP.NET Core is centered around it.
+
+If you aren’t familiar with dependency injection, it’s a software design pattern that helps manage dependencies [towards abstractions and not lower-level implementation details](https://docs.microsoft.com/dotnet/architecture/modern-web-apps-azure/architectural-principles#dependency-inversion). [New is glue](https://ardalis.com/new-is-glue/), after all. In ASP.NET Core, we use interfaces (or base classes) to abstract dependencies away, and “register” dependencies in a service container (most commonly IServiceProvider in the ConfigureServices method in a project’s Startup class). This allows us to “inject” services (or groups of services) only when we need them.
+
+Right on cue, this week’s edition of .NET Twitter Drama included the [discussion](https://twitter.com/davidfowl/status/1326271656776634368) of a [Hacker News article](https://t.co/Lq0KCy0jKZ?amp=1) criticizing the ASP.NET Core DI practice as overkill. The article mirrors a lot of HN: .NET rants with some valuable feedback nested inside.
+
+In my experience, DI in general is a difficult concept to learn initially but sets you up for success for maintaining loose coupling and testability as your project matures. However, the initial ceremony can drive people away from ASP.NET Core as developers can view it as overkill if they think their project will never need it.
+
+I do think the conversation this week helped folks understand that working with settings is very ceremonial and can lead to confusion (just look at the options pattern). This might foster .NET team discussions about doc updates and how to provide a better experience when working with configuration. A boy can dream, anyway.
 
 # 🌎 Last week in the .NET world
 
