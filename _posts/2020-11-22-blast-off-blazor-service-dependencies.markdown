@@ -227,7 +227,7 @@ protected override async Task OnInitializedAsync()
 }
 ```
 
-If you run the app, you should see no changes—we didn't have to modify the markup at all—but we've made our lives a lot easier and now testing should be a snapflexibility as we add to our project).
+If you run the app, you should see no changes—we didn't have to modify the markup at all—but we've made our lives a lot easier and now testing should be a snap as we add to our project).
 
 # Test our component
 
