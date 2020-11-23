@@ -6,7 +6,7 @@ comments: false
 header:
     overlay_image: /assets/images/stacks-26-card.png
     overlay_filter: 0.8
-excerpt: This week, .NET 5 arrives and ships and are C# 9 records actually immutable by default?
+excerpt: This week, we look at the .NET Conf content and also discuss the buzz around dependency injection.
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
