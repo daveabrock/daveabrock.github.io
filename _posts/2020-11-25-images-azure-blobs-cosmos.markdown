@@ -4,7 +4,7 @@ title: "Use Azure Functions, Azure Storage blobs, and Cosmos DB to copy images f
 excerpt: "In this post, we work with Azure Storage blobs and Cosmos DB to copy images that are available over the public Internet."
 tags: [aspnet-core, azure]
 header:
-    overlay_image: /assets/images/service-dependency-card.png
+    overlay_image: /assets/images/public-url-images.png
     overlay_filter: 0.8
 ---
 
