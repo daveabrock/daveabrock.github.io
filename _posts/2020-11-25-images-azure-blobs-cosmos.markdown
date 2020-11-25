@@ -21,7 +21,7 @@ To accomplish this, I wrote a quick Azure Function that accomplishes both tasks.
 Before you begin, you need to set up the following:
 
 - An [Azure storage account](https://portal.azure.com/) (I set up StorageV2, with LRS, and Hot access tier)
-- A [blob container](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) to store your images (I set it to public access as anonymous read access is not a concern ofr publicly available photos)
+- A [blob container](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) to store your images (I set it to public access as anonymous read access is not a concern for publicly available photos)
 - A [Cosmos DB resource](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal) (I largely accepted the defaults except using the Serverless option, now in preview, to reduce costs)
 - A [Cosmos DB collection, database, and container](https://docs.microsoft.com/azure/cosmos-db/create-cosmosdb-resources-portal)
 
