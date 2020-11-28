@@ -1,5 +1,5 @@
 ---
-date: "2020-11-21"
+date: "2020-11-28"
 title: "The .NET Stacks #27: Giving some 💜 to under-the-radar ASP.NET Core 5 features"
 tags: [dotnet-stacks]
 comments: false
