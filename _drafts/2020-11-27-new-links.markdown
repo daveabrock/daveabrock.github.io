@@ -1,0 +1,176 @@
+---
+date: "2020-11-27"
+title: "The .NET Stacks #28: Fill in stuff"
+tags: [dotnet-stacks]
+comments: false
+---
+![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+
+*Note: This is the published version of my free, weekly newsletter, The .NET Stacks. It was originally sent to subscribers on November 30, 2020. Subscribe at the bottom of this post to get the content right away!*
+
+Happy Monday to all. This week we'll be discussing:
+
+- David Fowler on the ASP.NET Core standup
+- .NET 6 planning
+- Microsoft Q&A for .NET is a thing
+
+## David Fowler's appearance
+
+package into any component, built from the get-go
+
+if you need most packages, what do you do? we have a shared framework (kesterel as a component)
+
+kestrel perf was terrible
+
+code over configuration (web.config) -> had to reconfigure yourself
+
+composition from DI -> separate components via module
+
+functions over classes - vb lambda and f# -> to begin with - MVC got the least changes for the stack. Keep MVC compatible
+
+Pay for MVC even if you don't use it
+
+MVC -> framework for framework authors
+
+Houdini
+    Make MVCs disappear -> features are actually in the entire stack. Like routing, Razor in general (s/a in language features, no generic base type)
+
+    Push productivity features into the core of the stack
+
+    Make jump from imperative routing to declarative MVC smaller (improve perf along the way)
+
+kestrel manages sockets for you
+kestrel support preview .net 5 http/3
+
+mvc -> super complex state machine
+
+don't need a lot of extension filters
+
+```csharp
+[ActionFilter]
+public class HomeController : ControllerBase
+{
+    public string Index() => "Hello Maunal Action.";
+}
+```
+
+controllers are declarative, get is imperivie
+
+```csharp
+app.UseEndpoints(e =>
+{
+    endpoints.MapHttpHandler<MyHandler>();
+    endpoints.MapHttpHandler<ProductsHandler>();
+
+    endpoints.MapAction("/api/products", () =>
+    {
+        return Enumerable.Empty<Product>();
+    });
+})
+```
+
+generate the code you do for you at compile time
+
+writes to the response pipe, super efficient -> middleware performance with the style of MVC.
+
+What about model binding, you'll ask for it. On my default. Doevetail back into response
+
+compile code into the body
+
+think about razor pages - don't think about implementation. conceptually, vertical app models that sit on top of asp.net core. 
+
+each one of those -> MVC, everything else is more specialized. infra is so much more complicated - APIs, 
+
+you're paying so much - existing API controller (mvc) -> 80%, you can change to a new vertical controller. Didn't change other code for a certain category of an API controller. You get runtime perf and treeshake more effectively when real AOT comes. Not as dynamically composable. Code looks very similar.
+
+MVC will be around forever (like Orchard). If you're building simple APIs - use MVCs for REST and a different CRUD layer.
+
+HTTP part is quite slim, and delegates to something else. Why pay for what MVC can do if you aren't using those things. Framework that builds other frameworks.
+
+Look at speakerdeck for Fowler's talk -> more of the talk and lifecycle for .NET 6 and very little code is being written
+
+## .NET 5 planning
+
+## .NET Q&A
+
+## 🌎 Last week in the .NET world
+
+### 🔥 The Top 3
+
+* Andrew Lock [applies the MVC design pattern to Razor Pages](https://andrewlock.net/aspnetcore-in-action-2e-applying-the-mvc-design-pattern-to-razor-pages/).
+* Khalid Abuhakmeh [introduces Entity Framework Core 5](https://blog.jetbrains.com/dotnet/2020/11/25/getting-started-with-entity-framework-core-5/).
+* Rick Strahl [warns against .NET Core runtime bitness for IIS installs when upgrading to .NET 5](https://weblog.west-wind.com/posts/2020/Nov/25/Watch-out-for-NET-Core-Runtime-Bitness-for-IIS-Installs).
+
+### 📢 Announcements
+
+* Jayme Singleton [wraps up .NET Conf 2020](https://devblogs.microsoft.com/dotnet/dotnetconf-2020-recap).
+* James Montemagno [announces Microsoft Q&A for .NET](https://devblogs.microsoft.com/dotnet/announcing-microsoft-q-and-a-for-dotnet/).
+* Klaus Loeffelmann [writes about VB WinForms apps in .NET 5 and Visual Studio 16.8](https://devblogs.microsoft.com/dotnet/visual-basic-winforms-apps-in-net-5-and-visual-studio-16-8/?WT.mc_id=DOP-MVP-4025064).
+* Tara Overfield [provides a .NET Framework November 2020 update](https://devblogs.microsoft.com/dotnet/net-framework-november-2020-cumulative-update-preview).
+* Azure Pipelines [is replacing the "View YAML" experience](https://devblogs.microsoft.com/devops/replacing-view-yaml).
+
+### 📅 Community and events
+
+A light week because of the US Thanksgiving Holiday, so just one community standup—for ASP.NET, [David Fowler joins to talk about ASP.NET Core architecture](https://www.youtube.com/watch?v=d9Bjg31VuHw).
+
+### 😎 ASP.NET Core / Blazor
+
+* Dave Brock [isolates and test service dependencies in Blazor](https://daveabrock.com/2020/11/22/blast-off-blazor-service-dependencies).
+* Ricardo Peres [works with inline images in ASP.NET Core](https://weblogs.asp.net/ricardoperes/inline-images-with-asp-net-core) and also pitfalls of [DI lifetime validation in ASP.NET Core](https://weblogs.asp.net/ricardoperes/asp-net-core-pitfalls-dependency-injection-lifetime-validation?WT.mc_id=DOP-MVP-4025064).
+* Shaun C. Curtis [runs Blazor WASM and Server in a single project on a single site](https://www.codeproject.com/Articles/5287009/Blazor-WASM-and-Server-in-a-Single-Project-running).
+* Khalid Abuhakmeh [writes about JS isolation, modules, and dynamic C# with Blazor](https://khalidabuhakmeh.com/blazor-javascript-isolation-modules-and-dynamic-csharp).
+* Jason Farrell [uses scoped dependencies in ASP.NET Core](https://jfarrell.net/2020/11/23/using-scoped-dependencies/).
+* Imar Spaanjaars [improves his ASP.NET Core site's e-mail capabilities](https://imar.spaanjaars.com/614/improving-your-aspnet-core-sites-e-mailing-capabilities).
+* Marinko Spasojevic [writes about Blazor CSS isolation](https://code-maze.com/css-isolation-in-blazor-applications/) and also [works with custom validation in Blazor WebAssembly](https://code-maze.com/custom-validation-in-blazor-webassembly/).
+* David Hayden [generates a client for ASP.NET Core Web API using OpenAPI](https://www.davidhayden.me/blog/generate-client-for-asp-net-core-web-api-using-openapi).
+* David Grace [writes about four useful tips when using the xUnit Test Server in ASP.NET Core](https://www.roundthecode.com/dotnet/asp-net-core-web-api/four-useful-tips-using-asp-net-core-testserver-in-xunit).
+
+### 🚀 .NET 5
+
+* Alex Yakunin [provides more updates on his performance improvements working with .NET 5](https://medium.com/swlh/astonishing-performance-of-net-5-more-data-5cdc8d821e8c).
+* Rick Strahl [upgrades his apps and libraries to .NET 5](https://weblog.west-wind.com/posts/2020/Nov/24/Upgrading-to-NET-Core-50).
+* Davide Benvegnù [talks about why .NET 5 is perfect for DevOps](https://dev.to/n3wt0n/net-5-is-perfect-for-devops-4afd).
+* Scott Hanselman [makes a self-contained WinForms app with .NET 5 from the command-line](https://www.hanselman.com/blog/how-to-make-a-winforms-app-with-net-5-entirely-from-the-command-line-and-publish-as-one-selfcontained-file).
+
+### ⛅ The cloud
+
+* Dave Brock uses [Azure Functions, Azure Storage blobs, and Cosmos DB to copy images from public URLs](https://daveabrock.com/2020/11/25/images-azure-blobs-cosmos).
+* Adrian Hall [announces Azure Mobile Apps v4.2.0 for .NET](https://devblogs.microsoft.com/xamarin/azure-mobile-apps-updates).
+* Tim Sander [writes about the difference between null and undefined in Azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/difference-between-null-and-undefined).
+* Mark Heath [writes about Azure Durable Entities](https://markheath.net/post/durable-entities-what-are-they-good-for).
+
+### 📔 Languages
+
+* Gergely Sinka [installs .NET Core apps on Linux in 5 minutes](https://developer.okta.com/blog/2020/11/25/how-to-install-dotnetcore-on-linux).
+* Thomas Levesque [continues writing about C# 9 records as strongly-typed IDs](https://thomaslevesque.com/2020/11/23/csharp-9-records-as-strongly-typed-ids-part-2-aspnet-core-route-and-query-parameters/).
+* Johnson Manohar [writes about 4 steps to export Excel files to JSON using C#](https://www.syncfusion.com/blogs/post/export-excel-files-to-json-using-c-sharp.aspx).
+* Vladimir Khorikov [uses C# 9 records as DDD value objects](https://enterprisecraftsmanship.com/posts/csharp-records-value-objects/).
+* Khalid Abuhakmeh [consumes SOAP APIs in .NET Core](https://khalidabuhakmeh.com/consuming-soap-apis-in-dotnet-core).
+
+### 🔧 Tools
+
+* Scott Hanselman [shows off the Spectre.Console project](https://www.hanselman.com/blog/spectreconsole-lets-you-make-beautiful-console-apps-with-net-core).
+* David Grace [uses ASP.NET Core's TestServer in xUnit](https://www.roundthecode.com/dotnet/asp-net-core-web-api/asp-net-core-testserver-xunit-test-web-api-endpoints).
+* Matt Ward [writes about NuGet support in Visual Studio for Mac 8.8](https://lastexitcode.com/blog/2020/11/21/NuGetSupportInVisualStudioMac8-8/).
+* Jesse Liberty [continues his series on Git](http://jesseliberty.com/2020/11/22/get-git-part-2/).
+* Nada Rifki [writes about 9 new 2020 browser features](https://www.telerik.com/blogs/9-best-new-2020-browser-features-you-didnt-know).
+
+### 📱 Xamarin
+
+* Daniel Hindrikes [works on GitHub Actions and Cake for TinyMvvm](https://danielhindrikes.se/index.php/2020/11/26/github-actions-for-tinymvvm/).
+* Rendy Del Rosario [works with background distance-based location updates on iOS](https://www.xamboy.com/2020/11/26/background-distance-based-location-updates-on-ios/).
+* Charlin Agramonte [simplifies bindable properties with type converters in Xamarin Forms](https://xamgirl.com/simplifying-bindable-properties-with-type-converters-in-xamarin-forms/).
+* Antonio Liccardi [talks about new features with Xamarin.Forms 5.0](https://www.infoq.com/news/2020/11/xamarin-forms-5-improvements/).
+* Leomaris Reyes [writes about what's new in Xamarin.Essentials 1.6](https://www.telerik.com/blogs/exploring-whats-new-xamarin-essentials-1-6).
+* James Montemagno [enables C# 9 in Xamarin and .NET Standard projects](https://montemagno.com/enabling-c-9-in-xamarin-net-standard-projects/).
+* Delpin Susai Raj [uses a file browser](https://xamarinmonkeys.blogspot.com/2020/11/xamarinforms-file-browser.html).
+
+### 🎤 Podcasts
+
+* Shawn Wildermith talks to [the .NET Rocks podcast](https://www.dotnetrocks.com/default.aspx?ShowNum=1715) and [Herding Code](https://herdingcode.com/herding-code-243-shawn-wildermuth-on-his-new-film-hello-world) about his new *Hello World* film.
+* The Stack Overflow Podcast [discusses how Big Tech is getting cozy with CS departments](https://the-stack-overflow-podcast.simplecast.com/episodes/big-tech-is-getting-cozy-with-computer-science-departments-82K23tP3).
+* The 6 Figure Developer podcast [talks to Jeremy Sinclair](https://6figuredev.com/podcast/episode-171-jeremy-sinclair-windows-insider-net-on-arm/).
+* The MS Dev Show [talks to Scott Hunter about .NET 5](https://msdevshow.com/2020/11/dot-net-5-with-scott-hunter/).
+* Technology and Friends [talks to Omkar Naik on Microsoft Cloud for Health Care](http://davidgiard.com/2020/11/23/OmkarNaikOnMicrosoftCloudForHealthCare.aspx).
+* The Unhandled Exception Podcast [talks with Pete Gallagher about teaching kids to code](https://unhandledexceptionpodcast.com/posts/0004-petegallagher/).
+* The Work Item podcast [talks to Christos Matskas](https://theworkitem.com/blog/interview-christos-matskas/).

@@ -3,6 +3,10 @@ date: "2020-11-21"
 title: "The .NET Stacks #27: Giving some 💜 to under-the-radar ASP.NET Core 5 features"
 tags: [dotnet-stacks]
 comments: false
+header:
+    overlay_image: /assets/images/stacks-27-card.png
+    overlay_filter: 0.8
+excerpt: This week, we look at some under-the-radar ASP.NET Core 5 features, and look around the community.
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
