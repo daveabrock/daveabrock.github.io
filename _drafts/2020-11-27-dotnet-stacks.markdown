@@ -1,6 +1,6 @@
 ---
 date: "2020-11-27"
-title: "The .NET Stacks #28: Fill in stuff"
+title: "The .NET Stacks, #28: The future of MVC and themes of .NET 6"
 tags: [dotnet-stacks]
 comments: false
 ---
@@ -8,90 +8,52 @@ comments: false
 
 *Note: This is the published version of my free, weekly newsletter, The .NET Stacks. It was originally sent to subscribers on November 30, 2020. Subscribe at the bottom of this post to get the content right away!*
 
-Happy Monday to all. This week we'll be discussing:
+Happy Monday to all. This week, we'll be discussing:
 
-- David Fowler on the ASP.NET Core standup
-- .NET 6 planning
-- Microsoft Q&A for .NET is a thing
+- The future of ASP.NET Core MVC APIs
+- Check out the "themes" of .NET 6
+- .NET Q&A: Not the Overflow you're looking for
+- Last week in the .NET world
 
-## David Fowler's appearance
+## The future of ASP.NET Core MVC APIs
 
-package into any component, built from the get-go
+This week, David Fowler [stopped by the ASP.NET community standup](https://www.youtube.com/watch?v=d9Bjg31VuHw) to talk about ASP.NET Core architecture. As you'd expect, it was quite informative. We learned how the team is addressing MVC, ASP.NET Core's exception to the rule.
 
-if you need most packages, what do you do? we have a shared framework (kesterel as a component)
+As ASP.NET Core has kept an eye on lightweight and modular services, MVC isn't exactly a shining example of this concept. As with a lot of Microsoft tech, there are a lot of historical reasons for this—when thinking about MVC for ASP.NET Core, a lot of time was spent merging APIs and MVC web bits into one platform so performance analysis wasn't given the light of day.
 
-kestrel perf was terrible
+If you develop APIs with MVC, then, you're paying a lot up front. When a lot of use cases are using it for CRUD operations over HTTP, do you need all the extension filters, formatters, and so on? Why pay for all of MVC if you aren't using it? As said in the standup, we're now looking at a "framework for framework authors" where all the abstractions aren't used by 99% of developers.
 
-code over configuration (web.config) -> had to reconfigure yourself
+Fowler and team are working on something called "Project Houdini"—an effort to "make MVCs disappear." Don't worry, MVC will always be around, but the effort revolves pushing MVC productivity features to the core of the stack, and not being a special citizen. Along the way, performance should improve. Fowler showed off a way to generate imperative APIs for you at compile time using source generation (allowing you to keep the traditional MVC controller syntax).
 
-composition from DI -> separate components via module
+As a result, you're shipping super-efficient code much closer to the response pipe. And when AOT gets here, it'll benefit from runtime performance and treeshaking capabilities. Stay tuned: there's a lot to wrap your head around here, with more information to come.
 
-functions over classes - vb lambda and f# -> to begin with - MVC got the least changes for the stack. Keep MVC compatible
+## Check out the "themes" of .NET 6
 
-Pay for MVC even if you don't use it
+It's a fun time in the .NET 6 release cycle—there's a lot of design and high-level discussions going on, as it'll be 11 months before it actually ships. You can definitely look at things like the [.NET Product Roadmap](https://github.com/dotnet/core/blob/master/product-roadmap/current.md), but .NET PM Immo Landwerth has [built a *Themes of .NET* site](https://themesof.net/), which shows off the GitHub themes, epics, and stories slotted for .NET 6. (As if you had to ask, yes, [it's built with Blazor](https://github.com/terrajobst/themesof.net).)
 
-MVC -> framework for framework authors
+As [Immo warns](https://twitter.com/terrajobst/status/1331821633787424769), this is all fluid and not a committed roadmap—it *will* change frequently as the team's thinking evolves. Even at this stage, I thought it was interesting to filter by the Priority 0 issues. These aren't guarantees to make it in, but it *is* what the team currently is prioritizing the highest.
 
-Houdini
-    Make MVCs disappear -> features are actually in the entire stack. Like routing, Razor in general (s/a in language features, no generic base type)
+📲 With Xamarin coming to .NET 6 [via MAUI](https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/), there's predictably [a lot of Priority 0 work](https://github.com/dotnet/xamarin/issues/2) outlined here—from [managing mobile .NET SDKs](https://github.com/dotnet/xamarin/issues/4), [improving performance](https://github.com/dotnet/xamarin/issues/10), and [using .NET 6 targets](https://github.com/dotnet/xamarin/issues/16).
 
-    Push productivity features into the core of the stack
+🏫 I'm happy to see an epic around appealing to new developers and students, and there are epics around [teaching entire classes in .NET Notebooks in VS Code](https://github.com/dotnet/core/issues/5466) and [making setup easier](https://github.com/dotnet/core/issues/5467). They're also prioritizing democratizing machine learning with stories for [using data when training in the cloud](https://github.com/dotnet/machinelearning-modelbuilder/issues/556) and [better data loading options](https://github.com/dotnet/machinelearning-modelbuilder/issues/642).
 
-    Make jump from imperative routing to declarative MVC smaller (improve perf along the way)
+🌎 Blazor developers are anxious for [enabling ahead-of-time (AOT) compilation](https://github.com/dotnet/runtimelab/issues/248), with stories around [compiling .NET apps into WASM](https://github.com/dotnet/runtime/issues/44316) and [AOT targeting](https://github.com/dotnet/runtime/issues/43390).
 
-kestrel manages sockets for you
-kestrel support preview .net 5 http/3
+✅ Acknowledging carryover from .NET 5 promises, there are stories for [building libraries for HTTP/3](https://github.com/dotnet/runtime/issues/43546) and *confidently* [generating single file apps for supported target platforms](https://github.com/dotnet/runtime/issues/43540). There's also [more on app trimming](https://github.com/dotnet/runtime/issues/43543) planned, especially [when using `System.Text.Json`](https://github.com/dotnet/runtime/issues/1568). 
 
-mvc -> super complex state machine
+📈 As promised, a lot to improve the inner-loop performance—plans for the [BCL to support hot reloading](https://github.com/dotnet/runtime/issues/45023) (and [for Blazor](https://github.com/dotnet/aspnetcore/issues/5456) to support it), [improving MSBuild performance](https://github.com/dotnet/msbuild/issues/5876), and [an improved experience for Xamarin devs](https://github.com/dotnet/xamarin/issues/13).
 
-don't need a lot of extension filters
+There's so much to look through if you've got the time, and things are going to move around a lot—there's a ton of XL-sized Priority 0 issues, for example—but it's always nice to geek out.
 
-```csharp
-[ActionFilter]
-public class HomeController : ControllerBase
-{
-    public string Index() => "Hello Maunal Action.";
-}
-```
+## Microsoft Q&A for .NET: Not the Overflow you're looking for
 
-controllers are declarative, get is imperivie
+This week, Microsoft [announced](https://devblogs.microsoft.com/dotnet/announcing-microsoft-q-and-a-for-dotnet/) Microsoft Q&A for .NET. The Q&A experience, a replacement for Microsoft's older forum platforms like MSDN and TechNet, was [first rolled out last October](https://docs.microsoft.com/teamblog/introducing-microsoft-qanda) (and [went GA in May 2020](https://docs.microsoft.com/teamblog/microsoft-qna-ga?WT.mc_id=launchblog-blog-learn-tv)). The inevitable question: "Why not just use and/or buy Stack Overflow?" I find it interesting that this week's post didn't mention what every developer was thinking, but I've explored [Microsoft's thoughts from last year](https://docs.microsoft.com/answers/articles/388/microsoft-qa-frequently-asked-questions.html):
 
-```csharp
-app.UseEndpoints(e =>
-{
-    endpoints.MapHttpHandler<MyHandler>();
-    endpoints.MapHttpHandler<ProductsHandler>();
+>We love Stack Overflow. We will continue supporting our customers who ask questions there. In the future, we will introduce a feature that points askers on Microsoft Q&A to relevant answers from Stack Overflow ... However, Stack Overflow has specific criteria about what questions are appropriate for the community and Microsoft Q&A will have a more open policy regarding this. More importantly, via Microsoft Q&A we can create unique experiences that allow us to provide the highest level of support for our customers.
 
-    endpoints.MapAction("/api/products", () =>
-    {
-        return Enumerable.Empty<Product>();
-    });
-})
-```
+In Microsoft's defense, [the line](https://docs.microsoft.com/answers/questions/773/why-not-just-use-stack-overflow.html) "I see too many questions on SO that I believe are viable in any normal support scenario, but get closed and downvoted because people didn't follow the rules" is all too familiar. There's a lot of value in a Microsoft-focused platform centered around answers, not reputation.
 
-generate the code you do for you at compile time
-
-writes to the response pipe, super efficient -> middleware performance with the style of MVC.
-
-What about model binding, you'll ask for it. On my default. Doevetail back into response
-
-compile code into the body
-
-think about razor pages - don't think about implementation. conceptually, vertical app models that sit on top of asp.net core. 
-
-each one of those -> MVC, everything else is more specialized. infra is so much more complicated - APIs, 
-
-you're paying so much - existing API controller (mvc) -> 80%, you can change to a new vertical controller. Didn't change other code for a certain category of an API controller. You get runtime perf and treeshake more effectively when real AOT comes. Not as dynamically composable. Code looks very similar.
-
-MVC will be around forever (like Orchard). If you're building simple APIs - use MVCs for REST and a different CRUD layer.
-
-HTTP part is quite slim, and delegates to something else. Why pay for what MVC can do if you aren't using those things. Framework that builds other frameworks.
-
-Look at speakerdeck for Fowler's talk -> more of the talk and lifecycle for .NET 6 and very little code is being written
-
-## .NET 5 planning
-
-## .NET Q&A
+In addition, Microsoft is looking to own the experience with additional support channels, badges, and integration with other Microsoft services. I don't think Stack Overflow is getting nervous—the Q&A UX is similar to the MSDN forums, and that's not a compliment—but the platform is there if you want to try it. I'll be curious to see how it evolves.
 
 ## 🌎 Last week in the .NET world
 
@@ -105,6 +67,7 @@ Look at speakerdeck for Fowler's talk -> more of the talk and lifecycle for .NET
 
 * Jayme Singleton [wraps up .NET Conf 2020](https://devblogs.microsoft.com/dotnet/dotnetconf-2020-recap).
 * James Montemagno [announces Microsoft Q&A for .NET](https://devblogs.microsoft.com/dotnet/announcing-microsoft-q-and-a-for-dotnet/).
+* Maoni Stephens [writes about the new GetGCMemoryInfo API in .NET 5](https://devblogs.microsoft.com/dotnet/the-updated-getgcmemoryinfo-api-in-net-5-0-and-how-it-can-help-you/).
 * Klaus Loeffelmann [writes about VB WinForms apps in .NET 5 and Visual Studio 16.8](https://devblogs.microsoft.com/dotnet/visual-basic-winforms-apps-in-net-5-and-visual-studio-16-8/?WT.mc_id=DOP-MVP-4025064).
 * Tara Overfield [provides a .NET Framework November 2020 update](https://devblogs.microsoft.com/dotnet/net-framework-november-2020-cumulative-update-preview).
 * Azure Pipelines [is replacing the "View YAML" experience](https://devblogs.microsoft.com/devops/replacing-view-yaml).
@@ -138,6 +101,7 @@ A light week because of the US Thanksgiving Holiday, so just one community stand
 * Adrian Hall [announces Azure Mobile Apps v4.2.0 for .NET](https://devblogs.microsoft.com/xamarin/azure-mobile-apps-updates).
 * Tim Sander [writes about the difference between null and undefined in Azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/difference-between-null-and-undefined).
 * Mark Heath [writes about Azure Durable Entities](https://markheath.net/post/durable-entities-what-are-they-good-for).
+* AWS had an outage, [and an interesting writeup about it](https://aws.amazon.com/message/11201/).
 
 ### 📔 Languages
 
@@ -146,6 +110,7 @@ A light week because of the US Thanksgiving Holiday, so just one community stand
 * Johnson Manohar [writes about 4 steps to export Excel files to JSON using C#](https://www.syncfusion.com/blogs/post/export-excel-files-to-json-using-c-sharp.aspx).
 * Vladimir Khorikov [uses C# 9 records as DDD value objects](https://enterprisecraftsmanship.com/posts/csharp-records-value-objects/).
 * Khalid Abuhakmeh [consumes SOAP APIs in .NET Core](https://khalidabuhakmeh.com/consuming-soap-apis-in-dotnet-core).
+* Prashant Pathak [slices in F# and writes about how it's different in F# 5](https://www.compositional-it.com/news-blog/slicing-in-f-and-how-its-a-bit-better-in-f-5).
 
 ### 🔧 Tools
 
