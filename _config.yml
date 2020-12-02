@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Dave Brock"
+title                    : "Dave Brock — Software engineer and writer"
 title_separator          : "|"
 subtitle                 : # for under masthead
 name                     : "Dave Brock"
-description              : "Software engineer specializing in Microsoft and JavaScript technologies."
+description              : "I'm Dave Brock. I write about modern development with C#, .NET, Azure, and other topics."
 url                      : "https://daveabrock.com"
 baseurl                  : "/"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
