@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Dave Brock — Software engineer and writer"
+title                    : "Dave Brock"
 title_separator          : "|"
 subtitle                 : # for under masthead
 name                     : "Dave Brock"
