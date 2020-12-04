@@ -114,7 +114,7 @@ For more details, check out my post: *[Are C# 9 records immutable by default](ht
 Before C# 9, you would likely represent new state by creating new values from existing ones.
 
 ```csharp
-var person = new Person("Tony", "Stark", "10880 Malibu Point", "Malibu", "red")
+var person = new Person
 {
     FirstName = "Tony",
     LastName = "Stark",
