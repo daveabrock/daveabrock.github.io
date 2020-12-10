@@ -47,7 +47,7 @@ Here I can go wild with a few more attributes:
 ```csharp
 [Obsolete]
 [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-static string GetReplyText(TextSentiment [Obsolete] sentiment) => sentiment switch
+static string GetReplyText(TextSentiment sentiment) => sentiment switch
 {
     TextSentiment.Positive => "I am Gruut.",
     TextSentiment.Negative => "I AM GRUUUUUTTT!!",
