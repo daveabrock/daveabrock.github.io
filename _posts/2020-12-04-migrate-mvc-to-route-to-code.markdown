@@ -119,7 +119,7 @@ Now, we can write a `MapGet` call to define and configure our endpoint. Take a l
 endpoints.MapGet("/bands", async context =>
 {
     var repository = context.RequestServices.GetService<SampleContext>();
-    var bands = repository.Bands.ToListAsync();
+    var bands = await repository.Bands.ToListAsync();
     await context.Response.WriteAsJsonAsync(bands);
 });
 ```
