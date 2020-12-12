@@ -6,7 +6,7 @@ comments: false
 header:
     overlay_image: /assets/images/stacks-29-card.png
     overlay_filter: 0.8
-excerpt: This week, we look at one thing, and then another thing.
+excerpt: This week, we dig deep on route-to-code and discuss some Kubernetes news.
 ---
 
 ![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
