@@ -13,7 +13,7 @@ GitHub Universe 2020 occurred this week, and [Shanku Niyogi has all the details]
 
 The GitHub site itself stole the show. Dark Mode is now supported natively—you can delete your favorite browser extensions that do this for you. Also, the front page is a site to behold. Just hover over a globe to see commits in real-time from across the world:
 
-![The GitHub globe]({{ site.url }}{{ site.baseurl }}/images/github-globe.png)
+![The GitHub globe]({{ site.url }}{{ site.baseurl }}/images/gh-globe.png)
 
 As for actual development features, we now see the ability to auto-merge PRs, discussions, CD support. Also, companies can now invest in OSS with [the GitHub Sponsors program](https://github.com/sponsors).
 
