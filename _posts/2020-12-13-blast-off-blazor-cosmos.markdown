@@ -28,10 +28,9 @@ This post contains the following content.
 - [Update our tests](#update-our-tests)
 - [Wrap up](#wrap-up)
 
-
 # Move our Image component to its own page
 
-To move our `Iamge` component away from the default `Index` view, rename your `Index.razor` and `Index.razor.cs` files to `Image.razor` and `Image.razor.cs`.
+To move our `Image` component away from the default `Index` view, rename your `Index.razor` and `Index.razor.cs` files to `Image.razor` and `Image.razor.cs`.
 
 In the `Image.razor` file, change the route from `@page "/"` to `@page "/image"`. That keeps it as a routable component, meaning it'll render whenever we browse to `/image`.
 
