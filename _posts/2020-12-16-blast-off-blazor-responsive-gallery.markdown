@@ -72,7 +72,7 @@ namespace Api
             bool hasDays = int.TryParse(req.Query["days"], out int days);
             log.LogInformation($"Requested images from last {days} days.");
 
-            if (!hasDays && days <= 1 && days > 90)
+            if (!hasDays && (days <= 1 || days > 90))
                 return new BadRequestResult();
 
             ValueTask<IEnumerable<Image>> imageResponse;
