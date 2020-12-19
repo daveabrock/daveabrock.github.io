@@ -1,9 +1,17 @@
 ---
-date: "2020-12-12"
+date: "2020-12-19"
 title: "The .NET Stacks #30: 🥂 See ya, 2020"
 tags: [dotnet-stacks]
 comments: false
+header:
+    overlay_image: /assets/images/see-ya-2020.png
+    overlay_filter: 0.8
+excerpt: This week, we wrap up 2020 with some news, a look back, and a coding tip.
 ---
+
+![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+
+*Note: This is the published version of my free, weekly newsletter, The .NET Stacks. It was originally sent to subscribers on December 14, 2020. Subscribe at the bottom of this post to get the content right away!*
 
 👋 Happy Monday, everyone! This is the very last issue of 2020. Every year, I try to take the last few weeks off to decompress and unplug—considering how 2020 went, this year is no exception.
 
