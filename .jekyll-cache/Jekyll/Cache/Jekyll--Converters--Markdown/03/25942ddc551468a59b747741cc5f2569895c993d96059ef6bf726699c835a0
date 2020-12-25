@@ -1,0 +1,108 @@
+I"w/<p>So far in our series, we’ve <a href="https://daveabrock.com/2020/10/26/blast-off-blazor-intro">walked through the intro</a>, <a href="https://daveabrock.com/2020/10/28/blast-off-blazor-404-page">wrote our first component</a>, <a href="https://daveabrock.com/2020/11/08/blast-off-blazor-update-head">dynamically updated the HTML head from a component</a>, and <a href="https://daveabrock.com/2020/11/22/blast-off-blazor-service-dependencies">isolated our service dependencies</a>, and worked on <a href="https://daveabrock.com/2020/12/13/blast-off-blazor-cosmos">hosting our images over Azure Blob Storage and Cosmos DB</a>.</p>
+
+<p>Now, we’re going to query Cosmos DB, fetch our images, and display them in an image gallery. We’ll learn how to reuse components and pass parameters to methods.</p>
+
+<p>After we work on this post, we’ll enhance the page in future posts, with:</p>
+
+<ul>
+  <li>Enabling the “infinite scrolling” feature with Blazor virtualization</li>
+  <li>Filter and query images</li>
+  <li>Create a dialog to learn more and see the image in a larger size</li>
+</ul>
+
+<p>This post contains the following content.</p>
+
+<ul>
+  <li><a href="#a-quick-primer">A quick primer</a></li>
+  <li><a href="#customize-the-service-layer">Customize the service layer</a></li>
+  <li><a href="#update-images-component-to">Update <code class="language-plaintext highlighter-rouge">Images</code> component to</a></li>
+</ul>
+
+<h1 id="a-quick-primer">A quick primer</h1>
+
+<p>If you haven’t been with us for the whole series, we’re building a Blazor Web Assembly app hosted with Azure Static Web Apps at <em>blastoffwithblazor.com</em>. We’ve copied images from the NASA APOD API (all 25 years!) to Azure Blob Storage, and are storing the image metadata in a serverless Cosmos DB instance. Feel free to read those links to learn more.</p>
+
+<p>With the images in place, we’re going to build this image gallery. It’s responsive and will look good on devices of any size.</p>
+
+<p><img src="http://localhost:4000//images/image-gallery.png" alt="Our slow site" /></p>
+
+<p>All code <a href="https://github.com/daveabrock/NASAImageOfDay">is on GitHub</a>.</p>
+
+<h1 id="customize-the-service-layer">Customize the service layer</h1>
+
+<p>In previous posts, to get up and running we fetched a random image. To make things more interesting, we’re going to fetch images from the last 90 days. (In future posts, we’ll work on infinite scrolling and searching and filtering.) This requires updates to our Azure Function. We’ll ask for a <code class="language-plaintext highlighter-rouge">days</code> query string parameter, that allows the caller to request up to 90 days of images. For example, if we call <code class="language-plaintext highlighter-rouge">api/images?days=90</code>, we get images from the last 90 days.</p>
+
+<p>I’ve added logic to verify and grab the <code class="language-plaintext highlighter-rouge">days</code>, make sure it’s in the appropriate range, then query Cosmos for the data itself.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNetCore.Mvc</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Azure.WebJobs</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Azure.WebJobs.Extensions.Http</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNetCore.Http</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Extensions.Logging</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Azure.CosmosRepository</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Data</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Transactions</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Api</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">ImageGet</span>
+    <span class="p">{</span>
+        <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;</span> <span class="n">_imageRepository</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">ImageGet</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;</span> <span class="n">imageRepository</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">_imageRepository</span> <span class="p">=</span> <span class="n">imageRepository</span><span class="p">;</span>
+
+        <span class="p">[</span><span class="nf">FunctionName</span><span class="p">(</span><span class="s">"ImageGet"</span><span class="p">)]</span>
+        <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Run</span><span class="p">(</span>
+            <span class="p">[</span><span class="nf">HttpTrigger</span><span class="p">(</span><span class="n">AuthorizationLevel</span><span class="p">.</span><span class="n">Anonymous</span><span class="p">,</span> <span class="s">"get"</span><span class="p">,</span> <span class="n">Route</span> <span class="p">=</span> <span class="s">"image"</span><span class="p">)]</span> <span class="n">HttpRequest</span> <span class="n">req</span><span class="p">,</span>
+            <span class="n">ILogger</span> <span class="n">log</span><span class="p">)</span>
+        <span class="p">{</span>
+
+            <span class="kt">bool</span> <span class="n">hasDays</span> <span class="p">=</span> <span class="kt">int</span><span class="p">.</span><span class="nf">TryParse</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">Query</span><span class="p">[</span><span class="s">"days"</span><span class="p">],</span> <span class="k">out</span> <span class="kt">int</span> <span class="n">days</span><span class="p">);</span>
+            <span class="n">log</span><span class="p">.</span><span class="nf">LogInformation</span><span class="p">(</span><span class="s">$"Requested images from last </span><span class="p">{</span><span class="n">days</span><span class="p">}</span><span class="s"> days."</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(!</span><span class="n">hasDays</span> <span class="p">&amp;&amp;</span> <span class="n">days</span> <span class="p">&lt;=</span> <span class="m">1</span> <span class="p">&amp;&amp;</span> <span class="n">days</span> <span class="p">&gt;</span> <span class="m">90</span><span class="p">)</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nf">BadRequestResult</span><span class="p">();</span>
+
+            <span class="n">ValueTask</span><span class="p">&lt;</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;&gt;</span> <span class="n">imageResponse</span><span class="p">;</span>
+            <span class="n">imageResponse</span> <span class="p">=</span> <span class="n">_imageRepository</span><span class="p">.</span><span class="nf">GetAsync</span>
+                 <span class="p">(</span><span class="n">img</span> <span class="p">=&gt;</span> <span class="n">img</span><span class="p">.</span><span class="n">Date</span> <span class="p">&gt;</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="nf">AddDays</span><span class="p">(-</span><span class="n">days</span><span class="p">));</span>
+
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">OkObjectResult</span><span class="p">(</span><span class="n">imageResponse</span><span class="p">.</span><span class="n">Result</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In the <code class="language-plaintext highlighter-rouge">ApiClientService</code> class in the <code class="language-plaintext highlighter-rouge">Client</code> project, update the call to take in the <code class="language-plaintext highlighter-rouge">days</code>. We’ll also order the images descending (newest to oldest):</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;&gt;</span> <span class="nf">GetImageOfDay</span><span class="p">(</span><span class="kt">int</span> <span class="n">days</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="n">_clientFactory</span><span class="p">.</span><span class="nf">CreateClient</span><span class="p">(</span><span class="s">"imageofday"</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">images</span> <span class="p">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">GetFromJsonAsync</span>
+                <span class="p">&lt;</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;&gt;(</span><span class="s">$"api/image?days=</span><span class="p">{</span><span class="n">days</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+                <span class="k">return</span> <span class="n">images</span><span class="p">.</span><span class="nf">OrderByDescending</span><span class="p">(</span><span class="n">img</span> <span class="p">=&gt;</span> <span class="n">img</span><span class="p">.</span><span class="n">Date</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_logger</span><span class="p">.</span><span class="nf">LogError</span><span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">ex</span><span class="p">);</span>
+    <span class="p">}</span>
+
+     <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, in the code for the <code class="language-plaintext highlighter-rouge">Images</code> component, at <code class="language-plaintext highlighter-rouge">Images.razor.cs</code>, change the call to pass in the days:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">protected</span> <span class="k">override</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">OnInitializedAsync</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">_images</span> <span class="p">=</span> <span class="k">await</span> <span class="n">ApiClientService</span><span class="p">.</span><span class="nf">GetImageOfDay</span><span class="p">(</span><span class="n">days</span><span class="p">:</span> <span class="m">90</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="update-images-component-to">Update <code class="language-plaintext highlighter-rouge">Images</code> component to</h1>
+:ET

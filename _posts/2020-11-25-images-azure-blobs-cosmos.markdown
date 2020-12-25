@@ -1,11 +1,9 @@
 ---
 date: "2020-11-25"
 title: "Use Azure Functions, Azure Storage blobs, and Cosmos DB to copy images from public URLs"
-excerpt: "In this post, we work with Azure Storage blobs and Cosmos DB to copy images that are available over the public Internet."
+subtitle: "In this post, we work with Azure Storage blobs and Cosmos DB to copy images that are available over the public Internet."
 tags: [aspnet-core, azure]
-header:
-    overlay_image: /assets/images/public-url-images.png
-    overlay_filter: 0.8
+share-img: /assets/img/public-url-images.png
 ---
 
 There are several reasons why you'll want to host publicly accessible images yourself. For example, you may want to compress them or apply metadata for querying purposes on your site. For my *Blast Off with Blazor* project, I had that exact need.
@@ -52,7 +50,7 @@ In my Azure function I'm doing three things:
 
 If we look at the [Astronomy Picture of the Day site](https://apod.nasa.gov/apod/astropix.html), it hosts an image and its metadata for the current day. I want to put the image in Storage Blobs and the details in Cosmos DB.
 
-![The Astronomy Picture of the Day site]({{ site.url }}{{ site.baseurl }}/images/apod-site.png)
+![The Astronomy Picture of the Day site]({{ site.url }}{{ site.baseurl }}/assets/img/apod-site.png)
 
 Here's how the function itself looks:
 
@@ -161,7 +159,7 @@ private string GetFileNameFromUrl(string urlString)
 
 If I browse to my Azure Storage container, I'll see my new image.
 
-![The result]({{ site.url }}{{ site.baseurl }}/images/blob-result.png)
+![The result]({{ site.url }}{{ site.baseurl }}/assets/img/blob-result.png)
 
 # Push metadata to Cosmos DB
 
@@ -186,7 +184,7 @@ private async Task<bool> AddImageToContainer(Image image)
 
 In the Data Explorer for my Cosmos DB resource in the Azure portal, I can see my new record.
 
-![The result]({{ site.url }}{{ site.baseurl }}/images/cosmos-result.png)
+![The result]({{ site.url }}{{ site.baseurl }}/assets/img/cosmos-result.png)
 
 
 # Wrap up

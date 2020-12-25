@@ -3,13 +3,12 @@ date: "2020-12-19"
 title: "The .NET Stacks #30: 🥂 See ya, 2020"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/see-ya-2020.png
-    overlay_filter: 0.8
-excerpt: This week, we wrap up 2020 with some news, a look back, and a coding tip.
+share-img: /assets/img/see-ya-2020.png 
+subtitle: This week, we wrap up 2020 with some news, a look back, and a coding tip.
+readtime: true
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 *Note: This is the published version of my free, weekly newsletter, The .NET Stacks. It was originally sent to subscribers on December 14, 2020. Subscribe at the bottom of this post to get the content right away!*
 
@@ -21,7 +20,7 @@ GitHub Universe 2020 occurred this week, and [Shanku Niyogi has all the details]
 
 The GitHub site itself stole the show. Dark Mode is now supported natively—you can delete your favorite browser extensions that do this for you. Also, the front page is a site to behold. Just hover over a globe to see commits in real-time from across the world:
 
-![The GitHub globe]({{ site.url }}{{ site.baseurl }}/images/gh-globe.png)
+![The GitHub globe]({{ site.url }}{{ site.baseurl }}/assets/img/gh-globe.png)
 
 As for actual development features, we now see the ability to auto-merge PRs, discussions, CD support. Also, companies can now invest in OSS with [the GitHub Sponsors program](https://github.com/sponsors).
 

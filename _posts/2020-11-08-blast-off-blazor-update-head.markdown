@@ -1,11 +1,9 @@
 ---
 date: "2020-11-08"
 title: "Blast Off with Blazor: Use .NET 5 to update the HTML head from a Blazor component"
-excerpt: "In the latest post, we'll learn how to update the HTML head dynamically using .NET 5."
+subtitle: "In the latest post, we'll learn how to update the HTML head dynamically using .NET 5."
 tags: [blazor, aspnet-core]
-header:
-    overlay_image: /assets/images/update-head.png
-    overlay_filter: 0.8
+share-img: /assets/img/update-head.png
 ---
 
 So far in this series, we've [walked through a project intro](https://daveabrock.com/2020/10/26/blast-off-blazor-intro) and also [got our feet wet with our first component](https://daveabrock.com/2020/10/28/blast-off-blazor-404-page).
@@ -115,7 +113,7 @@ Now, all that's left is to drop the `<Title>` component at the top of our markup
 
 Here's a GIF of our update in action. (I set a `Thread.Sleep(1000)` for demonstration purposes, but I don't recommend it in practice obviously.)
 
-![Our title bar in action]({{ site.url }}{{ site.baseurl }}/images/SetTitleBar.gif)
+![Our title bar in action]({{ site.url }}{{ site.baseurl }}/assets/img/SetTitleBar.gif)
 
 ## How it all works
 
@@ -181,7 +179,7 @@ Before we do that, we'll need to pick a new image.
 
 Did you know the .NET team has a [branding GitHub repository](https://github.com/dotnet/brand) where you can look at logos, presentation templates, wallpapers, and a bunch of illustrations of the purple .NET bot? For our example, we'll use the [bot using a jetpack](https://github.com/dotnet/brand/blob/master/dotnet-bot-illustrations/dotnet-bot/dotnet-bot_jetpack-faceing-right.png) because—obviously. We're blasting off, after all.
 
-Let's also update our header icon to this image, too. After dropping the file in our `wwwroot/images` [directory](https://github.com/daveabrock/NASAImageOfDay/tree/main/Client/wwwroot/images), we can edit our `NavBar` component in our `Shared` directory to include our new file.
+Let's also update our header icon to this image, too. After dropping the file in our `wwwroot/assets/img` [directory](https://github.com/daveabrock/NASAImageOfDay/tree/main/Client/wwwroot/assets/img), we can edit our `NavBar` component in our `Shared` directory to include our new file.
 
 ```html
 <nav class="flex items-center justify-between flex-wrap bg-black p-6 my-bar">
@@ -195,7 +193,7 @@ Let's also update our header icon to this image, too. After dropping the file in
 
 I feel better and, as a bonus, the fine folks at NASA don't have to worry about asking me to take their official logo down.
 
-![Our title bar in action]({{ site.url }}{{ site.baseurl }}/images/new-site-icon.png)
+![Our title bar in action]({{ site.url }}{{ site.baseurl }}/assets/img/new-site-icon.png)
 
 Now, we can head over the [RealFaviconGenerator](https://realfavicongenerator.net/) site to upload our new icon. After adjusting any settings to our liking, it'll give us a bunch of icons, which we'll unzip to the root of our `wwwroot` directory.
 

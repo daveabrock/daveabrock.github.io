@@ -1,0 +1,2 @@
+I"‚<p>In this post, we refactor our component to inject an API service wrapper, to abstract away a direct HttpClient dependency.</p>
+:ET

@@ -3,13 +3,11 @@ date: "2020-09-26"
 title: "The .NET Stacks #18: RC1 is here, the fate of .NET Standard, and F# with Isaac Abraham"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/stacks-18-card.png
-    overlay_filter: 0.8
-excerpt: This week, RC1 is here, we talk about .NET Standard, and discuss F# with Isaac Abraham.
+share-img: /assets/img/stacks-18-card.png
+subtitle: This week, RC1 is here, we talk about .NET Standard, and discuss F# with Isaac Abraham.
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 ## .NET 5 RC1 is here
 
@@ -39,7 +37,7 @@ As much as we all love C#, there's something that needs reminding from time to t
 
 I caught up with Isaac Abraham to learn more about F#. After spending a decade as a C# developer, Isaac embraced the power of F# and founded [Compositional IT](https://www.compositional-it.com/), a functional-first consultancy. He's also the author of [*Get Programming with F#: A Guide for .NET Developers*](https://www.manning.com/books/get-programming-with-f-sharp).
 
-![Isaac Abraham]({{ site.url }}{{ site.baseurl }}/images/isaac-abraham.png)
+![Isaac Abraham]({{ site.url }}{{ site.baseurl }}/assets/img/isaac-abraham.png)
 
 ### I know it's more nuanced than this: but if you could sell F# to C# developers in a sentence or two, how would you do it?
 

@@ -1,15 +1,13 @@
 ---
 date: "2020-08-15"
 title: "Dev Discussions - Scott Addie"
-excerpt: In the latest interview, we talk with Scott from Microsoft.
+subtitle: In the latest interview, we talk with Scott from Microsoft.
 tags: [dotnet-stacks, dev-discussions]
-header:
-    overlay_image: /assets/images/addie-card.png
-    overlay_filter: 0.8
+share-img: /assets/img/addie-card.png
 ---
 
 This is the full interview from my discussion with Scott Addie in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away!
-{: .notice--success}
+{: .box-note}
 
 Have you worked in ASP.NET Core? If so, you have surely come across Scott Addie, whether you know about it or not. For over three years, Scott has worked as a content developer at Microsoft—publishing documentation on the framework, APIs, ebooks, blog posts, and Learn modules, and more.
 
@@ -17,7 +15,7 @@ He's also been active in the developer community—both before and after joining
 
 I recently caught up with Scott to talk about his work in the community, his career, .NET 5, and what he's working on.
 
-![Scott Addie]({{ site.url }}{{ site.baseurl }}/images/keynote-scott.jpg)
+![Scott Addie]({{ site.url }}{{ site.baseurl }}/assets/img/keynote-scott.jpg)
 
 **Walk us through your role and how you got there in your career.**
 
@@ -48,7 +46,7 @@ One day while having lunch with some colleagues in the cafeteria, the witty bant
 
 On the flight to New Orleans later that year, I studied the session schedule and noticed countless "developer celebrities". I built a schedule of sessions to attend that week. While at the conference, I attended breakout sessions from John Papa, Daniel Roth, Julie Lerman, Rowan Miller, and many others. I also attended an "Ask the Experts" session facilitated by Julie Lerman on the topic of Entity Framework. The conference's content was amazing! After a week of breakout sessions, I felt more prepared than ever for my next MCSD exam. I was mesmerized by the presenters' skill in delivering technical content to such a large and diverse audience. Conference speaking is what I wanted to do one day.
 
-![TechEd 2013 badge]({{ site.url }}{{ site.baseurl }}/images/teched-2013-badge.jpg)
+![TechEd 2013 badge]({{ site.url }}{{ site.baseurl }}/assets/img/teched-2013-badge.jpg)
 
 Skip ahead to February 2014. I drove to the local testing center and completed the last of three exams for the MCSD certification. I passed! Equipped with a plethora of fresh .NET knowledge from the certification, I was inspired to share what I learned. With the birth of my daughter the following month, I became a father! It was a relief to earn my certification just weeks before her birth. The next couple of months would be challenging as I navigated parenting and struggled through sleep deprivation. After spending a few days with my daughter, there was a strong desire to kick my career into high gear to support her. I began to ponder what other changes I could make to differentiate myself.
 
@@ -58,7 +56,7 @@ It was early January 2015. A friend at work, named Matt Frye, stopped by my desk
 
 I caught the conference bug in 2013 and the speaking bug in 2015. If you've caught either one, then you already understand that they're highly addictive substances. For the next couple years, I actively participated in both. A highlight from the early speaking years included meeting folks like Ashley Grant, Cecil Phillip, Jeremy Likness, and Rachel Appel at South Florida Code Camp. Another highlight was getting interviewed by Seth Juarez on the main stage at That Conference 2016:
 
-![That Conference 2016 interview with Seth]({{ site.url }}{{ site.baseurl }}/images/that-conference-2016.png)
+![That Conference 2016 interview with Seth]({{ site.url }}{{ site.baseurl }}/assets/img/that-conference-2016.png)
 
 While attending That Conference 2016, I stopped by an open spaces session about authoring for Pluralsight. Course authoring was another avenue I wanted to explore. I met David Berry, an accomplished Pluralsight author from the area, and Adam Mumma, a Pluralsight acquisitions editor. As an aside, David now works on another content team at Microsoft. After chatting with both David and Adam, I decided to audition for Pluralsight. After spending two weeks creating my demo, I decided this opportunity wasn't for me. Talking into a microphone with no audience didn't give me the adrenaline rush that's inherent to conference speaking. I called it quits after giving it a fair shot.
 
@@ -68,7 +66,7 @@ In the beta releases of ASP.NET 5 (the precursor to ASP.NET Core), I invested so
 
 As my knowledge of the ASP.NET 5 framework grew, I discovered gaps in the documentation and project templates. I wanted to address them to validate my understanding. A small documentation contribution, to what was then called ASP.NET 5, was my debut in open-source contributions on GitHub. I started a blog to share any information that didn't belong in the official documentation. Over the course of several months, I became a top contributor to the ASP.NET 5 documentation repository on GitHub. The .NET Foundation expressed their gratitude for my docs contributions with a care package, hand-written note, and challenge coin:
 
-![.NET Foundation thank you note]({{ site.url }}{{ site.baseurl }}/images/dotnet-foundation-note.jpg)
+![.NET Foundation thank you note]({{ site.url }}{{ site.baseurl }}/assets/img/dotnet-foundation-note.jpg)
 
 My blogging and involvement on GitHub led me to collaborating with brilliant folks all over the world. Mads Kristensen read a blog post I wrote about Webpack and contacted me about collaborating on a Visual Studio extension called *Webpack Task Runner*. We spent some time working on that extension and a few others, the most popular of which was *npm Task Runner*. While building a talk on ASP.NET 5 with Visual Studio Code, I discovered the Yeoman generator for ASP.NET 5 templates. My curiosity of this tool led me to collaborating on GitHub with Sayed Hashimi, Shayne Boyer, and Piotr Blazejewicz. At the time, I was just learning Git. I began submitting pull requests and made myself look like a fool a couple of times. They provided coaching to get me up-to-speed. Over the course of a few weeks working with them, I learned a ton and started to feel more confident with Git.
 
@@ -78,7 +76,7 @@ Through my developer community contributions, I was nominated for the Microsoft 
 
 I received an email from Martin Woodward asking if I planned to be in a certain room that afternoon at that summit. No context was provided. I simply replied, "yes". When that time came, I took a seat in the session. Thousands of other MVPs were packed into the room, and impostor syndrome hit me hard. I was surrounded by industry veterans I had looked up to for years. The session kicked off, and Scott Hanselman took the stage. The following slide was displayed:
 
-![MVP Summit 2016]({{ site.url }}{{ site.baseurl }}/images/mvp-summit-2016.jpg)
+![MVP Summit 2016]({{ site.url }}{{ site.baseurl }}/assets/img/mvp-summit-2016.jpg)
 
 I was blown away when Scott recognized me as one of five most significant contributors. I didn't feel as though my contributions were that significant, but it felt amazing to get some recognition. That recognition made me push myself even harder, which led to my renewal in the MVP program for another year. More community contributions were made, and more networking with Microsoft employees took place.
 

@@ -3,13 +3,11 @@ date: "2020-08-22"
 title: "The .NET Stacks #13: .NET 5 Preview 8 and Blazor, interview with Scott Addie, community links!"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/stacks-13-card.png
-    overlay_filter: 0.8
-excerpt: We discuss Blazor and .NET 5 Preview 8, talk with Scott Addie, and look at the busy week in the .NET community!
+share-img: /assets/img/stacks-13-card.png
+subtitle: We discuss Blazor and .NET 5 Preview 8, talk with Scott Addie, and look at the busy week in the .NET community!
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 Happy Monday to you! Here's what we have for this week:
 
@@ -55,7 +53,7 @@ He’s also been active in the developer community—both before and after joini
 
 I recently caught up with Scott to talk about his work in the community, his career, .NET 5, and what he’s working on.
 
-![Scott Addie]({{ site.url }}{{ site.baseurl }}/images/keynote-scott.jpg)
+![Scott Addie]({{ site.url }}{{ site.baseurl }}/assets/img/keynote-scott.jpg)
 
 **Walk us through your role.**
 

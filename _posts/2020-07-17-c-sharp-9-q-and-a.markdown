@@ -1,15 +1,13 @@
 ---
 date: "2020-07-17"
 title: "C# 9: Answering your questions"
-excerpt: In this post, I discuss the questions you had after I wrote my posts.
+subtitle: In this post, I discuss the questions you had after I wrote my posts.
 tags: [csharp, csharp-9]
-header:
-    overlay_image: /assets/images/q-and-a-card.png
-    overlay_filter: 0.8
+share-img: /assets/img/q-and-a-card.png
 ---
 
 **Note**: Originally published five months before the official release of C# 9, I've updated this post after the release to capture the latest updates.
-{: .notice--success}
+{: .box-note}
 
 In the last month or so, I've written almost 8,000 words about C# 9. That seems like a lot (and it is!) but there is so much to cover! I've talked about how it [reduces mental energy](https://daveabrock.com/2020/06/18/reduce-mental-energy-with-c-sharp), [simplifies null validation](https://daveabrock.com/2020/06/24/simplified-null-validation), and took on a deep dive series featuring [init-only features](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits), [records](https://daveabrock.com/2020/07/06/c-sharp-9-deep-dive-records), [pattern matching](https://daveabrock.com/2020/07/06/c-sharp-9-pattern-matching), [top-level programs](https://daveabrock.com/2020/07/09/c-sharp-9-top-level-programs), and [target typing and covariant returns](https://daveabrock.com/2020/07/14/c-sharp-9-target-typing-covariants).
 

@@ -2,14 +2,12 @@
 date: "2020-08-01"
 title: "The .NET Stacks #10: .NET 5 taking shape, how approachable is .NET, a talk with Jeremy Likness, more!"
 tags: [dotnet-stacks]
-header:
-    overlay_image: /assets/images/stacks-10-card.png
-    overlay_filter: 0.8
-excerpt: We discuss the latest on .NET 5, the approachability of .NET, a talk with Jeremy Likness, and more!
+share-img: /assets/img/stacks-10-card.png
+subtitle: We discuss the latest on .NET 5, the approachability of .NET, a talk with Jeremy Likness, and more!
 comments: false
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 We had a tremendously busy week in .NET and it shows in this week's edition.
 
@@ -62,7 +60,7 @@ I caught up with Jeremy to talk about his path to software development and all t
 
 Jeremy was very generous with his time! Because there’s so much to cover, I’ve split this into two different parts. This week, we get to know Jeremy. Next week, we’ll get into his work and discuss Entity Framework and .NET 5.
 
-![Jeremy Likness]({{ site.url }}{{ site.baseurl }}/images/jeremy-likness.jpg)
+![Jeremy Likness]({{ site.url }}{{ site.baseurl }}/assets/img/jeremy-likness.jpg)
 
 **As a developer at heart, what kind of projects have you been tinkering with?**
 

@@ -1,0 +1,33 @@
+I"	<p>So far in our series, we’ve <a href="https://daveabrock.com/2020/10/26/blast-off-blazor-intro">walked through the intro</a>, <a href="https://daveabrock.com/2020/10/28/blast-off-blazor-404-page">wrote our first component</a>, <a href="https://daveabrock.com/2020/11/08/blast-off-blazor-update-head">dynamically updated the HTML head from a component</a>, and <a href="https://daveabrock.com/2020/11/22/blast-off-blazor-service-dependencies">isolated our service dependencies</a>, and worked on <a href="https://daveabrock.com/2020/12/13/blast-off-blazor-cosmos">hosting our images over Azure Blob Storage and Cosmos DB</a>.</p>
+
+<p>Now, we’re going to query Cosmos DB, fetch our images, and display them in an image gallery. We’ll learn how to reuse components and pass parameters to methods.</p>
+
+<p>After we work on this post, we’ll enhance the page in future posts, with:</p>
+
+<ul>
+  <li>Enabling the “infinite scrolling” feature with Blazor virtualization</li>
+  <li>Filter and query images</li>
+  <li>Create a dialog to learn more and see the image in a larger size</li>
+</ul>
+
+<p>This post contains the following content.</p>
+
+<ul>
+  <li><a href="#a-quick-primer">A quick primer</a></li>
+  <li><a href="#customize-the-azure-function">Customize the Azure Function</a></li>
+</ul>
+
+<h1 id="a-quick-primer">A quick primer</h1>
+
+<p>If you haven’t been with us for the whole series, we’re building a Blazor Web Assembly app hosted with Azure Static Web Apps at <em>blastoffwithblazor.com</em>. We’ve copied images from the NASA APOD API (all 25 years!) to Azure Blob Storage, and are storing the image metadata in a serverless Cosmos DB instance. Feel free to read those links to learn more.</p>
+
+<p>With the images in place, we’re going to build this image gallery. It’s responsive and will look good on devices of any size.</p>
+
+<p><img src="http://localhost:4000//images/image-gallery.png" alt="Our slow site" /></p>
+
+<p>All code <a href="https://github.com/daveabrock/NASAImageOfDay">is on GitHub</a>.</p>
+
+<h1 id="customize-the-azure-function">Customize the Azure Function</h1>
+
+<p>In previous posts, to get up and running we fetched a random image. To make things more interesting, we’re going to fetch images from the last 90 days. (In future posts, we’ll work on infi)</p>
+:ET

@@ -1,0 +1,214 @@
+I"ZZ<p>So far in our series, we’ve <a href="https://daveabrock.com/2020/10/26/blast-off-blazor-intro">walked through the intro</a>, <a href="https://daveabrock.com/2020/10/28/blast-off-blazor-404-page">wrote our first component</a>, <a href="https://daveabrock.com/2020/11/08/blast-off-blazor-update-head">dynamically updated the HTML head from a component</a>, <a href="https://daveabrock.com/2020/11/22/blast-off-blazor-service-dependencies">isolated our service dependencies</a>, and worked on <a href="https://daveabrock.com/2020/12/13/blast-off-blazor-cosmos">hosting our images over Azure Blob Storage and Cosmos DB</a>.</p>
+
+<p>Now, we’re going to query Cosmos DB, fetch our images, and display them in a responsive image gallery. We’ll learn how to reuse components and pass parameters to them.</p>
+
+<p>After we work on this, we’ll enhance the gallery in future posts, with:</p>
+
+<ul>
+  <li>Enabling the “infinite scrolling” feature with Blazor virtualization</li>
+  <li>Filtering and querying images</li>
+  <li>Creating a dialog to see a larger image and other details</li>
+</ul>
+
+<p>This post contains the following content.</p>
+
+<ul>
+  <li><a href="#a-quick-primer">A quick primer</a></li>
+  <li><a href="#customize-the-service-layer">Customize the service layer</a></li>
+  <li><a href="#update-images-component-to-list-our-image-collection">Update <code class="language-plaintext highlighter-rouge">Images</code> component to list our image collection</a></li>
+  <li><a href="#create-a-reusable-imagecard-component">Create a reusable <code class="language-plaintext highlighter-rouge">ImageCard</code> component</a></li>
+  <li><a href="#wrap-up">Wrap up</a></li>
+</ul>
+
+<h1 id="a-quick-primer">A quick primer</h1>
+
+<p>If you haven’t been with me for the whole series, we’re building a Blazor Web Assembly app <a href="https://daveabrock.com/2020/10/26/blast-off-blazor-intro">hosted with Azure Static Web Apps</a> at <em><a href="https://blastoffwithblazor.com">blastoffwithblazor.com</a></em>. I’ve copied images from the NASA APOD API (all 25 years!) <a href="https://daveabrock.com/2020/11/25/images-azure-blobs-cosmos">to Azure Blob Storage</a>, and are storing the image metadata in <a href="https://daveabrock.com/2020/12/13/blast-off-blazor-cosmos">a serverless Cosmos DB instance</a>. Feel free to read those links to learn more.</p>
+
+<p>With the images in place, we’re going to build the image gallery. It’s responsive and will look good on devices of any size.</p>
+
+<p><img src="http://localhost:4000//images/image-gallery.png" alt="Our slow site" /></p>
+
+<p>All code <a href="https://github.com/daveabrock/NASAImageOfDay">is on GitHub</a>.</p>
+
+<h1 id="customize-the-service-layer">Customize the service layer</h1>
+
+<p>In previous posts, to get up and running we fetched a random image. To make things more interesting, we’re going to fetch images from the last 90 days. (In future posts, we’ll work on infinite scrolling and searching and filtering.) This requires updates to our Azure Function. We’ll ask for a <code class="language-plaintext highlighter-rouge">days</code> query string parameter that allows the caller to request up to 90 days of images. For example, if we call <code class="language-plaintext highlighter-rouge">api/images?days=90</code>, we get images from the last 90 days.</p>
+
+<p>I’ve added logic to verify and grab the <code class="language-plaintext highlighter-rouge">days</code>, make sure it’s in the appropriate range, then query Cosmos for the data itself.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNetCore.Mvc</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Azure.WebJobs</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Azure.WebJobs.Extensions.Http</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.AspNetCore.Http</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Extensions.Logging</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Microsoft.Azure.CosmosRepository</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Data</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Transactions</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Api</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">ImageGet</span>
+    <span class="p">{</span>
+        <span class="k">readonly</span> <span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;</span> <span class="n">_imageRepository</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">ImageGet</span><span class="p">(</span><span class="n">IRepository</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;</span> <span class="n">imageRepository</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">_imageRepository</span> <span class="p">=</span> <span class="n">imageRepository</span><span class="p">;</span>
+
+        <span class="p">[</span><span class="nf">FunctionName</span><span class="p">(</span><span class="s">"ImageGet"</span><span class="p">)]</span>
+        <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Run</span><span class="p">(</span>
+            <span class="p">[</span><span class="nf">HttpTrigger</span><span class="p">(</span><span class="n">AuthorizationLevel</span><span class="p">.</span><span class="n">Anonymous</span><span class="p">,</span> <span class="s">"get"</span><span class="p">,</span> <span class="n">Route</span> <span class="p">=</span> <span class="s">"image"</span><span class="p">)]</span> <span class="n">HttpRequest</span> <span class="n">req</span><span class="p">,</span>
+            <span class="n">ILogger</span> <span class="n">log</span><span class="p">)</span>
+        <span class="p">{</span>
+
+            <span class="kt">bool</span> <span class="n">hasDays</span> <span class="p">=</span> <span class="kt">int</span><span class="p">.</span><span class="nf">TryParse</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">Query</span><span class="p">[</span><span class="s">"days"</span><span class="p">],</span> <span class="k">out</span> <span class="kt">int</span> <span class="n">days</span><span class="p">);</span>
+            <span class="n">log</span><span class="p">.</span><span class="nf">LogInformation</span><span class="p">(</span><span class="s">$"Requested images from last </span><span class="p">{</span><span class="n">days</span><span class="p">}</span><span class="s"> days."</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(!</span><span class="n">hasDays</span> <span class="p">&amp;&amp;</span> <span class="n">days</span> <span class="p">&lt;=</span> <span class="m">1</span> <span class="p">&amp;&amp;</span> <span class="n">days</span> <span class="p">&gt;</span> <span class="m">90</span><span class="p">)</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nf">BadRequestResult</span><span class="p">();</span>
+
+            <span class="n">ValueTask</span><span class="p">&lt;</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;&gt;</span> <span class="n">imageResponse</span><span class="p">;</span>
+            <span class="n">imageResponse</span> <span class="p">=</span> <span class="n">_imageRepository</span><span class="p">.</span><span class="nf">GetAsync</span>
+                 <span class="p">(</span><span class="n">img</span> <span class="p">=&gt;</span> <span class="n">img</span><span class="p">.</span><span class="n">Date</span> <span class="p">&gt;</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="nf">AddDays</span><span class="p">(-</span><span class="n">days</span><span class="p">));</span>
+
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">OkObjectResult</span><span class="p">(</span><span class="n">imageResponse</span><span class="p">.</span><span class="n">Result</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In the <code class="language-plaintext highlighter-rouge">ApiClientService</code> class in the <code class="language-plaintext highlighter-rouge">Client</code> project, update the call to take in the <code class="language-plaintext highlighter-rouge">days</code>. We’ll also order the images descending (newest to oldest):</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;&gt;</span> <span class="nf">GetImageOfDay</span><span class="p">(</span><span class="kt">int</span> <span class="n">days</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="n">_clientFactory</span><span class="p">.</span><span class="nf">CreateClient</span><span class="p">(</span><span class="s">"imageofday"</span><span class="p">);</span>
+        <span class="kt">var</span> <span class="n">images</span> <span class="p">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">GetFromJsonAsync</span>
+                <span class="p">&lt;</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;&gt;(</span><span class="s">$"api/image?days=</span><span class="p">{</span><span class="n">days</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+                <span class="k">return</span> <span class="n">images</span><span class="p">.</span><span class="nf">OrderByDescending</span><span class="p">(</span><span class="n">img</span> <span class="p">=&gt;</span> <span class="n">img</span><span class="p">.</span><span class="n">Date</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_logger</span><span class="p">.</span><span class="nf">LogError</span><span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span> <span class="n">ex</span><span class="p">);</span>
+    <span class="p">}</span>
+
+     <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, in the code for the <code class="language-plaintext highlighter-rouge">Images</code> component, at <code class="language-plaintext highlighter-rouge">Images.razor.cs</code>, change the call to pass in the days:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">protected</span> <span class="k">override</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">OnInitializedAsync</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">_images</span> <span class="p">=</span> <span class="k">await</span> <span class="n">ApiClientService</span><span class="p">.</span><span class="nf">GetImageOfDay</span><span class="p">(</span><span class="n">days</span><span class="p">:</span> <span class="m">90</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="update-images-component-to-list-our-image-collection">Update <code class="language-plaintext highlighter-rouge">Images</code> component to list our image collection</h1>
+
+<p>So, how should we lay out our images? I’d like to list them left-to-right, top-to-bottom. Luckily, I can use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">CSS grid layouts</a>. We can define how we want to lay out our rows and columns, and grid can handle how they render when the user’s window size is at different dimensions.</p>
+
+<p>Using Tailwind CSS, I’m going to add a little  <code class="language-plaintext highlighter-rouge">2px</code> of padding around. Then, I’ll have one column on small devices, two columns on medium devices, and three columns on large and extra-large devices.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>In between the <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code>’s, we’ll iterate through our images and display them. We could handle the rendering here, but that’s asking for maintenance headaches and won’t give you any reusability options. The advantages of Blazor are in its component model, so let’s build a reusable component.</p>
+
+<p>We can pass parameters to our components, and here we’ll want to pass down our <code class="language-plaintext highlighter-rouge">Image</code> model. Here’s how we’ll use the new component from the <code class="language-plaintext highlighter-rouge">Images</code> page, then:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"</span><span class="nt">&gt;</span>
+    @foreach (var image in _images)
+    {
+        <span class="nt">&lt;ImageCard</span> <span class="na">ImageDetails=</span><span class="s">"image"</span> <span class="nt">/&gt;</span>
+    }
+ <span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h1 id="create-a-reusable-imagecard-component">Create a reusable <code class="language-plaintext highlighter-rouge">ImageCard</code> component</h1>
+
+<p>Now, in <code class="language-plaintext highlighter-rouge">Pages</code>, create two files: <code class="language-plaintext highlighter-rouge">ImageCard.razor</code>, and <code class="language-plaintext highlighter-rouge">ImageCard.razor.cs</code>. In the <code class="language-plaintext highlighter-rouge">.cs</code> file, use the <code class="language-plaintext highlighter-rouge">[Parameter]</code> attribute to pass down the <code class="language-plaintext highlighter-rouge">Image</code>. (We’ll likely add much more to this component, so are writing a partial class.)</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">Microsoft.AspNetCore.Components</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Client.Pages</span>
+<span class="p">{</span>
+    <span class="k">partial</span> <span class="k">class</span> <span class="nc">ImageCard</span> <span class="p">:</span> <span class="n">ComponentBase</span>
+    <span class="p">{</span>
+        <span class="p">[</span><span class="n">Parameter</span><span class="p">]</span>
+        <span class="k">public</span> <span class="n">Data</span><span class="p">.</span><span class="n">Image</span> <span class="n">ImageDetails</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>How will our new component look? As you can imagine, a lot of the work is in designing the layout. There’s a lot of different sized images, and I spent a lot of time getting it to work. Even though we aren’t going deep on Tailwind CSS in these posts, it’s worth mentioning here. (Also, much thanks to Khalid Abuhakmeh for lending a hand.)</p>
+
+<p>In the outer <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code>, we’re giving the card a large shadow and some margin:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m-6 rounded overflow-hidden shadow-lg"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Then we’ll render our image, and assign the alternate tag to the title. It’s all in our model. We’re saying here it’ll fill the entire width of the card, only reach a specified height, and use the <code class="language-plaintext highlighter-rouge">object-cover</code>, which <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit">uses the <code class="language-plaintext highlighter-rouge">cover</code> value from the <code class="language-plaintext highlighter-rouge">object-fit</code> CSS property</a>. It maintains an image’s aspect ratio as an image is resized.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m-6 rounded overflow-hidden shadow-lg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"w-full h-48 object-cover"</span> <span class="na">src=</span><span class="s">"@ImageDetails.Url"</span> <span class="na">alt=</span><span class="s">"@ImageDetails.Title"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>In the rest of the markup, we do the following:</p>
+
+<ul>
+  <li>We have an <code class="language-plaintext highlighter-rouge">IsNew</code> property on our model that we use to apply a <code class="language-plaintext highlighter-rouge">New</code> badge if an image is newer than three days old.</li>
+  <li>If so, we give it a teal background and darker teal text, and apply some effects to it. We use flexbox to align it appropriately. If it isn’t new, we make sure things are aligned appropriately without the badge.</li>
+  <li>Finally, we display the <code class="language-plaintext highlighter-rouge">Title</code>. We use the <code class="language-plaintext highlighter-rouge">truncate</code> property, which gives long titles <code class="language-plaintext highlighter-rouge">...</code> at the end. This way, the cards don’t align differently depending on how many lines of text the title consumes.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m-6 rounded overflow-hidden shadow-lg"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"w-full h-48 object-cover"</span> <span class="na">src=</span><span class="s">"@ImageDetails.Url"</span> <span class="na">alt=</span><span class="s">"@ImageDetails.Title"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"p-6"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex items-baseline"</span><span class="nt">&gt;</span>
+                @if (ImageDetails.IsNew)
+                {
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex items-baseline"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"inline-block bg-teal-200 text-teal-800 text-xs px-2 rounded-full
+                      uppercase font-semibold tracking-wide"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ml-2 text-gray-600 text-md-left uppercase font-semibold tracking-wide"</span><span class="nt">&gt;</span>
+                            @ImageDetails.Date.ToLongDateString()
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
+                }
+                else
+                {
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-gray-600 text-md-left uppercase font-semibold tracking-wide"</span><span class="nt">&gt;</span>
+                        @ImageDetails.Date.ToLongDateString()
+                    <span class="nt">&lt;/div&gt;</span>
+                }
+
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"mt-1 font-semibold text-2xl leading-tight truncate"</span><span class="nt">&gt;</span>@ImageDetails.Title<span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Here’s how a card looks with the <code class="language-plaintext highlighter-rouge">New</code> badge:</p>
+
+<p><img src="http://localhost:4000//images/new-badge.png" alt="The card with a new badge" /></p>
+
+<p>And again, here’s how the page looks. Check it out <a href="https://www.blastoffwithblazor.com/images">live at <code class="language-plaintext highlighter-rouge">blastoffwithblazor.com</code> as well</a>!</p>
+
+<p><img src="http://localhost:4000//images/image-gallery.png" alt="Our slow site" /></p>
+
+<p>For comparison, here’s how it looks on an iPhone X.</p>
+
+<p><img src="http://localhost:4000//images/iphone-cards.png" alt="Our slow site" /></p>
+
+<h1 id="wrap-up">Wrap up</h1>
+
+<p>In this post, we showed off how to query images from our Cosmos DB and display our images using a responsive layout. Along the way, we learned how to pass parameters to reusable components.</p>
+
+<p>In future posts, we’ll work on infinite scrolling, clicking an image for more details, and querying and searching the data.</p>
+:ET

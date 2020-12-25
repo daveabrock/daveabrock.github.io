@@ -3,12 +3,11 @@ date: "2020-12-05"
 title: "The .NET Stacks, #28: The future of MVC and themes of .NET 6"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/stacks-28-card.png
-    overlay_filter: 0.8
-excerpt: This week, we look at the future of APIs in ASP.NET Core MVC and the "themes" of .NET 6.
+share-img: /assets/img/stacks-28-card.png
+subtitle: This week, we look at the future of APIs in ASP.NET Core MVC and the "themes" of .NET 6.
 ---
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 *Note: This is the published version of my free, weekly newsletter, The .NET Stacks. It was originally sent to subscribers on November 30, 2020. Subscribe at the bottom of this post to get the content right away!*
 
@@ -101,7 +100,7 @@ A light week because of the US Thanksgiving Holiday, so just one community stand
 
 ### ⛅ The cloud
 
-* Dave Brock uses [Azure Functions, Azure Storage blobs, and Cosmos DB to copy images from public URLs](https://daveabrock.com/2020/11/25/images-azure-blobs-cosmos).
+* Dave Brock uses [Azure Functions, Azure Storage blobs, and Cosmos DB to copy images from public URLs](https://daveabrock.com/2020/11/25/assets/img-azure-blobs-cosmos).
 * Adrian Hall [announces Azure Mobile Apps v4.2.0 for .NET](https://devblogs.microsoft.com/xamarin/azure-mobile-apps-updates).
 * Tim Sander [writes about the difference between null and undefined in Azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/difference-between-null-and-undefined).
 * Mark Heath [writes about Azure Durable Entities](https://markheath.net/post/durable-entities-what-are-they-good-for).

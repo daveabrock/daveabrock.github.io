@@ -1,11 +1,9 @@
 ---
 date: "2020-12-07"
 title: "Automate a Markdown links page with Pinboard and C#"
-excerpt: "In this post, we generate a Markdown links page using Pinboard and C#."
+subtitle: "In this post, we generate a Markdown links page using Pinboard and C#."
 tags: [tools, csharp, dotnetstacks]
-header:
-    overlay_image: /assets/images/pinboard-post.png
-    overlay_filter: 0.8
+share-img: /assets/img/pinboard-post.png
 ---
 
 *This is my contribution for the [C# Advent Calendar](https://www.csadvent.christmas/), a collection of awesome C# posts throughout December. Check it out!*
@@ -26,7 +24,7 @@ Where do I store my bookmarks? I'm a big fan [of Pinboard](https://pinboard.in/)
 
 After exploring the API docs, I found a hacky—but useful!—way to save me loads of time.
 
-![A link in Pinboard]({{ site.url }}{{ site.baseurl }}/images/markdown-link.png)
+![A link in Pinboard]({{ site.url }}{{ site.baseurl }}/assets/img/markdown-link.png)
 
 These are all retrievable fields from the API. The `title`, which is my name, is anything before the link and the `description` is my link text.
 

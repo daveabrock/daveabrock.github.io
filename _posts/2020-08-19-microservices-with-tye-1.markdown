@@ -1,10 +1,8 @@
 ---
 date: "2020-08-19"
 title: "Use Project Tye to simplify your .NET microservice development experience (part 1)"
-excerpt: In this post, we explore Project Tye, a new developer tool that simplifies developing .NET microservices and distributed applications.
-header:
-    overlay_image: /assets/images/tye-1-card.png
-    overlay_filter: 0.8
+subtitle: In this post, we explore Project Tye, a new developer tool that simplifies developing .NET microservices and distributed applications.
+share-img: /assets/img/tye-1-card.png
 tags: [tools, aspnet-core]
 ---
 
@@ -79,19 +77,19 @@ tye run
 
 There's a lot going on here. Tye is building your projects, launching your services, and creating a dashboard for you at `http://127.0.0.1:8000`. What's important here: if you do nothing, ASP.NET Core will assign your app's listening ports randomly, freeing you from the pain of port conflicts.
 
-![tye run]({{ site.url }}{{ site.baseurl }}/images/tye-run.png)
+![tye run]({{ site.url }}{{ site.baseurl }}/assets/img/tye-run.png)
 
 The main page of the dashboard shows you all your services, your bindings (discoverable URLs), and more.
 
-![tye run]({{ site.url }}{{ site.baseurl }}/images/dashboard-high-level.png)
+![tye run]({{ site.url }}{{ site.baseurl }}/assets/img/dashboard-high-level.png)
 
 If you click the name of a service (like `marvel-web`), you can access real-time metrics as it's running:
 
-![tye run]({{ site.url }}{{ site.baseurl }}/images/marvel-web-metrics.png)
+![tye run]({{ site.url }}{{ site.baseurl }}/assets/img/marvel-web-metrics.png)
 
 And, of course, what would a dashboard be without logs?
 
-![tye run]({{ site.url }}{{ site.baseurl }}/images/marvel-web-logs.png)
+![tye run]({{ site.url }}{{ site.baseurl }}/assets/img/marvel-web-logs.png)
 
 Of course, this is cool but not very exciting. Let's add some code to our apps.
 
@@ -334,7 +332,7 @@ public void ConfigureServices(IServiceCollection services)
 
 This is where the service discovery takes place. (Feel free to [geek out on how Tye does service discovery](https://github.com/dotnet/tye/blob/master/docs/reference/service_discovery.md).) What a world—no port numbers, no brittle configuration. It just works. Execute `tye run` now—and go to the web project. (Also, if you click over to the logs, it's a lot more insightful now.)
 
-![random characters]({{ site.url }}{{ site.baseurl }}/images/randos.png)
+![random characters]({{ site.url }}{{ site.baseurl }}/assets/img/randos.png)
 
 # Adding a dependency  
 

@@ -1,0 +1,9 @@
+I"�<p>So far in our series, we’ve <a href="https://daveabrock.com/2020/10/26/blast-off-blazor-intro">walked through the intro</a>, <a href="https://daveabrock.com/2020/10/28/blast-off-blazor-404-page">wrote our first component</a>, <a href="https://daveabrock.com/2020/11/08/blast-off-blazor-update-head">dynamically updated the HTML head from a component</a>, and <a href="https://daveabrock.com/2020/11/22/blast-off-blazor-service-dependencies">isolated our service dependencies</a>, and worked on <a href="https://daveabrock.com/2020/12/13/blast-off-blazor-cosmos">hosting our images over Azure Blob Storage and Cosmos DB</a>.</p>
+
+<p>Now, we’re going to query Cosmos DB, fetch our images, and display them in an image gallery. We’ll learn how to reuse components and pass parameters to methods.</p>
+
+<p>After we work on this post, we’ll enhance the page in future posts with search</p>
+
+<h1 id="wrap-up">Wrap up</h1>
+
+:ET

@@ -1,11 +1,9 @@
 ---
 date: "2020-10-10"
 title: "How to Docker with .NET: Getting Started"
-excerpt: "The series kicks off with an introduction on Docker, core concepts, and accessing a base ASP.NET Core image."
+subtitle: "The series kicks off with an introduction on Docker, core concepts, and accessing a base ASP.NET Core image."
 tags: [docker, tools, aspnet-core]
-header:
-    overlay_image: /assets/images/docker-getting-started.png
-    overlay_filter: 0.8
+share-img: /assets/img/docker-getting-started.png
 ---
 
 As a developer, do you ever think about all the time you spend ... *not developing*? Among the work we do to get things working—I like to call it *meta-work*—infrastructure is the most frustrating and the biggest headache. It takes so much of our time and impacts our ability to deliver value quickly.
@@ -117,7 +115,7 @@ Armed with this knowledge, we're ready to get our feet wet by running a pre-buil
 
 To access existing Docker images, they must be hosted in a container registry. The most common public registry is [Docker Hub](https://hub.docker.com/search?q=&type=image). When I go to the Docker Hub and search for **.net core**, you'll see quite a few repositories hosted by Microsoft.
 
-![Docker Hub]({{ site.url }}{{ site.baseurl }}/images/docker-hub.png)
+![Docker Hub]({{ site.url }}{{ site.baseurl }}/assets/img/docker-hub.png)
 
 We're going to fetch an existing ASP.NET Core sample app. Head on over [to the samples repo to look at the instructions](https://hub.docker.com/_/microsoft-dotnet-core-samples).
 
@@ -170,7 +168,7 @@ The terminal responds with a bunch of great information (too much for a readable
 
 Now, launch your favorite browser and enter `http://localhost:8000` (or whatever port you specified):
 
-![A view of our pre-built image]({{ site.url }}{{ site.baseurl }}/images/dockered-core.png)
+![A view of our pre-built image]({{ site.url }}{{ site.baseurl }}/assets/img/dockered-core.png)
 
 See how easy that was? Now **that** is the value of containerization—going out, fetching an image, and not having to worry about all the ridiculous infrastructure headaches.
 

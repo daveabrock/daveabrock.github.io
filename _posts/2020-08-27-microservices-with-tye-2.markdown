@@ -1,10 +1,8 @@
 ---
 date: "2020-08-27"
 title: "Use Project Tye to simplify your .NET microservice development experience (part 2)"
-excerpt: In this post, we use Project Tye to deploy our application to Kubernetes.
-header:
-    overlay_image: /assets/images/tye-2-card.png
-    overlay_filter: 0.8
+subtitle: In this post, we use Project Tye to deploy our application to Kubernetes.
+share-img: /assets/img/tye-2-card.png
 tags: [tools, aspnet-core]
 ---
 
@@ -53,18 +51,18 @@ From the [Azure Portal](https://portal.azure.com/), search for "container" and c
 
 From the Create container registry screen, enter a subscription, resource group, unique registry name, location, and SKU. The Basic SKU should be fine for our purposes. Once complete, click **Review + Create**, then **Create**.
 
-![create ACR instance]({{ site.url }}{{ site.baseurl }}/images/create-container-registry.png)
+![create ACR instance]({{ site.url }}{{ site.baseurl }}/assets/img/create-container-registry.png)
 
 Now, we're ready to create our AKS instance. Again from the search bar at the top of the Azure Portal screen: search for "aks", then click **Kubernetes services**. Fill out a subscription, resource group, cluster name, accept and accept the rest of the defaults. 
 
-![create aks cluster - basics]({{ site.url }}{{ site.baseurl }}/images/create-aks-cluster.png)
+![create aks cluster - basics]({{ site.url }}{{ site.baseurl }}/assets/img/create-aks-cluster.png)
 
 Don't create the resource yet!
 {: .notice--danger}
 
 Next, pop on over to the Integrations tab. This is important: select the registry you just created from the drop-down list, then click **Review + Create**, then **Create**. It'll take a few minutes to complete resource creation.
 
-![create aks cluster - integration]({{ site.url }}{{ site.baseurl }}/images/cluster-integration.png)
+![create aks cluster - integration]({{ site.url }}{{ site.baseurl }}/assets/img/cluster-integration.png)
 
 The Kubernetes command-line tool, `kubectl`, needs to know about the cluster. To do so, call [the Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) from your local machine (you first may need to call `az login`, or `az acr login --name {registry_name}`, I had to do the latter).
 
@@ -74,7 +72,7 @@ az aks get-credentials --resource-group {resource-group} --name {cluster-name}
 
 Once that completes, you can execute `kubectl config view` to view and verify your local Kubernetes configuration. Here's both commands in one handy screenshot.
 
-![tye run]({{ site.url }}{{ site.baseurl }}/images/kubectl.png)
+![tye run]({{ site.url }}{{ site.baseurl }}/assets/img/kubectl.png)
 
 # Deploy our dependency ourselves
 

@@ -1,11 +1,10 @@
 ---
 date: "2020-12-16"
 title: "Blast Off with Blazor: Build a responsive image gallery"
-excerpt: "In this post, we build a responsive image gallery using Blazor and Tailwind CSS."
+subtitle: "In this post, we build a responsive image gallery using Blazor and Tailwind CSS."
 tags: [aspnet-core]
-header:
-    overlay_image: /assets/images/image-gallery.png
-    overlay_filter: 0.8
+share-img: /assets/img/image-gallery.png
+readtime: true
 ---
 
 So far in our series, we've [walked through the intro](https://daveabrock.com/2020/10/26/blast-off-blazor-intro), [wrote our first component](https://daveabrock.com/2020/10/28/blast-off-blazor-404-page), [dynamically updated the HTML head from a component](https://daveabrock.com/2020/11/08/blast-off-blazor-update-head), [isolated our service dependencies](https://daveabrock.com/2020/11/22/blast-off-blazor-service-dependencies), and worked on [hosting our images over Azure Blob Storage and Cosmos DB](https://daveabrock.com/2020/12/13/blast-off-blazor-cosmos).
@@ -28,17 +27,17 @@ This post contains the following content.
 
 # A quick primer
 
-If you haven't been with me for the whole series, we're building a Blazor Web Assembly app [hosted with Azure Static Web Apps](https://daveabrock.com/2020/10/26/blast-off-blazor-intro) at *[blastoffwithblazor.com](https://blastoffwithblazor.com)*. I've copied images from the NASA APOD API (all 25 years!) [to Azure Blob Storage](https://daveabrock.com/2020/11/25/images-azure-blobs-cosmos), and are storing the image metadata in [a serverless Cosmos DB instance](https://daveabrock.com/2020/12/13/blast-off-blazor-cosmos). Feel free to read those links to learn more.
+If you haven't been with me for the whole series, we're building a Blazor Web Assembly app [hosted with Azure Static Web Apps](https://daveabrock.com/2020/10/26/blast-off-blazor-intro) at *[blastoffwithblazor.com](https://blastoffwithblazor.com)*. I've copied images from the NASA APOD API (all 25 years!) [to Azure Blob Storage](https://daveabrock.com/2020/11/25/assets/img-azure-blobs-cosmos), and are storing the image metadata in [a serverless Cosmos DB instance](https://daveabrock.com/2020/12/13/blast-off-blazor-cosmos). Feel free to read those links to learn more.
 
 With the images in place, we're going to build the image gallery. It's responsive and will look good on devices of any size.
 
-![Our slow site]({{ site.url }}{{ site.baseurl }}/images/image-gallery.png)
+![Our slow site]({{ site.url }}{{ site.baseurl }}/assets/img/image-gallery.png)
 
 All code [is on GitHub](https://github.com/daveabrock/NASAImageOfDay).
 
 # Customize the service layer
 
-In previous posts, to get up and running we fetched a random image. To make things more interesting, we're going to fetch images from the last 90 days. (In future posts, we'll work on infinite scrolling and searching and filtering.) This requires updates to our Azure Function. We'll ask for a `days` query string parameter that allows the caller to request up to 90 days of images. For example, if we call `api/images?days=90`, we get images from the last 90 days.
+In previous posts, to get up and running we fetched a random image. To make things more interesting, we're going to fetch images from the last 90 days. (In future posts, we'll work on infinite scrolling and searching and filtering.) This requires updates to our Azure Function. We'll ask for a `days` query string parameter that allows the caller to request up to 90 days of images. For example, if we call `api/assets/img?days=90`, we get images from the last 90 days.
 
 I've added logic to verify and grab the `days`, make sure it's in the appropriate range, then query Cosmos for the data itself.
 
@@ -209,15 +208,15 @@ In the rest of the markup, we do the following:
 
 Here's how a card looks with the `New` badge:
 
-![The card with a new badge]({{ site.url }}{{ site.baseurl }}/images/new-badge.png)
+![The card with a new badge]({{ site.url }}{{ site.baseurl }}/assets/img/new-badge.png)
 
-And again, here's how the page looks. Check it out [live at *blastoffwithblazor.com* as well](https://www.blastoffwithblazor.com/images)!
+And again, here's how the page looks. Check it out [live at *blastoffwithblazor.com* as well](https://www.blastoffwithblazor.com/assets/img)!
 
-![Our slow site]({{ site.url }}{{ site.baseurl }}/images/image-gallery.png)
+![Our slow site]({{ site.url }}{{ site.baseurl }}/assets/img/image-gallery.png)
 
 For comparison, here's how it looks on an iPhone X.
 
-![Our slow site]({{ site.url }}{{ site.baseurl }}/images/iphone-cards.png)
+![Our slow site]({{ site.url }}{{ site.baseurl }}/assets/img/iphone-cards.png)
 
 # Wrap up
 

@@ -1,13 +1,12 @@
 ---
 date: "2020-06-24"
 title: "On simplifying null validation with C# 9"
-excerpt: An update on simplified null checking in C# 9.
+subtitle: An update on simplified null checking in C# 9.
 tags: [csharp]
-header:
-    overlay_image: /assets/images/simplify-null-card.png
-    overlay_filter: 0.8
+share-img: /assets/img/simplify-null-card.png
 ---
 
+{: .box-note}
 **UPDATE:** *Since the initial publishing of the post, the approach has changed. This post has been updated to reflect the latest news*.
 
 In my last post, I took a [test drive through some C# 9 features](https://daveabrock.com/2020/06/18/reduce-mental-energy-with-c-sharp) that might make your developer life easier. In it, I mentioned using logical patterns, such as the `not` keyword to throw an `ArgumentException`, if wanted:

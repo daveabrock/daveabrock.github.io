@@ -3,14 +3,12 @@ date: "2020-07-18"
 title: "The .NET Stacks #8: functional C# 9, .NET Foundation nominees, Azure community, more!"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/stacks-8-card.png
-    overlay_filter: 0.8
-excerpt: We discuss functional programming in C# 9, .NET Foundation updates, and more!
+share-img: /assets/img/stacks-8-card.png
+subtitle: We discuss functional programming in C# 9, .NET Foundation updates, and more!
 ---
 
 This is an archive of my weekly (free!) newsletter, -The .NET Stacks-. Consider [subscribing today](https://dotnetstacks.com) to get this content right away! Subscribers don't have to wait a week to receive the content.
-{: .notice--success}
+{: .box-note}
 
 On tap this week:
 
@@ -55,7 +53,7 @@ If you've worked on Azure, you've likely come across Michael Crump's work. He st
 
 I caught up with Michael to talk about how he got to working on Azure at Microsoft, his work for the developer community, and his programming advice.
 
-![Michael Crump]({{ site.url }}{{ site.baseurl }}/images/michael-crump.png)
+![Michael Crump]({{ site.url }}{{ site.baseurl }}/assets/img/michael-crump.png)
 
 **My [crack team of researchers](https://google.com) tell me that you were a former Microsoft Silverlight MVP. Ah, memories. Do you miss it?**
 

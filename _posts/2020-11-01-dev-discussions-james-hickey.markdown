@@ -2,15 +2,13 @@
 date: "2020-11-01"
 title: "Dev Discussions - James Hickey"
 tags: [dotnet-stacks, dev-discussions]
-excerpt: We talk to James Hickey about his Coravel project and software design.
+subtitle: We talk to James Hickey about his Coravel project and software design.
 tags: [dotnet-stacks, dev-discussions]
-header:
-    overlay_image: /assets/images/hickey-card.png
-    overlay_filter: 0.8
+share-img: /assets/img/hickey-card.png
 ---
 
 This is the full interview from my discussion with James Hickey in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com)!
-{: .notice--success}
+{: .box-note}
 
 When designing a real production system—especially over the web—there's a lot to think about past coding features for stakeholders. For example, how do you manage events? What about scheduling tasks? What about your caching mechanism? A lot of these considerations make you wonder if they should be supplied out-of-the-box with ASP.NET Core.
 
@@ -20,7 +18,7 @@ I caught up with James to talk about his project, software design, and more.
 
 (You can reach out to James Hickey [through Twitter](https://twitter.com/jamesmh_dev), browse to the [Coravel GitHub repo](https://github.com/jamesmh/coravel), and [check out his site](https://www.blog.jamesmichaelhickey.com/).)
 
-![James Hickey]({{ site.url }}{{ site.baseurl }}/images/james-hickey.jpg)
+![James Hickey]({{ site.url }}{{ site.baseurl }}/assets/img/james-hickey.jpg)
 
 ## What are you up to these days? What's your main gig like?
 

@@ -2,14 +2,12 @@
 date: "2020-10-09"
 title: "The .NET Stacks #20: Route to Code, IdentityServer, community links"
 tags: [dotnet-stacks]
-header:
-    overlay_image: /assets/images/stacks-20-card.png
-    overlay_filter: 0.8
-excerpt: This week, we look at Route to Code and check in on big IdentityServer news.
+share-img: /assets/img/stacks-20-card.png
+subtitle: This week, we look at Route to Code and check in on big IdentityServer news.
 comments: false
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 Based on my eating habits this week, I should probably rename this newsletter to *The .NET Snacks*.
 
@@ -30,7 +28,7 @@ This "route to code" concept offers a solution somewhere between ASP.NET Core mi
 
 If we look at Anthony's example, he creates a list of countries and instantiates it in the `Startup` constructor. The fun stuff, though, is in the `app.UseEndpoints` middleware.
 
-![Creating endpoints]({{ site.url }}{{ site.baseurl }}/images/use-endpoints.png)
+![Creating endpoints]({{ site.url }}{{ site.baseurl }}/assets/img/use-endpoints.png)
 
 Here, we're [using the `MapGet` extension method](https://docs.microsoft.com/aspnet/core/fundamentals/routing?view=aspnetcore-3.1)—you use it to match the HTTP/URL method, and then execute by running a delegate (and yes, there are other methods for the other HTTP verbs). You can definitely use this in more complex ways—like using string interpolation to create routing templates, adding authentication, and dependency injection. It takes some getting used to after years of depending on controllers—but it's a great way to cut straight to what matters.
 

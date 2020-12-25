@@ -1,12 +1,11 @@
 ---
 date: "2020-06-17"
 title: 'Party in the cloud with feature flags and Azure App Configuration'
-excerpt: Learn how to integrate native .NET feature flags with Azure App Configuration.
-header:
-    overlay_image: /assets/images/ff-appconfig.png
-    overlay_filter: 0.8
+subtitle: Learn how to integrate native .NET feature flags with Azure App Configuration.
+share-img: /assets/img/ff-appconfig.png
 tags: [csharp, dotnet-core, feature-flags]
 ---
+
 This is part 4 in a four-part series on .NET native feature flags:
 
 - Part 1: [Introducing the `Microsoft.FeatureManagement` library](https://daveabrock.com/2020/05/24/introducing-feature-management-copy)
@@ -113,7 +112,7 @@ To add our feature flag in Azure App Configuration, perform the following steps:
    - **End**: "01 Jul 2020 12:00:00 +00:00"
 1. Click **Apply** once more to create your conditional feature flag in Azure App Configuration. Here's a snapshot of what your configuration should look like:
 
-![Time window configuration]({{site.baseurl}}{{ site.url }}{{ site.baseurl }}/images/TimeWindow-AppConfig.PNG)
+![Time window configuration]({{site.baseurl}}{{ site.url }}{{ site.baseurl }}/assets/img/TimeWindow-AppConfig.PNG)
 
 Great! We are now ready for refactor our application to see this in action. Before you do this, however, navigate to **Access keys** from your Azure App Configuration instance, and copy a connection string (primary or secondary is fine).
 
@@ -209,7 +208,7 @@ You can also delete `IndexViewModel.cs`, if you prefer.
 
 Now, run the app!
 
-![After turning on flag]({{ site.url }}{{ site.baseurl }}/images/timewindow.png)
+![After turning on flag]({{ site.url }}{{ site.baseurl }}/assets/img/timewindow.png)
 
 # Next steps
 

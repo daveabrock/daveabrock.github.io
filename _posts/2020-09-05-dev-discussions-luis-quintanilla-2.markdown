@@ -1,15 +1,13 @@
 ---
 date: "2020-09-05"
 title: "Dev Discussions - Luis Quintanilla (2 of 2)"
-excerpt: We continue our talk with Luis Quintanilla about ML.NET.
+subtitle: We continue our talk with Luis Quintanilla about ML.NET.
 tags: [dotnet-stacks, dev-discussions]
-header:
-    overlay_image: /assets/images/dev-discussions-luis.png
-    overlay_filter: 0.8
+share-img: /assets/img/dev-discussions-luis.png
 ---
 
 This is the full interview from my discussion with Luis Quintanilla in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com)!
-{: .notice--success}
+{: .box-note}
 
 Machine learning is a fascinating world and, to many, a complicated one. As .NET developers, we definitely see the benefit in training our data but between the learning curve and using other languages like Python for machine learning—a language .NET devs might not be familiar with—ML is often sent to a developer's "I should look into that sometime" queue.
 
@@ -17,7 +15,7 @@ That changed in 2018, when Microsoft launched ML.NET—a free, open source, x-pl
 
 There's no one better to talk to about this than Luis Quintanilla. Luis has been with ML.NET since the beginning and was eventually scooped up by Microsoft to work on the docs for ML.NET. Luis had so much great stuff to share that we'll split this interview up into two parts. Last time, [we talked about his path to Microsoft, the value of ML.NET, and how to get started](https://daveabrock.com/2020/08/29/dev-discussions-luis-quintanilla-1). Today, we're talking about using ML.NET over something like Azure Cognitive Services, use cases for ML.NET, and more.
 
-![Luis Quintanilla]({{ site.url }}{{ site.baseurl }}/images/luisquintanilla-picture.jpg)
+![Luis Quintanilla]({{ site.url }}{{ site.baseurl }}/assets/img/luisquintanilla-picture.jpg)
 
 ## Where is the dividing line for when I should use machine learning, or use Azure Cognitive Services?
 

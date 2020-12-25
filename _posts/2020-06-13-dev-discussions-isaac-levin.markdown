@@ -1,15 +1,13 @@
 ---
 date: "2020-06-13"
 title: "Dev Discussions - Isaac Levin talks PresenceLight"
-excerpt: Microsoft's Isaac Levin talks about his PresenceLight project.
-header:
-    overlay_image: /assets/images/isaac-card.png
-    overlay_filter: 0.8
+subtitle: Microsoft's Isaac Levin talks about his PresenceLight project.
+share-img: /assets/img/isaac-card.png
 tags: [dotnet-stacks, dev-discussions]
 ---
 
+{: .box-note}
 This is the full interview from my discussion with Isaac Levin in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away!
-{: .notice--success}
 
 If you watched Scott Hanselman's [keynote at Microsoft Build](https://mybuild.microsoft.com/sessions/871ef73f-f04a-405b-a0fa-01d7433067d1?WT.mc_id=-blog-scottha) (you know, the "self-hosted" one), he showed off changing room lighting to your status in Teams (or Slack, Skype, etc.) and matching any background colors to your smart lights with the click of a button!
 
@@ -17,7 +15,7 @@ This was brought to you by PresenceLight, a WPF app developed by Microsoft's Isa
 
 For more information on PresenceLight, check out the [GitHub repo](https://github.com/isaacrlevin/PresenceLight) (where you can [find the releases](https://github.com/isaacrlevin/PresenceLight/releases)), Isaac's [blog post](https://www.isaaclevin.com/post/presence-light/), and of course you can always [contact him on Twitter](https://twitter.com/isaacrlevin).
 
-![Isaac Levin]({{ site.url }}{{ site.baseurl }}/images/isaac-levin.jpg)
+![Isaac Levin]({{ site.url }}{{ site.baseurl }}/assets/img/isaac-levin.jpg)
 
 **Can you walk me through your path to working at Microsoft?**
 

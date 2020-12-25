@@ -1,11 +1,9 @@
 ---
 date: "2020-10-13"
 title: "Blast Off with Blazor, Azure Functions, and Azure Static Web Apps"
-excerpt: "Let's talk about deploying an Azure Static Web App running Blazor and Azure Functions."
+subtitle: "Let's talk about deploying an Azure Static Web App running Blazor and Azure Functions."
 tags: [blazor, azure, aspnet-core]
-header:
-    overlay_image: /assets/images/static-web-apps-card.png
-    overlay_filter: 0.8
+share-img: /assets/img/static-web-apps-card.png
 ---
 
 Static sites are so great. After all, you're reading these words on a static site. Why bother with the overhead of dynamically generated files if you don't need them? It's not that static sites are boring—just that its served files, like HTML, aren't generated dynamically. With less to do, these sites perform better and are cheaper to run.
@@ -80,7 +78,7 @@ I won't go to the moon and back on Blazor and Azure Functions in this post, as I
 
 Here's the application in action. Puts stars in your eyes, doesn't it?
 
-![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/images/blast-off-demo.png)
+![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/assets/img/blast-off-demo.png)
 
 Before we blast off, let's explore some app configuration.
 
@@ -144,7 +142,7 @@ From there, do the following:
 
 Your completed form should look similar to this:
 
-![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/images/static-gh-details.png)
+![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/assets/img/static-gh-details.png)
 
 After the deployment completes, click **Go to resource**. You'll see a bunch of links to your new URL, deployment history, and a workflow file. Before your site is ready, the workflow file executes right away (it resides in the `.github/workflows` directory of your repo). 
 
@@ -210,7 +208,7 @@ You can head over to the **Actions** section of your GitHub repository to monito
 
 I'd love to tell you the build succeeded on the first try, but it kept spacing out:
 
-![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/images/oryx-error.png)
+![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/assets/img/oryx-error.png)
 
 In my project, I use Gulp to build and deploy Tailwind CSS styles ([thanks, Chris Sainty](https://chrissainty.com/integrating-tailwind-css-with-blazor-using-gulp-part-1/)). By accident, I deployed my `package.json` file to my repo. Because of that, Oryx detected a Node.js install, and therefore was looking for a `build` step in `package.json`. As a result, my build failed. 
 
@@ -222,11 +220,11 @@ This is my favorite thing about Azure Static Web Apps: when you create a pull re
 
 For example, I created a PR to fix a minor bug. Once I click **Create pull request** in GitHub, a workflow will run and the PR will update with a link to the temporary environment:
 
-![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/images/temp-site.png)
+![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/assets/img/temp-site.png)
 
 Additionally, if you hit up the **Environments** link in the Azure Portal, it'll display everything nicely:
 
-![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/images/environments.png)
+![The Blast Off with Blazor app]({{ site.url }}{{ site.baseurl }}/assets/img/environments.png)
 
 # A note on custom domains
 

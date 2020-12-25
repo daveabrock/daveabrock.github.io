@@ -1,7 +1,7 @@
 ---
 date: "2018-11-12"
 title: "Share Blazor Components with Shared Class Libraries"
-excerpt: Use shared class libraries to share Blazor components across projects.
+subtitle: Use shared class libraries to share Blazor components across projects.
 tags: [blazor, csharp, dotnet-core]
 ---
 
@@ -42,7 +42,7 @@ From your `Pages/Index.razor` file, add a using statement at the top of the file
 
  Now, below the `SurveyPrompt` component, add the `Component1` component. As you begin typing, you can use IntelliSense.
 
-![Autocomplete]({{ site.url }}{{ site.baseurl }}/images/Autocomplete.png)
+![Autocomplete]({{ site.url }}{{ site.baseurl }}/assets/img/Autocomplete.png)
 
 Your `Index.razor` component should now look like this:
 
@@ -62,6 +62,6 @@ Welcome to your new app.
 
 After you save your changes, reload the page to see your new component in action.
 
-   ![PageWithComponent-1]({{ site.url }}{{ site.baseurl }}/images/PageWithComponent-1.png)
+   ![PageWithComponent-1]({{ site.url }}{{ site.baseurl }}/assets/img/PageWithComponent-1.png)
 
 You have just referenced a component from a shared library with minimal effort. By merely importing the library, you were able to add a component and its styles quite easily.

@@ -3,13 +3,11 @@ date: "2020-10-03"
 title: "The .NET Stacks #19: An Ignite recap and F# with Phillip Carter"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/stacks-19-card.png
-    overlay_filter: 0.8
-excerpt: This week, we run through Ignite and also talk with Phillip Carter about F# from the Microsoft perspective.
+share-img: /assets/img/stacks-19-card.png
+subtitle: This week, we run through Ignite and also talk with Phillip Carter about F# from the Microsoft perspective.
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 This week, we'll review Ignite 2020, talk with Phillip Carter about F# from the Microsoft perspective, and check out what's going on around the community.
 
@@ -36,7 +34,7 @@ Last week, we [talked to Isaac Abraham about F# from a C# developer's perspectiv
 
 In this interview, we talk to Phillip about Microsoft F# support, F# tooling (and how it might compare to C#), good advice for learning F#, and more.
 
-![Phillip Carter]({{ site.url }}{{ site.baseurl }}/images/phillip-carter.jpg)
+![Phillip Carter]({{ site.url }}{{ site.baseurl }}/assets/img/phillip-carter.jpg)
 
 ## From the build system to the tooling, is F# a first-class citizen in Visual Studio and other tools like C# is? If I'm a C# dev coming over, would I be surprised about things I am used to?
 

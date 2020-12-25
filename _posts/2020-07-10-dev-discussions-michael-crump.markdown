@@ -1,21 +1,19 @@
 ---
 date: "2020-07-10"
 title: "Dev Discussions - Michael Crump on contributing to the Azure community"
-excerpt: We talk with Michael Crump about his contributions to the Azure community!
+subtitle: We talk with Michael Crump about his contributions to the Azure community!
 tags: [dotnet-stacks, dev-discussions]
-header:
-    overlay_image: /assets/images/michael-crump-post.png
-    overlay_filter: 0.8
+share-img: /assets/img/michael-crump-post.png
 ---
 
 This is the full interview from my discussion with Michael Crump in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away! Subscribers don't have to wait two weeks to receive the content.
-{: .notice--success}
+{: .box-note}
 
 If you've worked on Azure, you've likely come across Michael Crump's work. He started [Azure Tips and Tricks](http://azuredev.tips), a collection of tips, videos, and talks—if it's Azure, it's probably there. He also runs a popular Twitch stream where he talks about various topics.
 
 I caught up with Michael to talk about how he got to working on Azure at Microsoft, his work for the developer community, and his programming advice. (We talk Silverlight, but only in passing—no need to click away.)
 
-![Michael Crump]({{ site.url }}{{ site.baseurl }}/images/michael-crump.png)
+![Michael Crump]({{ site.url }}{{ site.baseurl }}/assets/img/michael-crump.png)
 
 **My [crack team of researchers](https://google.com) tell me that you were a former Microsoft Silverlight MVP. Ah, memories. Do you miss it?**
 

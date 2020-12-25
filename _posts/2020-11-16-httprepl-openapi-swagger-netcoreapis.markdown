@@ -1,11 +1,9 @@
 ---
 date: "2020-11-16"
 title: "Use OpenAPI, Swagger UI, and HttpRepl in ASP.NET Core 5 to supercharge your API development"
-excerpt: "In the latest post, we look at how easy it is to work with Swagger and HttpRepl in ASP.NET Core 5."
+subtitle: "In the latest post, we look at how easy it is to work with Swagger and HttpRepl in ASP.NET Core 5."
 tags: [aspnet-core]
-header:
-    overlay_image: /assets/images/swagger-repl-card.png
-    overlay_filter: 0.8
+share-img: /assets/img/swagger-repl-card.png
 ---
 
 When developing APIs in ASP.NET Core, you've got many tools at your disposal. Long gone are the days when you run your app from Visual Studio and call your `localhost` endpoint in your browser. 
@@ -42,11 +40,11 @@ In short, OpenAPI is a specification used for documenting the capabilities of yo
 
 For the uninitiated, the Swashbuckle project allows you to use Swagger UI—a tool that gives you the ability to render dynamic pages that allow to describe, document, and execute your API endpoints. Here's how mine looks.
 
-![A high-level look at my Swagger page]({{ site.url }}{{ site.baseurl }}/images/swagger-ui-high-level.png)
+![A high-level look at my Swagger page]({{ site.url }}{{ site.baseurl }}/assets/img/swagger-ui-high-level.png)
 
 And if you look at a sample POST (or any action), you'll see a sample schema and response codes.
 
-![A sample post in Swagger]({{ site.url }}{{ site.baseurl }}/images/movies-post.png)
+![A sample post in Swagger]({{ site.url }}{{ site.baseurl }}/assets/img/movies-post.png)
 
 In previous versions of ASP.NET Core, you had to manually download the Swashbuckle package, configure the middleware, and optionally change your `launchSettings.json` file. Now, with ASP.NET Core 5, that's baked in automatically.
 
@@ -56,7 +54,7 @@ A big driver for the default OpenAPI support is [the integration with Azure API 
 
 If you create an ASP.NET Core 5 Web API project, you'll see an **Enable OpenAPI support** checkbox that's enabled by default. Just deselect it if you don't want it.
 
-![Visual Studio OpenAPI checkbox]({{ site.url }}{{ site.baseurl }}/images/enable-open-api-support.png)
+![Visual Studio OpenAPI checkbox]({{ site.url }}{{ site.baseurl }}/assets/img/enable-open-api-support.png)
 
 If you create API projects using `dotnet new webapi` it'll be baked in, too. (To opt out from OpenAPI support here, execute `dotnet new webapi --no-openapi true`.)
 {: .notice--info}
@@ -163,15 +161,15 @@ httprepl https://localhost:5001
 
 If I do an `ls` or `dir`, I can look at my endpoints:
 
-![Doing a dir from the root]({{ site.url }}{{ site.baseurl }}/images/localhost-dir.png)
+![Doing a dir from the root]({{ site.url }}{{ site.baseurl }}/assets/img/localhost-dir.png)
 
 To execute a get on my `/bands` endpoint, I get a response payload, with headers:
 
-![Doing a GET on bands]({{ site.url }}{{ site.baseurl }}/images/get-bands.png)
+![Doing a GET on bands]({{ site.url }}{{ site.baseurl }}/assets/img/get-bands.png)
 
 Then, I could say `get {id}` to get a `Band` by id:
 
-![Doing a get by id]({{ site.url }}{{ site.baseurl }}/images/get-eagles.png)
+![Doing a get by id]({{ site.url }}{{ site.baseurl }}/assets/img/get-eagles.png)
 
 ## Modify data with a default editor
 
@@ -199,11 +197,11 @@ You can also [set various other preferences](https://docs.microsoft.com/aspnet/c
 
 Now, when you say `post` from your endpoint, VS Code opens a `.tmp` file with a default request body, then waits for you to save and close it. The POST should process successfully.
 
-![Performing a post]({{ site.url }}{{ site.baseurl }}/images/post-brothers.png)
+![Performing a post]({{ site.url }}{{ site.baseurl }}/assets/img/post-brothers.png)
 
 With the ID in hand, I can do the same steps to modify using `put 5`, then run `get 5` to confirm my changes:
 
-![Performing a put]({{ site.url }}{{ site.baseurl }}/images/put-get-brothers.png)
+![Performing a put]({{ site.url }}{{ site.baseurl }}/assets/img/put-get-brothers.png)
 
 If I want to delete my resource, I can execute `delete 5` and it'll be gone. I tweeted a video of me cycling through the CRUD operations.
 

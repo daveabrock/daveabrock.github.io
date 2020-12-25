@@ -2,10 +2,8 @@
 date: "2020-09-10"
 title: "Use CSS isolation in your Blazor projects"
 tags: [aspnet-core, blazor]
-header:
-    overlay_image: /assets/images/css-isolation-card.png
-    overlay_filter: 0.8
-excerpt: We talk about scoping your CSS to your Blazor components—all without a stylesheet reference.
+share-img: /assets/img/css-isolation-card.png
+subtitle: We talk about scoping your CSS to your Blazor components—all without a stylesheet reference.
 ---
 
 I'm excited to see Blazor now supporting CSS isolation—also known as scoped CSS.
@@ -100,7 +98,7 @@ In addition to a terrible developer experience, you're also adding bloat to your
 
 In your browser's developer tools, you can verify this quite easily—I'm using [Show Coverage from Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools/coverage). As you can see from the screenshot below, I'm not even using 40% of my styles. You can see the heading styles from the other components are being loaded, even though we know they aren't used.
 
-![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/css-coverage.png)
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/assets/img/css-coverage.png)
 
 There are ways to get around this by bringing in external libraries and tools from both inside and outside of the Blazor ecosystem. If it works for you, great—but I ask: isn't the promise of one toolchain a big reason why you're using Blazor?
 
@@ -142,11 +140,11 @@ I'm incredibly happy with the simplicity of this solution. Many folks have asked
 
 For this to work, Blazor appends a special attribute to your CSS classes, which binds your classes to the specific component.
 
-![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/css-identifier.png)
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/assets/img/css-identifier.png)
 
 If you're curious, you can head over to the Network panel of your favorite browser's developer tools. You'll see that Blazor loads in a `MyProject.styles.css` file, where `MyProject` is the name of your project. Here, you'll see the styles for all our components, each referenced by that unique ID—as a bonus, it's super helpful to have the component's name commented for us.
 
-![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/scoped-css.png)
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/assets/img/scoped-css.png)
 
 This `styles.css` file is the result of bundling all your isolated CSS files for your project into a single output. Don't take my word for it: if you view the `<head>` on your page, you'll see the reference that's generated for you.
 
@@ -156,11 +154,11 @@ This `styles.css` file is the result of bundling all your isolated CSS files for
 
 Because each project has a different `styles.css` file, they'll need to know about each other somehow. This is accomplished using CSS imports. In this example, you'll see my project references a shared Razor component.
 
-![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/css-import.png)
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/assets/img/css-import.png)
 
 Armed with this knowledge, if we take a larger view of the DOM it'll make a lot more sense. The new `h1` class refers to our `Index` component (`b-dew6pvofzw`), and the other styles are brought in from the `Shared/MainLayout` component (`b-vtqmmfsxlh`).
 
-![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/scoped-css-html.png)
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/assets/img/scoped-css-html.png)
 
 This pattern has [worked well with Vue](https://vue-loader.vuejs.org/guide/scoped-css.html#scoped-css) and there was no sense in reinventing the wheel.
 
@@ -196,7 +194,7 @@ Welcome to your new app.
 
 Fire up your app and see what happens. We notice that, by default, **scoped styles do not apply to child components**. The styles in your `*.razor.css` files only get applied to the rendered output of that specific component.
 
-![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/no-inherit.png)
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/assets/img/no-inherit.png)
 
 Don't worry, though: we can cascade styles down to child components without the need for a new component-specific CSS file. We'll do this with a `::deep` combinator in our CSS. Change the contents of `Index.razor.css` to the following:
 
@@ -223,15 +221,15 @@ Fire up your app and see that ... it doesn't work. Because of how the markup is 
 
 Now, it works great. We're able to have our child components inherit styles from our parent component.
 
-![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/it-works.png)
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/assets/img/it-works.png)
 
 If we look at our attribute:
 
-![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/parent-child-attributes.png)
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/assets/img/parent-child-attributes.png)
 
 Blazor identifies the child style as "belonging" to the parent component in `scoped.styles.css`.
 
-![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/scoped-styles-inheritance.png)
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/assets/img/scoped-styles-inheritance.png)
 
 # Integrate with your favorite preprocessors
 
@@ -263,7 +261,7 @@ h1 {
 
 During the build, the `.scss` file is compiled to `Index.razor.css` and we see that our changes are in place.
 
-![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/images/red.png)
+![A lot of unused styles]({{ site.url }}{{ site.baseurl }}/assets/img/red.png)
 
 # Disable automatic bundling
 

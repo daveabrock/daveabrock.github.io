@@ -3,14 +3,12 @@ date: "2020-07-05"
 title: "The .NET Stacks #6: Blazor mobile bindings, EF update, ASP.NET Core A-Z, more!"
 tags: [dotnet-stacks]
 comments: false
-excerpt: A rundown on mobile Blazor bindings, EF updates, ASP.NET Core A-Z, and more!
-header:
-    overlay_image: /assets/images/stacks-6-card.png
-    overlay_filter: 0.8
+subtitle: A rundown on mobile Blazor bindings, EF updates, ASP.NET Core A-Z, and more!
+share-img: /assets/img/stacks-6-card.png
 ---
 
 This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away! Subscribers don't have to wait a week to receive the content.
-{: .notice--success}
+{: .box-note}
 
 On tap this week:
 
@@ -47,7 +45,7 @@ As a huge fan of the Marvel universe, Microsoft’s Shahed Chowdhuri must feel l
 
 I talked with Shahed about his path to Microsoft, the evolution of the blog series, his side projects and interests and, of course, which Marvel character sums him up best. You can reach out to Shahed [on Twitter](https://twitter.com/shahedC) and follow his site, [Wake Up and Code](https://wakeupandcode.com/).
 
-![Shahed Chowdhuri]({{ site.url }}{{ site.baseurl }}/images/shahed-chowdhuri.jpg)
+![Shahed Chowdhuri]({{ site.url }}{{ site.baseurl }}/assets/img/shahed-chowdhuri.jpg)
 
 **What got you into software development, and Microsoft? What are you doing for Microsoft these days?**
 

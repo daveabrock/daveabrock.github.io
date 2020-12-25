@@ -1,11 +1,9 @@
 ---
 date: "2020-10-26"
 title: "Blast Off with Blazor: Get to know Blazor and our project"
-excerpt: "We kick off our series by talking about Blazor, reviewing our code for the first time, and explaining how to run our project."
+subtitle: "We kick off our series by talking about Blazor, reviewing our code for the first time, and explaining how to run our project."
 tags: [blazor, aspnet-core]
-header:
-    overlay_image: /assets/images/blast-off-intro.png
-    overlay_filter: 0.8
+share-img: /assets/img/blast-off-intro.png
 ---
 
 A couple of weeks ago, I wrote about [deploying an Azure Static Web App with Blazor and Azure Functions](https://daveabrock.com/2020/10/13/azure-functions-static-apps-blazor). In that post, I talked about using the app I built as a base for an upcoming Blazor series. This is it!
@@ -51,7 +49,7 @@ If you look at the footer of your generated HTML, you'll see it uses `blazor.web
 
 I've ~~stolen~~ borrowed this diagram [from the Microsoft doc on the subject](https://docs.microsoft.com/aspnet/core/blazor/hosting-models?view=aspnetcore-3.1):
 
-![Blazor web assembly diagram]({{ site.url }}{{ site.baseurl }}/images/blazor-webassembly.png)
+![Blazor web assembly diagram]({{ site.url }}{{ site.baseurl }}/assets/img/blazor-webassembly.png)
 
 #### The good
 
@@ -71,7 +69,7 @@ With Blazor Server, your app executes on the server from an ASP.NET Core app. An
 
 I've once again ~~stolen~~ borrowed this diagram [from the Microsoft doc on the subject](https://docs.microsoft.com/aspnet/core/blazor/hosting-models?view=aspnetcore-3.1):
 
-![Blazor Server diagram]({{ site.url }}{{ site.baseurl }}/images/blazor-server.png)
+![Blazor Server diagram]({{ site.url }}{{ site.baseurl }}/assets/img/blazor-server.png)
 
 #### The good
 
@@ -94,7 +92,7 @@ As [written about previously](https://daveabrock.com/2020/10/13/azure-functions-
 
 When the application loads, it calls an Azure Function. The Function, in turn, calls NASA’s Astronomy Picture of the Day (APOD) API to get a picture that is out of this world—literally. The APOD site has been [serving up amazing images daily](https://apod.nasa.gov/apod/) since June 16, 1995. Every time you reload the app, I’ll fetch a random image anytime between that start date and today.
 
-![blast off with blazor site](https://daveabrock.com/images/blast-off-demo.png)
+![blast off with blazor site](https://daveabrock.com/assets/img/blast-off-demo.png)
 
 Right now, it's super simple and super slow. We'll fix that in upcoming posts as we learn Blazor together. As we build on it, we'll be using additional awesome NASA APIs as we learn all about ...
 

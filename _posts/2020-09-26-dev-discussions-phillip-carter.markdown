@@ -1,23 +1,21 @@
 ---
 date: "2020-09-26"
 title: "Dev Discussions - Phillip Carter"
-excerpt: In the latest interview, we talk with Phillip Carter.
+subtitle: In the latest interview, we talk with Phillip Carter.
 tags: [dotnet-stacks, dev-discussions]
-excerpt: In the latest interview, I talk with Phillip Carter to get the Microsoft perspective on F#.
+subtitle: In the latest interview, I talk with Phillip Carter to get the Microsoft perspective on F#.
 tags: [dotnet-stacks, dev-discussions]
-header:
-    overlay_image: /assets/images/carter-card.png
-    overlay_filter: 0.8
+share-img: /assets/img/carter-card.png
 ---
 
 This is the full interview from my discussion with Phillip Carter in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com)!
-{: .notice--success}
+{: .box-note}
 
 Last week, we [talked to Isaac Abraham about F# from a C# developer's perspective](https://daveabrock.com/2020/09/19/dev-discussions-isaac-abraham). This week, I'm excited to get more F# perspectives from Phillip Carter. Phillip is a busy guy at Microsoft but a big part of his role as a Program Manager is overseeing F# and its tooling.
 
 In this interview, we talk to Phillip about Microsoft F# support, F# tooling (and how it might compare to C#), good advice for learning F#, and more.
 
-![Phillip Carter]({{ site.url }}{{ site.baseurl }}/images/phillip-carter.jpg)
+![Phillip Carter]({{ site.url }}{{ site.baseurl }}/assets/img/phillip-carter.jpg)
 
 ## Can you talk about what you've done at Microsoft, and how you landed on F#?
 

@@ -1,18 +1,16 @@
 ---
 date: "2020-12-13"
 title: "Blast Off with Blazor: Integrate Cosmos DB with Blazor WebAssembly"
-excerpt: "In this post, I integrate Cosmos DB with our project."
+subtitle: "In this post, I integrate Cosmos DB with our project."
 tags: [aspnet-core]
-header:
-    overlay_image: /assets/images/cosmos-wasm.png
-    overlay_filter: 0.8
+share-img: /assets/img/cosmos-wasm.png
 ---
 
 So far in our series, we've [walked through the intro](https://daveabrock.com/2020/10/26/blast-off-blazor-intro), [wrote our first component](https://daveabrock.com/2020/10/28/blast-off-blazor-404-page), [dynamically updated the HTML head from a component](https://daveabrock.com/2020/11/08/blast-off-blazor-update-head), and [isolated our service dependencies](https://daveabrock.com/2020/11/22/blast-off-blazor-service-dependencies).
 
 It's time to address the elephant in the room—why is the image loading so slow?
 
-![Our slow site]({{ site.url }}{{ site.baseurl }}/images/SetTitleBar.gif)
+![Our slow site]({{ site.url }}{{ site.baseurl }}/assets/img/SetTitleBar.gif)
 
 There's a few reasons for that. First, we have to wait for the app to load when we refresh the page–and with Blazor WebAssembly, we're waiting for the .NET runtime to load. On top of that, we're calling off to a REST API, getting the image source, and sending that to our view. That's not incredibly efficient.
 
@@ -95,7 +93,7 @@ With that in place, let's create a new `Home` component. Right now, it'll welcom
 
 Here's how the `Home` component looks now. 
 
-![Our new index component]({{ site.url }}{{ site.baseurl }}/images/new-splash-page.png)
+![Our new index component]({{ site.url }}{{ site.baseurl }}/assets/img/new-splash-page.png)
 
 # Integrate Cosmos DB with our application
 
@@ -106,7 +104,7 @@ With our first fix out of the way, it's now time to speed up our image loading t
 
 In the past, Cosmos has been incredibly expensive and wouldn't have been worth the cost for this project. With a new serverless offering (now in preview), it's a lot more manageable and can easily be run under my monthly Azure credits. While Cosmos excels with intensive, globally-distributed workloads, I'm after a fully-managed NoSQL offering that'll allow me flexibility if my schema needs change.
 
-In this post, I won't show you how to create a Cosmos instance, upload our images to Azure Storage, then create a link between the two. This is all [documented in a recent post](https://daveabrock.com/2020/11/25/images-azure-blobs-cosmos). After I have the data set up, I need to understand how to access it from my application. That's what we'll cover.
+In this post, I won't show you how to create a Cosmos instance, upload our images to Azure Storage, then create a link between the two. This is all [documented in a recent post](https://daveabrock.com/2020/11/25/assets/img-azure-blobs-cosmos). After I have the data set up, I need to understand how to access it from my application. That's what we'll cover.
 
 Now, I *could* [use the Azure Cosmos DB C# client](https://docs.microsoft.com/azure/cosmos-db/sql-api-get-started) to work with Cosmos. There's a lot of complexities here, and I don't need any of that business. I need it for basic CRUD operations. I'm a fan of [David Pine](https://twitter.com/davidpine7)'s [Azure Cosmos DB Repository .NET SDK](https://devblogs.microsoft.com/cosmosdb/azure-cosmos-db-repository-net-sdk-v-1-0-4/), and will be using it here. This allows me to maintain the abstraction layer between the API and the client application, and is super easy to work with.
 

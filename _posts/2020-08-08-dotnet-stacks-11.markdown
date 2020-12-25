@@ -3,13 +3,11 @@ date: "2020-08-08"
 title: "The .NET Stacks #11: Newtonsoft, async void, more with Jeremy Likness, more!"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/stacks-11-card.png
-    overlay_filter: 0.8
-excerpt: We discuss Newtonsoft.Json, using async void, more with Jeremy Likness, and more!
+share-img: /assets/img/stacks-11-card.png
+subtitle: We discuss Newtonsoft.Json, using async void, more with Jeremy Likness, and more!
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 This week, we:
 
@@ -61,7 +59,7 @@ A lot of people (including myself) have been asking the Foundation for increased
 
 Last week, we got to know Jeremy. This week, we’ll get into his work and discuss Entity Framework and .NET 5.
 
-![Jeremy Likness]({{ site.url }}{{ site.baseurl }}/images/jeremy-likness.jpg)
+![Jeremy Likness]({{ site.url }}{{ site.baseurl }}/assets/img/jeremy-likness.jpg)
 
 **To be honest, when I think of your role as the "Sr. PM of .NET Data," I mostly think of "Sr. PM of Entity Framework." Does anything else fall under that umbrella?**
 

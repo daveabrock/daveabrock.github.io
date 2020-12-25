@@ -2,11 +2,10 @@
 date: "2020-09-04"
 title: "NDepend: Boost Your Team's Code Quality"
 tags: [tools]
-header:
-    overlay_image: /assets/images/ndepend-card.png
-    overlay_filter: 0.8
-excerpt: I take a look at what's new with NDepend, the robust static code analysis tool.
+share-img: /assets/img/ndepend-card.png
+subtitle: I take a look at what's new with NDepend, the robust static code analysis tool.
 ---
+
 Have you used NDepend before? If you've been working on .NET for some time, you may have either used it or heard of it—I believe it's been around since 2007 or so.
 
 If you aren't familiar, NDepend is a robust static code analysis tool that allows you to gain a concrete understanding of your project's complexity, technical debt, associations, dependencies, and more. You can easily integrate NDepend into your daily workflow with a Visual Studio extension and it also has extensions for your build pipelines as well.
@@ -37,13 +36,13 @@ In your version of Visual Studio, enter **ndepend** in your global search bar at
 
 The first time you analyze, a beginner-friendly screen will ask you how you want to proceed. Click **View NDepend Dashboard**.
 
-![go to NDepend dashboard]({{ site.url }}{{ site.baseurl }}/images/ndepend-what-to-do.png)
+![go to NDepend dashboard]({{ site.url }}{{ site.baseurl }}/assets/img/ndepend-what-to-do.png)
 
 # Review the NDepend dashboard
 
 The dashboard gives you a nice view of overall tech debt, quality gates, and issue and rule estimation. My sample app needs some work but ... in my career, I've definitely seen worse.
 
-![go to NDepend dashboard]({{ site.url }}{{ site.baseurl }}/images/dashboard.png)
+![go to NDepend dashboard]({{ site.url }}{{ site.baseurl }}/assets/img/dashboard.png)
 
 You can drill into the dashboard to get details about any violations.
 
@@ -65,7 +64,7 @@ It's been a few years since I last worked with NDepend, and a welcome new additi
 
 Here you'll see a nice visualization view where you can hover over "trouble spots" in your application. In the top-left of the image, you'll see details about the offending method (I hovered over the redness).
 
-![visualize code complexity]({{ site.url }}{{ site.baseurl }}/images/visualizer.png)
+![visualize code complexity]({{ site.url }}{{ site.baseurl }}/assets/img/visualizer.png)
 
 This capability isn't just for cyclomatic complexity—you can do it for documentation (comments), test coverage, and more. It's a great way to see the high-level state of your application.
 
@@ -75,7 +74,7 @@ I can personally see a lot of value in using the [code coverage visualization](h
 
 NDepend ships with a dependencies view that allows you to visualize the relationships between your projects. It's an interactive view, where you can click and hover over dependencies, to see how tightly or loosely coupled your dependencies are.
 
-![visualize code complexity]({{ site.url }}{{ site.baseurl }}/images/graph.png)
+![visualize code complexity]({{ site.url }}{{ site.baseurl }}/assets/img/graph.png)
 
 If you tell your boss something is taking a while because it's a "bowl of spaghetti" and he or she wants evidence, here's where you can get it.
 
@@ -87,7 +86,7 @@ Let's say I want to find any methods where the cyclomatic complexity is greater 
 
 The first thing I notice is the Intellisense-like previews as I type:
 
-![cqlinq]({{ site.url }}{{ site.baseurl }}/images/intellisense.png)
+![cqlinq]({{ site.url }}{{ site.baseurl }}/assets/img/intellisense.png)
 
 Now, I can execute the query like this:
 
@@ -98,7 +97,7 @@ select new { m, m.CyclomaticComplexity }
 
 I don't need to click a Run button or anything—the results will populate automatically.
 
-![cqlinq]({{ site.url }}{{ site.baseurl }}/images/cqlinq-results.png)
+![cqlinq]({{ site.url }}{{ site.baseurl }}/assets/img/cqlinq-results.png)
 
 I can run this just once, or even save my queries for later use. As a C# developer you're likely familiar with the LINQ syntax, so this offers a great and quick way for you to grab just the data you need.
 

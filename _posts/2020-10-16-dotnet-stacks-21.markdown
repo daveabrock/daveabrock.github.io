@@ -2,14 +2,12 @@
 date: "2020-10-16"
 title: "The .NET Stacks #21: Azure Static Web Apps, .NET 6 feedback, and more!"
 tags: [dotnet-stacks]
-header:
-    overlay_image: /assets/images/stacks-21-card.png
-    overlay_filter: 0.8
-excerpt: This week, we take a look at Azure Static Web Apps, dotnet-monitor, and more.
+share-img: /assets/img/stacks-21-card.png
+subtitle: This week, we take a look at Azure Static Web Apps, dotnet-monitor, and more.
 comments: false
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 Happy Monday! It looks like my pun from last week received some attention (and some new subscribers). I'm glad you all joined the newsletter before it gets code outside.
 
@@ -47,7 +45,7 @@ Before we get into the links: I quickly wanted to wish my mom a very Happy Birth
 
 Here's a picture of us when I was young. I think she's trying to convince me to use Kubernetes.
 
-![Picture with mom]({{ site.url }}{{ site.baseurl }}/images/mom.jpg)
+![Picture with mom]({{ site.url }}{{ site.baseurl }}/assets/img/mom.jpg)
 
 ## 🌎 Last week in the .NET world
 

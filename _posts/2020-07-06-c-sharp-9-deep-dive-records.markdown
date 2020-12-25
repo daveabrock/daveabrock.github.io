@@ -1,15 +1,13 @@
 ---
 date: "2020-07-06"
 title: "C# 9 Deep Dive: Records"
-excerpt: In a C# 9 deep dive, we go in depth on records.
+subtitle: In a C# 9 deep dive, we go in depth on records.
 tags: [csharp, csharp-9]
-header:
-    overlay_image: /assets/images/records.png
-    overlay_filter: 0.8
+share-img: /assets/img/records.png
 ---
 
 **Note**: Originally published five months before the official release of C# 9, I've updated this post after the release to capture the latest updates.
-{: .notice--success}
+{: .box-note}
 
 In the [previous post of this series](https://daveabrock.com/2020/06/29/c-sharp-9-deep-dive-inits), we discussed the init-only features of C# 9, which allowed you to make individual properties immutable. That works great on a case-by-case basis, but the real power in leveraging C# immutability is when you can do this for custom types. This is where records shine, and will be the focus of this post.
 

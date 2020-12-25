@@ -1,15 +1,13 @@
 ---
 date: "2020-07-25"
 title: "Dev Discussions - Jeremy Likness (1 of 2)"
-excerpt: We get to know Jeremy Likness, the senior PM of .NET Data at Microsoft.
+subtitle: We get to know Jeremy Likness, the senior PM of .NET Data at Microsoft.
 tags: [dotnet-stacks, dev-discussions]
-header:
-    overlay_image: /assets/images/likness-1-card.png
-    overlay_filter: 0.8
+share-img: /assets/img/likness-1-card.png
 ---
 
 This is the full interview from my discussion with Jeremy Likness in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away!
-{: .notice--success}
+{: .box-note}
 
 If you've worked on Azure or .NET for awhile—like Azure Functions and Entity Framework—you're probably familiar with Jeremy Likness, the senior PM for .NET data at Microsoft. He's spoken at several conferences (remember those?), [writes about various topics at his site](https://blog.jeremylikness.com/), is a familiar face on various .NET-related videos, and, as of late, can be seen in the Entity Framework community standups (and more!).
 
@@ -17,7 +15,7 @@ I caught up with Jeremy to talk about his path to software development and all t
 
 Jeremy was very generous with his time! Because there's so much to cover, I've split this into two different parts. This week, we get to know Jeremy. Next week, [we'll get into his work and discuss Entity Framework and .NET 5](https://daveabrock.com/2020/08/01/dev-discussions-jeremy-likness-2).
 
-![Jeremy Likness]({{ site.url }}{{ site.baseurl }}/images/jeremy-likness.jpg)
+![Jeremy Likness]({{ site.url }}{{ site.baseurl }}/assets/img/jeremy-likness.jpg)
 
 **Can you walk me through your path to Microsoft?**
 

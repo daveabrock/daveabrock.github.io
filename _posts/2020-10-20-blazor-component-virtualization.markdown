@@ -1,11 +1,9 @@
 ---
 date: "2020-10-20"
 title: "Improve rendering performance with Blazor component virtualization"
-excerpt: "Use Blazor component virtualization to improve perceived performance of components that work with large data sets."
+subtitle: "Use Blazor component virtualization to improve perceived performance of components that work with large data sets."
 tags: [blazor, aspnet-core]
-header:
-    overlay_image: /assets/images/virtualization-card.png
-    overlay_filter: 0.8
+share-img: /assets/img/virtualization-card.png
 ---
 
 When measuring web performance—especially on page load—it's not always about a consistent metric, such as how quickly the entire HTML tree loads from the server. It's helpful to think in terms of [perceived performance](https://developer.mozilla.org/en-US/docs/Learn/Performance/perceived_performance)—do you understand what needs to be rendered now, and what can be rendered later? End users should never have to wait for something that, well, can wait.
@@ -161,7 +159,7 @@ Now, we're looking at 1.2 to 1.9 seconds uncached, about twice the speed.
 In the following video, keep an eye on Chrome Developer tools. You'll see how the elements change as I scroll.
 
 <video autoplay controls muted loop>
-  <source src="{{ site.url }}{{ site.baseurl }}/videos/Twitter.mp4" type="video/mp4">
+  <source src="/assets/vid/Twitter.mp4" type="video/mp4">
 </video>
 
 The `Items` and `Context` are the most common parameters to use here, but there's plenty more you can utilize.

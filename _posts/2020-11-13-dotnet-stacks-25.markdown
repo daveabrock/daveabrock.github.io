@@ -3,13 +3,11 @@ date: "2020-11-13"
 title: "The .NET Stacks #25: .NET 5 officially launches tomorrow"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/stacks-25-card.png
-    overlay_filter: 0.8
-excerpt: This week, .NET 5 ships and are C# 9 records actually immutable by default?
+share-img: /assets/img/stacks-25-card.png
+subtitle: This week, .NET 5 ships and are C# 9 records actually immutable by default?
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 With .NET 5 shipping this week, it's going to be such a release.
 
@@ -75,7 +73,7 @@ Someone has turned a lucky ... um ... well, numbers don't matter, do they? Happy
 
 When I said I like to wear many hats, I didn't mean this one.
 
-![Picture with mom]({{ site.url }}{{ site.baseurl }}/images/dad-and-me.jpeg)
+![Picture with mom]({{ site.url }}{{ site.baseurl }}/assets/img/dad-and-me.jpeg)
 
 (Don't worry, this is the last birthday wish. Back to regularly scheduled programming.)
 

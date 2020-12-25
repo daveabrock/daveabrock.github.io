@@ -1,10 +1,8 @@
 ---
 date: "2020-07-28"
 title: "Talk with Groot using the Microsoft Bot Framework and Azure sentiment analysis"
-excerpt: In this post, we use the Bot Framework to detect how a user really feels.
-header:
-    overlay_image: /assets/images/groot-card.png
-    overlay_filter: 0.8
+subtitle: In this post, we use the Bot Framework to detect how a user really feels.
+share-img: /assets/img/groot-card.png
 tags: [csharp]
 ---
 
@@ -57,7 +55,7 @@ While there are multiple ways to develop with the Bot Framework, we'll use Visua
 
 To make project generation easier, you'll need to install the Bot Framework v4 SDK Templates for Visual Studio. In your Visual Studio, go to **Extensions** > **Manage Extensions,** and search for **bot**. It should be the first result.
 
-![bot framework extension]({{ site.url }}{{ site.baseurl }}/images/bot-framework-extension.png)
+![bot framework extension]({{ site.url }}{{ site.baseurl }}/assets/img/bot-framework-extension.png)
 
 Alternatively, you can find the [direct download at this location](https://marketplace.visualstudio.com/items?itemName=BotBuilder.botbuilderv4).
 
@@ -71,15 +69,15 @@ Now, we can head out to Azure to create a Text Analytics instance. Assuming you 
 
 In the search box, enter **Text Analytics,** and select **Text Analytics** from the Marketplace section.
 
-![bot framework extension]({{ site.url }}{{ site.baseurl }}/images/text-analytics-marketplace.png)
+![bot framework extension]({{ site.url }}{{ site.baseurl }}/assets/img/text-analytics-marketplace.png)
 
 Enter a name, select your subscription, a location, pricing tier (the Free tier should be fine for this tutorial), and a resource group, then click **Create**.
 
-![bot framework extension]({{ site.url }}{{ site.baseurl }}/images/create-text-analytics.png)
+![bot framework extension]({{ site.url }}{{ site.baseurl }}/assets/img/create-text-analytics.png)
 
 After the deployment completes, click **Go to resource**. Then, click **Keys and Endpoint**. You'll need to grab a key (Key 1 or Key 2 is fine) and the endpoint for your application. Copy these values somewhere, like a text file.
 
-![echo bot template]({{ site.url }}{{ site.baseurl }}/images/sentiment-keys.png)
+![echo bot template]({{ site.url }}{{ site.baseurl }}/assets/img/sentiment-keys.png)
 
 Excellent! Let's move on to Visual Studio to create our chatbot.
 
@@ -89,7 +87,7 @@ After you install the Bot Framework v4 Templates for Visual Studio, create a new
 
 From the Project Types drop-down, select **AI Bots** and select the **Echo Bot** template. This will give us the basic functionality we need (since Gruut does a lot of echoing).
 
-![echo bot template]({{ site.url }}{{ site.baseurl }}/images/echo-bot-template.png)
+![echo bot template]({{ site.url }}{{ site.baseurl }}/assets/img/echo-bot-template.png)
 
 # Introducing your EchoBot
 
@@ -197,17 +195,17 @@ Let's see how this works. Before we debug this, set a breakpoint at the declarat
 
 Finally, we can now work with the Bot Framework Emulator. At the initial screen, click `Open Bot`. For your bot URL, enter `http://localhost:xxxx/api/messages` and replace `xxxx` with your port number you are using. Then, click `Connect`.
 
-![echo bot template]({{ site.url }}{{ site.baseurl }}/images/open-a-bot.png)
+![echo bot template]({{ site.url }}{{ site.baseurl }}/assets/img/open-a-bot.png)
 
 You are connected! Enter some text to try it out and hit your breakpoint. I'll type **I'm really mad**.
 
 With my breakpoint hit, hover over `sentiment` and you'll see it comes back as `Negative`.
 
-![echo bot template]({{ site.url }}{{ site.baseurl }}/images/negative.png)
+![echo bot template]({{ site.url }}{{ site.baseurl }}/assets/img/negative.png)
 
 Great! Hit *Continue* in Visual Studio, go back to the Bot Framework Emulator, and you'll see that Gruut matches your anger.
 
-![echo bot template]({{ site.url }}{{ site.baseurl }}/images/really-mad.png)
+![echo bot template]({{ site.url }}{{ site.baseurl }}/assets/img/really-mad.png)
 
 Excellent! This is great—however, before we ship an app with hard-coded credentials in the source code, we should probably clean that up. Let's do that now.
 
@@ -232,7 +230,7 @@ From your Key Vault, click **Secrets** and then **Generate/Import** to create tw
 
 We're now ready to set up our app registration. Head on over to Azure Active Directory (I just use the search box), and click **App Registrations**, then **New registration**. Give your registration the name and accept the default supported account type, then click **Register**.
 
-![echo bot template]({{ site.url }}{{ site.baseurl }}/images/app-registration.png)
+![echo bot template]({{ site.url }}{{ site.baseurl }}/assets/img/app-registration.png)
 
 Copy the `Application (client) ID`, as we will need it later.
 
@@ -242,11 +240,11 @@ Of course, this registration does nothing by its own, so we'll need to create a 
 
 Enter a name, leave the default expiration policy, and click **Add**.
 
-![echo bot template]({{ site.url }}{{ site.baseurl }}/images/client-secret.png)
+![echo bot template]({{ site.url }}{{ site.baseurl }}/assets/img/client-secret.png)
 
 You should see your new client secret. Copy this value somewhere—we will also need it soon.
 
-![echo bot template]({{ site.url }}{{ site.baseurl }}/images/key-vault-client-secret.png)
+![echo bot template]({{ site.url }}{{ site.baseurl }}/assets/img/key-vault-client-secret.png)
 
 ## Give your app rights to the Key Vault
 

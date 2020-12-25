@@ -3,13 +3,11 @@ date: "2020-11-28"
 title: "The .NET Stacks #27: Giving some 💜 to under-the-radar ASP.NET Core 5 features"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/stacks-27-card.png
-    overlay_filter: 0.8
-excerpt: This week, we look at some under-the-radar ASP.NET Core 5 features, and look around the community.
+share-img: /assets/img/stacks-27-card.png
+subtitle: This week, we look at some under-the-radar ASP.NET Core 5 features, and look around the community.
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 *Note: This is the published version of my free, weekly newsletter, The .NET Stacks. It was originally sent to subscribers on November 23, 2020. Subscribe at the bottom of this post to get the content right away!*
 
@@ -37,7 +35,7 @@ With [records](https://daveabrock.com/2020/07/06/c-sharp-9-deep-dive-records), i
 
 ASP.NET Core 5 now [can be used for model binding in MVC controllers or Razor Pages](https://docs.microsoft.com/aspnet/core/release-notes/aspnetcore-5.0?view=aspnetcore-5.0#model-binding-and-validation-with-c-9-record-types). I [wrote about it last week](https://daveabrock.com/2020/11/18/simplify-api-models-with-records). Look at how much simpler I can make things.
 
-![Our title bar in action]({{ site.url }}{{ site.baseurl }}/images/api-models.png)
+![Our title bar in action]({{ site.url }}{{ site.baseurl }}/assets/img/api-models.png)
 
 ### ✅ API improvements
 

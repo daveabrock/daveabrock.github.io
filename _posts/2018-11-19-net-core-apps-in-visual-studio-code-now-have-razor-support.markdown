@@ -1,7 +1,7 @@
 ---
 date: "2018-11-19"
 title: "Razor Support for ASP.NET Core Apps in Visual Studio Code"
-excerpt: VS Code now supports Razor for ASP.NET Core apps.
+subtitle: VS Code now supports Razor for ASP.NET Core apps.
 tags: [vs-code, dotnet-core, razor]
 ---
 
@@ -64,12 +64,12 @@ namespace TestRazorSupport.Pages
 
 In _Contact.cshtml_, let's access the `Name` property to check out the Razor support.
 
-   ![Name property]({{ site.url }}{{ site.baseurl }}/images/Name.png)
+   ![Name property]({{ site.url }}{{ site.baseurl }}/assets/img/Name.png)
 
 It works as you would expect—even inside HTML attributes—as we access the `Email` property:
 
-  ![Email]({{ site.url }}{{ site.baseurl }}/images/Email.png)
+  ![Email]({{ site.url }}{{ site.baseurl }}/assets/img/Email.png)
 
 And if we access .NET APIs (and [steal from the announcement)](https://blogs.msdn.microsoft.com/webdev/2018/11/16/razor-support-in-visual-studio-code-now-in-preview/) it works beautifully!
 
-   ![DateTime]({{ site.url }}{{ site.baseurl }}/images/DateTime.png)
+   ![DateTime]({{ site.url }}{{ site.baseurl }}/assets/img/DateTime.png)

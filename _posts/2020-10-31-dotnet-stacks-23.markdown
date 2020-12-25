@@ -3,13 +3,11 @@ date: "2020-10-31"
 title: "The .NET Stacks #23: .NET 5 support, migration tools, and links"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/stacks-23-card.png
-    overlay_filter: 0.8
-excerpt: This week, .NET 5 RC 2 ships, we talk .NET Foundation, and look around the community.
+share-img: /assets/img/stacks-23-card.png
+subtitle: This week, .NET 5 RC 2 ships, we talk .NET Foundation, and look around the community.
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 Get yourself a teammate that looks at your code [like Prince William looks at KFC](https://twitter.com/kieraneverson/status/1318602963921883138).
 
@@ -28,7 +26,7 @@ To that end, you might be wondering when future releases will occur, how Microso
 
 In terms of future releases, new major releases will be released every November.
 
-![.NET release schedule]({{ site.url }}{{ site.baseurl }}/images/release-schedule.png)
+![.NET release schedule]({{ site.url }}{{ site.baseurl }}/assets/img/release-schedule.png)
 
 As you can see, "LTS" and "Current" support will alternate between releases. As a refresher, let's walk through those.
 

@@ -1,13 +1,9 @@
 ---
 date: "2020-10-28"
 title: "Blast Off with Blazor: Learn components and testing with a custom 404 page"
-excerpt: "In the latest post, we'll write our first component and get acclimated with bUnit."
+subtitle: "In the latest post, we'll write our first component and get acclimated with bUnit."
 tags: [blazor, aspnet-core]
-header:
-    overlay_image: /assets/images/404-card.png
-    overlay_filter: 0.8
-toc: true
-toc_label: "Our custom NotFound component"
+share-img: /assets/img/404-card.png
 ---
 
 I hope you enjoyed the [introduction to our *Blast Off with Blazor* project](https://daveabrock.com/2020/10/26/blast-off-blazor-intro). It's time to get to work!
@@ -115,7 +111,7 @@ With that done, head back to `App.razor` and add our new component to the `NotFo
 
 Now, fire up your app and enter a silly path like `http://localhost:5000/kittykittylicklick` and change the `NotFound` section to the following.
 
-![Our 404 page]({{ site.url }}{{ site.baseurl }}/images/bowb-404.png)
+![Our 404 page]({{ site.url }}{{ site.baseurl }}/assets/img/bowb-404.png)
 
 With our first component under our belt, let's discuss testing our component.
 
@@ -202,7 +198,7 @@ public void NotFoundComponentRendersCorrectly()
 
 The bUnit library works great with existing tooling. Using your favorite method, run your test (like **Test** > **Run All Tests in Visual Studio**), and you'll see the results in Test Explorer.
 
-![Our 404 page]({{ site.url }}{{ site.baseurl }}/images/bowb-test-explorer.png)
+![Our 404 page]({{ site.url }}{{ site.baseurl }}/assets/img/bowb-test-explorer.png)
 
 **Wondering about testing the button click?** We can test the button click with bUnit, but involves injecting the `NavigationManager` from our test class. It's not documented yet, [but there is a solution available](https://github.com/egil/bunit/issues/73#issuecomment-597828532). Injecting and mocking services is not a light topic, so I'll reserve that for a future post.
 {: .notice--warning}

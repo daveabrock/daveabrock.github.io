@@ -3,13 +3,11 @@ date: "2020-09-05"
 title: "The .NET Stacks #15: The final preview and ML.NET with Luis Quintanilla"
 tags: [dotnet-stacks]
 comments: false
-header:
-    overlay_image: /assets/images/stacks-15-card.png
-    overlay_filter: 0.8
-excerpt: We discuss the final .NET preview, talk about ML.NET with Luis Quintanilla, and more!
+share-img: /assets/img/stacks-15-card.png
+subtitle: We discuss the final .NET preview, talk about ML.NET with Luis Quintanilla, and more!
 ---
 
-![Newsletter image]({{ site.url }}{{ site.baseurl }}/THE .NET STACKS.png)
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
 Welcome to the start of another week—I hope you are well and safe. We had an insanely busy week in the .NET world, so let's get to it.
 
@@ -49,7 +47,7 @@ That changed in 2018, when Microsoft launched ML.NET—a free, open source, x-pl
 
 There's no one better to talk to about this than Luis Quintanilla. Luis has been with ML.NET since the beginning and was eventually scooped up by Microsoft to work on the docs for ML.NET.
 
-![Luis Quintanilla]({{ site.url }}{{ site.baseurl }}/images/luisquintanilla-picture.jpg)
+![Luis Quintanilla]({{ site.url }}{{ site.baseurl }}/assets/img/luisquintanilla-picture.jpg)
 
 ### What made you focus on ML.NET over other development tech?
 
