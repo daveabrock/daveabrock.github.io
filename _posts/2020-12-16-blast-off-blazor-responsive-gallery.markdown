@@ -31,7 +31,7 @@ If you haven't been with me for the whole series, we're building a Blazor Web As
 
 With the images in place, we're going to build the image gallery. It's responsive and will look good on devices of any size.
 
-![Our slow site]({{ site.url }}{{ site.baseurl }}/assets/img/image-gallery.png)
+![Our slow site]({{ site.url }}{{ site.baseurl }}/assets/img/image-gallery-view.png)
 
 All code [is on GitHub](https://github.com/daveabrock/NASAImageOfDay).
 
@@ -212,7 +212,7 @@ Here's how a card looks with the `New` badge:
 
 And again, here's how the page looks. Check it out [live at *blastoffwithblazor.com* as well](https://www.blastoffwithblazor.com/assets/img)!
 
-![Our slow site]({{ site.url }}{{ site.baseurl }}/assets/img/image-gallery.png)
+![Our slow site]({{ site.url }}{{ site.baseurl }}/assets/img/image-gallery-view.png)
 
 For comparison, here's how it looks on an iPhone X.
 
