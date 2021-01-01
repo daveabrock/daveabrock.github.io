@@ -196,6 +196,9 @@ paginate: 10
 kramdown:
   input: GFM
 
+feed:
+  posts_limit: 10000
+
 # Default YAML values (more information on Jekyll's site)
 defaults:
   -
