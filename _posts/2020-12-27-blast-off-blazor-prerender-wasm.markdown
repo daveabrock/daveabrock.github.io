@@ -2,7 +2,7 @@
 date: "2020-12-27"
 title: "Blast Off with Blazor: Prerender a Blazor Web Assembly application"
 subtitle: "In this post, we speed up initial load time by prerendering our Blazor Web Assembly application."
-tags: [aspnet-core]
+tags: [aspnet-core, blast-off-blazor]
 share-img: /assets/img/prerender-card.png
 readtime: true
 ---

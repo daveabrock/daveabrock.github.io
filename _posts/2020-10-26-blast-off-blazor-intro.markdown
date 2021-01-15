@@ -2,7 +2,7 @@
 date: "2020-10-26"
 title: "Blast Off with Blazor: Get to know Blazor and our project"
 subtitle: "We kick off our series by talking about Blazor, reviewing our code for the first time, and explaining how to run our project."
-tags: [blazor, aspnet-core]
+tags: [blazor, aspnet-core, blast-off-blazor]
 share-img: /assets/img/blast-off-intro.png
 ---
 

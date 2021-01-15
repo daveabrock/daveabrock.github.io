@@ -2,7 +2,7 @@
 date: "2020-11-22"
 title: "Blast Off with Blazor: Isolate and test your service dependencies"
 subtitle: "In this post, we refactor our component to inject an API service wrapper, to abstract away a direct HttpClient dependency."
-tags: [aspnet-core]
+tags: [aspnet-core, blast-off-blazor]
 share-img: /assets/img/service-dependency-card.png
 ---
 

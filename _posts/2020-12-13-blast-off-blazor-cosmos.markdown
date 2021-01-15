@@ -2,7 +2,7 @@
 date: "2020-12-13"
 title: "Blast Off with Blazor: Integrate Cosmos DB with Blazor WebAssembly"
 subtitle: "In this post, I integrate Cosmos DB with our project."
-tags: [aspnet-core]
+tags: [aspnet-core, blast-off-blazor]
 share-img: /assets/img/cosmos-wasm.png
 ---
 

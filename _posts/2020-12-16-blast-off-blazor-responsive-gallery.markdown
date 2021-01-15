@@ -2,7 +2,7 @@
 date: "2020-12-16"
 title: "Blast Off with Blazor: Build a responsive image gallery"
 subtitle: "In this post, we build a responsive image gallery using Blazor and Tailwind CSS."
-tags: [aspnet-core]
+tags: [aspnet-core, blast-off-blazor]
 share-img: /assets/img/image-gallery.png
 readtime: true
 ---
