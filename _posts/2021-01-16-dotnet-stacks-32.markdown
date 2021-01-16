@@ -7,6 +7,8 @@ share-img: /assets/img/ssr-cool.png
 subtitle: This week, we talk about SSR and Xamarin.Forms 5.0.
 ---
 
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
+
 Good morning and happy Monday! We've got a few things to discuss this week:
 
 - The new/old hotness: HTML over the wire
