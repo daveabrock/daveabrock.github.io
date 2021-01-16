@@ -28,7 +28,7 @@ Certainly. Knockout was my first critical-mass open source project, so that’s 
 
 > Years ago, you probably envisioned what Blazor could be. Has it met its potential, or are there other areas to focus on?
 
-We’re not there yet. If you go on YouTube and find the f[irst demo I ever did of Blazor at NDC Oslo in 2017](https://youtu.be/MiLAE6HMr10?t=1612), you’ll see my original prototype had near-instant live reloading while coding, and the download size was really tiny. I still aspire to get the real version of Blazor to have those characteristics. Of course, the prototype had the advantage of only needing to do a tiny number of things—creating a production-capable version is 100x more work, which is why it hasn’t yet got there, but has of course exceeded the prototype vastly in more important ways.
+We’re not there yet. If you go on YouTube and find the [first demo I ever did of Blazor at NDC Oslo in 2017](https://youtu.be/MiLAE6HMr10?t=1612), you’ll see my original prototype had near-instant live reloading while coding, and the download size was really tiny. I still aspire to get the real version of Blazor to have those characteristics. Of course, the prototype had the advantage of only needing to do a tiny number of things—creating a production-capable version is 100x more work, which is why it hasn’t yet got there, but has of course exceeded the prototype vastly in more important ways.
 
 Good news though is that in .NET 6 [we expect to ship](https://github.com/dotnet/aspnetcore/issues/5456) an even better version of live-updating-while-coding than I had in that first prototype, so it’s getting there!
 
