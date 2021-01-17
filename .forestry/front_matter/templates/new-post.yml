@@ -17,3 +17,5 @@ fields:
 - type: file
   name: share-img
   label: share-img
+pages:
+- _posts/new-post.md
