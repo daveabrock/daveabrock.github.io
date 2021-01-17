@@ -2,9 +2,9 @@ backend:
   name: github
   repo: daveabrock/daveabrock.github.io
   branch: master
-  site_domain: reverent-kilby-c6cecd.netlify.com
+  site_domain: reverent-kilby-c6cecd.netlify.app
 
-media_folder: "images/uploads"
+media_folder: "assets/img"
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
