@@ -17,6 +17,3 @@ fields:
 - type: file
   name: share-img
   label: share-img
-- type: boolean
-  name: readtime
-  label: readtime
