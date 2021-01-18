@@ -17,3 +17,5 @@ fields:
 - type: file
   name: share-img
   label: share-img
+pages:
+- _posts/signed-http-exchanges-a-possible-cdn-cache-for-blazor-webassembly.md
