@@ -1,16 +1,17 @@
 ---
-date: "2021-01-17"
-title: "Dev Discussions: Steve Sanderson"
-tags: [dotnet-stacks, dev-discussions]
+date: 2021-01-17
+title: 'Dev Discussions: Steve Sanderson'
+tags:
+- dotnet-stacks
+- dev-discussions
 subtitle: We talk to Steve Sanderson, the creator of Blazor, about what's next.
-tags: [dotnet-stacks, dev-discussions]
-share-img: /assets/img/sanderson-card.png
----
+share-img: "/assets/img/sanderson-card.png"
 
-This is the full interview from my discussion with Steve Sanderson in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com)!
+---
+This is the full interview from my discussion with Steve Sanderson in my weekly (free!) newsletter, _The .NET Stacks_. Consider [subscribing today](https://dotnetstacks.com)!
 {: .box-note}
 
-It seems like forever ago when, [at NDC Oslo in 2017](https://youtu.be/MiLAE6HMr10?t=1612), Steve Sanderson talked about a fun project he was working on, called .NET Anywhere. In the demo, he was able to load and run C# code—*ConsoleApp1.dll*, specifically—in the browser, using Web Assembly. C# in the browser! In the talk, he called it "*an experiment, something for you to be amused by*."
+It seems like forever ago when, [at NDC Oslo in 2017](https://youtu.be/MiLAE6HMr10?t=1612), Steve Sanderson showed off a new web UI framework with the caveat: "_an experiment, something for you to be amused by_." By extending [Dot Net Anywhere](https://github.com/chrisdunelm/DotNetAnywhere) (DNA), Chris Bacon's portable .NET runtime, on WebAssembly, he was able to load and run C# in the browser. In the browser!
 
 Of course, this amusing experiment has grown [into Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor), a robust system for writing web UIs in C#. I was happy to talk to Steve Sanderson about his passions for the front-end web, how far Blazor has come, and what's coming to Blazor in .NET 6.
 
@@ -32,7 +33,7 @@ We’re not there yet. If you go on YouTube and find the [first demo I ever did 
 
 Good news though is that in .NET 6 [we expect to ship](https://github.com/dotnet/aspnetcore/issues/5456) an even better version of live-updating-while-coding than I had in that first prototype, so it’s getting there!
 
-> The Blazor use case for .NET devs is quite clear. Do you see Blazor reaching a lot of folks in the JavaScript community (I'm thinking of Angular, where the learning curve is steep), or do you see Blazor's impact limited to the .NET ecosystem? 
+> The Blazor use case for .NET devs is quite clear. Do you see Blazor reaching a lot of folks in the JavaScript community (I'm thinking of Angular, where the learning curve is steep), or do you see Blazor's impact limited to the .NET ecosystem?
 
 Longer term I think it depends on the fundamentals: download size and perf. With .NET 5, Blazor WebAssembly’s main selling point is the .NET code, which easily makes it the best choice of framework for a lot of .NET-centric teams, but on its own that isn’t enough to win over a JS-centric team.
 
@@ -66,7 +67,7 @@ Blazor is perhaps the option that gives the widest reach across device types, as
 
 See our [published roadmap](https://github.com/dotnet/aspnetcore/issues/27883). 😊
 
-*[Ed. Note: Fair enough. The heavy hitters include [AOT compilation](https://github.com/dotnet/aspnetcore/issues/5466), [hot reload](https://github.com/dotnet/aspnetcore/issues/5456), [global exception handling](https://github.com/dotnet/aspnetcore/issues/13452), and [required parameters for components](https://github.com/dotnet/aspnetcore/issues/11815).]*
+_\[Ed. Note: Fair enough. The heavy hitters include_ [_AOT compilation_](https://github.com/dotnet/aspnetcore/issues/5466)_,_ [_hot reload_](https://github.com/dotnet/aspnetcore/issues/5456)_,_ [_global exception handling_](https://github.com/dotnet/aspnetcore/issues/13452)_, and_ [_required parameters for components_](https://github.com/dotnet/aspnetcore/issues/11815)_.\]_
 
 > Does Blazor hold up from a load testing perspective? Would it support Amazon-like scale?
 
@@ -80,4 +81,4 @@ Blazor Server is a more obvious choice for a public-facing shopping cart app. We
 
 When something isn’t working or behaves differently than you expected, don’t just keep changing things until it seems to work, as a lot of developers do. Make sure you figure out why it was doing what it was doing, otherwise you’re not really advancing your skills.
 
-*You can connect with Steve Sanderson [on Twitter](https://twitter.com/stevensanderson).*
+_You can connect with Steve Sanderson_ [_on Twitter_](https://twitter.com/stevensanderson)_._
