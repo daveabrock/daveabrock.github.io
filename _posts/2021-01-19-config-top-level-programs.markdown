@@ -24,7 +24,7 @@ Console.WriteLine($"During the week, I like to {weekdayHobby} and on the weekend
 Console.WriteLine($"A quote to live by: {quote}");
 ```
 
-# Add configuration to top-level program
+# Add configuration to a top-level program
 
 Can we work with configuration with top-level programs? (Yes, *should we* is a different conversation, of course.)
 
@@ -67,7 +67,6 @@ In your top-level program, create a `ConfigurationBuilder` with the appropriate 
 var config = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())
                  .AddJsonFile("appsettings.json")
-                 .AddEnvironmentVariables()
                  .Build();
 ```
 
