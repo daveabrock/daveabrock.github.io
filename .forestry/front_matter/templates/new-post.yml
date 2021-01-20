@@ -18,4 +18,5 @@ fields:
   name: share-img
   label: share-img
 pages:
+- _posts/how-to-use-configuration-with-c-9-top-level-programs.md
 - _posts/signed-http-exchanges-a-possible-cdn-cache-for-blazor-webassembly.md
