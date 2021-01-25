@@ -57,7 +57,7 @@ ___
 
 ## Dev Discussions: Steve Sanderson
 
-It seems like forever ago when, [at NDC Oslo in 2017](https://youtu.be/MiLAE6HMr10?t=1612), Steve Sanderson talked about a fun project he was working on, called .NET Anywhere. In the demo, he was able to load and run C# code—*ConsoleApp1.dll*, specifically—in the browser, using Web Assembly. C# in the browser! In the talk, he called it "*an experiment, something for you to be amused by*."
+It seems like forever ago when, [at NDC Oslo in 2017](https://youtu.be/MiLAE6HMr10?t=1612), Steve Sanderson showed off a new web UI framework with the caveat: "_an experiment, something for you to be amused by_." By extending [Dot Net Anywhere](https://github.com/chrisdunelm/DotNetAnywhere) (DNA), Chris Bacon's portable .NET runtime, on WebAssembly, he was able to load and run C# in the browser. In the browser!
 
 Of course, this amusing experiment has grown [into Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor), a robust system for writing web UIs in C#. I was happy to talk to Steve Sanderson about his passions for the front-end web, how far Blazor has come, and what's coming to Blazor in .NET 6.
 
