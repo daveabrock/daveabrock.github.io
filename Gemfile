@@ -6,4 +6,5 @@ gemspec
 gem 'tzinfo-data'
 gem 'jekyll-feed'
 gem 'webrick'
+gem 'wdm'
 
