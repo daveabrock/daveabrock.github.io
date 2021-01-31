@@ -1,5 +1,5 @@
 ---
-date: "2021-01-28"
+date: "2021-01-31"
 title: "How to achieve style inheritance with Blazor CSS isolation"
 tags: [csharp,blazor]
 share-img: /assets/img/signed-exchanges.png 
