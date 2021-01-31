@@ -275,7 +275,7 @@ If you're good with that, add the `DisableScopedCssBundling` MSBuild property to
 </PropertyGroup>
 ```
 
-# Wrap up
+## Wrap up
 
 In this post, we reviewed the new CSS isolation feature for Blazor. We discussed its benefits, the problems it solves, how to use it, and how you can pass styles to child components. We also talked about how to use CSS isolation with preprocessors and how to disable automatic bundling.
 
