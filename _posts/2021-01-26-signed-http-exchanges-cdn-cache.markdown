@@ -1,7 +1,7 @@
 ---
 date: "2021-01-26"
 title: "Signed HTTP Exchanges: A path for Blazor WebAssembly instant runtime loading?"
-tags: [csharp,csharp-9]
+tags: [csharp,blazor]
 share-img: /assets/img/signed-exchanges.png 
 subtitle: We explore Signed HTTP Exchanges, which may help when loading the .NET runtime in Blazor WebAssembly apps.
 ---
