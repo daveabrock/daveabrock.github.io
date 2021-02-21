@@ -1,9 +1,9 @@
 ---
 date: "2020-07-09"
 title: "C# 9 Deep Dive: Top-Level Programs"
-subtitle: In a C# 9 deep dive, we talk about how top-level programs work with status codes, async, arguments, and local functions.
+description: In a C# 9 deep dive, we talk about how top-level programs work with status codes, async, arguments, and local functions.
 tags: [csharp, csharp-9]
-share-img: /assets/img/top-level-programs.png
+image: /assets/img/top-level-programs.png
 ---
 
 This is the fourth post in a six-post series on C# 9 features in-depth:

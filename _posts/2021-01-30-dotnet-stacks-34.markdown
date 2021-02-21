@@ -3,8 +3,8 @@ date: "2021-01-30"
 title: "The .NET Stacks #34: 🎙 Visual Studio gets an update, and you get a rant"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/rant-card.png 
-subtitle: This week, we talk about Visual Studio, EF Core 6, and GitHub Pages.
+image: /assets/img/rant-card.png 
+description: This week, we talk about Visual Studio, EF Core 6, and GitHub Pages.
 ---
 
 ![Newsletter image](https://daveabrock.com/bernie-stacks.png)

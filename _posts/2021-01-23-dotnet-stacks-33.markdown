@@ -3,8 +3,8 @@ date: "2021-01-23"
 title: "The .NET Stacks #33: 🚀 A blazing conversation with Steve Sanderson"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-33-card.png 
-subtitle: It's a jam-packed issue this week, as we talk about Blazor with Steve Sanderson.
+image: /assets/img/stacks-33-card.png 
+description: It's a jam-packed issue this week, as we talk about Blazor with Steve Sanderson.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

@@ -1,9 +1,9 @@
 ---
 date: "2021-01-14"
 title: "Blast Off with Blazor: Build a search-as-you-type box"
-subtitle: "In this post, we build a quick search box that filters our images."
+description: "In this post, we build a quick search box that filters our images."
 tags: [aspnet-core, blast-off-blazor]
-share-img: /assets/img/search-type-card.png
+image: /assets/img/search-type-card.png
 readtime: true
 ---
 

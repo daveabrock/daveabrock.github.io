@@ -1,9 +1,9 @@
 ---
 date: "2020-06-07"
 title: 'Implement custom filters in your ASP.NET Core feature flags'
-subtitle: Learn how to implement custom filters in your ASP.NET Core apps, using pre-shipped filters or even writing your own.
+description: Learn how to implement custom filters in your ASP.NET Core apps, using pre-shipped filters or even writing your own.
 tags: [csharp, dotnet-core, feature-flags]
-share-img: /assets/img/ff-filters.png
+image: /assets/img/ff-filters.png
 ---
 
 So far in this series, we introduced `Microsoft.FeatureManagement` as a way to [manage feature flag functionality in your .NET applications](https://daveabrock.com/2020/05/24/introducing-feature-management-copy) and used the `Microsoft.FeatureManagement.AspNetCore` library to [conditionally filter HTML components and apply filters across controller action methods and classes](https://daveabrock.com/2020/05/30/introducing-feature-management-aspnetcore.html).

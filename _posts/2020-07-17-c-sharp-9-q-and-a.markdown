@@ -1,9 +1,9 @@
 ---
 date: "2020-07-17"
 title: "C# 9: Answering your questions"
-subtitle: In this post, I discuss the questions you had after I wrote my posts.
+description: In this post, I discuss the questions you had after I wrote my posts.
 tags: [csharp, csharp-9]
-share-img: /assets/img/q-and-a-card.png
+image: /assets/img/q-and-a-card.png
 ---
 
 **Note**: Originally published five months before the official release of C# 9, I've updated this post after the release to capture the latest updates.

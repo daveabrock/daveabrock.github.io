@@ -2,8 +2,8 @@
 date: "2020-10-09"
 title: "The .NET Stacks #20: Route to Code, IdentityServer, community links"
 tags: [dotnet-stacks]
-share-img: /assets/img/stacks-20-card.png
-subtitle: This week, we look at Route to Code and check in on big IdentityServer news.
+image: /assets/img/stacks-20-card.png
+description: This week, we look at Route to Code and check in on big IdentityServer news.
 comments: false
 ---
 

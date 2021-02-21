@@ -3,8 +3,8 @@ date: "2020-09-12"
 title: "The .NET Stacks #16: App trimming and more on ML.NET"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-16-card.png
-subtitle: We discuss app trimming in .NET 5, more on ML.NET with Luis Quintanilla, and more!
+image: /assets/img/stacks-16-card.png
+description: We discuss app trimming in .NET 5, more on ML.NET with Luis Quintanilla, and more!
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

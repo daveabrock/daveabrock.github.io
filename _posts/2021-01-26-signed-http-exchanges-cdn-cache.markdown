@@ -2,8 +2,8 @@
 date: "2021-01-26"
 title: "Signed HTTP Exchanges: A path for Blazor WebAssembly instant runtime loading?"
 tags: [csharp,blazor]
-share-img: /assets/img/signed-exchanges.png 
-subtitle: We explore Signed HTTP Exchanges, which may help when loading the .NET runtime in Blazor WebAssembly apps.
+image: /assets/img/signed-exchanges.png 
+description: We explore Signed HTTP Exchanges, which may help when loading the .NET runtime in Blazor WebAssembly apps.
 ---
 
 Before you sit down and write the next great Blazor application, you first need to think about [hosting](https://docs.microsoft.com/aspnet/core/blazor/hosting-models?view=aspnetcore-5.0): Blazor Server or Blazor WebAssembly? I've [written about this quite a bit](https://daveabrock.com/2020/10/26/blast-off-blazor-intro#hosting-models), but I'll provide a condensed version for you.

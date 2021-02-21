@@ -3,8 +3,8 @@ date: "2020-11-13"
 title: "The .NET Stacks #25: .NET 5 officially launches tomorrow"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-25-card.png
-subtitle: This week, .NET 5 ships and are C# 9 records actually immutable by default?
+image: /assets/img/stacks-25-card.png
+description: This week, .NET 5 ships and are C# 9 records actually immutable by default?
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

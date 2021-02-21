@@ -2,8 +2,8 @@
 date: "2020-09-02"
 title: "How To Not Hate JavaScript"
 tags: [javascript]
-share-img: /assets/img/not-hate-javascript.png
-subtitle: Let's improve our relationship with JavaScript by reinforcing some core concepts.
+image: /assets/img/not-hate-javascript.png
+description: Let's improve our relationship with JavaScript by reinforcing some core concepts.
 ---
 
 "I hate JavaScript."

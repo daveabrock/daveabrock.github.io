@@ -3,8 +3,8 @@ date: "2020-05-31"
 title: "The .NET Stacks #2: Project Tye, YARP, news, and community!"
 tags: [dotnet-stacks]
 comments: false
-subtitle: Details on Project Tye, talking about YARP, and community links!
-share-img: /assets/img/stacks-2-card.png
+description: Details on Project Tye, talking about YARP, and community links!
+image: /assets/img/stacks-2-card.png
 ---
 
 This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away! Subscribers don't have to wait a week to receive the content.

@@ -3,8 +3,8 @@ date: "2020-06-08"
 title: "The .NET Stacks #3: Native feature flags, local Kubernetes, community roundup!"
 tags: [dotnet-stacks]
 comments: false
-subtitle: Let's talk feature flags and Kubernetes in Visual Studio.
-share-img: /assets/img/stacks-3-card.png
+description: Let's talk feature flags and Kubernetes in Visual Studio.
+image: /assets/img/stacks-3-card.png
 ---
 
 This is an archive of my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away! Subscribers don't have to wait a week to receive the content.

@@ -1,9 +1,9 @@
 ---
 date: "2020-10-20"
 title: "C# 10 First Look: Constant string interpolation"
-subtitle: "Constant string interpolation looks to be set for C# 10—let's take a look."
+description: "Constant string interpolation looks to be set for C# 10—let's take a look."
 tags: [csharp]
-share-img: /assets/img/constant-string-interpolation.png
+image: /assets/img/constant-string-interpolation.png
 ---
 
 C# 9 is finally here, everybody.

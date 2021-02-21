@@ -1,9 +1,9 @@
 ---
 date: "2020-11-16"
 title: "Use OpenAPI, Swagger UI, and HttpRepl in ASP.NET Core 5 to supercharge your API development"
-subtitle: "In the latest post, we look at how easy it is to work with Swagger and HttpRepl in ASP.NET Core 5."
+description: "In the latest post, we look at how easy it is to work with Swagger and HttpRepl in ASP.NET Core 5."
 tags: [aspnet-core]
-share-img: /assets/img/swagger-repl-card.png
+image: /assets/img/swagger-repl-card.png
 ---
 
 When developing APIs in ASP.NET Core, you've got many tools at your disposal. Long gone are the days when you run your app from Visual Studio and call your `localhost` endpoint in your browser. 

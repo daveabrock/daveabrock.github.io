@@ -2,8 +2,8 @@
 date: "2020-09-10"
 title: "Use CSS isolation in your Blazor projects"
 tags: [aspnet-core, blazor]
-share-img: /assets/img/css-isolation-card.png
-subtitle: We talk about scoping your CSS to your Blazor components—all without a stylesheet reference.
+image: /assets/img/css-isolation-card.png
+description: We talk about scoping your CSS to your Blazor components—all without a stylesheet reference.
 ---
 
 I'm excited to see Blazor now supporting CSS isolation—also known as scoped CSS.

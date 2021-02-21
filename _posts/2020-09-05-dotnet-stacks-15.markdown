@@ -3,8 +3,8 @@ date: "2020-09-05"
 title: "The .NET Stacks #15: The final preview and ML.NET with Luis Quintanilla"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-15-card.png
-subtitle: We discuss the final .NET preview, talk about ML.NET with Luis Quintanilla, and more!
+image: /assets/img/stacks-15-card.png
+description: We discuss the final .NET preview, talk about ML.NET with Luis Quintanilla, and more!
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

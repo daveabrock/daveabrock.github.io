@@ -3,8 +3,8 @@ date: "2020-12-12"
 title: "The .NET Stacks #29: More on route-to-code and some Kubernetes news"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-29-card.png
-subtitle: This week, we dig deep on route-to-code and discuss some Kubernetes news.
+image: /assets/img/stacks-29-card.png
+description: This week, we dig deep on route-to-code and discuss some Kubernetes news.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

@@ -3,8 +3,8 @@ date: "2020-12-05"
 title: "The .NET Stacks, #28: The future of MVC and themes of .NET 6"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-28-card.png
-subtitle: This week, we look at the future of APIs in ASP.NET Core MVC and the "themes" of .NET 6.
+image: /assets/img/stacks-28-card.png
+description: This week, we look at the future of APIs in ASP.NET Core MVC and the "themes" of .NET 6.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

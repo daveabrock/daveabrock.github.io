@@ -2,8 +2,8 @@
 date: "2020-03-29"
 title: "C# 8, A Year Late"
 tags: [csharp]
-subtitle: I catch up on all that C# 8 has to offer.
-share-img: /assets/img/year-late-card.png
+description: I catch up on all that C# 8 has to offer.
+image: /assets/img/year-late-card.png
 readtime: true
 ---
 

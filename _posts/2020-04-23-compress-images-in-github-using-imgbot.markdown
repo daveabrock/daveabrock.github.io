@@ -1,9 +1,9 @@
 ---
 date: "2020-04-23"
 title: "Compress Images in GitHub Using Imgbot"
-subtitle: How to use the ImgBot GitHub app for set-it-and-forget-it image compression.
+description: How to use the ImgBot GitHub app for set-it-and-forget-it image compression.
 tags: [github, tools, imgbot]
-share-img: /assets/img/imgbot-card.png
+image: /assets/img/imgbot-card.png
 ---
 
 We've all been there: we're reading an article online and it takes *forever* to load. To investigate—because we're developers, after all—we open our developer tools, browse to the `Network` tab, and notice that the images are uncompressed. *Oof*. Of course, we would never do that, right?

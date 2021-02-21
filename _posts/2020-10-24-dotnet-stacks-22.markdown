@@ -3,8 +3,8 @@ date: "2020-10-24"
 title: "The .NET Stacks #22: .NET 5 RC 2 ships, .NET Foundation all hands, and links"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-22-card.png
-subtitle: This week, .NET 5 RC 2 ships, we talk .NET Foundation, and look around the community.
+image: /assets/img/stacks-22-card.png
+description: This week, .NET 5 RC 2 ships, we talk .NET Foundation, and look around the community.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

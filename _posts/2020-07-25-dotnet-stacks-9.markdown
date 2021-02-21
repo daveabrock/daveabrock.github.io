@@ -3,8 +3,8 @@ date: "2020-07-25"
 title: "The .NET Stacks #9: Project Coyote, new Razor editor, and more!"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-9-card.png
-subtitle: We discuss Project Coyote, a new Visual Studio Razor editor, and more!
+image: /assets/img/stacks-9-card.png
+description: We discuss Project Coyote, a new Visual Studio Razor editor, and more!
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

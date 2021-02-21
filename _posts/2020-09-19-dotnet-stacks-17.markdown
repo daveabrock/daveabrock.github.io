@@ -3,8 +3,8 @@ date: "2020-09-19"
 title: "The .NET Stacks #17: EF Core 5, Blazor + CSS, and community!"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-17-card.png
-subtitle: EF Core 5 is done, Blazor CSS isolation, and more!
+image: /assets/img/stacks-17-card.png
+description: EF Core 5 is done, Blazor CSS isolation, and more!
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

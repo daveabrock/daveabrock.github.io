@@ -1,9 +1,9 @@
 ---
 date: "2020-12-07"
 title: "Automate a Markdown links page with Pinboard and C#"
-subtitle: "In this post, we generate a Markdown links page using Pinboard and C#."
+description: "In this post, we generate a Markdown links page using Pinboard and C#."
 tags: [tools, csharp, dotnetstacks]
-share-img: /assets/img/pinboard-post.png
+image: /assets/img/pinboard-post.png
 ---
 
 *This is my contribution for the [C# Advent Calendar](https://www.csadvent.christmas/), a collection of awesome C# posts throughout December. Check it out!*

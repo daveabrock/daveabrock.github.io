@@ -8,7 +8,7 @@ During your development process, you may need to show off your work from a brows
 
 There are several options you could consider. You could use a cloud service like [Microsoft Azure](https://azure.microsoft.com/en-us/) or [Amazon Web Services](https://aws.amazon.com), but you'll need to register, configure, and eventually pay. [Now](https://www.npmjs.com/package/localhost-now) is great, but it only serves up static files. [Ngrok](https://ngrok.com/) is full-featured and robust, but if you're looking for a quick solution with minimal configuration you should look elsewhere.
 
-I prefer [Localtunnel](https://localtunnel.github.io/www/) and its amazing simplicity. Its simplicity should not be taken as a deficiency, [as others have noted](https://news.ycombinator.com/item?id=7585056). Once I download the package, all I need to do is tell Localtunnel the port I am working on—then I get back a public URL I can share with anyone in the world.
+I prefer [Localtunnel](https://localtunnel.github.io/www/)and its amazing simplicity. Its simplicity should not be taken as a deficiency, [as others have noted](https://news.ycombinator.com/item?id=7585056). Once I download the package, all I need to do is tell Localtunnel the port I am working on—then I get back a public URL I can share with anyone in the world.
 
 You can get Localtunnel from a Node.js package. (If you need Node, download it from [this site](https://nodejs.org/en/download/), and of course confirm the installation by typing `node -v` in your shell.)
 

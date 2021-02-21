@@ -2,8 +2,8 @@
 date: "2021-02-18"
 title: "Build a Blazor 'Copy to Clipboard' component with a Markdown editor"
 tags: [github]
-share-img: /assets/img/copy-clipboard.png 
-subtitle: Let's build a 'Copy to Clipboard' component, where we can copy Markdown content to the clipboard.
+image: /assets/img/copy-clipboard.png 
+description: Let's build a 'Copy to Clipboard' component, where we can copy Markdown content to the clipboard.
 ---
 
 I recently built a quick utility app for the day job, where I used a simple Markdown previewer with a *Copy to Clipboard* button. I use the button to notify if the copy is successful. Then, I return the button to its original state.

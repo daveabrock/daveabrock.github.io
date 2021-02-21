@@ -4,8 +4,8 @@ title: 'Dev Discussions: Steve Sanderson'
 tags:
 - dotnet-stacks
 - dev-discussions
-subtitle: We talk to Steve Sanderson, the creator of Blazor, about what's next.
-share-img: "/assets/img/sanderson-card.png"
+description: We talk to Steve Sanderson, the creator of Blazor, about what's next.
+image: "/assets/img/sanderson-card.png"
 
 ---
 This is the full interview from my discussion with Steve Sanderson in my weekly (free!) newsletter, _The .NET Stacks_. Consider [subscribing today](https://dotnetstacks.com)!

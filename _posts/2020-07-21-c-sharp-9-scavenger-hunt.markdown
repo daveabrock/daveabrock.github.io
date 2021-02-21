@@ -1,8 +1,8 @@
 ---
 date: "2020-07-21"
 title: "C# 9: Putting it all together with a scavenger hunt"
-subtitle: Let's go through the major C# 9 features in a single post.
-share-img: /assets/img/scavenger-card.png
+description: Let's go through the major C# 9 features in a single post.
+image: /assets/img/scavenger-card.png
 tags: [csharp, csharp-9]
 ---
 

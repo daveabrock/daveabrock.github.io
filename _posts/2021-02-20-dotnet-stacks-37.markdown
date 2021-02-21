@@ -3,8 +3,8 @@ date: "2021-02-20"
 title: "The .NET Stacks #37: 😲 When your private NuGet feed isn't so private"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-37-card.png 
-subtitle: This week, we talk about a supply chain attack, container updates, Blazor REPL, and more.
+image: /assets/img/stacks-37-card.png 
+description: This week, we talk about a supply chain attack, container updates, Blazor REPL, and more.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

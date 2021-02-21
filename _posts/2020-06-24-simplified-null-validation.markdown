@@ -1,9 +1,9 @@
 ---
 date: "2020-06-24"
 title: "On simplifying null validation with C# 9"
-subtitle: An update on simplified null checking in C# 9.
+description: An update on simplified null checking in C# 9.
 tags: [csharp]
-share-img: /assets/img/simplify-null-card.png
+image: /assets/img/simplify-null-card.png
 ---
 
 {: .box-note}

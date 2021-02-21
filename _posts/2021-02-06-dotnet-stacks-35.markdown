@@ -3,8 +3,8 @@ date: "2021-02-06"
 title: "The .NET Stacks #35: 🔑 Nothing is certain but death and expiring certificates"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-35-card.png 
-subtitle: This week, we talk about NuGet, Razor improvements, and more.
+image: /assets/img/stacks-35-card.png 
+description: This week, we talk about NuGet, Razor improvements, and more.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

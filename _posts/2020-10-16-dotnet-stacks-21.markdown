@@ -2,8 +2,8 @@
 date: "2020-10-16"
 title: "The .NET Stacks #21: Azure Static Web Apps, .NET 6 feedback, and more!"
 tags: [dotnet-stacks]
-share-img: /assets/img/stacks-21-card.png
-subtitle: This week, we take a look at Azure Static Web Apps, dotnet-monitor, and more.
+image: /assets/img/stacks-21-card.png
+description: This week, we take a look at Azure Static Web Apps, dotnet-monitor, and more.
 comments: false
 ---
 

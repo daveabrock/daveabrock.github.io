@@ -2,8 +2,8 @@
 date: "2020-09-24"
 title: "Get to know your .NET streamers"
 tags: [community]
-share-img: /assets/img/dotnet-streamers.png
-subtitle: Let's look at the great streams from the .NET community.
+image: /assets/img/dotnet-streamers.png
+description: Let's look at the great streams from the .NET community.
 ---
 
 I've been geeking out on a lot of Twitch streams lately. I think it's a fantastic way to learn and engage with other folks. I find I'll learn more by watching someone code in a natural environment and asking questions as you go. And with most streams getting archived, you can consume them as they fit your schedule.

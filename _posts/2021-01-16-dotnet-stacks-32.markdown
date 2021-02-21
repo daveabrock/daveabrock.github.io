@@ -3,8 +3,8 @@ date: "2021-01-16"
 title: "The .NET Stacks #32: 😎 SSR is cool again"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/ssr-cool.png 
-subtitle: This week, we talk about SSR and Xamarin.Forms 5.0.
+image: /assets/img/ssr-cool.png 
+description: This week, we talk about SSR and Xamarin.Forms 5.0.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

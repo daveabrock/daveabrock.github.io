@@ -1,9 +1,9 @@
 ---
 date: "2020-08-15"
 title: "Dev Discussions - Scott Addie"
-subtitle: In the latest interview, we talk with Scott from Microsoft.
+description: In the latest interview, we talk with Scott from Microsoft.
 tags: [dotnet-stacks, dev-discussions]
-share-img: /assets/img/addie-card.png
+image: /assets/img/addie-card.png
 ---
 
 This is the full interview from my discussion with Scott Addie in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away!

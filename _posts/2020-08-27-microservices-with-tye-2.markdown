@@ -1,8 +1,8 @@
 ---
 date: "2020-08-27"
 title: "Use Project Tye to simplify your .NET microservice development experience (part 2)"
-subtitle: In this post, we use Project Tye to deploy our application to Kubernetes.
-share-img: /assets/img/tye-2-card.png
+description: In this post, we use Project Tye to deploy our application to Kubernetes.
+image: /assets/img/tye-2-card.png
 tags: [tools, aspnet-core]
 ---
 

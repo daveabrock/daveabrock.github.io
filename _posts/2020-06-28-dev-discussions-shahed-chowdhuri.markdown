@@ -1,9 +1,9 @@
 ---
 date: "2020-06-28"
 title: "Dev Discussions - Shahed Chowdhuri talks about his ASP.NET Core A-Z blog series"
-subtitle: We talk with Shahed Chowdhuri about ASP.NET Core blogging and more!
+description: We talk with Shahed Chowdhuri about ASP.NET Core blogging and more!
 tags: [dotnet-stacks, dev-discussions]
-share-img: /assets/img/shahed-card.png
+image: /assets/img/shahed-card.png
 ---
 
 This is the full interview from my discussion with Shahed Chowdhuri in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com) to get this content right away!

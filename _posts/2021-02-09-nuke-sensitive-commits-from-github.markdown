@@ -2,8 +2,8 @@
 date: "2021-02-09"
 title: "How to nuke sensitive commits from your GitHub repository"
 tags: [github]
-share-img: /assets/img/sensitive-commits.png 
-subtitle: Let's learn how to hit Ctrl+Z on a regretful commit.
+image: /assets/img/sensitive-commits.png 
+description: Let's learn how to hit Ctrl+Z on a regretful commit.
 ---
 
 We all make mistakes. Let's talk about one of my recent ones.

@@ -3,8 +3,8 @@ date: "2020-08-15"
 title: "The .NET Stacks #12: Azure DevOps or GitHub Actions, .NET Foundation results, community links!"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-12-card.png
-subtitle: We discuss Microsoft CI/CD options, find out who's on the .NET Foundation board, and look at the busy week in the .NET community!
+image: /assets/img/stacks-12-card.png
+description: We discuss Microsoft CI/CD options, find out who's on the .NET Foundation board, and look at the busy week in the .NET community!
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

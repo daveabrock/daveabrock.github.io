@@ -3,8 +3,8 @@ date: "2020-08-08"
 title: "The .NET Stacks #11: Newtonsoft, async void, more with Jeremy Likness, more!"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-11-card.png
-subtitle: We discuss Newtonsoft.Json, using async void, more with Jeremy Likness, and more!
+image: /assets/img/stacks-11-card.png
+description: We discuss Newtonsoft.Json, using async void, more with Jeremy Likness, and more!
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

@@ -1,8 +1,8 @@
 ---
 date: "2021-01-05"
 title: "More with Gruut: Use the Microsoft Bot Framework to analyze emotion with the Azure Face API"
-subtitle: In this post, we use the Azure Face API to send Gruut attachments.
-share-img: /assets/img/face-api.png
+description: In this post, we use the Azure Face API to send Gruut attachments.
+image: /assets/img/face-api.png
 tags: [csharp]
 ---
 

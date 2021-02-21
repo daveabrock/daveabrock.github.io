@@ -2,8 +2,8 @@
 date: "2021-01-31"
 title: "How to achieve style inheritance with Blazor CSS isolation"
 tags: [csharp,blazor]
-share-img: /assets/img/iso-inherit.png 
-subtitle: We explore how to achieve traditional style inheritance with Blazor CSS isolation.
+image: /assets/img/iso-inherit.png 
+description: We explore how to achieve traditional style inheritance with Blazor CSS isolation.
 ---
 
 Are you familiar with Blazor CSS isolation? Last year, when it was released, I [wrote an introductory post](https://daveabrock.com/2020/09/10/blazor-css-isolation) and the [official ASP.NET Core doc](https://docs.microsoft.com/aspnet/core/blazor/components/css-isolation?view=aspnetcore-5.0). If you want a quick primer, here goes: Blazor CSS isolation allows you to scope styles to a specific component. With CSS isolation, you can package your styles to your components, and you also don't need to worry about the inevitable headaches when working with vendor styles and global CSS.

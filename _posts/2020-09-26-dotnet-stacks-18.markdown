@@ -3,8 +3,8 @@ date: "2020-09-26"
 title: "The .NET Stacks #18: RC1 is here, the fate of .NET Standard, and F# with Isaac Abraham"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-18-card.png
-subtitle: This week, RC1 is here, we talk about .NET Standard, and discuss F# with Isaac Abraham.
+image: /assets/img/stacks-18-card.png
+description: This week, RC1 is here, we talk about .NET Standard, and discuss F# with Isaac Abraham.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

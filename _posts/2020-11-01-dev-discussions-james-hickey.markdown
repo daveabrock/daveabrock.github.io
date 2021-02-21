@@ -2,9 +2,9 @@
 date: "2020-11-01"
 title: "Dev Discussions - James Hickey"
 tags: [dotnet-stacks, dev-discussions]
-subtitle: We talk to James Hickey about his Coravel project and software design.
+description: We talk to James Hickey about his Coravel project and software design.
 tags: [dotnet-stacks, dev-discussions]
-share-img: /assets/img/hickey-card.png
+image: /assets/img/hickey-card.png
 ---
 
 This is the full interview from my discussion with James Hickey in my weekly (free!) newsletter, *The .NET Stacks*. Consider [subscribing today](https://dotnetstacks.com)!

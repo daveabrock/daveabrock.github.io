@@ -3,8 +3,8 @@ date: "2021-01-09"
 title: "The .NET Stacks #31: 🥳 10 things to kick off '21"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/10-things-2021.png 
-subtitle: This week, we kick off 2021 with a busy issue.
+image: /assets/img/10-things-2021.png 
+description: This week, we kick off 2021 with a busy issue.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

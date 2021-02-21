@@ -1,9 +1,9 @@
 ---
 date: "2020-07-06"
 title: "C# 9 Deep Dive: Records"
-subtitle: In a C# 9 deep dive, we go in depth on records.
+description: In a C# 9 deep dive, we go in depth on records.
 tags: [csharp, csharp-9]
-share-img: /assets/img/records.png
+image: /assets/img/records.png
 ---
 
 **Note**: Originally published five months before the official release of C# 9, I've updated this post after the release to capture the latest updates.

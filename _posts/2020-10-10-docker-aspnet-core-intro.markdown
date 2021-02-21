@@ -1,9 +1,9 @@
 ---
 date: "2020-10-10"
 title: "How to Docker with .NET: Getting Started"
-subtitle: "The series kicks off with an introduction on Docker, core concepts, and accessing a base ASP.NET Core image."
+description: "The series kicks off with an introduction on Docker, core concepts, and accessing a base ASP.NET Core image."
 tags: [docker, tools, aspnet-core]
-share-img: /assets/img/docker-getting-started.png
+image: /assets/img/docker-getting-started.png
 ---
 
 As a developer, do you ever think about all the time you spend ... *not developing*? Among the work we do to get things working—I like to call it *meta-work*—infrastructure is the most frustrating and the biggest headache. It takes so much of our time and impacts our ability to deliver value quickly.

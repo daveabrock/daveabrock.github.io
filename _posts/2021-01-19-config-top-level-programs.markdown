@@ -2,8 +2,8 @@
 date: "2021-01-19"
 title: "How to use configuration with C# 9 top-level programs"
 tags: [csharp,csharp-9]
-share-img: /assets/img/top-level-config.png 
-subtitle: In this post, let's use C# 9 top-level programs to read from configuration.
+image: /assets/img/top-level-config.png 
+description: In this post, let's use C# 9 top-level programs to read from configuration.
 ---
 
 I've been working with [top-level programs in C# 9](https://daveabrock.com/2020/07/09/c-sharp-9-top-level-programs) quite a bit lately. When writing simple console apps in .NET 5, it allows you to remove the ceremony of a namespace and a `Main(string[] args)` method. It's very beginner-friendly and allows developers to get going without worrying about learning about namespaces, arrays, arguments, and so on. While I'm not a beginner—although I feel like it some days—I enjoy using top-level programs to prototype things quickly.

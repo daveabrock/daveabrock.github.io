@@ -1,8 +1,8 @@
 ---
 date: "2020-08-19"
 title: "Use Project Tye to simplify your .NET microservice development experience (part 1)"
-subtitle: In this post, we explore Project Tye, a new developer tool that simplifies developing .NET microservices and distributed applications.
-share-img: /assets/img/tye-1-card.png
+description: In this post, we explore Project Tye, a new developer tool that simplifies developing .NET microservices and distributed applications.
+image: /assets/img/tye-1-card.png
 tags: [tools, aspnet-core]
 ---
 

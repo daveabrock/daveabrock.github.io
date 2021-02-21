@@ -1,7 +1,7 @@
 ---
 date: "2020-05-30"
 title: "Using Microsoft.FeatureManagement.AspNetCore to filter actions and HTML"
-subtitle: Use Microsoft.FeatureManagement.AspNetCore to filter HTML and controller actions.
+description: Use Microsoft.FeatureManagement.AspNetCore to filter HTML and controller actions.
 tags: [csharp, dotnet-core, feature-flags]
 ---
 

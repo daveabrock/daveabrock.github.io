@@ -1,9 +1,9 @@
 ---
 date: "2020-11-08"
 title: "Blast Off with Blazor: Use .NET 5 to update the HTML head from a Blazor component"
-subtitle: "In the latest post, we'll learn how to update the HTML head dynamically using .NET 5."
+description: "In the latest post, we'll learn how to update the HTML head dynamically using .NET 5."
 tags: [blazor, aspnet-core, blast-off-blazor]
-share-img: /assets/img/update-head.png
+image: /assets/img/update-head.png
 ---
 
 So far in this series, we've [walked through a project intro](https://daveabrock.com/2020/10/26/blast-off-blazor-intro) and also [got our feet wet with our first component](https://daveabrock.com/2020/10/28/blast-off-blazor-404-page).
@@ -225,6 +225,6 @@ Stay tuned for the next post where we work on writing tests for our `Index` comp
 
 - [Update the HTML head from your Blazor components](https://jonhilton.net/blazor-update-html-head/) (Jon Hilton)
 - [Dynamically setting the page title in a Blazor application](https://www.meziantou.net/dynamically-setting-the-page-title-in-a-blazor-application.htm) (Gérald Barré)
-- [Influencing the HTML head in Blazor apps](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-preview-8/#influencing-the-html-head-in-blazor-apps) (Daniel Roth)
+- [Influencing the HTML head in Blazor apps](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-5-preview-8/#influencing-the-html-head-in-blazor-apps)(Daniel Roth)
 - [Influencing HTML Head from a Blazor component](https://github.com/dotnet/aspnetcore/issues/10450) (GitHub issue)
 - [Adding favicons to your ASP.NET Core website with Real Favicon Generator](https://andrewlock.net/adding-favicons-to-your-asp-net-core-website-with-realfavicongenerator/) (Andrew Lock)

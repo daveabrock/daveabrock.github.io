@@ -3,8 +3,8 @@ date: "2020-05-24"
 title: "The .NET Stacks #1: Microsoft Build, announcements galore!"
 tags: [dotnet-stacks]
 comments: false
-subtitle: We discuss all of the Microsoft Build news!
-share-img: /assets/img/stacks-1-card.png
+description: We discuss all of the Microsoft Build news!
+image: /assets/img/stacks-1-card.png
 ---
 
 {: .box-note}

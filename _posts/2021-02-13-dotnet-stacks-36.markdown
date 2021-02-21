@@ -3,8 +3,8 @@ date: "2021-02-13"
 title: "The .NET Stacks #36: ⚡ Azure Functions and some Microsoft history"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-36-card.png 
-subtitle: This week, we talk about Azure Functions, Blazor, and some Microsoft history.
+image: /assets/img/stacks-36-card.png 
+description: This week, we talk about Azure Functions, Blazor, and some Microsoft history.
 ---
 
 Welcome to another week. If you're seeing temperatures above above 0° F, please send some my way. Talk about a cold start—Azure Functions should be jealous.

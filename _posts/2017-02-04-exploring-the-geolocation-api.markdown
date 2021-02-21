@@ -1,7 +1,7 @@
 ---
 date: "2017-02-04"
 title: "Exploring the Geolocation API"
-subtitle: Use the HTML geolocation API to get and monitor a user's current location.
+description: Use the HTML geolocation API to get and monitor a user's current location.
 tags: [javascript, html5]
 ---
 

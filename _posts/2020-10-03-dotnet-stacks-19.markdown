@@ -3,8 +3,8 @@ date: "2020-10-03"
 title: "The .NET Stacks #19: An Ignite recap and F# with Phillip Carter"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-19-card.png
-subtitle: This week, we run through Ignite and also talk with Phillip Carter about F# from the Microsoft perspective.
+image: /assets/img/stacks-19-card.png
+description: This week, we run through Ignite and also talk with Phillip Carter about F# from the Microsoft perspective.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)

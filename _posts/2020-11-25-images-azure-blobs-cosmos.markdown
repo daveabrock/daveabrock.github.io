@@ -1,9 +1,9 @@
 ---
 date: "2020-11-25"
 title: "Use Azure Functions, Azure Storage blobs, and Cosmos DB to copy images from public URLs"
-subtitle: "In this post, we work with Azure Storage blobs and Cosmos DB to copy images that are available over the public Internet."
+description: "In this post, we work with Azure Storage blobs and Cosmos DB to copy images that are available over the public Internet."
 tags: [aspnet-core, azure]
-share-img: /assets/img/public-url-images.png
+image: /assets/img/public-url-images.png
 ---
 
 There are several reasons why you'll want to host publicly accessible images yourself. For example, you may want to compress them or apply metadata for querying purposes on your site. For my *Blast Off with Blazor* project, I had that exact need.

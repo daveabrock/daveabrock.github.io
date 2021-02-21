@@ -1,7 +1,7 @@
 ---
 date: "2020-05-24"
 title: "Introducing the Microsoft.FeatureManagement library"
-subtitle: Use Microsoft.FeatureManagement to add native feature flags!
+description: Use Microsoft.FeatureManagement to add native feature flags!
 tags: [csharp, dotnet-core, feature-flags]
 ---
 

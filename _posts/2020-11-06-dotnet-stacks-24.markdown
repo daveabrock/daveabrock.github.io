@@ -3,8 +3,8 @@ date: "2020-11-06"
 title: "The .NET Stacks #24: Blazor readiness and James Hickey on Coravel"
 tags: [dotnet-stacks]
 comments: false
-share-img: /assets/img/stacks-24-card.png
-subtitle: This week, Blazor readiness and a talk with James Hickey.
+image: /assets/img/stacks-24-card.png
+description: This week, Blazor readiness and a talk with James Hickey.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
