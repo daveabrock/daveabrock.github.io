@@ -26,7 +26,7 @@ author:
 url: "https://daveabrock.com" #
 baseurl: ""
 permalink: /:year/:month/:day/:title
-google_analytics: "UA-83589168-1"
+google_analytics: UA-83589168-1
 fb_appid:
 
 # Collection setting
