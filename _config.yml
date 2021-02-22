@@ -62,6 +62,8 @@ jekyll_compose:
 # Homepage limit posts
 number_of_posts: 10
 
+future: false
+
 # Build settings
 # theme: klise
 sass:
