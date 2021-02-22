@@ -3,7 +3,7 @@ date: 2021-02-21
 title: 'Dev Discussions: Cecil Phillip'
 tags: [dotnet-stacks, dev-discussions]
 description: We talk to Cecil.
-image: "/assets/img/sanderson-card.png"
+image: "/assets/img/cecil-card.png"
 
 ---
 *This is the full interview from my discussion with Steve Sanderson in my weekly (free!) newsletter, The .NET Stacks. Consider [subscribing today](https://dotnetstacks.com)!*
