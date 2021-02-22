@@ -6,7 +6,7 @@ description: We talk to Cecil Phillip about microservices and distributed system
 image: "/assets/img/cecil-card.png"
 
 ---
-*This is the full interview from my discussion with Steve Sanderson in my weekly (free!) newsletter, The .NET Stacks. Consider [subscribing today](https://dotnetstacks.com)!*
+*This is the full interview from my discussion with Cecil Phillip in my weekly (free!) newsletter, The .NET Stacks. Consider [subscribing today](https://dotnetstacks.com)!*
 
 I recently had a chance to catch up with Cecil Phillip, a Senior Cloud Advocate for Microsoft. He's a busy guy: you might have seen him co-hosting [The .NET Docs Show](https://dotnet.microsoft.com/live/dotnet-docs) or the [ON.NET Show](https://channel9.msdn.com/Shows/On-NET). Cecil also does a lot with with microservices and distributed systems. I wanted to pick his brain on topics like Dapr, YARP, and Service Fabric. I hope you enjoy it.
 
