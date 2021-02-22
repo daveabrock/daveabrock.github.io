@@ -2,7 +2,7 @@
 date: 2021-02-21
 title: 'Dev Discussions: Cecil Phillip'
 tags: [dotnet-stacks, dev-discussions]
-description: We talk to Cecil.
+description: We talk to Cecil Phillip about microservices and distributed systems.
 image: "/assets/img/cecil-card.png"
 
 ---
