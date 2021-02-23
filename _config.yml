@@ -1,7 +1,7 @@
 # Site settings
 title: Dave Brock # site title
 description: >- # site description
-  I'm Dave Brock. I'm a software engineer, Microsoft MVP</a>, and writer who
+  I'm Dave Brock. I'm a software engineer, Microsoft MVP, and writer who
   specializes in modern development with C#, .NET, Azure, and other topics.
 lang: en-US # default lang
 timezone: America/Toronto # set your timezone
@@ -13,7 +13,7 @@ mode: light # default theme "dark" | "light"
 author:
   name: Dave Brock # author name
   bio: >- # tell to the world
-   I'm Dave Brock. I'm a software engineer, Microsoft MVP</a>, and writer who
+   I'm Dave Brock. I'm a software engineer, Microsoft MVP, and writer who
    specializes in modern development with C#, .NET, Azure, and other topics.
   username: daveabrock # general username
   github: daveabrock # github username
