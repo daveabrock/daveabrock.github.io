@@ -1,5 +1,5 @@
 ---
-date: "2021-02-27"
+date: "2021-03-06"
 title: "The .NET Stacks #39: 🔥 Is Dapr worth the hype?"
 tags: [dotnet-stacks]
 comments: false
