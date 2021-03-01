@@ -2,7 +2,7 @@
 date: "2021-02-24"
 title: "Use Azure Functions with .NET 5"
 description: "In this post, we upgrade a Functions app to .NET 5."
-tags: azure, functions]
+tags: [azure, functions]
 image: /assets/img/functions-dotnet-5.png
 readtime: true
 ---
