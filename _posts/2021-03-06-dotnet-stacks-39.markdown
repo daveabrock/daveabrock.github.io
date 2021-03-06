@@ -3,7 +3,7 @@ date: "2021-03-06"
 title: "The .NET Stacks #39: 🔥 Is Dapr worth the hype?"
 tags: [dotnet-stacks]
 comments: false
-image: /assets/img/stacks-38-card.png 
+image: /assets/img/stacks-39-card.png 
 description: This week, is Dapr for real?
 ---
 
