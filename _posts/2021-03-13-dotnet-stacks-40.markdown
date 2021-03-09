@@ -35,7 +35,7 @@ The .NET Upgrade Assistant is not a tool meant to upgrade with a click of a butt
 
 Last week, Okta [bought Auth0 for $6.5 billion](https://techcrunch.com/2021/03/03/okta-acquires-cloud-identity-startup-auth0-for-6-5b/). (I think I need to start an API company.)
 
-It makes sense: at the risk of oversimplifying, Okta provides IAM to companies that use it for SSO. Auth0 works on the app level, allowing developers API access to SSO. Okta has a reputation for being very enterprise-*y*, and Auth0 is known as a company with a startup feel that provides a developer-first experience. With this news, IdentityServer v4 now a paid product, and the Azure AD offerings, you many of choices when it comes to integrating auth in your .NET apps.
+It makes sense: at the risk of oversimplifying, Okta provides IAM to companies that use it for SSO. Auth0 works on the app level, allowing developers API access to SSO. Okta has a reputation for being very enterprise-*y*, and Auth0 is known as a company with a startup feel that provides a developer-first experience. With this news, IdentityServer v4 now a paid product, and the Azure AD offerings, you have many choices when it comes to integrating auth in your .NET apps.
 
 ***
 
