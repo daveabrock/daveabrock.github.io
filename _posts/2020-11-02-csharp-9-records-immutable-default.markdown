@@ -68,7 +68,7 @@ static void Main(string[] args)
 }
 ```
 
-Using positional creation, then, *we can say that records are not immutable by default*.
+Using nominal creation, then, *we can say that records are not immutable by default*.
 
 Of course, making this immutable is simple work by changing `set` to `init`:
 
