@@ -10,17 +10,14 @@ tags: [dotnet-stacks]
 
 ## 📢 Announcements
 
-- Jeremy Likness [announces Entity Framework Core 6.0 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-6-0-preview-2).
+- Richard Lander [announces .NET 6 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-2). Daniel Roth [writes about ASP.NET Core updates in .NET 6 Preview 2 updates](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-2) and Jeremy Likness [updates us on Entity Framework Core](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-6-0-preview-2).
 - David Ramel [writes about MAUI support with .NET 6 Preview 2](https://visualstudiomagazine.com/articles/2021/03/11/net-6-preview-2.aspx).
-- Richard Lander [announces .NET 6 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-2).
 - Angelos Petropoulos [writes about what's new with GitHub Actions tooling in Visual Studio](https://devblogs.microsoft.com/visualstudio/whats-new-with-github-actions-tooling-in-visual-studio).
-- Daniel Roth [writes about ASP.NET Core updates in .NET 6 Preview 2](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-2).
+- Anthony Chu [provides an update on .NET Azure Functions support](https://techcommunity.microsoft.com/t5/apps-on-azure/net-on-azure-functions-roadmap/ba-p/2197916).
 
 ## 📅 Community and events
 
-- The EF Standup [talks to Julie Lerman](https://www.youtube.com/watch?v=oZVsZrFKp48).
-- The ASP.NET standup [discusses contributing to Blazor](https://www.youtube.com/watch?v=gRg0xxK8L6w).
-- The Languages & Runtime standup [discusses the C# design process](https://www.youtube.com/watch?v=lzyWFew_w8Y).
+- For community standups: the EF team [talks to Julie Lerman](https://www.youtube.com/watch?v=oZVsZrFKp48), ASP.NET [discusses contributing to Blazor](https://www.youtube.com/watch?v=gRg0xxK8L6w), and the Languages & Runtime team [discusses the C# design process](https://www.youtube.com/watch?v=lzyWFew_w8Y).
 - The .NET Docs Show [talks with Yair Halberstadt about compile-time DI](https://www.youtube.com/watch?v=8cyumKVEth0).
 
 ## 🌎 Web development
@@ -29,9 +26,8 @@ tags: [dotnet-stacks]
 - Madhu Sudhanan P [builds a Blazor app with Dapper](https://www.syncfusion.com/blogs/post/build-blazor-crud-application-with-dapper.aspx).
 - Rick Strahl [writes about role-based JWT tokens in ASP.NET Core](https://weblog.west-wind.com/posts/2021/Mar/09/Role-based-JWT-Tokens-in-ASPNET-Core).
 - The Code Maze blog [introduces benchmarking C# and ASP.NET Core projects](https://code-maze.com/benchmarking-csharp-and-asp-net-core-projects/).
-- Khalid Abuhakmeh [answers a question about working With data in an HTTP API](https://khalidabuhakmeh.com/community-question-working-with-data-in-an-http-api).
+- Khalid Abuhakmeh [answers a question about working With data in an HTTP API](https://khalidabuhakmeh.com/community-question-working-with-data-in-an-http-api), and also [hosts two ASP.NET Core apps in one host](https://khalidabuhakmeh.com/hosting-two-aspnet-core-apps-in-one-host).
 - Damien Bowden [secures Blazor WebAssembly using cookies](https://damienbod.com/2021/03/08/securing-blazor-web-assembly-using-cookies/).
-- Khalid Abuhakmeh [hosts two ASP.NET Core apps in one host](https://khalidabuhakmeh.com/hosting-two-aspnet-core-apps-in-one-host).
 - Jeremy Miller [uses Alba to integration test ASP.NET services](https://jeremydmiller.com/2021/03/09/using-alba-to-test-asp-net-services/).
 - Sam Basu [works on a real-time WinUI dashboard with  a SignalR backend](https://www.telerik.com/blogs/real-time-winui-dashboard-with-signalr-backend).
 - Matthew Jones [wraps up building a blackjack game in Blazor](https://exceptionnotfound.net/blackjack-in-blazor-part-4-putting-it-all-together/).
@@ -47,7 +43,6 @@ tags: [dotnet-stacks]
 ## ⛅ The cloud
 
 - Anthony Chu [writes about running Node.js 14 with Azure Functions](https://techcommunity.microsoft.com/t5/apps-on-azure/run-node-js-14-in-azure-functions/ba-p/2195063?WT.mc_id=DOP-MVP-4025064).
-- Anthony Chu [provides an update on .NET Azure Functions support](https://techcommunity.microsoft.com/t5/apps-on-azure/net-on-azure-functions-roadmap/ba-p/2197916).
 - Elton Stoneman [runs containers in Azure VM Scale Sets instead of using Kubernetes](https://blog.sixeyed.com/you-cant-always-have-kubernetes-running-containers-in-azure-vm-scale-sets/).
 - James Randall [compares performance between AWS Lambda and Azure Functions](https://www.azurefromthetrenches.com/comparative-performance-of-azure-functions-and-aws-lambda/).
 - Scott Hanselman [starts using Azure Static Web Apps](https://www.hanselman.com/blog/penny-pinching-in-the-cloud-azure-static-web-apps-are-saving-me-money).
@@ -104,7 +99,5 @@ tags: [dotnet-stacks]
 
 - James Montemagno [discusses whether you should develop in Xamarin today or wait for MAUI](https://www.youtube.com/watch?v=zvPPz6DABi8).
 - Scott Hanselman and Azure Barry [discuss what to use for monitoring your applications in Azure](https://channel9.msdn.com/Shows/Azure-Friday/What-to-use-for-monitoring-your-applications-in-Azure).
-- The ON .NET Show [builds microservices with Tye](https://dev.to/dotnet/on-net-episode-building-microservices-with-tye-3ci).
-- The On .NET Show discusses [commands, queries, and other fun architectural patterns](https://www.youtube.com/watch?v=ysxgpVfyeNA).
+- The ON .NET Show [builds microservices with Tye](https://dev.to/dotnet/on-net-episode-building-microservices-with-tye-3ci), and also discusses commands, queries, and other fun architectural patterns](https://www.youtube.com/watch?v=ysxgpVfyeNA).
 - Scott Hanselman and Azure Barry [discuss what to use for deploying and testing your applications in Azure](https://channel9.msdn.com/Shows/Azure-Friday/What-to-use-for-deploying-and-testing-your-applications-in-Azure).
-
