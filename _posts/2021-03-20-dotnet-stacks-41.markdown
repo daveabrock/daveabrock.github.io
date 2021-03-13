@@ -99,5 +99,5 @@ tags: [dotnet-stacks]
 
 - James Montemagno [discusses whether you should develop in Xamarin today or wait for MAUI](https://www.youtube.com/watch?v=zvPPz6DABi8).
 - Scott Hanselman and Azure Barry [discuss what to use for monitoring your applications in Azure](https://channel9.msdn.com/Shows/Azure-Friday/What-to-use-for-monitoring-your-applications-in-Azure).
-- The ON .NET Show [builds microservices with Tye](https://dev.to/dotnet/on-net-episode-building-microservices-with-tye-3ci), and also discusses commands, queries, and other fun architectural patterns](https://www.youtube.com/watch?v=ysxgpVfyeNA).
+- The ON .NET Show [builds microservices with Tye](https://dev.to/dotnet/on-net-episode-building-microservices-with-tye-3ci), and also [discusses commands, queries, and other fun architectural patterns](https://www.youtube.com/watch?v=ysxgpVfyeNA).
 - Scott Hanselman and Azure Barry [discuss what to use for deploying and testing your applications in Azure](https://channel9.msdn.com/Shows/Azure-Friday/What-to-use-for-deploying-and-testing-your-applications-in-Azure).
