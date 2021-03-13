@@ -10,7 +10,7 @@ tags: [dotnet-stacks]
 
 ## 📢 Announcements
 
-- Richard Lander [announces .NET 6 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-2). Daniel Roth [writes about ASP.NET Core updates in .NET 6 Preview 2 updates](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-2) and Jeremy Likness [updates us on Entity Framework Core](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-6-0-preview-2).
+- Richard Lander [announces .NET 6 Preview 2](https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-2). Daniel Roth [writes about ASP.NET Core updates](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-2) and Jeremy Likness [updates us on Entity Framework Core](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-6-0-preview-2).
 - David Ramel [writes about MAUI support with .NET 6 Preview 2](https://visualstudiomagazine.com/articles/2021/03/11/net-6-preview-2.aspx).
 - Angelos Petropoulos [writes about what's new with GitHub Actions tooling in Visual Studio](https://devblogs.microsoft.com/visualstudio/whats-new-with-github-actions-tooling-in-visual-studio).
 - Anthony Chu [provides an update on .NET Azure Functions support](https://techcommunity.microsoft.com/t5/apps-on-azure/net-on-azure-functions-roadmap/ba-p/2197916).
