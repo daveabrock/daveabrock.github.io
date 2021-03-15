@@ -1,7 +1,7 @@
 ---
 date: "2021-03-14"
 title: "Use C# to upload files to a GitHub repository"
-description: ""
+description: "In this post, we use C# and Octokit to upload files to GitHub."
 tags: [csharp, github]
 image: /assets/img/upload-file-github.png
 ---
