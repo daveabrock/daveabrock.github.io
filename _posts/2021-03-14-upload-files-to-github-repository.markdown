@@ -8,7 +8,7 @@ image: /assets/img/upload-file-github.png
 
 If you need to upload a file to GitHub, [you can do it easily](https://docs.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository) from *github.com*. However, that doesn't scale. When it comes to doing it on a repeated basis or facilitating automation, you'll want to take a programmatic approach. While GitHub [does have a REST API](https://docs.github.com/en/rest), C# developers can take advantage of [the Octokit library](https://github.com/octokit/octokit.net). This library saves you a lot of time—you can take advantage of dynamic typing, get data models automatically, and not have to construct `HttpClient` calls yourself.
 
-This post will show you how to use the Octokit library to upload a Markdown file to a GitHub repository using the Octokit library.
+This post will show you how to use the Octokit library to upload a Markdown file to a GitHub repository.
 
 Before we get started, download the Octokit library from NuGet. You can do this in several different ways, but the simplest is using the `dotnet` CLI. From the path of your project, execute the following from your favorite terminal:
 
