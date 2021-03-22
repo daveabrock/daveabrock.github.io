@@ -68,11 +68,12 @@ What saves me every time is the *[crontab.guru](https://crontab.guru/)* site. (I
 
 # 🌎 Last week in the .NET world
 
-## 🔥 The Top 3
+## 🔥 The Top 4
 
 - Thomas Ardal [avoids password reuse with Pwned Passwords and ASP.NET Core](https://blog.elmah.io/avoid-password-reuse-with-pwned-passwords-and-asp-net-core/).
 - Jon Gallant [writes how the Azure SDK team decided to capitalize the T in Azure.IoT](https://blog.jongallant.com/2021/03/the-case-of-the-last-t/).
 - Andrew Lock [runs Kubernetes and the dashboard with Docker Desktop](https://andrewlock.net/running-kubernetes-and-the-dashboard-with-docker-desktop/).
+- Niels Swimberghe [creates ZIP files on HTTP request without intermediate files using ASP.NET MVC, Razor Pages, and endpoints](https://swimburger.net/blog/dotnet/create-zip-files-on-http-request-without-intermediate-files-using-aspdotnet-mvc-razor-pages-and-endpoints).
 
 ## 📢 Announcements
 
