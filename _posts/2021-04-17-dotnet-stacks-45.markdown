@@ -2,11 +2,73 @@
 date: "2021-04-17"
 title: "The .NET Stacks #45: 🔥 At last, hot reload is (initially) here"
 tags: [dotnet-stacks]
+image: /assets/img/stacks-45-card.png 
+description: This week, we discuss .NET 6 Preview 3 and some C# updates.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
 
+Happy Monday! Here's what we're talking about this week:
 
+- **One big thing**: .NET 6 Preview 3 is here, and so is hot reload
+- **The little thing**: C# updates
+- Last week in the .NET world
+
+***
+
+# .NET 6 Preview 3 is here, and so is hot reload
+
+On Thursday, Microsoft rolled out .NET 6 Preview 3. Richard Lander [has the announcement covered](https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-3/). As he notes in the post, the release is "dedicated almost entirely to low-level performance features." For example, we've got [faster handling of structs as Dictionary values](https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-3/#faster-handling-of-structs-as-dictionary-values), [faster interface checking and casting thanks to the use of pattern matching](https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-3/#faster-interface-checking-and-casting), and [code generation improvements](https://devblogs.microsoft.com/dotnet/announcing-net-6-preview-3/#runtime-codegen). The team [resolved an issue](https://devblogs.microsoft.com/nuget/net-5-nuget-restore-failures-on-linux-distributions-using-nss-or-ca-certificates/) where NuGet restore failed on Linux thanks to previous certificate issues. There were also updates to [EF Core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/6.0.0-preview.3.21201.2) and [ASP.NET Core](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/6.0.0-preview.3.21201.2).
+
+Oh, and [initial hot reload support](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-3/#initial-net-hot-reload-support) is finally here.
+
+Hot reload isn't just for Blazor developers to enjoy—it's built into the .NET 6 runtime. With Preview 3, you can use it by running `dotnet watch` in your terminal with ASP.NET Core web apps—Razor Pages, MVC, and Blazor (Server and WebAssembly). In future updates, you'll enjoy Visual Studio support and use it with other project types like mobile, console apps, and client and mobile apps.
+
+It's been highly requested, and for a good reason—front-end frameworks and libraries based on interpreted languages like JS have enjoyed this for the last five years, and it's a fantastic productivity booster. It's easy to rag on Microsoft for taking this long—but they've had more significant problems during this time. Five years ago, Microsoft was preparing the roll out of the first version of .NET Core, and a component library like Blazor was just a thought, if at all. Now, the runtime is ready to address these issues (as it's [a main goal](https://github.com/dotnet/core/issues/5510) of .NET 6).
+
+I tried out hot reload with Blazor Server this weekend (a blog post is coming). I'll include some GIFs that show what it's like.
+
+Here's basic editing of static text:
+
+![]({{ site.url }}{{site.baseurl}}/assets/img/hr-hello-friends.gif)
+
+Here's what happens when I update C# code:
+
+![]({{ site.url }}{{site.baseurl}}/assets/img/hr-increment-by-5.gif)
+
+In the following example, you'll see here that it preserves state. When I change the `currentCount` value, the state of the component is maintained. I'll need to refresh the page to see the new `currentCount`.
+
+![]({{ site.url }}{{site.baseurl}}/assets/img/hr-preserve-state.gif)
+
+Here's where I put it all together by dropping in components (with independent state) and editing some CSS for good measure.
+
+![]({{ site.url }}{{site.baseurl}}/assets/img/hr-put-it-together.gif)
+
+However, [not all code actions are supported](https://docs.microsoft.com/visualstudio/debugger/supported-code-changes-csharp). When this happens—like renaming a method—it will revert to current `dotnet watch` behavior by recompiling and refreshing your page with the latest bits.
+
+![]({{ site.url }}{{site.baseurl}}/assets/img/hr-method-rename.gif)
+
+If you have runtime errors, a banner displays at the top with the appropriate information. When you resolve your issues, the app will recompile and refresh.
+
+![]({{ site.url }}{{site.baseurl}}/assets/img/hr-build-error.gif)
+
+On the subject of Blazor, Preview 3 [ships with a `BlazorWebView` control](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-3/#blazorwebview-controls-for-wpf-windows-forms). This allows WPF and Windows Forms developers to embed Blazor functionality into existing .NET 6 desktop apps.
+
+***
+
+# The little thing: C# updates
+
+Last week, Bill Wagner [announced open-source C# standardization](https://devblogs.microsoft.com/dotnet/announcing-open-source-c-standardization-standards/). In addition to the compiler work repo (in dotnet/roslyn) and the repo for C# language evolution (dotnet/csharplang), there is now a new repo (dotnet/csharpstandard) dedicated to documenting the standard for the latest C# language versions.
+
+The new repo sits under the .NET Foundation, and as Wagner states:
+
+>Moving the standards work into the open, under the .NET Foundation, makes it easier for standardization work. Everything from language innovation and feature design through implementation and on to standardization now takes place in the open. It will be easier to ask questions among the language design team, the compiler implementers, and the standards committee. Even better, those conversations will be public ... The end result will be a more accurate standard for the latest versions of C#.
+
+If you're having trouble distinguishing between dotnet/csharplang and dotnet/csharpstandard, [you aren't alone](https://devblogs.microsoft.com/dotnet/announcing-open-source-c-standardization-standards/#comment-8901). Bill Wagner notes that [there's some overlap between the repos](https://devblogs.microsoft.com/dotnet/announcing-open-source-c-standardization-standards/#comment-8902), and it's a work in progress.
+
+Speaking of C#, it's nice to check out any [language proposals](https://github.com/dotnet/csharplang/tree/main/proposals) from time-to-time, and [file-scoped namespaces](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/file-scoped-namespaces.md) is making progress as a C# 10 proposal.
+
+***
 
 # 🌎 Last week in the .NET world
 
