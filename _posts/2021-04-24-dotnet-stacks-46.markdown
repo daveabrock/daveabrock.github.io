@@ -1,44 +1,49 @@
 ---
 date: "2021-04-24"
-title: "The .NET Stacks #45: <fill in later>"
+title: "The .NET Stacks #46: <fill in later>"
 tags: [dotnet-stacks]
+image: /assets/img/stacks-46-card.png 
+description: Say something about this issue.
 ---
+
+![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
+
+Happy Monday! Here's what we're talking about this week:
+
+- **One big thing**: 
+- **The little thing**: 
+- Last week in the .NET world
 
 # 🌎 Last week in the .NET world
 
 ## 🔥 The Top 3
 
+- Andrew Lock [views overwritten configuration values in ASP.NET Core](https://andrewlock.net/viewing-overriden-configuration-values-in-aspnetcore/).
+- Jeremy Likness [writes about an easier way to debounce in Blazor](https://blog.jeremylikness.com/blog/an-easier-blazor-debounce/).
+- Steve Smith [tests exceptions with XUnit and Actions](https://ardalis.com/testing-exceptions-with-xunit-and-actions/).
+
 ## 📢 Announcements
 
-- Microsoft releases [Windows Terminal Preview 1.8](https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-8-release).
-- Microsoft releases [Visual Studio 2019 v16.10 Preview 2](https://devblogs.microsoft.com/visualstudio/visual-studio-2019-v16-10-preview-2/?WT.mc_id=DOP-MVP-4025064).
+- Microsoft releases [Windows Terminal Preview 1.8](https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-8-release) and [Visual Studio 2019 v16.10 Preview 2](https://devblogs.microsoft.com/visualstudio/visual-studio-2019-v16-10-preview-2/?WT.mc_id=DOP-MVP-4025064).
 - The Azure SDK team [provides its April update](https://devblogs.microsoft.com/azure-sdk/april-release-2021).
 
 ## 📅 Community and events
 
 - Kevin Dockx [updates his Marvin.JsonPatch library](https://www.kevindockx.com/new-release-marvin-jsonpatch-2-2/).
-- The ASP.NET standup [talks to Shaun Walker about Oqtane](https://www.youtube.com/watch?v=livNmRqDnMI).
-- The .NET Tooling standup [talks about .NET Interactive](https://www.youtube.com/watch?v=3hQB_ElxJXU).
-- The Machine Learning standup [holds office hours](https://www.youtube.com/watch?v=o-WQyQc-rJ0).
-- The .NET Docs Show [talks to Rehan Saeed about NuGet packages](https://www.youtube.com/watch?v=A93Fn_qMLX4).
+- The Azure Cosmos DB Conf [starts on Tuesday](https://gotcosmos.com/conf).
 - JetBrains is [hosting .NET Days on May 11-12](https://blog.jetbrains.com/dotnet/2021/04/14/dotnet-days-online-2021/).
+- In community standups: ASP.NET standup [talks to Shaun Walker about Oqtane](https://www.youtube.com/watch?v=livNmRqDnMI), .NET Tooling [talks about .NET Interactive](https://www.youtube.com/watch?v=3hQB_ElxJXU), and Machine Learning [holds office hours](https://www.youtube.com/watch?v=o-WQyQc-rJ0).
+- The .NET Docs Show [talks to Rehan Saeed about NuGet packages](https://www.youtube.com/watch?v=A93Fn_qMLX4).
 
 ## 🌎 Web development
 
-- Ben Foster [customizes authorization responses in .NET 5.0
-](https://benfoster.io/blog/customize-authorization-response-aspnet-core/).
+- Ben Foster [customizes authorization responses in .NET 5.0](https://benfoster.io/blog/customize-authorization-response-aspnet-core/).
 - Dave Brock [writes about hot reload in .NET 6](https://www.telerik.com/blogs/instant-feedback-is-here-introducing-hot-reload-in-dotnet-6).
 - Matthew Jones [continues writing a Tetris game in Blazor](https://exceptionnotfound.net/tetris-in-blazor-part-4-displaying-the-grid-and-a-falling-tetromino/).
-- Andrew Lock [views overwritten configuration values in ASP.NET Core
-](https://andrewlock.net/viewing-overriden-configuration-values-in-aspnetcore/).
-- Khalid Abuhakmeh [generates links to ASP.NET Core map endpoints
-](https://khalidabuhakmeh.com/generate-links-to-aspnet-core-map-endpoints).
-- Jeremy Likness [writes about an easier way to debounce in Blazor](https://blog.jeremylikness.com/blog/an-easier-blazor-debounce/).
+- Khalid Abuhakmeh [generates links to ASP.NET Core map endpoints](https://khalidabuhakmeh.com/generate-links-to-aspnet-core-map-endpoints), and also [adds models to ASP.NET Core](https://khalidabuhakmeh.com/how-to-add-models-to-aspnet-core).
 - David Ramel [writes about the new Blazor WebView controls](https://visualstudiomagazine.com/articles/2021/04/09/blazorwebview.aspx).
 - Marinko Spasojevic [works with tables in MudBlazor](https://code-maze.com/blazor-material-table-paging-searching-sorting/).
-- Damien Bowden [secures Blazor Web Assembly using cookies and Auth0
-](https://damienbod.com/2021/04/12/securing-blazor-web-assembly-using-cookies-and-auth0/).
-- Khalid Abuhakmeh [adds models to ASP.NET Core](https://khalidabuhakmeh.com/how-to-add-models-to-aspnet-core).
+- Damien Bowden [secures Blazor Web Assembly using cookies and Auth0](https://damienbod.com/2021/04/12/securing-blazor-web-assembly-using-cookies-and-auth0/).
 
 ## 🥅 The .NET platform
 
@@ -48,16 +53,11 @@ tags: [dotnet-stacks]
 - Nick Randolph [restyles controls in an Uno (Windows UI) application](https://nicksnettravels.builttoroam.com/restyling-winui-controls/).
 - Laurent Ellerbach [writes about the story of .NET nanoFramework](https://devblogs.microsoft.com/dotnet/show-dotnet-build-your-own-unit-test-platform-the-true-story-of-net-nanoframework).
 
-## ⛅ The cloud
-
-
 ## 📔 Languages
 
-- The ON .NET Show [talks about target-typed new expressions in C# 9](https://channel9.msdn.com/Shows/On-NET/C-Language-Highlights-Target-Typed-new-expressions).
 - Jeff Fritz [writes about C# nullability](https://dev.to/dotnet/my-favorite-c-features-part-3-nullability-2mcg).
-- Damir Arh [makes code simpler with C# 9 ](https://www.dotnetcurry.com/csharp/simpler-code-with-csharp-9).
-- Tom Deseyn [writes about C# 9 new features for methods and functions
-](https://developers.redhat.com/blog/2021/04/13/c-9-new-features-for-methods-and-functions/).
+- Damir Arh [makes code simpler with C# 9](https://www.dotnetcurry.com/csharp/simpler-code-with-csharp-9).
+- Tom Deseyn [writes about C# 9 new features for methods and functions](https://developers.redhat.com/blog/2021/04/13/c-9-new-features-for-methods-and-functions/).
 
 ## 🔧 Tools
 
@@ -69,10 +69,8 @@ tags: [dotnet-stacks]
 - Pratik Nadagouda [writes about using Visual Studio with Git](https://devblogs.microsoft.com/visualstudio/enhanced-productivity-with-git-in-visual-studio).
 - Gerard Gallant [deploys C# web applications in Docker](https://platform.uno/blog/deploying-c-web-applications-with-docker/).
 - Aaron Stannard [builds headless Akka.NET services with IHostedService](https://petabridge.com/blog/akkadotnet-ihostedservice/).
-- Khalid Abuhakmeh [writes about ReSharper & Rider improvements For Avalonia
-](https://blog.jetbrains.com/dotnet/2021/04/12/improvements-for-resharper-rider-avalonia/).
-- Elie Bou Issa [automates Azure DevOps with Logic Apps
-](https://www.red-gate.com/simple-talk/sysadmin/devops/automating-azure-devops-logic-apps/).
+- Khalid Abuhakmeh [writes about ReSharper & Rider improvements For Avalonia](https://blog.jetbrains.com/dotnet/2021/04/12/improvements-for-resharper-rider-avalonia/).
+- Elie Bou Issa [automates Azure DevOps with Logic Apps](https://www.red-gate.com/simple-talk/sysadmin/devops/automating-azure-devops-logic-apps/).
 
 ## 📱 Xamarin
 
@@ -85,7 +83,6 @@ tags: [dotnet-stacks]
 - Derek Comartin [organizes microservices](https://codeopinion.com/organizing-commands-events-handlers-in-microservices/).
 - Over at Software Alchemy, [scaffolding your clean DDD web app](https://blog.jacobsdata.com/2021/04/11/scaffold-your-clean-ddd-web-application-part-6-domain-driven-design-workflow-patterns).
 - Scott Hannen [continues writing about his experiment with making integration tests easier to write](https://scotthannen.org/blog/2021/04/12/integration-test-experiment-2.html).
-- Steve Smith [tests exceptions with XUnit and Actions](https://ardalis.com/testing-exceptions-with-xunit-and-actions/).
 
 ## 🎤 Podcasts
 
@@ -98,6 +95,5 @@ tags: [dotnet-stacks]
 
 ## 🎥 Videos
 
-- The On .NET Show [secures apps with Microsoft Identity](https://www.youtube.com/watch?v=P25SIYLsH-g).
+- The On .NET Show [secures apps with Microsoft Identity](https://www.youtube.com/watch?v=P25SIYLsH-g), and [target-typed new expressions in C# 9](https://channel9.msdn.com/Shows/On-NET/C-Language-Highlights-Target-Typed-new-expressions).
 - The ASP.NET Monsters [deal with truncation with string and binary values](https://www.youtube.com/watch?v=emp1PVEt1X8).
-
