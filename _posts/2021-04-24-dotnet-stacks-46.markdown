@@ -3,7 +3,7 @@ date: "2021-04-24"
 title: "The .NET Stacks #46: 📒 What's new with your favorite IDE"
 tags: [dotnet-stacks]
 image: /assets/img/stacks-46-card.png 
-description: Say something about this issue.
+description: This week, we catch up on Visual Studio and JetBrains Rider updates.
 ---
 
 ![Newsletter image](https://daveabrock.com/THE .NET STACKS.png)
