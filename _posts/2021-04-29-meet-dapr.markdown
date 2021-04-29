@@ -1,0 +1,163 @@
+---
+date: "2021-04-29"
+title: "Make microservices fun again with Dapr"
+description: "In this introductory article, I explain what Dapr is and the problems it solves."
+tags: [tools]
+image: /assets/img/dapr-card.png
+---
+
+If you can manage a monolithic application correctly, often it's all you need: building, testing, and deploying is relatively straightforward. If you manage this well—embracing the concepts of [a loosely-coupled monolith](https://codeopinion.com/loosely-coupled-monolith)—you can get away from a lot of the complexity of modern distributed applications.
+
+In theory, though, I've seen monoliths open for abuse. After some time, the monolith becomes complicated, changes are filled with unintended side effects, and it becomes difficult to manage. Even simple changes require full deployments of the entire application, and testing is a nightmare. In these cases, you may want to consider a microservice architecture. With anything else, you need to understand what you're getting yourself into.
+
+Instead, you're signing up to manage a bunch of smaller applications with a lot to consider: how can I monitor and observe my services? How can I make them robust and resilient? How can I work with async communication, like messaging and event-driven patterns? When I do need to be synchronous, how can I handle that? How can I scale? Did I mention it has to be cloud-native through containerization and a container orchestrator like Kubernetes?
+
+Three months after your stakeholders ask you to build a shopping cart, you're looking at an app filled with complex dependencies, cobbled-together SDKs, and complicated configuration setups. You now spend your days futzing with YAML files—and believe me, some days it's a word dangerously close to *futzing*—and you can't help but wonder: wasn't I supposed to be developing things?
+
+Dapr, or Distributed Application Runtime, is here to help. Production-ready [since February](https://blog.dapr.io/posts/2021/02/17/announcing-dapr-v1.0/) and sponsored by Microsoft, it manages distributed applications for you through a "building blocks" mechanism. These pluggable components manage the various layers of complexity for you:
+
+- State management
+- Invoking services
+- Bindings
+- Observability
+- Secrets
+- Actors
+- Invoking services
+
+In these cases, you tell Dapr which "component to use"—like Redis or SQL Server, for instance—and Dapr will handle the rest for you through a singular SDK or API. While you may be worried about a single layer of abstraction, this provides a lot of value over other options like Istio or Orleans: one SDK to manage all your complexity.
+
+Dapr uses a sidecar pattern. From your services, you can connect to Dapr from HTTP or gRPC. Here's what it looks like (this graphic was [stolen from the Dapr Docs](https://docs.dapr.io/concepts/overview/#self-hosted)):
+
+![]({{ site.url }}{{site.baseurl}}/assets/img/overview-sidecar.png)
+
+Even more, you can enjoy the benefits from your local machine. You can configure Dapr to run the [Dapr CLI](https://github.com/dapr/cli#launch-dapr-and-your-app).
+
+You may think you need to Dapr-ize your entire application if you want to leverage it—this is not true. If you feel you could benefit by doing pub-sub over HTTP, use that piece and leave the rest of the application alone. This isn't an all-or-nothing approach.
+
+Before we proceed with one of my favorite Dapr use cases, let's answer a common question.
+
+## Is this a new Service Mesh?
+
+Is this a new Service Mesh? Thankfully, no.
+
+If you're unfamiliar, a service mesh is an infrastructure layer that can provide capabilities like load-balancing, telemetry, and service-to-service communication. In many ways, you might think abstracting these capabilities away from the services themselves is a step forward. In reality, though, I hate them so much. Adding another hop in your service to a complicated mesh that requires a talented I&O team to administer, coupled with a terrible developer experience? No, thanks. When I see these solutions, I wonder: does anyone think about the people who build applications?
+
+While these meshes use a sidecar pattern like Dapr, it is *not* a dedicated network infrastructure layer but a distributed application runtime. While a service mesh enables things from the network perspective, Dapr has that and more: application-level capabilities like actors that can encapsulate logic and data, complex state management, bindings, and more.
+
+This isn't a binary decision, of course—you *could* [add service meshes with Dapr](https://docs.dapr.io/concepts/faq/#networking-and-service-meshes) to isolate networking concerns away from application concerns.
+
+## Get your feet wet with simplified pub-sub
+
+Because Azure Service Bus does not provide a great local development experience—and [not without some discussion on making it better](https://github.com/Azure/azure-service-bus/issues/223)—it isn't uncommon to see developers use RabbitMQ locally and in development environments but Azure Service Bus in production. As [with the *Dapr for .NET Developers* ebook](https://docs.microsoft.com/dotnet/architecture/dapr-for-net-developers/reference-application#benefits-of-applying-dapr-to-eshop), you can provide an abstraction layer, but swapping between the two is a lot of work.
+
+Here's an example, using the Dapr .NET SDK, for publishing an event to a `concert` topic:
+
+```csharp
+var band = new Band
+{
+  Id = 1,
+  Name = "The Eagles, man"
+};
+
+var daprClient = new DaprClientBuilder().Build();
+
+await daprClient.PublishEventAsync<OrderData>("pubsub", "concert", band);
+```
+
+The Dapr SDK allows you to decorate your `ActionResult` methods with a `Topic` attribute. For example, here's how a `CreateBand` signature would look:
+
+```csharp
+[Topic("pubsub", "concert")]
+[HttpPost("/bands")]
+public async Task<ActionResult> CreateBand(BandModel band)
+```
+
+In ASP.NET Core, you'll need to let the middleware know you're working with Dapr in the `ConfigureServices` and `Configure` methods:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // other stuff omitted
+    services.AddControllers().AddDapr();
+}
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    // other stuff omitted
+    app.UseCloudEvents();
+
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapSubscribeHandler();
+    });
+}
+```
+
+If I was using [RabbitMQ with Dapr](https://v1-rc1.docs.dapr.io/operations/components/setup-pubsub/supported-pubsub/setup-rabbitmq/), I would include something like this in my configuration:
+
+```yaml
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub-rq
+spec:
+  type: pubsub.rabbitmq
+  version: v1
+  metadata:
+  - name: host
+    value: "amqp://localhost:5672"
+  - name: durable
+    value: true
+  - name: deletedwhenunused
+    value: true
+```
+
+If I wanted to swap it out with Azure Service Bus, I could update my configuration. (Each provider has various configuration levels, [as you can see](https://v1-rc1.docs.dapr.io/operations/components/setup-pubsub/supported-pubsub/setup-azure-servicebus/).)
+
+```yaml
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: <NAME>
+  namespace: <NAMESPACE>
+spec:
+  type: pubsub.azure.servicebus
+  version: v1
+  metadata:
+  - name: connectionString
+    value: <myconnectionstring> 
+  - name: timeoutInSec
+    value: 75 
+  - name: maxDeliveryCount
+    value: 3
+  - name: lockDurationInSec
+    value: 30
+```
+
+With the Dapr pub/sub model, a nice benefit is the capability to subscribe to a topic in a declarative fashion. In this example, I can define the Dapr component, the topic to subscribe to, the API to call, and which services have pub/sub capabilities.
+
+```yaml
+apiVersion: dapr.io/v1alpha1
+kind: Subscription
+metadata:
+  name: concert-subscription
+spec:
+  pubsubname: pubsub
+  topic: concert
+  route: /bands
+scopes:
+- ThisService
+- ThatService
+- TheOtherService
+```
+
+While a quick example—I plan a future dedicated post of Dapr pub-sub—you can see the benefits, especially when swapping dependencies. In the *Dapr for .NET Developers* ebook, Microsoft says they could [remove 700 lines of code](https://docs.microsoft.com/dotnet/architecture/dapr-for-net-developers/reference-application#benefits-of-applying-dapr-to-eshop) using Dapr to switch between RabbitMQ and Azure Service Bus.
+
+## Conclusion
+
+In this article, we introduced Dapr. We walked through the problems it solves, how it compares to a Service Mesh, and a simple scenario using pub-sub with RabbitMQ and Azure Service Bus. As I'm just beginning to get my feet wet, look for more posts on the topic soon!
+
+## References
+
+- [Dapr for .NET Developers](https://docs.microsoft.com/dotnet/architecture/dapr-for-net-developers/) (a good read and inspiration for the use case I provided, check it out)
+- [Dapr Docs](https://docs.dapr.io/concepts/overview/)
