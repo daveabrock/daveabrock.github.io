@@ -22,7 +22,6 @@ Dapr, or Distributed Application Runtime, is here to help. Production-ready [sin
 - Observability
 - Secrets
 - Actors
-- Invoking services
 
 In these cases, you tell Dapr which "component to use"—like Redis or SQL Server, for instance—and Dapr will handle the rest for you through a singular SDK or API. While you may be worried about a single layer of abstraction, this provides a lot of value over other options like Istio or Orleans: one SDK to manage all your complexity.
 
