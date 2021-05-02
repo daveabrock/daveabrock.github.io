@@ -154,7 +154,7 @@ ul {
 
 ol {
   list-style: none;
-  counter-reset: li;
+  // counter-reset: li;
   li {
     position: relative;
     counter-increment: li;
